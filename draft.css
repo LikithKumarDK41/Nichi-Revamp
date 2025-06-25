@@ -84,6 +84,14 @@ body {
     padding-right: 0.25rem;
 }
 
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+
 .logo img {
     height: 50px;
 }
@@ -109,15 +117,35 @@ body {
     transition: color 0.3s ease;
 }
 
-.main-nav .nav-links a:hover,
-.main-nav .nav-links a.active {
-    text-decoration: none !important; /* Ensure no underline on hover/active either */
+.main-nav .nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: #000066; 
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.main-nav .nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.main-nav .nav-links a.active::after {
+  transform: scaleX(1);
 }
 
 .header-actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.translate {
+  margin-left: 1rem;
 }
 
 .hamburger-menu {
@@ -162,14 +190,16 @@ body {
   display: flex;
 }
 
-/* Mobile Nav Overlay - Light Glassy Style */
 .mobile-nav-overlay {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100vw;
+  right: 0;
+  width: 65vw;
+  max-width: 420px;
   height: 100vh;
-  background: rgba(255, 255, 255, 0.9); /* solid white with slight transparency */
+  background: #e6e6f4; 
+  box-shadow: -16px 0 40px rgba(0, 0, 0, 0.48);
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -178,9 +208,8 @@ body {
   transform: translateX(100%);
   opacity: 0;
   pointer-events: none;
-  transition: transform 0.4s ease, opacity 0.4s ease;
+  transition: transform 0.4s ease, opacity 0.3s ease;
 }
-
 
 .mobile-nav-overlay.open {
   transform: translateX(0);
@@ -188,25 +217,64 @@ body {
   pointer-events: auto;
 }
 
+.mobile-nav {
+  width: 100%;
+  padding: 2rem 1.5rem;
+}
+
 .mobile-nav-links {
-    list-style: none;
-    text-align: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
 .mobile-nav-links li {
-    margin: 2rem 0;
+  width: 100%;
 }
 
-.mobile-nav-links a, .mobile-nav-links .cta-button {
-    color: var(--text-color-dark);
-    text-decoration: none !important; /* Force remove default underline */
-    font-size: 2rem;
-    font-weight: 600;
-    transition: color 0.3s ease;
+.mobile-nav-links a,
+.mobile-nav-links .cta-button {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #0a2540;
+
+  background: linear-gradient(135deg, #f6f5ff 0%, #e7f1fa 100%);
+  border: 1px solid #d2dee8;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+
+  transition:
+    background 0.6s cubic-bezier(0.25, 0.8, 0.25, 1),
+    color 0.4s ease-in-out,
+    text-shadow 0.4s ease-in-out,
+    transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.4s ease-in-out;
 }
 
-.mobile-nav-links a:hover {
-    color: #000066;
+.mobile-nav-links a:hover,
+.mobile-nav-links .cta-button:hover {
+background: linear-gradient(
+  105deg,
+  #0b0eb1 0%,       
+  #313e91 25%,      
+  #4179ce 50%,      
+  #c0bdc5 75%,      
+  #d6d3db 100%      
+);
+  color: #f8fafd;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transform: translateX(6px);
+  box-shadow: 0 8px 22px rgba(0, 43, 89, 0.1);
 }
 
 /*Hero Slider*/
@@ -214,10 +282,10 @@ body {
         #hero-slider {
             position: relative;
             width: 100%;
-            height: 100vh; /* Ensures it takes full viewport height for equal spacing */
+            height: 100vh; 
             display: flex;
-            align-items: center; /* Vertically center overall content */
-            justify-content: center; /* Horizontally center overall content */
+            align-items: center; 
+            justify-content: center; 
             margin-top: 30px;
         }
 
@@ -230,13 +298,13 @@ body {
             width: 100%;
             height: 100%;
             display: flex;
-            align-items: center; /* Vertically center text content within each slide */
-            justify-content: flex-start; /* Default: Align content to the start (left) */
-            text-align: left; /* Text alignment within the container */
+            align-items: center; 
+            justify-content: flex-start; 
+            text-align: left; 
             box-sizing: border-box;
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat; /* Ensure background image doesn't repeat */
+            background-repeat: no-repeat; 
         }
         
         .slide-content.active {
@@ -247,8 +315,8 @@ body {
             max-width: 800px;
             color: var(--text-color-light);
             z-index: 10;
-            padding: 2rem 1.35rem;
-            margin: auto 0; /* Vertically center in flex parent */
+            padding: 2rem 1.24rem;
+            margin: auto 0; 
         }
 
         .slide-text-container h2 {
@@ -507,21 +575,17 @@ body {
 
 .our-services-section {
   padding: 40px 20px;
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Darkish overlay added here */
-    url('http://localhost/Nichi-in%20Revamp/wp-content/uploads/2025/06/18705.jpg') no-repeat center center fixed;
-  background-size: cover;
+  background: linear-gradient(135deg, #f9fafb, #edf2f7);
   text-align: center;
-  position: relative; 
-  z-index: 0; 
+  position: relative;
+  z-index: 0;
 }
 
 .services-title {
   font-size: 2.5rem;
   margin-bottom: 40px;
-  color: #f8f9fa; 
+  color: #222222; 
   font-weight: 600;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); 
   position: relative; 
   z-index: 2; 
 }
@@ -582,10 +646,9 @@ body {
 
 .service-card h3 {
   font-size: 1.1rem;
-  color: #f8f9fa; 
+  color: #222222; 
   font-weight: 500;
   margin: 0;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); 
   position: relative; 
   z-index: 2; 
 }
@@ -594,7 +657,7 @@ body {
 
 .industry-focus-section {
   padding: 40px 20px;
-  background: linear-gradient(135deg, #f5faff, #e8f7ff);
+  background: linear-gradient(120deg, #d4d8dd 0%, #e2e4ec 50%, #141486 100%);
   overflow-x: hidden;
 }
 
@@ -691,18 +754,16 @@ body {
 .metrics {
   position: relative;
   padding: 40px 20px;
-  background: url('http://localhost/Nichi-in%20Revamp/wp-content/uploads/2025/06/2150377123.jpg') no-repeat center center;
-  background-size: cover;
-  background-attachment: scroll;
+  background: linear-gradient(135deg, #f9fafb, #edf2f7);
   text-align: center;
   z-index: 0;
 }
+
 
 .metrics::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4); 
   z-index: 1;
 }
 
@@ -742,17 +803,15 @@ body {
 
 .metric-box h1 {
   font-size: 2.2rem;
-  color: #ffffff;
+  color: #222222;
   margin: 0;
   font-weight: 700;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .metric-box p {
   font-size: 1rem;
-  color: #f1f1f1;
+  color: #222222;
   margin-top: 8px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -918,9 +977,9 @@ body {
   position: relative;
   padding: 40px 20px;
   text-align: center;
-  background: url('http://localhost/Nichi-in%20Revamp/wp-content/uploads/2025/06/16548.jpg') no-repeat center center fixed;
+  background-color: #eaf6fb; /* very soft light blue */
   z-index: 1;
-  color: #ffffff; 
+  color: #1a202c; /* changed to dark text for readability */
   min-height: 300px;
 }
 
@@ -928,27 +987,24 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 30, 60, 0.4); 
   z-index: -1;
 }
 
 .partnerships h2 {
   font-size: 2.4rem;
   font-weight: 700;
-  color: #f1f5f9; 
+  color: #222222; 
   margin-bottom: 0.5rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
 }
 
 .partnerships h3 {
   font-size: 1.25rem;
   font-weight: 500;
-  color: #e2e8f0; 
+  color: #222222; 
   margin-bottom: 2.5rem;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25); 
 }
 
 .partnership-logos {
@@ -975,7 +1031,12 @@ body {
 
 .certifications {
   padding: 40px 20px;
-  background: linear-gradient(285deg, #cee4e3, #f8fafa);
+  background: linear-gradient(
+    to right,
+    #f4f7fa 0%,
+    #f0f4f8 50%,
+    #f9fbfc 100%
+  );
   text-align: center;
   min-height: 400px;
 }
@@ -1269,6 +1330,26 @@ body {
 }
 
 @media (max-width: 768px) {
+  .header-content {
+    justify-content: space-between;
+  }
+
+  .header-actions {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .translate {
+    order: 1;
+    margin-left: 0;
+  }
+
+  .hamburger-menu {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
   .logo img {
     width: 140px;
     max-height: 35px;
@@ -1314,6 +1395,8 @@ body {
     font-size: 0.95rem;
     padding: 0 1rem;
     line-height: 1.6;
+    min-height: 150px;
+    padding: 30px 2rem;
   }
 }
 
