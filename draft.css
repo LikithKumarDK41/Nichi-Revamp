@@ -2459,19 +2459,27 @@ body {
   font-weight: 800;
   margin-bottom: 2rem;
   color: #222222; 
-  text-align: center;
+  text-align: left;
   padding: 40px 0px 0px
 }
 
-/* Intro Text */
 .leadership-intro-text {
   max-width: 900px;
-  margin: 0 auto 1.5rem;
   font-size: 1.1rem;
   color: #444;
-  text-align: justify;
+  text-align: left !important;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.leadership-intro-text1 {
+  max-width: 900px;
+  font-size: 1.1rem;
+  color: #444;
+  text-align: left !important;
   line-height: 1.7;
 }
+
 
 /* Category Title */
 .leadership-category-title {
@@ -2486,10 +2494,12 @@ body {
 
 /* =============== Grid Layout =============== */
 .leadership-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem; /* Minimal gap */
-  justify-items: center; /* Center items in the grid */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem; /* Tight gap between cards */
+  margin-bottom: 2rem;
+  padding: 0 1rem;
 }
 
 /* For a single card in a grid, center it */
@@ -2504,16 +2514,15 @@ body {
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
   text-align: center;
   padding: 1.5rem 1rem;
+  width: 280px;
+  height: 380px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 280px; /* Fixed width for consistency */
-  height: 380px; /* Fixed height for consistency */
-  justify-content: space-between; /* Distribute space within the card */
 }
 
 .team-member-card:hover {
@@ -2580,6 +2589,42 @@ body {
   transform: translateX(4px);
 }
 
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.linkedin-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #0a66c2;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.linkedin-link i {
+  font-size: 1rem;
+}
+
+.linkedin-link:hover {
+  background-color: #004182;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+
 /* =============== Responsive =============== */
 @media (max-width: 768px) {
   .section-title {
@@ -2641,3 +2686,4 @@ body {
     min-height: unset; /* Remove min-height on small screens */
   }
 }
+
