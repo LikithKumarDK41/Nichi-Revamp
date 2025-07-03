@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leadership Profile | Nichi-In Software Solutions</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="draft.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Internal CSS for this page -->
+  <style>
+    /* Global styles */
+    :root {
+      --primary-color: #00C2B8;
+      --secondary-color: #6F42C1;
+      --accent-color: #F4D35E;
+      --text-color-dark: #2d3748;
+      --text-color-light: #e2e8f0;
+      --bg-dark: #ffffff;
+      --bg-light: #f7fafc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    html,
+    body {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9fb;
+      color: #2d3748;
+      overflow-x: hidden;
+    }
+
+    /* Profile Section - Full Width */
+    .profile-section {
+      width: 100%;
+      padding: 60px 0;
+      background-color: #f9f9fb;
+      min-height: calc(100vh - 100px);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .profile-container {
+      padding: 0 20px;
+      margin-top: 30px;
+    }
+
+        /* Profile Display - Spacious Layout */
+    .profile-display {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      width: 100%;
+    }
+
+    .profile-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      margin-top: 50px;
+    }
+
+    #leadership-profiles > div {
+      background: transparent !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
+    }
+
+    .profile-image-container {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .profile-image-container {
+      width: 220px;
+      height: 280px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .profile-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .profile-header-content {
+      text-align: center;
+      width: 100%;
+    }
+
+    .profile-header-content h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #000066;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .profile-header-content .title {
+      font-size: 1.4rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .profile-details {
+      width: 100%;
+      padding: 0 1rem;
+    }
+
+    .profile-details p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #4a5568;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .profile-details h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #222222;
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .profile-details h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: var(--primary-color);
+    }
+
+    .profile-details ul {
+      list-style: disc;
+      margin-left: 1.5rem;
+      margin-bottom: 2rem;
+      color: #4a5568;
+    }
+
+    .profile-details ul li {
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .profile-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .linkedin-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 12px 24px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #ffffff;
+      background-color: #0a66c2;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .linkedin-link:hover {
+      background-color: #004182;
+      transform: translateY(-2px);
+    }
+
+    .back-button-container {
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #ffffff;
+      background: linear-gradient(135deg, #4f46e5, #6d28d9);
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .back-button:hover {
+      background: linear-gradient(135deg, #4338ca, #5b21b6);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Responsive adjustments */
+    @media (min-width: 768px) {
+      .profile-header {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .profile-header-content {
+        text-align: left;
+        padding-left: 2rem;
+      }
+
+      .profile-details {
+        padding: 0;
+      }
+
+      .profile-links {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .profile-container {
+        padding: 0 20px;
+      }
+
+      .profile-header-content h2 {
+        font-size: 2rem;
+      }
+
+      .profile-header-content .title {
+        font-size: 1.2rem;
+      }
+
+      .profile-details p,
+      .profile-details ul li {
+        font-size: 1rem;
+      }
+
+      .profile-details h3 {
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .profile-container {
+        padding: 0 15px;
+      }
+
+      .profile-image-container {
+        width: 180px;
+        height: 240px;
+      }
+
+      .profile-header-content h2 {
+        font-size: 1.8rem;
+      }
+
+      .profile-header-content .title {
+        font-size: 1.1rem;
+      }
+
+      .profile-details h3 {
+        font-size: 1.2rem;
+      }
+
+      .linkedin-link,
+      .back-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header will load here -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <section class="profile-section">
+      <div class="profile-container">
+        <div id="leadership-profiles">
+          <!-- Profiles will be dynamically loaded here -->
+        </div>
+        <div class="back-button-container">
+          <a href="javascript:history.back()" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Leadership
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer will load here -->
+  <div id="footer-placeholder"></div>
+
+  <script>
+    // Data for leadership profiles
+    const leadershipData = [{
+        name: "Takatsugu Nagahara",
+        title: "Founder and Chairman",
+        imageUrl: "http://localhost/Nichi-in%20Revamp/wp-content/uploads/2025/07/Nagahara_Sir.png",
+        details: [
+          "<strong>President</strong> – NDR Co., Ltd., Japan (<a href=\"http://www.ndr.co.jp\" target=\"_blank\" rel=\"noopener noreferrer\">http://www.ndr.co.jp</a>)",
+          "<strong>Established:</strong> NDR in 1984",
+        ],
+        majorRoles: [
+          "Business development in Japan",
+        ],
+        linkedinUrl: "", // No LinkedIn provided in original t_nagahara.html
+      },
+      {
+        name: "S N Giri",
+        title: "Co-Founder, Managing Director & CEO",
+        imageUrl: "http://localhost/Nichi-in%20Revamp/wp-content/uploads/2025/07/S-N-GIRI.png",
+        details: [
+          "Bachelor of Engineering, Bengaluru University, India – Gold Medalist",
+          "More than 25 years of experience in IT in various capacities both onsite & offshore",
+        ],
+        majorRoles: [
+          "Corporate Strategic Planning",
+          "Overall Administration",
+          "CMO",
+          "CTO",
+        ],
+        linkedinUrl: "https://www.linkedin.com/in/s-n-giri-b5b2b21/",
+      },
+      {
+        name: "Dinesh Karnik",
+        title: "President & CEO - Nichi-In Software Solutions – USA",
+        imageUrl: "http://localhost/Nichi-in%20Revamp/wp-content/uploads/2025/07/Dinesh.png",
+        details: [
+          "Bachelor of Computer Science and Engineering, University of Mysore, India",
+          "Tech Entrepreneur with a proven track record of successfully setting up and growing Technology companies",
+          "Experience of more than 30 years in the industry",
+          "Co-Founder & VP Development and operations, Custom Technology Solutions LLC (<a href=\"http://ctssys.com\" target=\"_blank\" rel=\"noopener noreferrer\">ctssys.com</a>)",
+          "Founder President & CEO, IDL SYSTEMS LLC (<a href=\"http://idlsystems.com\" target=\"_blank\" rel=\"noopener noreferrer\">idlsystems.com</a>)",
+          "Highly skilled and experienced in Retail, Distribution and Supply Chain Management",
+        ],
+        majorRoles: [
+          "Business Development in the USA",
+          "End to end Project Management support till delivery",
+          "Client interaction and relationship building",
+        ],
+        linkedinUrl: "https://www.linkedin.com/in/dinesh-karnik-944a941/",
+      },
+      {
+        name: "Manjunath P",
+        title: "Sr. AVP & HEAD-Finance & Human Resources",
+        imageUrl: "http://localhost/Nichi-in%20Revamp/wp-content/uploads/2025/07/Manjunath_P.png",
+        details: [
+          "Masters degree in Commerce( M Com.), Business Administration(MBA) and Law(LLB) from Bengaluru University, India",
+          "Possesses more than 24 years of diverse corporate experience across multiple functions",
+        ],
+        majorRoles: [
+          "Heads all financial operations, including budgeting, financial reporting, and tax compliance.",
+          "Oversee end-to-end HR operations, from recruitment and onboarding to employee relations and compliance.",
+          "Ensure adherence to corporate governance, legal, and statutory requirements.",
+          "Manage administration and procurement functions to streamline internal processes and ensure operational efficiency.",
+          "Develop and implement marketing strategies to strengthen Nichi-In's brand presence and market position.",
+          "Expands business opportunities in key regions through strategic partnerships and client relationships.",
+        ],
+        linkedinUrl: "https://www.linkedin.com/in/manjunath-p-7810b92b/",
+      },
+      {
+        name: "Narendra Kumar K",
+        title: "Sr. AVP & HEAD-Application Development Department-1",
+        imageUrl: "http://localhost/Nichi-in%20Revamp/wp-content/uploads/2025/07/Naren-siR-1.png",
+        details: [
+          "Bachelor of Engineering, Bengaluru University, India",
+          "More than 23 years of experience in IT",
+          "More than 20 years expertise in delivery of offshore development projects.",
+          "More than 5 years of Onsite experience in Japan and Singapore",
+        ],
+        majorRoles: [
+          "Offshore Design and Development, Project Management, Delivery",
+          "Client Management and Vendor Management",
+          "Pre-Sales",
+        ],
+        linkedinUrl: "https://www.linkedin.com/in/narendra-kumar-k-0714b611/",
+      },
+      {
+        name: "Yeshwanth I N",
+        title: "AVP & HEAD-Application Development Department-2",
+        imageUrl: "http://localhost/Nichi-in%20Revamp/wp-content/uploads/2025/07/1.png",
+        details: [
+          "Bachelor of Engineering, Bengaluru University, India",
+          "More than 22 years of experience in IT",
+          "More than 15 years expertise in delivery of offshore development projects.",
+          "More than 7 years of Onsite experience in Japan",
+        ],
+        majorRoles: [
+          "Offshore Design and Development, Project Management, Delivery",
+          "Client Management and Vendor Management",
+          "Pre-Sales",
+        ],
+        linkedinUrl: "https://www.linkedin.com/in/yeshwanth-i-n-254b3b41/",
+      },
+      {
+        name: "Venugopal D R",
+        title: "AVP-Business Development(Japan, APAC, India)",
+        imageUrl: "http://localhost/Nichi-in%20Revamp/wp-content/uploads/2025/07/2.png",
+        details: [
+          "Bachelor of Engineering, Gulbarga University, India",
+          "More than 23 years of experience in IT",
+          "More than 9 years of Onsite experience in Japan",
+        ],
+        majorRoles: [
+          "Offshore Design and Development, Project Management and Delivery",
+          "Training",
+          "Business Development – Japan, India and APAC",
+        ],
+        linkedinUrl: "https://www.linkedin.com/in/venugopal-dr/",
+      },
+      {
+        name: "Rajendra Patnashetty",
+        title: "AVP & HEAD-Industrial Automation Software Department",
+        imageUrl: "http://localhost/Nichi-in%20Revamp/wp-content/uploads/2025/07/6.png",
+        details: [
+          "Bachelor of Engineering, Bengaluru University, India",
+          "More than 19 years of experience in IT",
+          "More than 16 years expertise in delivery of offshore development projects.",
+          "More than 5 years of Onsite experience in Japan",
+        ],
+        majorRoles: [
+          "Offshore Design and Development, Project Management, Delivery",
+          "Client Management and Vendor Management",
+          "Pre-Sales",
+        ],
+        linkedinUrl: "https://www.linkedin.com/in/rajendra-patnashetty-5a008734/",
+      },
+      {
+        name: "Ryuzo Araki",
+        title: "AVP & HEAD-Japanese Language Training",
+        imageUrl: "http://localhost/Nichi-in%20Revamp/wp-content/uploads/2025/07/Araki-Sensei.png",
+        details: [
+          "Bachelor of Literature, Kobe University, Japan",
+          "Heads the Japanese Training Department at Nichi-In",
+          "More than 22 years of experience in training foreign professionals in India, Sri Lanka",
+        ],
+        majorRoles: [
+          "Japanese Language and Business Culture Training",
+          "Supports development of business with Japanese companies in India",
+        ],
+        linkedinUrl: "https://www.linkedin.com/in/%E9%9A%86%E4%B8%89-%E8%8D%92%E6%9C%A8-271278a6/",
+      },
+    ];
+
+    // Function to create a spacious profile display
+function createProfileDisplay(person) {
+  const wrapper = document.createElement('div');
+  wrapper.className = 'w-full bg-white shadow-lg rounded-xl p-6 flex flex-col md:flex-row gap-6 items-start';
+
+  // LEFT CARD
+  const leftCard = document.createElement('div');
+  leftCard.className = 'bg-white shadow-md rounded-xl overflow-hidden w-full md:w-72 text-center relative';
+
+  const imgWrapper = document.createElement('div');
+  imgWrapper.className = 'relative';
+
+  const img = document.createElement('img');
+  img.src = person.imageUrl;
+  img.alt = person.name;
+  img.className = 'w-full h-80 object-cover';
+  imgWrapper.appendChild(img);
+
+  // LinkedIn icon (if exists)
+  if (person.linkedinUrl) {
+    const badge = document.createElement('a');
+    badge.href = person.linkedinUrl;
+    badge.target = '_blank';
+    badge.rel = 'noopener noreferrer';
+    badge.className = 'absolute top-2 right-2 bg-[#0a66c2] text-white p-2 rounded-full';
+    badge.innerHTML = '<i class="fab fa-linkedin"></i>';
+    imgWrapper.appendChild(badge);
+  }
+
+  leftCard.appendChild(imgWrapper);
+
+  const nameTitleDiv = document.createElement('div');
+  nameTitleDiv.className = 'px-4 py-4';
+  nameTitleDiv.innerHTML = `
+    <h3 class="text-lg font-semibold text-gray-800">${person.name}</h3>
+    <p class="text-sm text-gray-500">${person.title}</p>
+  `;
+  leftCard.appendChild(nameTitleDiv);
+
+  // RIGHT CONTENT
+  const rightContent = document.createElement('div');
+  rightContent.className = 'flex-1';
+
+  const nameHeading = document.createElement('h2');
+  nameHeading.className = 'text-2xl font-bold text-gray-800 mb-1';
+  nameHeading.textContent = person.name;
+  rightContent.appendChild(nameHeading);
+
+  const title = document.createElement('p');
+  title.className = 'text-md font-semibold text-gray-600 mb-4';
+  title.textContent = person.title;
+  rightContent.appendChild(title);
+
+  // Details
+  const detailsList = document.createElement('ul');
+  detailsList.className = 'list-disc pl-6 mb-4 text-gray-700';
+
+  person.details.forEach(d => {
+    const li = document.createElement('li');
+    li.innerHTML = d;
+    detailsList.appendChild(li);
+  });
+  rightContent.appendChild(detailsList);
+
+  // Major roles
+  if (person.majorRoles?.length) {
+    const heading = document.createElement('h3');
+    heading.textContent = 'Major Roles:';
+    heading.className = 'text-md font-semibold text-gray-800 mt-4 mb-2';
+    rightContent.appendChild(heading);
+
+    const rolesList = document.createElement('ul');
+    rolesList.className = 'list-disc pl-6 text-gray-700';
+    person.majorRoles.forEach(role => {
+      const li = document.createElement('li');
+      li.textContent = role;
+      rolesList.appendChild(li);
+    });
+    rightContent.appendChild(rolesList);
+  }
+
+  // Append cards
+  wrapper.appendChild(leftCard);
+  wrapper.appendChild(rightContent);
+
+  return wrapper;
+}
+
+
+    // Function to render profiles based on URL parameter
+    function renderLeadershipProfiles() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const personName = urlParams.get('name');
+      const container = document.getElementById('leadership-profiles');
+
+      if (container) {
+        if (personName) {
+          const decodedPersonName = decodeURIComponent(personName);
+          const person = leadershipData.find(p => p.name === decodedPersonName);
+          if (person) {
+            const display = createProfileDisplay(person);
+            container.appendChild(display);
+            document.title = `${person.name} | Nichi-In Software Solutions`;
+          } else {
+            container.innerHTML = '<p class="text-center text-red-500 text-xl font-semibold">Profile not found.</p>';
+            document.title = 'Profile Not Found | Nichi-In Software Solutions';
+          }
+        } else {
+          container.innerHTML = '<p class="text-center text-gray-600 text-xl font-semibold">Please select a team member from the leadership page.</p>';
+          document.title = 'Select a Profile | Nichi-In Software Solutions';
+        }
+      }
+    }
+
+    // Function to load header and footer
+    async function loadPartial(id, file) {
+      try {
+        const res = await fetch(file);
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        const html = await res.text();
+        document.getElementById(id).innerHTML = html;
+        if (id === "header-placeholder") {
+          if (typeof initMobileNavigation === 'function') {
+            initMobileNavigation();
+          }
+        }
+      } catch (error) {
+        console.error(`Failed to load ${file}:`, error);
+      }
+    }
+
+    // Load header, footer, and render profiles when the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      loadPartial("header-placeholder", "header.html");
+      loadPartial("footer-placeholder", "footer.html");
+      renderLeadershipProfiles();
+    });
+  </script>
+
+  <script src="draft.js"></script>
+</body>
+
+</html>
