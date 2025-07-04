@@ -118,7 +118,7 @@ body {
   display: flex;
   align-items: center;
   list-style: none;
-  gap: 2rem;
+  gap: 1rem;
   margin: 0;
   padding: 0;
 }
@@ -126,8 +126,6 @@ body {
 /* EACH NAV ITEM */
 .nav-links > li {
   position: relative;
-  display: inline-flex;
-  align-items: center;
 }
 
 /* LINK STYLE */
@@ -135,8 +133,8 @@ body {
   color: #000066;
   text-decoration: none;
   font-weight: 500;
-  position: relative;
-  padding: 6px 0;
+  padding: 8px 12px; /* Adjusted padding for better click area */
+  display: block;
   transition: color 0.3s ease;
 }
 
@@ -164,28 +162,31 @@ body {
   transform: scaleX(1);
 }
 
-/* DROPDOWN MENU BASE */
+/* First-level dropdown */
 .dropdown-menu {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 200px;
-  background-color: white;
-  padding: 8px 0;
-  border-radius: 4px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  min-width: 220px;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   z-index: 999;
+  padding: 8px 0; /* Added padding */
+  border-radius: 4px; /* Added border-radius */
 }
 
-/* MENU ITEMS */
-.dropdown-menu li {
+.dropdown:hover > .dropdown-menu {
   display: block;
+}
+
+.dropdown-menu li {
+  position: relative;
 }
 
 .dropdown-menu li a {
-  display: block;
-  padding: 10px 20px;
+  padding: 10px 20px; /* Adjusted padding for dropdown items */
   color: #333;
   white-space: nowrap;
   font-weight: 400;
@@ -197,54 +198,33 @@ body {
   background-color: #f0f0f0;
 }
 
-/* DROPDOWN TOGGLE ON HOVER */
-.dropdown:hover .dropdown-menu {
+/* Second-level submenu */
+.dropdown-submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 200px;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 8px 0; /* Added padding */
+  border-radius: 4px; /* Added border-radius */
+}
+
+.dropdown-menu .dropdown:hover > .dropdown-submenu {
   display: block;
 }
 
-/* ALIGN CARET ICON */
-.dropdown > a {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+/* Add ▸ arrow for submenu items */
+.dropdown-menu .dropdown > a::after {
+  content: "▸";
+  float: right;
+  margin-left: 8px;
+  font-size: 0.75rem;
 }
 
-
-.main-nav .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 1.75rem;
-}
-
-.main-nav .nav-links a {
-    color: #000066;
-    text-decoration: none !important;
-    font-weight: 500;
-    position: relative;
-    padding: 0.25rem 0;
-    transition: color 0.3s ease;
-}
-
-.main-nav .nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-  width: 100%;
-  background: #000066;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
-}
-
-.main-nav .nav-links a:hover::after {
-  transform: scaleX(1);
-}
-
-.main-nav .nav-links a.active::after {
-  transform: scaleX(1);
-}
 
 .header-actions {
   display: flex;
@@ -1487,6 +1467,14 @@ body {
     display: none;
   }
 
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mobile-nav-links a {
+    font-size: 1.5rem;
+  }
 }
 
 /* Tiny phones */
@@ -2586,7 +2574,7 @@ body {
 
 /* =============== Leadership Section =============== */
 .leadership-section {
-  padding: 80px 20px;
+  padding: 40px 20px;
   background-color: #f9f9fb;
   font-family: 'Inter', sans-serif;
 }
@@ -2599,9 +2587,9 @@ body {
 .leadership-section-title {
   font-size: 2.75rem;
   font-weight: 800;
-  margin-bottom: 2rem;
+  margin-bottom: 20px;
   color: #222222; 
-  text-align: left;
+  text-align: center;
   padding: 40px 0px 0px
 }
 
@@ -2833,6 +2821,7 @@ body {
 }
 
 /* Hide dropdown menu initially */
+/* This is already defined above, but ensuring consistency */
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -2847,6 +2836,7 @@ body {
 }
 
 /* Style the dropdown items */
+/* This is already defined above, but ensuring consistency */
 .dropdown-menu li {
   display: block;
   padding: 8px 20px;
@@ -2865,11 +2855,13 @@ body {
 }
 
 /* Show dropdown on hover */
+/* This is already defined above, but ensuring consistency */
 .dropdown:hover .dropdown-menu {
   display: block;
 }
 
 /* Optional: caret icon styling */
+/* This is already defined above, but ensuring consistency */
 .dropdown > a {
   display: inline-flex;
   align-items: center;
@@ -3020,22 +3012,103 @@ main {
   font-size: 0.875rem; /* text-sm */
 }
 
-/* wwa-differentiators-section (Zigzag Section) */
-.wwa-differentiators-section { /* py-16 px-4 */
-  padding: 40px 20px; /* Added 20px padding */
+/* ========================
+   Differentiators Section
+   ======================== */
+.differentiators {
+  padding: 80px 0;
+  background-color: #f9fafb;
 }
 
-.wwa-differentiators-section > div { /* max-w-7xl mx-auto */
-  margin-left: auto;
-  margin-right: auto;
+.differentiators .container {
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.wwa-differentiators-section h1 { /* text-4xl font-extrabold text-center text-gray-900 mb-12 */
-  font-size: 2.25rem; /* text-4xl */
-  font-weight: 800; /* font-extrabold */
+.differentiators .section-title {
   text-align: center;
-  color: #1a202c; /* gray-900 */
-  margin-bottom: 48px; /* mb-12 */
+  margin-bottom: 60px;
+  font-size: 2.5rem;
+  color: #222;
+}
+
+.differentiator-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.differentiator-item.reversed {
+  flex-direction: row-reverse;
+}
+
+.differentiator-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.differentiator-content h3 {
+  font-size: 1.8rem;
+  color: #222222;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.differentiator-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #4a5568;
+}
+
+.differentiator-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.differentiator-image img {
+  width: 100%;
+  max-width: 500px; /* ✅ Make the image appear smaller */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto; /* Optional: center the image if it’s smaller */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .differentiators {
+    padding: 60px 0;
+  }
+  
+  .differentiator-item,
+  .differentiator-item.reversed {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .differentiator-content,
+  .differentiator-image {
+    width: 100%;
+  }
+  
+  .differentiator-content h3 {
+    font-size: 1.5rem;
+  }
+  
+  .differentiator-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .differentiators .section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
 }
 
 .wwa-zigzag-row { /* flex flex-col md:flex-row items-center mb-16 */
@@ -3095,23 +3168,21 @@ main {
 }
 
 /* ========================
-   Main Content Area
+   Zigzag Layout Styles
 ======================== */
-.ob_main-content {
-  padding: 20px;
+
+.content-wrapper {
   margin: 0 auto;
+  padding: 20px;
 }
 
-/* ========================
-   Hero Section
-======================== */
-.ob_hero-section {
-  padding: 60px 20px;
+.hero {
   text-align: center;
+  padding: 60px 20px;
   margin-bottom: 40px;
 }
 
-.ob_main-heading {
+.hero h1 {
   font-size: 2.5em;
   font-weight: 800;
   color: #1a202c;
@@ -3119,125 +3190,93 @@ main {
   margin-top: 40px;
 }
 
-.ob_sub-heading {
+.hero .subtitle {
   font-size: 1.2em;
   color: #4a5568;
   max-width: 800px;
   margin: 0 auto;
 }
 
-/* ========================
-   Content Sections
-======================== */
-.ob_content-section {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+.zigzag-section {
   margin-bottom: 60px;
 }
 
-.ob_text-content {
+.section-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+}
+
+.section-content.reverse {
+  flex-direction: row-reverse;
+}
+
+.text-content {
   flex: 1;
   min-width: 300px;
 }
 
-.ob_text-content p {
-  font-size: 1em;
-  line-height: 1.6;
-  margin-bottom: 15px;
-  color: #4a5568;
-}
-
-.ob_image-content {
-  flex: 1;
-  padding: 20px;
-  min-width: 300px;
-  text-align: left;
-}
-
-.ob_image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* ========================
-   Section Titles
-======================== */
-.ob_section-title {
+.text-content h2 {
   font-size: 2em;
   font-weight: 700;
   color: #2d3748;
   margin-bottom: 20px;
 }
 
-/* ========================
-   Zigzag Layout
-======================== */
-.ob_zigzag-row {
-  margin-bottom: 40px;
+.text-content p {
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #4a5568;
 }
 
-.ob_zigzag-row:nth-child(even) {
-  flex-direction: row-reverse;
-}
-
-/* ========================
-   Side-by-Side Images
-======================== */
-.ob_images-side-by-side {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+.image-content {
   flex: 1;
-  padding: 20px;
   min-width: 300px;
 }
 
-.ob_side-by-side-image {
-  width: calc(50% - 10px);
-  max-width: 300px;
+.image-content img {
+  max-width: 100%;
   height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* ========================
-   Responsive Adjustments
-======================== */
+/* Side by side images */
+.image-content.side-by-side {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.image-content.side-by-side img {
+  flex: 1;
+  min-width: 200px;
+}
+
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .ob_content-section {
+  .section-content,
+  .section-content.reverse {
     flex-direction: column;
   }
-
-  .ob_zigzag-row:nth-child(even) {
-    flex-direction: column;
+  
+  .text-content,
+  .image-content {
+    width: 100%;
   }
-
-  .ob_text-content {
-    padding: 10px;
-  }
-
-  .ob_image-content {
-    padding: 10px;
-  }
-
-  .ob_images-side-by-side {
-    padding: 10px;
-  }
-
-  .ob_main-heading {
+  
+  .hero h1 {
     font-size: 2em;
   }
-
-  .ob_section-title {
+  
+  .text-content h2 {
     font-size: 1.7em;
   }
-
-  .ob_side-by-side-image {
-    width: 100%;
-    max-width: none;
+  
+  .image-content.side-by-side img {
+    min-width: 100%;
   }
 }
