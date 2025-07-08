@@ -43,44 +43,196 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { threshold: 0.6 });
 
     counters.forEach(counter => observer.observe(counter));
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Sticky header
+    const header = document.getElementById('main-header');
+    if (header) {
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                // Scrolling up
+                header.style.transform = 'translateY(0)';
+            }
+            lastScrollTop = scrollTop;
+
+            if (scrollTop === 0) {
+                header.style.transform = 'translateY(0)'; // Ensure header is visible at top
+            }
+        });
+    }
+
+    // Translation button logic
+    const translateBtn = document.getElementById('translate-btn');
+    if (translateBtn) {
+        translateBtn.addEventListener('click', () => {
+            // Placeholder for translation functionality
+            console.log('Translate button clicked!');
+            // You would integrate a translation API here, e.g., Google Translate
+            console.log('Translation feature coming soon!');
+        });
+    }
 });
 
 /**
  * Initializes mobile navigation: hamburger menu toggle and overlay behavior.
+ * Also handles mobile dropdown functionality.
  */
 function initMobileNavigation() {
     const hamburgerMenu = document.getElementById('hamburger-menu');
     const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+    const mobileNavLinks = document.querySelector('.mobile-nav-links'); // Get the main ul for closing all dropdowns
+    const mobileDropdowns = document.querySelectorAll('.mobile-nav-links .dropdown-mobile'); // All dropdown parents
 
-    if (hamburgerMenu && mobileNavOverlay) {
-        // Toggle menu and prevent body scroll
-        hamburgerMenu.addEventListener('click', () => {
-            hamburgerMenu.classList.toggle('open');
-            mobileNavOverlay.classList.toggle('open');
-            document.body.classList.toggle('overflow-hidden');
-        });
-
-        // Close menu when a link is clicked
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburgerMenu.classList.remove('open');
-                mobileNavOverlay.classList.remove('open');
-                document.body.classList.remove('overflow-hidden');
-            });
-        });
-
-        // Auto-close menu on desktop resize
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 1024) {
-                hamburgerMenu.classList.remove('open');
-                mobileNavOverlay.classList.remove('open');
-                document.body.classList.remove('overflow-hidden');
+    // Function to close all open dropdowns at a specific level
+    function closeAllDropdowns(parentUl) {
+        const openDropdowns = parentUl.querySelectorAll('.dropdown-mobile.open');
+        openDropdowns.forEach(dropdown => {
+            dropdown.classList.remove('open');
+            const menu = dropdown.querySelector('.dropdown-mobile-menu, .dropdown-mobile-submenu');
+            if (menu) {
+                menu.classList.remove('open');
+                menu.setAttribute('aria-expanded', 'false');
+                menu.style.maxHeight = '0'; // Ensure max-height is reset for smooth close
+            }
+            const link = dropdown.querySelector('a');
+            if (link) {
+                link.setAttribute('aria-expanded', 'false');
             }
         });
-    } else {
-        console.warn("Mobile navigation elements not found.");
     }
+
+    // Toggle mobile menu overlay
+    if (hamburgerMenu && mobileNavOverlay) {
+        hamburgerMenu.addEventListener('click', () => {
+            const isOpen = mobileNavOverlay.classList.toggle('open');
+            hamburgerMenu.classList.toggle('open', isOpen);
+            hamburgerMenu.setAttribute('aria-expanded', isOpen);
+            document.body.classList.toggle('overflow-hidden', isOpen); // Prevent body scroll
+
+            // If closing the main overlay, close all submenus too
+            if (!isOpen) {
+                closeAllDropdowns(mobileNavLinks);
+            }
+        });
+    }
+
+    // Handle clicks outside the mobile menu to close it
+    document.addEventListener('click', (event) => {
+        if (mobileNavOverlay && !mobileNavOverlay.contains(event.target) && !hamburgerMenu.contains(event.target) && mobileNavOverlay.classList.contains('open')) {
+            mobileNavOverlay.classList.remove('open');
+            if (hamburgerMenu) {
+                hamburgerMenu.classList.remove('open');
+                hamburgerMenu.setAttribute('aria-expanded', 'false');
+            }
+            document.body.classList.remove('overflow-hidden'); // Re-enable body scroll
+            closeAllDropdowns(mobileNavLinks);
+        }
+    });
+
+    // Handle mobile dropdowns
+    mobileDropdowns.forEach(dropdown => {
+        const link = dropdown.querySelector('a');
+        const menu = dropdown.querySelector('.dropdown-mobile-menu, .dropdown-mobile-submenu');
+
+        if (link && menu) {
+            // Set initial aria-expanded state
+            link.setAttribute('aria-expanded', 'false');
+            menu.setAttribute('aria-expanded', 'false');
+
+            link.addEventListener('click', (event) => {
+                // Prevent default link navigation for dropdown toggles
+                // Only prevent if the link has a dropdown-arrow, indicating it's a toggle
+                if (link.querySelector('.dropdown-arrow')) {
+                    event.preventDefault();
+                }
+
+                const isOpen = dropdown.classList.contains('open');
+
+                // Close all sibling dropdowns at the same level (accordion-style)
+                const parentUl = dropdown.closest('ul');
+                if (parentUl) {
+                    Array.from(parentUl.children).forEach(sibling => {
+                        if (sibling !== dropdown && sibling.classList.contains('dropdown-mobile') && sibling.classList.contains('open')) {
+                            sibling.classList.remove('open');
+                            const siblingMenu = sibling.querySelector('.dropdown-mobile-menu, .dropdown-mobile-submenu');
+                            if (siblingMenu) {
+                                siblingMenu.classList.remove('open');
+                                siblingMenu.setAttribute('aria-expanded', 'false');
+                                siblingMenu.style.maxHeight = '0'; // Ensure max-height is reset
+                            }
+                            const siblingLink = sibling.querySelector('a');
+                            if (siblingLink) {
+                                siblingLink.setAttribute('aria-expanded', 'false');
+                            }
+                        }
+                    });
+                }
+
+                // Toggle the clicked dropdown
+                dropdown.classList.toggle('open', !isOpen);
+                menu.classList.toggle('open', !isOpen);
+                link.setAttribute('aria-expanded', !isOpen);
+                menu.setAttribute('aria-expanded', !isOpen);
+
+                // Set max-height for smooth animation
+                if (dropdown.classList.contains('open')) {
+                    menu.style.maxHeight = menu.scrollHeight + 'px';
+                } else {
+                    menu.style.maxHeight = '0';
+                }
+
+                // Optional: Scroll to the newly opened menu item if it's off-screen
+                if (!isOpen && mobileNavOverlay) {
+                    setTimeout(() => { // Allow transition to start
+                        const linkRect = link.getBoundingClientRect();
+                        const overlayRect = mobileNavOverlay.getBoundingClientRect();
+
+                        // Check if the link is outside the visible area of the overlay
+                        if (linkRect.bottom > overlayRect.bottom || linkRect.top < overlayRect.top) {
+                            mobileNavOverlay.scrollTo({
+                                top: mobileNavOverlay.scrollTop + linkRect.top - overlayRect.top - 20, // 20px offset from top
+                                behavior: 'smooth'
+                            });
+                        }
+                    }, 400); // Match CSS transition duration
+                }
+            }, { passive: false }); // Use passive: false to allow preventDefault
+        }
+    });
+
+    // Auto-close menu on desktop resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 1024) {
+            if (hamburgerMenu) {
+                hamburgerMenu.classList.remove('open');
+                hamburgerMenu.setAttribute('aria-expanded', 'false');
+            }
+            if (mobileNavOverlay) {
+                mobileNavOverlay.classList.remove('open');
+            }
+            document.body.classList.remove('overflow-hidden');
+            // Also close any open mobile dropdowns when switching to desktop view
+            closeAllDropdowns(mobileNavLinks);
+        }
+    });
 }
 
 /**
@@ -93,9 +245,9 @@ function initBackToTop() {
         // Show/hide button on scroll
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
-                backToTopButton.classList.add('show');
+                backToTopButton.style.display = 'flex'; // Use flex to ensure proper centering of SVG
             } else {
-                backToTopButton.classList.remove('show');
+                backToTopButton.style.display = 'none';
             }
         });
 

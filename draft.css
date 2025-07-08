@@ -73,7 +73,11 @@ body {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding: 1rem 1rem;
     z-index: 1000;
-    transition: background 0.3s ease, border-bottom 0.3s ease;
+    transition:
+    background-color 0.4s ease-in-out,
+    border-bottom 0.4s ease-in-out,
+    box-shadow 0.4s ease-in-out,
+    transform 0.3s ease-in-out;
 }
 
 .header-content {
@@ -89,7 +93,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 
@@ -103,8 +107,6 @@ body {
   justify-content: flex-end;
 }
 
-/* Ensure nav bar items are aligned properly */
-/* NAVIGATION CONTAINER */
 .main-nav {
   background: transparent;
   height: 60px;
@@ -118,7 +120,7 @@ body {
   display: flex;
   align-items: center;
   list-style: none;
-  gap: 1rem;
+  gap: 0.75rem;
   margin: 0;
   padding: 0;
 }
@@ -128,74 +130,92 @@ body {
   position: relative;
 }
 
-/* LINK STYLE */
-.nav-links a {
+/* Top-Level Nav Links */
+.nav-links > li > a {
   color: #000066;
   text-decoration: none;
-  font-weight: 500;
-  padding: 8px 12px; /* Adjusted padding for better click area */
+  font-weight: 500; /* Font weight 500-600 */
+  padding: 10px 15px; /* Balanced padding for clickability */
   display: block;
-  transition: color 0.3s ease;
+  position: relative; /* For underline animation */
+  /* Adjusted transition for smoother color change */
+  transition: color 0.4s ease-in-out;
 }
 
-/* UNDERLINE ANIMATION */
-.nav-links a::after {
+/* Subtle hover animation (underline grow) */
+.nav-links > li > a::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 5px; /* Adjust to be slightly above the bottom */
+  left: 50%; /* Start from center */
   height: 2px;
-  width: 100%;
-  background-color: #000066;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
+  width: 0; /* Initially no width */
+  background-color: #000066; /* Changed to requested color */
+  transform: translateX(-50%); /* Center the underline */
+  /* Adjusted transition for smoother underline animation */
+  transition: width 0.4s ease-in-out, background-color 0.4s ease-in-out;
 }
 
-/* ON HOVER */
-.nav-links a:hover::after {
-  transform: scaleX(1);
+.nav-links > li > a:hover::after,
+.nav-links > li > a.active::after {
+  width: calc(100% - 30px); /* Grow to full width minus padding */
+  background-color: #000066; /* Changed to requested color */
 }
 
-/* ACTIVE LINK */
-.nav-links a.active::after {
-  transform: scaleX(1);
+.nav-links > li > a:hover {
+  color: #000066; /* Changed to requested color */
 }
+
 
 /* First-level dropdown */
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: 100%;
+  top: 100%; /* Appear directly below the parent li */
   left: 0;
   min-width: 220px;
-  background: #fff;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: var(--bg-dark); /* White background */
+  border: 1px solid var(--border-color-dark);
+  box-shadow: 0 8px 24px var(--shadow-color-dark); /* Soft shadows */
   z-index: 999;
-  padding: 8px 0; /* Added padding */
-  border-radius: 4px; /* Added border-radius */
+  padding: 10px 0;
+  padding-top: 10px; /* Add padding to create visual gap */
+  border-radius: 8px; /* Rounded corners */
+  opacity: 0;
+  transform: translateY(10px);
+  /* Adjusted transition for smoother dropdown appearance */
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
 }
 
-.dropdown:hover > .dropdown-menu {
+/* Show dropdown on hover */
+.dropdown:hover > .dropdown-menu,
+.dropdown-menu li.dropdown:hover > .dropdown-submenu { /* For nested dropdowns */
   display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .dropdown-menu li {
   position: relative;
+  list-style: none; /* Remove list bullet points */
 }
 
 .dropdown-menu li a {
-  padding: 10px 20px; /* Adjusted padding for dropdown items */
-  color: #333;
+  padding: 12px 20px; /* Padding between links */
+  color: var(--text-color-dark);
   white-space: nowrap;
   font-weight: 400;
   text-decoration: none;
-  transition: background 0.2s;
+  display: block;
+  /* Adjusted transition for smoother dropdown item hover */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  font-size: 0.95rem; /* Slightly smaller font for dropdowns */
 }
 
+/* Hover state for dropdown items */
 .dropdown-menu li a:hover {
-  background-color: #f0f0f0;
+  background-color: var(--bg-light); /* Light gray or soft brand accent */
+  color: #000066; /* Changed to requested color */
 }
 
 /* Second-level submenu */
@@ -203,28 +223,58 @@ body {
   display: none;
   position: absolute;
   top: 0;
-  left: 100%;
-  min-width: 200px;
-  background: white;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  left: 100%; /* Appear directly to the right */
+  min-width: 220px; /* Consistent width with first-level menu */
+  background: var(--bg-dark);
+  border: 1px solid var(--border-color-dark);
+  box-shadow: 0 8px 24px var(--shadow-color-dark);
   z-index: 1000;
-  padding: 8px 0; /* Added padding */
-  border-radius: 4px; /* Added border-radius */
+  padding: 10px 0;
+  padding-left: 10px; /* Add padding to create visual gap */
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateX(10px);
+  /* Adjusted transition for smoother submenu appearance */
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
 }
 
-.dropdown-menu .dropdown:hover > .dropdown-submenu {
+/* Show second-level submenu on hover of parent li */
+.dropdown-menu li.dropdown:hover > .dropdown-submenu {
   display: block;
+  opacity: 1;
+  transform: translateX(0);
 }
 
-/* Add ▸ arrow for submenu items */
-.dropdown-menu .dropdown > a::after {
-  content: "▸";
+/* Arrow icon for submenu items */
+.dropdown-menu li.dropdown > a::after {
+  content: "❯"; /* Custom chevron icon */
+  font-family: 'Font Awesome 5 Free'; /* Using Font Awesome for the icon */
+  font-weight: 900; /* Solid icon */
   float: right;
-  margin-left: 8px;
-  font-size: 0.75rem;
+  margin-left: 10px;
+  font-size: 0.8em;
+  color: var(--text-color-dark);
+  /* Adjusted transition for smoother arrow movement */
+  transition: transform 0.3s ease-in-out;
 }
 
+.dropdown-menu li.dropdown:hover > a::after {
+  transform: translateX(3px); /* Slight movement on hover */
+  color: #000066; /* Changed to requested color */
+}
+
+/* Accessibility: Show dropdowns on focus-within for keyboard navigation */
+.dropdown:focus-within > .dropdown-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-menu li.dropdown:focus-within > .dropdown-submenu {
+  display: block;
+  opacity: 1;
+  transform: translateX(0);
+}
 
 .header-actions {
   display: flex;
@@ -271,16 +321,16 @@ body {
   cursor: pointer;
   padding: 0.5rem;
   z-index: 1001;
-  width: 40px;
-  height: 40px;
+  width: 40px; /* Default size */
+  height: 40px; /* Default size */
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .hamburger-menu .bar {
-    width: 28px;
-    height: 3px;
+    width: 28px; /* Default bar width */
+    height: 3px; /* Default bar height */
     background-color: #333;
     border-radius: 2px;
     transition: all 0.3s ease-in-out;
@@ -301,29 +351,28 @@ body {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-.mobile-nav-overlay.open {
-  display: flex;
-}
-
+/* ===============================
+   Mobile Nav Overlay Container
+================================= */
 .mobile-nav-overlay {
   position: fixed;
   top: 0;
   right: 0;
-  width: 65vw;
+  height: 100dvh;
+  width: 70vw;
   max-width: 420px;
-  height: 100vh;
   background: #e6e6f4;
-  box-shadow: -16px 0 40px rgba(0, 0, 0, 0.48);
+  backdrop-filter: blur(12px);
   border-left: 1px solid rgba(0, 0, 0, 0.05);
-  z-index: 1000;
+  box-shadow: -16px 0 40px rgba(0, 0, 0, 0.48);
   display: flex;
-  justify-content: center;
-  align-items: center;
-
+  flex-direction: column;
   transform: translateX(100%);
   opacity: 0;
   pointer-events: none;
   transition: transform 0.4s ease, opacity 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
 }
 
 .mobile-nav-overlay.open {
@@ -332,21 +381,28 @@ body {
   pointer-events: auto;
 }
 
+/* ===============================
+   Inner Nav Wrapper
+================================= */
 .mobile-nav {
-  width: 100%;
   padding: 2rem 1.5rem;
+  width: 100%;
+  flex-grow: 1;
 }
 
 .mobile-nav-links {
   list-style: none;
-  margin: 0;
-  padding: 1.5rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  margin: 0;
+  padding: 0;
 }
 
-.mobile-nav-links li {
+/* ===============================
+   Top-Level Links
+================================= */
+.mobile-nav-links > li {
   width: 100%;
 }
 
@@ -356,13 +412,11 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-
   width: 100%;
   padding: 1rem 1.2rem;
   font-size: 1.1rem;
   font-weight: 600;
   color: #16293b;
-
   background: linear-gradient(145deg, #f0f4ff, #e4ecff);
   border: 1px solid #c9d7f1;
   border-radius: 16px;
@@ -370,15 +424,12 @@ body {
   box-shadow:
     inset 2px 2px 5px rgba(255, 255, 255, 0.6),
     4px 6px 14px rgba(0, 0, 0, 0.08);
-  transition:
-    all 0.4s ease,
-    transform 0.4s ease;
   position: relative;
   overflow: hidden;
+  transition: all 0.3s ease;
 }
 
-.mobile-nav-links a::before,
-.mobile-nav-links .cta-button::before {
+.mobile-nav-links a::before {
   content: "";
   position: absolute;
   top: 0;
@@ -395,15 +446,13 @@ body {
   z-index: 0;
 }
 
-.mobile-nav-links a:hover::before,
-.mobile-nav-links .cta-button:hover::before {
+.mobile-nav-links a:hover::before {
   left: 0;
 }
 
-.mobile-nav-links a:hover,
-.mobile-nav-links .cta-button:hover {
+.mobile-nav-links a:hover {
   color: #ffffff;
-  transform: scale(1.03);
+  transform: scale(1.02);
   background: linear-gradient(135deg, #120270, #60efff);
   box-shadow:
     0 8px 24px rgba(0, 91, 187, 0.25),
@@ -411,6 +460,80 @@ body {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
   z-index: 1;
 }
+
+/* ===============================
+   Dropdown Arrow & Toggle
+================================= */
+.dropdown-mobile > a {
+  position: relative;
+  padding-right: 2.5rem;
+}
+
+.dropdown-arrow {
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.dropdown-mobile.open > a .dropdown-arrow {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* ===============================
+   Dropdown Menus (First & Second Level)
+================================= */
+.dropdown-mobile-menu,
+.dropdown-mobile-submenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  margin-top: 0.5rem;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+}
+
+.dropdown-mobile-menu.open,
+.dropdown-mobile-submenu.open {
+  display: block;
+}
+
+/* ===============================
+   Inner Link Items
+================================= */
+.dropdown-mobile-menu li a,
+.dropdown-mobile-submenu li a {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  box-shadow: none;
+  justify-content: flex-start;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-mobile-menu li a:hover,
+.dropdown-mobile-submenu li a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: white;
+}
+
+/* Indentation for nesting */
+.dropdown-mobile-menu {
+  padding-left: 1rem;
+}
+
+.dropdown-mobile-submenu {
+  padding-left: 1.5rem;
+}
+
 
 
 /*Hero Slider*/
@@ -1450,10 +1573,35 @@ body {
 @media (max-width: 768px) {
   .hamburger-menu {
     display: flex;
+    width: 36px; /* Slightly smaller button */
+    height: 36px; /* Slightly smaller button */
+    padding: 0.4rem; /* Adjusted padding */
+  }
+
+  .hamburger-menu .bar {
+    width: 24px; /* Smaller bar width */
+    height: 2.5px; /* Slightly thinner bars */
+    margin: 2.5px 0; /* Adjusted margin */
+  }
+
+  .hamburger-menu.open .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg); /* Adjusted transform */
+  }
+  .hamburger-menu.open .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg); /* Adjusted transform */
   }
 
   .main-nav {
     display: none;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mobile-nav-links a {
+    font-size: 1.5rem;
   }
 }
 
@@ -1461,6 +1609,22 @@ body {
 @media (max-width: 640px) {
   .hamburger-menu {
     display: flex;
+    width: 32px; /* Even smaller button */
+    height: 32px; /* Even smaller button */
+    padding: 0.3rem; /* Further adjusted padding */
+  }
+
+  .hamburger-menu .bar {
+    width: 20px; /* Even smaller bar width */
+    height: 2px; /* Thinner bars */
+    margin: 2px 0; /* Adjusted margin */
+  }
+
+  .hamburger-menu.open .bar:nth-child(1) {
+    transform: translateY(6px) rotate(45deg); /* Adjusted transform */
+  }
+  .hamburger-menu.open .bar:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg); /* Adjusted transform */
   }
 
   .main-nav {
@@ -1481,6 +1645,22 @@ body {
 @media (max-width: 480px) {
   .hamburger-menu {
     display: flex;
+    width: 28px; /* Smallest button size */
+    height: 28px; /* Smallest button size */
+    padding: 0.25rem; /* Minimal padding */
+  }
+
+  .hamburger-menu .bar {
+    width: 18px; /* Smallest bar width */
+    height: 1.5px; /* Thinnest bars */
+    margin: 1.5px 0; /* Minimal margin */
+  }
+
+  .hamburger-menu.open .bar:nth-child(1) {
+    transform: translateY(5px) rotate(45deg); /* Adjusted transform */
+  }
+  .hamburger-menu.open .bar:nth-child(3) {
+    transform: translateY(-5px) rotate(-45deg); /* Adjusted transform */
   }
 
   .main-nav {
@@ -1779,7 +1959,7 @@ body {
   }
 
   .partnerships h3 {
-    font-size: 1rem;
+    font-size: 1.0rem; /* Changed from h3 to p, so this rule is for the p tag */
     padding: 0 1rem;
   }
 
@@ -1848,7 +2028,7 @@ body {
   }
 
   .certifications h3 {
-    font-size: 1rem;
+    font-size: 1.0rem; /* Changed from h3 to p, so this rule is for the p tag */
     padding: 0 1rem;
   }
 
@@ -1942,7 +2122,7 @@ body {
 
   .footer-bottom {
     text-align: center;
-    padding-top: 1rem;
+    padding-top: 1.5rem;
     font-size: 0.85rem;
   }
 }
@@ -2013,7 +2193,7 @@ body {
 ===============================*/
 .aboutus-section {
   padding: 60px 20px;
-  background-color: #ebedf1; 
+  background-color: #ebedf1;
   text-align: center;
 }
 
@@ -2211,7 +2391,7 @@ body {
   width: 100%; /* Make slide take full width of its parent (factsheet-container) */
   position: relative;
   flex-shrink: 0; /* Prevent items from shrinking */
-  display: flex; /* Ensure content is centered vertically and horizontally */
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -2522,7 +2702,7 @@ body {
 
 .brochure-subtext {
   font-size: 1.125rem;
-  color: #222222; 
+  color: #222222;
   margin-bottom: 2rem;
   font-style: italic;
 }
@@ -2563,7 +2743,7 @@ body {
   }
 
   .brochure-subtext {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .brochure-download-btn {
@@ -2588,7 +2768,7 @@ body {
   font-size: 2.75rem;
   font-weight: 800;
   margin-bottom: 20px;
-  color: #222222; 
+  color: #222222;
   text-align: center;
   padding: 40px 0px 0px
 }
@@ -2615,7 +2795,7 @@ body {
   font-weight: 700;
   margin-top: 3rem;
   margin-bottom: 1.5rem;
-  color: #222222; 
+  color: #222222;
   border-left: 6px solid #000066;
   padding-left: 12px;
 }
@@ -2822,7 +3002,7 @@ body {
 
 /* Hide dropdown menu initially */
 /* This is already defined above, but ensuring consistency */
-.dropdown-menu {
+/* .dropdown-menu {
   display: none;
   position: absolute;
   top: 100%;
@@ -2833,40 +3013,40 @@ body {
   padding: 10px 0;
   border-radius: 4px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-}
+} */
 
 /* Style the dropdown items */
 /* This is already defined above, but ensuring consistency */
-.dropdown-menu li {
+/* .dropdown-menu li {
   display: block;
   padding: 8px 20px;
   white-space: nowrap;
-}
+} */
 
-.dropdown-menu li a {
+/* .dropdown-menu li a {
   color: #333;
   text-decoration: none;
   display: block;
   transition: background 0.2s ease;
-}
+} */
 
-.dropdown-menu li a:hover {
+/* .dropdown-menu li a:hover {
   background-color: #f0f0f0;
-}
+} */
 
 /* Show dropdown on hover */
 /* This is already defined above, but ensuring consistency */
-.dropdown:hover .dropdown-menu {
+/* .dropdown:hover .dropdown-menu {
   display: block;
-}
+} */
 
 /* Optional: caret icon styling */
 /* This is already defined above, but ensuring consistency */
-.dropdown > a {
+/* .dropdown > a {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-}
+} */
 
 /* ========================================================================== */
 /* Who We Are Page Specific Styles */
@@ -3083,22 +3263,22 @@ main {
   .differentiators {
     padding: 60px 0;
   }
-  
+
   .differentiator-item,
   .differentiator-item.reversed {
     flex-direction: column;
     gap: 30px;
   }
-  
+
   .differentiator-content,
   .differentiator-image {
     width: 100%;
   }
-  
+
   .differentiator-content h3 {
     font-size: 1.5rem;
   }
-  
+
   .differentiator-content p {
     font-size: 1rem;
   }
@@ -3262,21 +3442,480 @@ main {
   .section-content.reverse {
     flex-direction: column;
   }
-  
+
   .text-content,
   .image-content {
     width: 100%;
   }
-  
+
   .hero h1 {
     font-size: 2em;
   }
-  
+
   .text-content h2 {
     font-size: 1.7em;
   }
-  
+
   .image-content.side-by-side img {
     min-width: 100%;
+  }
+}
+
+/* Offshore Section Styling */
+.offshore-container {
+  margin: 0 auto;
+  padding: 60px 20px; /* Vertical padding and horizontal padding for smaller screens */
+  box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+.offshore-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.offshore-heading h2 {
+  font-size: 44px; /* Slightly larger for main heading */
+  font-weight: 800; /* Bolder for impact */
+  margin-bottom: 15px; /* More space below heading */
+  color: #1a202c; /* Darker, more professional color */
+  line-height: 1.2; /* Improve readability */
+}
+
+.offshore-heading-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.offshore-heading {
+  flex: 1 1 60%;
+}
+
+.offshore-heading-image {
+  flex: 1 1 35%;
+  min-width: 280px;
+}
+
+.offshore-heading-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.offshore-heading-image img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.offshore-heading p,
+.offshore-heading h3,
+.offshore-heading h4 {
+  margin: 15px auto; /* Consistent margin */
+  font-size: 18px;
+  line-height: 1.7; /* Increased line-height for better readability */
+  color: #4a5568; /* Softer text color */
+  text-align: left;
+}
+
+.offshore-heading h3 {
+  font-size: 30px; /* Larger sub-heading */
+  font-weight: 700;
+  color: #2d3748; /* Slightly darker than body text */
+  margin-top: 40px; /* More space above this sub-heading */
+  margin-bottom: 20px;
+}
+
+.offshore-heading h4 {
+  font-size: 22px; /* Distinct for a sub-heading below h3 */
+  font-weight: 600;
+  color: #2d3748;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.offshore-zigzag {
+  display: flex;
+  flex-direction: column;
+  gap: 80px; /* Increased gap between zigzag rows for more breathing room */
+}
+
+.offshore-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start; 
+  gap: 40px;
+}
+
+.offshore-reverse {
+  flex-direction: row-reverse;
+}
+
+.offshore-image {
+  flex: 1 1 45%; /* Flex-grow, flex-shrink, flex-basis. Allows image to take almost half width */
+  min-width: 320px; /* Slightly increased min-width to prevent squishing */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 12px; /* Slightly more rounded corners */
+  overflow: hidden; /* Ensures image respects border-radius */
+}
+
+.offshore-image img {
+  width: 100%;
+  max-height: 300px; 
+  display: block;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.offshore-image img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.offshore-content {
+  flex: 1 1 50%; /* Content takes slightly more than half to balance */
+  min-width: 320px;
+  padding: 10px 0; /* Some vertical padding if needed, but usually handled by line-height */
+}
+
+.offshore-content h3 {
+  font-size: 28px; /* Slightly larger for section-specific heading */
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #222222; /* A slightly darker, more prominent blue */
+  line-height: 1.3;
+}
+
+.offshore-content p {
+  font-size: 17px; /* Slightly larger for main content readability */
+  line-height: 1.8; /* Increased line-height for body text */
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) { /* Adjust breakpoint for tablets */
+  .offshore-container {
+    padding: 40px 15px;
+  }
+
+  .offshore-heading h2 {
+    font-size: 38px;
+  }
+
+  .offshore-heading p,
+  .offshore-heading h3,
+  .offshore-heading h4 {
+    font-size: 17px;
+  }
+
+  .offshore-heading h3 {
+    font-size: 26px;
+  }
+
+  .offshore-heading h4 {
+    font-size: 20px;
+  }
+
+  .offshore-row,
+  .offshore-reverse {
+    flex-direction: column; /* Stack vertically on tablets and smaller */
+    text-align: center; /* Center text when stacked */
+  }
+
+  .offshore-image {
+    flex: 1 1 100%; /* Image takes full width */
+    min-width: unset; /* Remove min-width to allow shrinking */
+  }
+
+  .offshore-content {
+    flex: 1 1 100%; /* Content takes full width */
+    min-width: unset;
+  }
+
+  .offshore-content h3 {
+    font-size: 24px;
+    margin-top: 20px; /* Add space above heading when stacked */
+  }
+
+  .offshore-content p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) { /* Mobile specific adjustments */
+  .offshore-heading h2 {
+    font-size: 32px;
+  }
+
+  .offshore-heading p,
+  .offshore-heading h3,
+  .offshore-heading h4 {
+    font-size: 16px;
+  }
+
+  .offshore-heading h3 {
+    font-size: 24px;
+  }
+
+  .offshore-heading h4 {
+    font-size: 18px;
+  }
+
+  .offshore-zigzag {
+    gap: 50px; /* Reduce gap on mobile */
+  }
+
+  .offshore-row {
+    gap: 30px; /* Reduce gap between elements on mobile */
+  }
+
+  .offshore-content h3 {
+    font-size: 22px;
+  }
+
+  .offshore-content p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) { /* Smaller mobile adjustments */
+  .offshore-heading h2 {
+    font-size: 28px;
+  }
+}
+
+/* ----------------------------------------
+   1. Quality Policy and Process Section
+----------------------------------------- */
+.qpp {
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+}
+
+.qpp h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.qpp p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.qpp ul {
+  list-style: disc;
+  padding-left: 24px;
+  margin-top: 10px;
+}
+
+.qpp li {
+  font-size: 17px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+/* ----------------------------------------
+   2. Certification Section
+----------------------------------------- */
+.qpp_certification {
+  padding: 40px 20px;
+  background-color: #e0e7ff;
+  border-top: 1px solid #e0e0e0;
+}
+
+.qpp_certification h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.qpp_certification p {
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+/* ----------------------------------------
+   3. Trio Section (Policy / Methodologies / Team)
+----------------------------------------- */
+.qpp_trio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 60px 20px;
+  background-color: #f1f5f9;
+}
+
+.qpp_trio > div {
+  flex: 1 1 300px;
+  background-color: #fff;
+  padding: 30px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.qpp_trio > div:hover {
+  transform: translateY(-5px);
+}
+
+.qpp_trio img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.qpp_trio img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.qpp_trio h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 12px;
+}
+
+.qpp_trio p {
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* ----------------------------------------
+   4. Strategic Approach Section
+----------------------------------------- */
+.qpp_approach {
+  padding: 60px 20px;
+  background-color: #e0e7ff;
+  text-align: center;
+}
+
+.qpp_approach h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.qpp_approach p {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #222;
+}
+
+/* ----------------------------------------
+   5. Development & Review Section
+----------------------------------------- */
+.qpp_development {
+  padding: 60px 20px;
+  background-color: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+.qpp_development h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+.qpp_development p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.qpp_development ul {
+  list-style: disc;
+  padding-left: 24px;
+  margin-bottom: 24px;
+}
+
+.qpp_development li {
+  font-size: 17px;
+  line-height: 1.5;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.qpp_development ul + h2 {
+  margin-top: 40px;
+}
+
+/* -- Icon and Text Block Layouts -- */
+.qpp_block {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.qpp_block .qpp_icon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+/* ----------------------------------------
+   6. Responsive Design
+----------------------------------------- */
+@media (max-width: 768px) {
+  .qpp h2,
+  .qpp_certification h2,
+  .qpp_approach h2,
+  .qpp_development h2 {
+    font-size: 24px;
+  }
+
+  .qpp p,
+  .qpp li,
+  .qpp_certification p,
+  .qpp_trio p,
+  .qpp_approach p,
+  .qpp_development p,
+  .qpp_development li {
+    font-size: 16px;
+  }
+
+  .qpp_trio {
+    flex-direction: column;
+  }
+
+  .qpp_block {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .qpp_block .qpp_icon {
+    margin-top: 0;
   }
 }
