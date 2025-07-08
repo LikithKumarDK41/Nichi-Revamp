@@ -2192,7 +2192,7 @@ body {
   About Us & Infrastructure
 ===============================*/
 .aboutus-section {
-  padding: 60px 20px;
+  padding: 40px 20px;
   background-color: #ebedf1;
   text-align: center;
 }
@@ -2207,7 +2207,7 @@ body {
 .infrastructure-section .section-title {
   font-size: 2.5rem;
   margin-bottom: 24px;
-  color: #2d3748;
+  color: #222222;
   font-weight: 700;
   text-align: center;
 }
@@ -2251,10 +2251,6 @@ body {
   text-align: justify;
 }
 
-.zigzag-text .section-title {
-  padding-top: 40px;
-}
-
 .zigzag-image {
   flex: 1 1 45%;
   display: flex;
@@ -2269,6 +2265,8 @@ body {
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
+
+.zigzag-image img:hover { transform: scale(1.03); transition: transform 0.3s ease; }
 
 /*===============================
   Responsive Design
@@ -3059,7 +3057,7 @@ main {
 
 /* wwa-hero-section */
 .wwa-hero-section {
-  background-color: #f0f4f8; /* Light blue-gray */
+  background: linear-gradient(135deg, #5077b1, #000066, #380597);
   padding: 40px 20px; /* Added 20px padding */
   text-align: center;
   display: flex;
@@ -3074,15 +3072,15 @@ main {
 }
 
 .wwa-hero-title {
-  font-size: 3rem; /* text-4xl */
-  font-weight: 800; /* font-extrabold */
-  color: #1a202c; /* gray-900 */
+  font-size: 2.5rem; /* text-4xl */
+  font-weight: 700; /* font-extrabold */
+  color: white; /* gray-900 */
   margin-bottom: 16px; /* mb-4 */
 }
 
 .wwa-hero-subtitle {
   font-size: 1.5rem; /* text-xl */
-  color: #4a5568; /* gray-700 */
+  color: white; /* gray-700 */
   line-height: 1.5;
 }
 
@@ -3112,6 +3110,8 @@ main {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
   background-color: #ffffff;
 }
+
+.wwa-vision-mission-card:hover { transform: translateY(-4px); transition: transform 0.3s ease; }
 
 .wwa-vision-mission-card h2 { /* text-3xl font-bold text-gray-800 mb-4 flex items-center */
   font-size: 1.875rem; /* text-3xl */
@@ -3165,6 +3165,8 @@ main {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
   background-color: #ffffff;
 }
+
+.wwa-trio-card :hover { transform: translateY(-4px); transition: transform 0.3s ease; }
 
 .wwa-trio-card h2 { /* text-2xl font-semibold text-gray-800 mb-3 flex items-center */
   font-size: 1.5rem; /* text-2xl */
@@ -3244,19 +3246,21 @@ main {
 
 .differentiator-image {
   flex: 1;
-  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  padding: 0; /* Ensure no internal padding affects image sizing */
 }
 
 .differentiator-image img {
-  width: 100%;
-  max-width: 500px; /* ✅ Make the image appear smaller */
-  height: auto;
+  width: 600px;
+  height: 350px;
+  object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   display: block;
-  margin: 0 auto; /* Optional: center the image if it’s smaller */
 }
 
+.differentiator-image img:hover { transform: scale(1.03); transition: transform 0.3s ease; }
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -3422,6 +3426,8 @@ main {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.image-content img:hover { transform: scale(1.03); transition: transform 0.3s ease; }
 
 /* Side by side images */
 .image-content.side-by-side {
@@ -3782,13 +3788,6 @@ main {
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 16px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover effect */
-.qpp_trio img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .qpp_trio h3 {
@@ -3919,3 +3918,381 @@ main {
     margin-top: 0;
   }
 }
+
+.OFS_hero-section {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f2f6fc;
+}
+
+.OFS_hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 24px;
+  font-weight: 700;
+  color: #222;
+}
+
+.OFS_hero-section p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #555;
+  margin: 0 auto;
+  opacity: 0.95;
+  text-align: left;
+}
+
+/* OFS_ Specific Classes */
+.OFS_container {
+    margin: 0 auto; /* Centers the container horizontally. */
+    padding: 0 20px; /* Adds horizontal padding to the container. */
+}
+
+.OFS_section-heading {
+    font-size: 2.5rem; /* Sets the font size for section headings. */
+    font-weight: 700; /* Sets the font weight to bold. */
+    color: #222222; /* Sets the color of the section heading. */
+    text-align: center; /* Centers the text. */
+    margin-bottom: 40px; /* Adds space below the heading. */
+    position: relative; /* Needed for positioning the ::after pseudo-element. */
+    padding-bottom: 10px; /* Adds padding below the text for the underline. */
+}
+
+/* Offerings Section - Zigzag Layout */
+.OFS_offerings-section {
+    padding: 40px 0; /* Adds vertical padding. */
+    background-color: #fff; /* Sets a white background. */
+}
+
+.OFS_zigzag-container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* Space between each zigzag item */
+}
+
+.OFS_zigzag-item {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Space between image and content */
+    background-color: #f0f4f8; /* Light background for each item */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.OFS_zigzag-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.OFS_zigzag-left {
+    flex-direction: row; /* Content on right, image on left */
+}
+
+.OFS_zigzag-right {
+    flex-direction: row-reverse; /* Content on left, image on right */
+}
+
+.OFS_zigzag-content {
+    flex: 1; /* Takes up remaining space */
+    padding: 20px;
+}
+
+.OFS_zigzag-image-wrapper {
+    flex: 1; /* Takes up half the space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px; /* Minimum width for the image wrapper */
+}
+
+.OFS_zigzag-image {
+    width: 100%;
+    max-width: 500px; /* Ensure images don't get too large */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.OFS_card-title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #222222;
+    margin-bottom: 15px;
+}
+
+.OFS_card-description {
+    font-size: 1rem;
+    color: #222222;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.OFS_tech-read-more {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.OFS_tech-read-more:hover {
+    color: #0056b3;
+}
+
+/* Detailed Services Section */
+.OFS_detailed-services-section {
+    padding: 40px 0; /* Adds vertical padding. */
+    background-color: #f0f4f8; /* Sets a light background color. */
+}
+
+.OFS_detailed-services-flexbox {
+    display: flex; /* Uses flexbox for the layout of service items. */
+    flex-wrap: wrap; /* Allows items to wrap to the next line. */
+    gap: 43px; /* Sets the space between flex items. */
+    justify-content: center; /* Centers the flex items horizontally. */
+}
+
+.OFS_service-item {
+    background-color: #fff; /* Sets a white background for service items. */
+    border-radius: 15px; /* Rounds the corners. */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Adds a subtle shadow. */
+    padding: 30px; /* Adds padding inside the item. */
+    text-align: left; 
+    flex: 1 1 calc(33.333% - 30px); /* Three items per row on larger screens, considering gap. */
+    max-width: calc(33.333% - 30px); /* Ensures maximum width for three columns. */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects. */
+}
+
+.OFS_service-item:hover {
+    transform: translateY(-10px); /* Lifts the item up on hover. */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12); /* Enhances shadow on hover. */
+}
+
+.OFS_service-image {
+    width: 90px; /* Sets a fixed width for the image. */
+    height: 90px; /* Sets a fixed height for the image. */
+    object-fit: cover; /* Ensures the image covers the area without distortion. */
+    margin-bottom: 20px; /* Adds space below the image. */
+    display: block; /* Makes the image a block element. */
+    margin-left: auto; /* Centers the image horizontally. */
+    margin-right: auto; /* Centers the image horizontally. */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects. */
+}
+
+.OFS_service-image:hover {
+    transform: scale(1.05); /* Slightly enlarges the image on hover. */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Enhances shadow on hover. */
+}
+
+
+.OFS_service-item .OFS_service-title {
+    font-size: 1.5rem; /* Sets the font size for service titles. */
+    font-weight: 600; /* Sets the font weight. */
+    color: #34495e; /* Sets the color of the service title. */
+    margin-bottom: 10px; /* Adds space below the title. */
+}
+
+.OFS_service-item .OFS_service-description {
+    font-size: 0.95rem; /* Sets the font size for service descriptions. */
+    color: #777; /* Sets the color of the description. */
+    line-height: 1.7; /* Increases line height for readability. */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) { /* Styles for screens up to 992px wide (e.g., tablets). */
+    /* Zigzag adjustments for smaller screens */
+    .OFS_zigzag-item {
+        flex-direction: column; /* Stack content and image vertically */
+        text-align: center;
+        padding: 20px;
+    }
+
+    .OFS_zigzag-content {
+        padding: 10px 0; /* Adjust padding for stacked content */
+    }
+
+    .OFS_zigzag-image-wrapper {
+        min-width: unset; /* Remove min-width constraint */
+        width: 80%; /* Make image narrower on smaller screens */
+        margin-bottom: 20px; /* Add space below image when stacked */
+    }
+
+    .OFS_service-item {
+        flex: 1 1 calc(50% - 30px); /* Two items per row on medium screens, considering gap. */
+        max-width: calc(50% - 30px); /* Ensures maximum width for two columns. */
+    }
+}
+
+@media (max-width: 768px) { /* Styles for screens up to 768px wide (e.g., larger phones). */
+    .OFS_section-heading {
+        font-size: 2rem; /* Reduces font size of section headings. */
+    }
+
+    .OFS_service-item {
+        flex: 1 1 100%; /* One item per row on small screens. */
+        max-width: 100%; /* Ensures full width. */
+    }
+
+    .OFS_service-image {
+        width: 80px; /* Reduces image size on smaller screens. */
+        height: 80px; /* Reduces image size on smaller screens. */
+    }
+
+    .OFS_service-item .OFS_service-title {
+        font-size: 1.3rem; /* Reduces font size of service titles. */
+    }
+}
+
+@media (max-width: 480px) { /* Styles for screens up to 480px wide (e.g., smaller phones). */
+    .OFS_section-heading {
+        font-size: 1.8rem; /* Further reduces font size of section headings. */
+    }
+
+    .OFS_card-title {
+        font-size: 1.3rem; /* Further reduces font size of card titles. */
+    }
+}
+
+        .hero-products {
+            background: linear-gradient(135deg, #5077b1, #000066, #380597);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+        }
+
+        .products-hero h2 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .products-hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .products-section {
+            padding: 60px 20px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .product-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .product-card h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #222222;
+            margin-bottom: 15px;
+        }
+
+        .product-card p {
+            font-size: 1.1rem;
+            color: #4a5568;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            flex-grow: 1; 
+            text-align: left;
+        }
+
+        .product-card img {
+            width: 100%;
+            max-width: 300px; 
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-products {
+                padding: 60px 20px;
+            }
+
+            .products-hero h2 {
+                font-size: 2.8rem;
+            }
+
+            .products-hero p {
+                font-size: 1.1rem;
+            }
+
+            .products-section {
+                padding: 40px 20px;
+                grid-template-columns: 1fr; /* Single column on smaller screens */
+            }
+
+            .product-card {
+                padding: 25px;
+            }
+
+            .product-card h3 {
+                font-size: 1.8rem;
+            }
+
+            .product-card p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-products {
+                padding: 50px 15px;
+            }
+
+            .products-hero h2 {
+                font-size: 2.2rem;
+            }
+
+            .products-hero p {
+                font-size: 0.95rem;
+            }
+
+            .products-section {
+                padding: 30px 15px;
+            }
+
+            .product-card {
+                padding: 20px;
+            }
+
+            .product-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .product-card p {
+                font-size: 0.9rem;
+            }
+
+            .tech-read-more {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
