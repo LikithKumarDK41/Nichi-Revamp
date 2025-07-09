@@ -71,7 +71,7 @@ body {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 1rem 1rem;
+    padding: 0.75rem 1rem;
     z-index: 1000;
     transition:
     background-color 0.4s ease-in-out,
@@ -2191,6 +2191,44 @@ body {
 /*===============================
   About Us & Infrastructure
 ===============================*/
+
+.aboutus-hero {
+  background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+}
+
+.aboutus-hero-container {
+  margin: 0 auto;
+}
+
+.aboutus-hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.aboutus-hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .aboutus-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .aboutus-hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
+
 .aboutus-section {
   padding: 40px 20px;
   background-color: #ebedf1;
@@ -2751,6 +2789,43 @@ body {
 }
 
 /* =============== Leadership Section =============== */
+
+.leadership-hero {
+  background: linear-gradient(135deg, #5077b1, #000066, #380597);
+  padding: 40px 20px;
+  color: white;
+  text-align: center;
+}
+
+.leadership-hero .hero-content {
+  margin: 0 auto;
+}
+
+.leadership-hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.leadership-hero p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .leadership-hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .leadership-hero p {
+    font-size: 1rem;
+  }
+}
+
+
+
 .leadership-section {
   padding: 40px 20px;
   background-color: #f9f9fb;
@@ -3390,6 +3465,8 @@ main {
   flex-wrap: wrap;
   align-items: center;
   gap: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .section-content.reverse {
@@ -3425,6 +3502,7 @@ main {
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
 }
 
 .image-content img:hover { transform: scale(1.03); transition: transform 0.3s ease; }
@@ -3467,10 +3545,90 @@ main {
   }
 }
 
+/*Onsite Business*/
+
+/* Hero Section: Onsite Business */
+.onsite_hero {
+  background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.onsite_hero .container {
+  margin: 0 auto;
+}
+
+.onsite_hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.onsite_hero .subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Responsive: Onsite Hero */
+@media (max-width: 768px) {
+  .onsite_hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .onsite_hero .subtitle {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+}
+
+
 /* Offshore Section Styling */
+
+.offshore-hero {
+  background: linear-gradient(135deg, #5077b1, #000066, #380597);
+  padding: 40px 20px;
+  color: white;
+  text-align: center;
+}
+
+.offshore-hero .hero-content {
+  margin: 0 auto;
+}
+
+.offshore-hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.offshore-hero p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .offshore-hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .offshore-hero p {
+    font-size: 1rem;
+  }
+}
+
+
 .offshore-container {
   margin: 0 auto;
-  padding: 60px 20px; /* Vertical padding and horizontal padding for smaller screens */
+  padding: 40px 20px; /* Vertical padding and horizontal padding for smaller screens */
   box-sizing: border-box; /* Include padding in element's total width and height */
 }
 
@@ -3699,8 +3857,45 @@ main {
 /* ----------------------------------------
    1. Quality Policy and Process Section
 ----------------------------------------- */
+
+.qpp-hero {
+  background: linear-gradient(135deg, #5077b1, #000066, #380597);
+  padding: 40px 20px;
+  color: white;
+  text-align: center;
+}
+
+.qpp-hero-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.qpp-hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.qpp-hero-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .qpp-hero h1 {
+    font-size: 2.2rem;
+  }
+  .qpp-hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
+
 .qpp {
-  padding: 60px 20px;
+  padding: 40px 20px;
   background-color: #f8f9fa;
 }
 
@@ -3716,6 +3911,7 @@ main {
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 16px;
+  text-align: left;
 }
 
 .qpp ul {
@@ -3920,26 +4116,24 @@ main {
 }
 
 .OFS_hero-section {
-  padding: 40px 20px;
-  text-align: center;
-  background-color: #f2f6fc;
+    background: linear-gradient(135deg, #5077b1, #000066, #380597);
+    padding: 60px 20px;
+    color: white;
+    text-align: center;
 }
 
 .OFS_hero-section h1 {
-  font-size: 2.5rem;
-  margin-bottom: 24px;
-  font-weight: 700;
-  color: #222;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
 .OFS_hero-section p {
-  font-size: 1.125rem;
-  line-height: 1.8;
-  color: #555;
-  margin: 0 auto;
-  opacity: 0.95;
-  text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin: 0 auto;
 }
+
 
 /* OFS_ Specific Classes */
 .OFS_container {
@@ -4296,3 +4490,191 @@ main {
                 font-size: 0.9rem;
             }
         }
+
+/* Section Titles */
+.section-title {
+  font-size: 2.5em;
+  color: #222222; /* Dark blue for titles */
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+
+.aboutus-hero-container {
+  width: 100%;
+}
+
+.aboutus-hero h1 {
+  font-size: 3.5em;
+  margin: 0;
+  font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* IT Services Introduction Section */
+.it-services-intro-section {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.it-services-intro-section p {
+  font-size: 1.1em;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* IT Services Grid Section (2x3 Layout) */
+.it-services-grid-section {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+.it-services-grid-container {
+  display: grid; /* Using CSS Grid for a more robust 2x3 layout */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns, min width 280px */
+  gap: 30px; /* Space between grid items */
+  max-width: 1200px; /* Max width of the grid container */
+  margin: 0 auto; /* Center the grid container */
+}
+
+.it-service-item {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center; /* Ensures text inside is horizontally centered */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers items horizontally within the column */
+  justify-content: space-between; /* DISTRIBUTES SPACE: Pushes h3 to top, p to bottom, image in between */
+  min-height: 280px; /* Ensures consistent height for all items */
+}
+
+.it-service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.it-service-item h3 {
+  font-size: 1.8em;
+  color: #003366;
+  margin-top: 0; /* Remove default top margin */
+  margin-bottom: 15px; /* Consistent spacing below heading */
+  font-weight: 700;
+}
+
+.it-service-item img {
+  max-width: 120px; /* Adjust image size */
+  height: auto;
+  margin-bottom: 20px; /* Consistent spacing below image */
+  border-radius: 8px; /* Slightly rounded corners for images */
+}
+
+.it-service-item p {
+  font-size: 1em;
+  color: #666;
+  margin: 0; /* Remove default margins, space-between handles vertical distribution */
+}
+
+/* Responsive adjustments for the grid */
+@media (max-width: 992px) {
+  .it-services-grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust for smaller screens */
+    gap: 20px;
+  }
+
+  .it-service-item {
+    min-height: 260px;
+    padding: 25px;
+  }
+
+  .it-service-item h3 {
+    font-size: 1.6em;
+  }
+}
+
+@media (max-width: 768px) {
+  .it-services-grid-container {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+    gap: 25px;
+  }
+
+  .it-service-item {
+    min-height: auto; /* Allow height to adjust on mobile if content is very short */
+    padding: 20px;
+  }
+
+  .it-service-item h3 {
+    font-size: 1.5em;
+  }
+
+  .it-service-item img {
+    max-width: 100px;
+  }
+
+  .it-services-intro-section p {
+    font-size: 1em;
+  }
+}
+
+/* Ensure zigzag-row styles are available if this file is also draft.css and you want consistency */
+/* The following zigzag styles are copied from the previous response for completeness */
+.zigzag-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+@media (min-width: 768px) {
+  .zigzag-row {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .zigzag-row.reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.zigzag-text {
+  flex: 1;
+  padding: 20px;
+}
+
+.zigzag-text p {
+  font-size: 1.1em;
+  margin-bottom: 1em;
+  color: #555;
+}
+
+.zigzag-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.zigzag-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.aboutus-section,
+.infrastructure-section {
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #eee;
+}
+
+.infrastructure-section {
+  background-color: #fff;
+}

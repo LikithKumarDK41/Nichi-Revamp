@@ -10,8 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="draft.css" />
 
     <!-- Font Awesome -->
@@ -53,86 +51,61 @@
             overflow-x: hidden;
         }
 
+        /* Simplified product details section */
         .product-details-section {
-            padding: 0 20px 40px;
+            padding: 40px 20px; /* Adjusted padding for a cleaner look */
             margin: 0 auto;
             min-height: calc(100vh - 100px); /* Adjust based on header/footer height */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+            text-align: left; /* Align text left for a natural flow */
         }
 
-        .product-details-card {
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            padding: 40px;
-            width: 100%;
-        }
-
-        .product-details-card h2 {
+        /* Styling for dynamically loaded content */
+        .product-details-section h2 {
             font-size: 3rem;
             font-weight: 700;
             color: #222222;
             margin-bottom: 20px;
+            text-align: center; /* Keep title centered */
         }
 
-        .product-details-card img {
+        /* Styling for the main product image (default, larger size) */
+        .product-main-image {
             width: 100%;
-            max-width: 300px;
+            max-width: 500px; /* Larger image size */
             height: auto;
-            margin: 0 auto 30px auto;
-            border-radius: 8px;
+            margin: 0 auto 30px auto; /* Center image and add bottom margin */
+            display: block; /* Ensure image is block level for margin auto to work */
             object-fit: cover;
         }
 
-        .product-details-card p {
+        /* Styling for the smaller image next to features (Kisanbandhu specific) */
+        .product-image-inline-features {
+            width: 100%; /* Ensure it's responsive within its column */
+            max-width: 300px; /* Smaller size */
+            height: auto;
+            margin-bottom: 20px; /* Space below image when stacked */
+            object-fit: cover;
+            border-radius: 8px; /* Added for better aesthetics */
+        }
+
+        .product-details-section p {
             font-size: 1.15rem;
             color: #4a5568;
             line-height: 1.8;
             margin-bottom: 25px;
-            text-align: left;
         }
 
-        .product-details-card ul {
+        .product-details-section ul {
             list-style: disc;
             margin-left: 25px;
             margin-bottom: 25px;
-            text-align: left;
         }
 
-        .product-details-card ul li {
+        .product-details-section ul li {
             font-size: 1.1rem;
             color: #4a5568;
             line-height: 1.7;
             margin-bottom: 8px;
-        }
-
-        .back-button-container {
-            margin-top: 40px;
-        }
-
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 14px 28px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #ffffff;
-            background: linear-gradient(135deg, #4f46e5, #6d28d9);
-            border-radius: 8px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
-        }
-
-        .back-button:hover {
-            background: linear-gradient(135deg, #4338ca, #5b21b6);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.6);
         }
 
         .video-container {
@@ -140,9 +113,8 @@
             padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
             position: relative;
             background: #000;
-            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 25px; /* Add margin below video */
         }
 
         .video-container iframe {
@@ -174,14 +146,14 @@
             box-shadow: 0 6px 20px rgba(0, 194, 184, 0.6);
         }
 
-        /* New CSS for the layout */
+        /* New CSS for the layout - simplified */
         .features-video-wrapper {
             display: flex;
             flex-wrap: wrap;
             gap: 30px;
             justify-content: space-between;
             margin-top: 40px;
-            width: 100%; /* Ensure it takes full width of its parent */
+            width: 100%;
         }
 
         .features-column {
@@ -197,7 +169,75 @@
             justify-content: flex-start;
         }
 
+        /* Wrapper for image and features, specifically for Kisanbandhu */
+        .image-features-wrapper {
+            display: flex;
+            flex-wrap: wrap; /* Allows image and features to stack on small screens */
+            gap: 20px; /* Default gap */
+            flex: 1 1 50%; /* Takes up similar space as features-column */
+            align-items: flex-start; /* Align items to the top */
+        }
+
+        /* Adjust gap for Kisanbandhu layout to bring image closer to features */
+        .image-features-wrapper.kisanbandhu-layout {
+            gap: 0px; /* Reduced gap to push image further left */
+        }
+
+        /* Specific order for Kisanbandhu image and features */
+        .kisanbandhu-layout .features-column {
+            order: 1; /* Features first */
+        }
+
+        .kisanbandhu-layout .product-image-inline-features {
+            order: 2; /* Image second */
+        }
+
+
+        .link-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            width: 100%;
+        }
+
+        /* Hero Section Styling */
+        .product-hero-section {
+            padding: 40px 20px;
+            text-align: center;
+            color: #ffffff; /* Default text color for hero */
+            background-color: #333; /* Fallback background color */
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 30px; /* Space between hero and content */
+        }
+
+        .product-hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .product-hero-section p.tagline {
+            font-size: 1.5rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        /* Responsive adjustments */
         @media (max-width: 768px) {
+            .product-details-section {
+                padding: 30px 15px;
+            }
+
+            .product-details-section h2 {
+                font-size: 2.5rem;
+            }
+
+            .product-details-section p,
+            .product-details-section ul li {
+                font-size: 1rem;
+            }
+
             .features-video-wrapper {
                 flex-direction: column;
                 align-items: center;
@@ -205,63 +245,55 @@
 
             .features-column, .video-column {
                 width: 100%;
-                min-width: unset; /* Reset min-width for smaller screens */
-            }
-        }
-
-        .link-wrapper {
-            display: flex;
-            justify-content: center;
-            margin-top: 40px;
-            width: 100%; /* Ensure it takes full width to center effectively */
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .product-details-section {
-                padding: 40px 20px;
+                min-width: unset;
             }
 
-            .product-details-card {
-                padding: 30px;
+            /* Stack image and features on smaller screens for Kisanbandhu */
+            .image-features-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+            .product-image-inline-features {
+                margin-bottom: 20px; /* Ensure space when stacked */
             }
 
-            .product-details-card h2 {
-                font-size: 2.5rem;
+            .product-hero-section {
+                padding: 60px 15px;
             }
 
-            .product-details-card p,
-            .product-details-card ul li {
-                font-size: 1rem;
+            .product-hero-section h1 {
+                font-size: 2.8rem;
             }
 
-            .back-button {
-                padding: 12px 24px;
-                font-size: 1rem;
+            .product-hero-section p.tagline {
+                font-size: 1.3rem;
             }
         }
 
         @media (max-width: 480px) {
             .product-details-section {
-                padding: 30px 15px;
+                padding: 20px 10px;
             }
 
-            .product-details-card {
-                padding: 25px;
-            }
-
-            .product-details-card h2 {
+            .product-details-section h2 {
                 font-size: 2rem;
             }
 
-            .product-details-card p,
-            .product-details-card ul li {
+            .product-details-section p,
+            .product-details-section ul li {
                 font-size: 0.95rem;
             }
 
-            .back-button {
-                padding: 10px 20px;
-                font-size: 0.9rem;
+            .product-hero-section {
+                padding: 40px 10px;
+            }
+
+            .product-hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .product-hero-section p.tagline {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -271,15 +303,13 @@
     <div id="header-placeholder"></div>
 
     <main>
+        <!-- Product Hero Section Placeholder -->
+        <section id="product-hero-section" class="product-hero-section"></section>
+
         <section class="product-details-section">
-            <div id="product-details-content" class="product-details-card">
+            <div id="product-details-content">
                 <!-- Product details will be dynamically loaded here -->
                 <p class="text-center text-gray-600 text-xl font-semibold">Loading product details...</p>
-            </div>
-            <div class="back-button-container">
-                <a href="products.html" class="back-button">
-                    <i class="fas fa-arrow-left"></i> Back to Products
-                </a>
             </div>
         </section>
     </main>
@@ -293,17 +323,17 @@
             "StayInSmart": {
                 title: "StayInSmart",
                 image: "images/products/sis.png",
-                description: "StayInSmart is an easy-to-use, integrated Mobile App (IoT smartphone / smartwatch (Android and iOS) Solution), designed and developed for the Hotel industry. It serves as a companion for hotel guests, allowing them to control appliances in their room, lock/unlock doors, order food, and more – all with the swipe of a finger!",
+                description: "StayInSmart is an easy-to-use, integrated Mobile App (IoT smartphone / smartwatch (Android and iOS) Solution), designed and developed for Hotel industry and serves as a companion for the Hotel guests for controlling appliances in the room, lock/unlock doors, order food and more – all with the swipe of finger!",
                 features: [
-                    "Android and iOS smartphone compatibility",
-                    "Smartwatch interface",
-                    "Third-party API Integration",
-                    "Seamless control of in-room appliances",
-                    "Digital key for room access",
-                    "In-app food and service ordering"
+                    "Android and iOS smartphones",
+                    "Smart watch interface",
+                    "Third party API Integration"
                 ],
                 visitLink: "http://www.stayinsmart.com/",
-                ytLink: "https://youtu.be/OvSBap_ms0k"
+                ytLink: "https://youtu.be/OvSBap_ms0k",
+                // Bonus: Custom tagline and hero background
+                tagline: "The Integrated Mobile App to serve as a Digital Companion for the Hotel guests and enhance their experience",
+                heroStyle: "background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);" // Example gradient
             },
             "McDataArchiver": {
                 title: "McDataArchiver",
@@ -317,19 +347,25 @@
                     "Backup status monitoring through logs, with email report registration option",
                     "Supports Mitsubishi M70 / M80 / C70 CNCs, FX5U / RCPU / QCPU PLCs, GOT1000 / GOT2000 HMIs"
                 ],
-                ytLink: "https://youtu.be/fujxPiWDRwk"
+                ytLink: "https://youtu.be/fujxPiWDRwk",
+                // Bonus: Custom tagline and hero background
+                tagline: "Secure Your Industrial Data",
+                heroStyle: "background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);" // Applied to all products
             },
             "Kisanbandhu": {
                 title: "Kisanbandhu",
                 image: "images/products/KB-1.png", /* Assuming .png extension */
-                description: "Kisanbandhu is a digital platform that creates a marketplace to connect farmers with distribution centers. This allows farmers to sell their agricultural produce and dairy products directly to consumers at a fair price. The application involves three key stakeholders: farmers, distribution centers, and consumers, fostering a more efficient and equitable supply chain.",
+                description: "Kisanbandu is a digital platform which creates a marketplace to connect farmers with distribution centres to sell their agricultural produce/ dairy products to consumers at fair price. This application has 3 stakeholders namely farmers, distribution centres and the consumers.",
                 features: [
                     "Direct connection between farmers and distribution centers",
                     "Marketplace for agricultural produce and dairy products",
                     "Ensures fair pricing for farmers",
                     "Benefits consumers with fresh produce",
                     "Streamlines the supply chain"
-                ]
+                ],
+                // Bonus: Custom tagline and hero background
+                tagline: "Kisanbandhu", // Added a tagline
+                heroStyle: "background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);" // Applied to all products
             }
         };
 
@@ -346,22 +382,51 @@
         function renderProductDetails() {
             const urlParams = new URLSearchParams(window.location.search);
             const productName = urlParams.get('product');
-            const container = document.getElementById('product-details-content');
+            const detailsContainer = document.getElementById('product-details-content');
+            const heroContainer = document.getElementById('product-hero-section');
 
-            if (container) {
+            if (detailsContainer && heroContainer) {
                 if (productName) {
                     const decodedProductName = decodeURIComponent(productName);
                     const product = productsData[decodedProductName];
 
                     if (product) {
-                        let featuresHtml = '';
-                        if (product.features && product.features.length > 0) {
-                            featuresHtml = '<h3 class="text-2xl font-semibold text-gray-800 mt-8 mb-4 text-left">Key Features:</h3><ul>';
-                            product.features.forEach(feature => {
-                                featuresHtml += `<li>${feature}</li>`;
-                            });
-                            featuresHtml += '</ul>';
+                        // Render Hero Section
+                        const tagline = product.tagline || `Learn more about ${product.title}`;
+                        let heroStyle = '';
+                        if (product.heroStyle) {
+                            heroStyle = product.heroStyle;
+                        } else if (product.heroBg) {
+                            heroStyle = `background: ${product.heroBg};`;
                         }
+
+                        heroContainer.innerHTML = `
+                            <div style="${heroStyle}" class="w-full h-full flex flex-col justify-center items-center rounded-b-lg p-8">
+                                <h1 class="text-white text-5xl md:text-6xl font-extrabold mb-4">${product.title}</h1>
+                                <p class="tagline text-white text-xl md:text-2xl font-medium opacity-90">${tagline}</p>
+                            </div>
+                        `;
+                        // Apply hero style directly to the heroContainer for consistent background application
+                        heroContainer.style = heroStyle;
+
+
+                        // Render Product Details Content
+                        let featuresListHtml = '';
+                        // Only generate features HTML if it's not Kisanbandhu OR if Kisanbandhu has more than 2 features (as per previous understanding)
+                        // However, based on the latest explicit request, we will remove it for Kisanbandhu regardless of feature count.
+                        if (decodedProductName !== "Kisanbandhu" && product.features && product.features.length > 0) {
+                            featuresListHtml = `
+                                <h3 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">Key Features:</h3>
+                                <ul>`;
+                            product.features.forEach(feature => {
+                                featuresListHtml += `<li>${feature}</li>`;
+                            });
+                            featuresListHtml += `</ul>`;
+                        } else if (decodedProductName === "Kisanbandhu") {
+                            // For Kisanbandhu, explicitly set featuresListHtml to empty string to remove the heading and list
+                            featuresListHtml = '';
+                        }
+
 
                         let visitLinkContent = '';
                         if (product.visitLink) {
@@ -380,7 +445,6 @@
                             if (embedUrl) {
                                 youtubeVideoContent = `
                                     <div class="video-column">
-                                        <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-left">Watch Video:</h3>
                                         <div class="video-container">
                                             <iframe
                                                 src="${embedUrl}"
@@ -394,25 +458,52 @@
                             }
                         }
 
-                        container.innerHTML = `
-                            <h2>${product.title}</h2>
-                            <img src="${product.image}" alt="${product.title} Image" onerror="this.onerror=null;this.src='https://placehold.co/300x200/cccccc/333333?text=Image+Not+Found';" class="mx-auto">
+                        let mainImageHtml = '';
+                        let featuresAndImageLayoutHtml = '';
+
+                        // Conditional rendering for Kisanbandhu image and features layout
+                        if (decodedProductName === "Kisanbandhu") {
+                            mainImageHtml = ''; // No main image for Kisanbandhu as it's placed inline
+                            featuresAndImageLayoutHtml = `
+                                <div class="image-features-wrapper kisanbandhu-layout">
+                                    <div class="features-column">
+                                        ${featuresListHtml}
+                                    </div>
+                                    <img src="${product.image}" alt="${product.title} Image" onerror="this.onerror=null;this.src='https://placehold.co/300x200/cccccc/333333?text=Image+Not+Found';" class="product-image-inline-features">
+                                </div>
+                            `;
+                        } else {
+                            // Default layout for other products
+                            mainImageHtml = `<img src="${product.image}" alt="${product.title} Image" onerror="this.onerror=null;this.src='https://placehold.co/500x300/cccccc/333333?text=Image+Not+Found';" class="product-main-image">`;
+                            featuresAndImageLayoutHtml = `
+                                <div class="features-column">
+                                    ${featuresListHtml}
+                                </div>
+                            `;
+                        }
+
+                        detailsContainer.innerHTML = `
+                            ${mainImageHtml}
                             <p>${product.description}</p>
                             <div class="features-video-wrapper">
-                                <div class="features-column">
-                                    ${featuresHtml}
-                                </div>
+                                ${featuresAndImageLayoutHtml}
                                 ${youtubeVideoContent}
                             </div>
                             ${visitLinkContent}
                         `;
                         document.title = `${product.title} Details | Nichi-In Software Solutions`;
                     } else {
-                        container.innerHTML = '<p class="text-center text-red-500 text-xl font-semibold">Product not found.</p>';
+                        // Product not found, clear hero and show message
+                        heroContainer.innerHTML = '';
+                        heroContainer.style = ''; // Clear any previous styles
+                        detailsContainer.innerHTML = '<p class="text-center text-red-500 text-xl font-semibold">Product not found.</p>';
                         document.title = 'Product Not Found | Nichi-In Software Solutions';
                     }
                 } else {
-                    container.innerHTML = '<p class="text-center text-gray-600 text-xl font-semibold">Please select a product from the products page.</p>';
+                    // No product selected, clear hero and show message
+                    heroContainer.innerHTML = '';
+                    heroContainer.style = ''; // Clear any previous styles
+                    detailsContainer.innerHTML = '<p class="text-center text-gray-600 text-xl font-semibold">Please select a product from the products page.</p>';
                     document.title = 'Select a Product | Nichi-In Software Solutions';
                 }
             }
