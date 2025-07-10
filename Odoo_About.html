@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Odoo | Nichi-In Software Solutions</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="draft.css">
+  <style>
+    /* Base Styles */
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+
+    /* About Odoo Section */
+    .about-odoo {
+      background-color: #fff;
+      padding: 40px 20px; 
+      margin: 30px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .about-odoo p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    /* Advantages Section */
+    .Odoo-flex {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 25px;
+      padding: 40px 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+      margin: 40px 0;
+    }
+
+    .Odoo-flex h3 {
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+      color: #2c3e50;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .Odoo-flex > p {
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .Odoo-flex ul {
+      grid-column: 1 / -1;
+      display: contents;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .Odoo-flex li {
+      background-color: #fff;
+      border: 1px solid #eaeaea;
+      border-radius: 8px;
+      padding: 25px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      background-color: #f8fafc;
+    }
+
+    .Odoo-flex li:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-color: #d6e4ff;
+    }
+
+    .Odoo-flex li:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, #3498db, #2ecc71);
+    }
+
+    .Odoo-flex li strong {
+      color: #2c3e50;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+      padding-left: 10px;
+    }
+
+    .Odoo-flex li p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #555;
+      margin: 0;
+      padding-left: 10px;
+    }
+
+    /* Bottom paragraph in advantages section */
+    .Odoo-flex > p:last-of-type {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: #666;
+      font-style: italic;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .about-odoo {
+        padding: 30px 20px;
+      }
+      
+      .Odoo-flex {
+        padding: 30px 20px;
+      }
+      
+      .Odoo-flex h3 {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .about-odoo {
+        padding: 25px 15px;
+      }
+      
+      .Odoo-flex {
+        grid-template-columns: 1fr;
+        padding: 25px 15px;
+      }
+      
+      .Odoo-flex h3 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header will load here -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <section class="Odoo-hero">
+      <h2>About Odoo</h2>
+    </section>
+
+    <section class="about-odoo">
+      <p>Odoo is an open-source business management software suite that
+        includes a wide range of applications for CRM, accounting, inventory,
+        manufacturing, eCommerce, and more. It is highly modular, allowing
+        businesses to customize and integrate various apps based on their needs.
+        Odoo offers both a free community edition and a paid enterprise edition
+        with additional features and support. It is widely used by businesses
+        of all sizes for streamlining operations and improving efficiency.
+      </p>
+    </section>
+
+    <section class="Odoo-flex">
+      <h3>Advantages of Odoo</h3>
+      <p>Odoo has several advantages over other ERP systems, making it a popular choice for businesses of all sizes. Here are some key benefits:</p>
+
+      <!-- Each li will now act as a card in the grid -->
+      <ul>
+        <li>
+          <strong>Cost-Effective:</strong> Odoo's Community Edition is free, while its Enterprise Edition is more affordable than many traditional ERP solutions like SAP and Oracle.
+        </li>
+        <li>
+          <strong>Modular & Scalable:</strong> Businesses can start with essential modules and expand as needed, making it highly scalable.
+        </li>
+        <li>
+          <strong>User-Friendly Interface:</strong> Odoo has a modern and intuitive UI, making it easier for employees to learn and use compared to complex ERP systems.
+        </li>
+        <li>
+          <strong>Fully Integrated:</strong> All Odoo applications work seamlessly together, eliminating the need for third-party integrations in many cases.
+        </li>
+        <li>
+          <strong>Open Source & Customizable:</strong> Odoo's open-source nature allows businesses to customize and modify the software according to their specific needs.
+        </li>
+        <li>
+          <strong>Cloud & On-Premise Options:</strong> Companies can choose between cloud hosting and on-premise deployment based on their security and operational preferences.
+        </li>
+        <li>
+          <strong>Strong Community Support:</strong> A large developer and user community continuously improves the platform and provides support.
+        </li>
+        <li>
+          <strong>Faster Implementation:</strong> Compared to legacy ERP systems, Odoo can be implemented more quickly, reducing downtime and costs.
+        </li>
+        <li>
+          <strong>All-in-One Solution:</strong> Odoo covers a wide range of business needs, from CRM and HRM to eCommerce and project management, reducing dependency on multiple software solutions.
+        </li>
+        <li>
+          <strong>Regular Updates & Innovations:</strong> Odoo frequently releases updates and new features, ensuring businesses stay ahead with the latest technology.
+        </li>
+      </ul>
+      <p>These advantages make Odoo a flexible and powerful ERP solution for startups, SMEs, and large enterprises.</p>
+    </section>
+  </main>
+
+  <!-- Footer will load here -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript to Load Header & Footer -->
+  <script>
+    /**
+     * Loads an HTML partial into a specified placeholder element.
+     * @param {string} id - The ID of the placeholder div.
+     * @param {string} file - The path to the HTML partial file.
+     */
+    async function loadPartial(id, file) {
+      try {
+        const res = await fetch(file);
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        const html = await res.text();
+        document.getElementById(id).innerHTML = html;
+        // If header is loaded, initialize mobile navigation (assuming initMobileNavigation is defined in draft.js or header.html)
+        if (id === "header-placeholder" && typeof initMobileNavigation === 'function') {
+          initMobileNavigation();
+        }
+      } catch (error) {
+        console.error(`Failed to load partial ${file}:`, error);
+      }
+    }
+
+    // Load header and footer when the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      loadPartial("header-placeholder", "header.html");
+      loadPartial("footer-placeholder", "footer.html");
+    });
+  </script>
+  <!-- Assuming draft.js contains any necessary scripts like initMobileNavigation -->
+  <script src="draft.js"></script>
+</body>
+
+</html>

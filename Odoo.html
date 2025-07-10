@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Odoo ERP Services | Nichi-In Software Solutions</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="draft.css">
+</head>
+
+<body>
+  <!-- Header will load here -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <section class="Odoo-hero">
+      <h2>Odoo ERP Services</h2>
+
+      <p>Streamline Your Business with Expert Odoo Consulting
+        As a trusted Odoo Partner, we specialize in delivering comprehensive
+        Odoo ERP solutions tailored to your business needs. From implementation
+        to customization, integration, and ongoing support, our certified
+        Odoo experts ensure seamless operations and improved efficiency.
+        <a href="Odoo_About.html">Click to know more about Odoo</a></p>
+    </section>
+
+    <section class="odoo-services-section">
+      <h2>Our Expertise</h2>
+
+      <div class="service-block">
+        <div class="service-image-wrapper">
+          <img src="images/Odoo/Odoo-Implementation.png" alt="Odoo Implementation Image">
+        </div>
+        <div class="service-content">
+          <h3>Odoo Implementation</h3>
+          <p>End-to-end setup and deployment, data migration and system configuration, and user training and adoption strategies to ensure a smooth transition and effective use of Odoo within your organization.</p>
+        </div>
+      </div>
+
+      <div class="service-block">
+        <div class="service-image-wrapper">
+          <img src="images/Odoo/Odoo-Customization-Development.png" alt="Odoo Customization Image">
+        </div>
+        <div class="service-content">
+          <h3>Odoo Customization & Development</h3>
+          <p>Tailored module development to fit unique business requirements, workflow automation, process optimization, and seamless integration of third-party modules to enhance Odoo's capabilities.</p>
+        </div>
+      </div>
+
+      <div class="service-block">
+        <div class="service-image-wrapper">
+          <img src="images/Odoo/Odoo-Support-Maintenance.png" alt="Odoo Support Image">
+        </div>
+        <div class="service-content">
+          <h3>Odoo Support & Maintenance</h3>
+          <p>Comprehensive technical support and troubleshooting, performance monitoring, and system optimization to ensure your Odoo environment runs efficiently and without interruption.</p>
+        </div>
+      </div>
+
+      <div class="service-block">
+        <div class="service-image-wrapper">
+          <img src="images/Odoo/odoo-Integration-Services.png" alt="Odoo Integration Image">
+        </div>
+        <div class="service-content">
+          <h3>Odoo Integration Services</h3>
+          <p>Expertly connecting Odoo with your existing CRM, eCommerce platforms, and other third-party applications, enabling real-time data synchronization and automation across your business ecosystem.</p>
+        </div>
+      </div>
+
+      <div class="service-block">
+        <div class="service-image-wrapper">
+          <img src="images/Odoo/Odoo-Managed-Services.png" alt="Odoo Managed Services Image">
+        </div>
+        <div class="service-content">
+          <h3>Odoo Managed Services</h3>
+          <p>Continuous system monitoring, proactive maintenance, regular updates, and feature enhancements. We also provide business process consultation to continuously improve your operational efficiency.</p>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Footer will load here -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript to Load Header & Footer -->
+  <script>
+    /**
+     * Loads an HTML partial into a specified placeholder element.
+     * @param {string} id - The ID of the placeholder div.
+     * @param {string} file - The path to the HTML partial file.
+     */
+    async function loadPartial(id, file) {
+      try {
+        const res = await fetch(file);
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        const html = await res.text();
+        document.getElementById(id).innerHTML = html;
+        // If header is loaded, initialize mobile navigation (assuming initMobileNavigation is defined in draft.js or header.html)
+        if (id === "header-placeholder" && typeof initMobileNavigation === 'function') {
+          initMobileNavigation();
+        }
+      } catch (error) {
+        console.error(`Failed to load partial ${file}:`, error);
+      }
+    }
+
+    // Load header and footer when the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      loadPartial("header-placeholder", "header.html");
+      loadPartial("footer-placeholder", "footer.html");
+    });
+  </script>
+  <!-- Assuming draft.js contains any necessary scripts like initMobileNavigation -->
+  <script src="draft.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Major Technology Stack | Nichi-In Software Solutions</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="draft.css" />
+  <style>
+    /* Custom styles for enhanced design - similar to DM.html */
+    .tech-card {
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      border: 1px solid #e2e8f0; /* Light gray border */
+    }
+
+    .tech-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .tech-card h2 {
+      color: #1a202c; /* Darker heading color */
+      position: relative;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .tech-card h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 50px;
+      height: 3px;
+      background-color: #3182ce; /* Blue accent line */
+      border-radius: 2px;
+    }
+
+    .tech-card ul {
+      list-style: none; /* Remove default bullet points */
+      padding-left: 0;
+    }
+
+    .tech-card ul li {
+      color: #4a5568; /* Slightly darker text color */
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 25px; /* Space for custom bullet */
+    }
+
+    .tech-card ul li::before {
+      content: '\2022'; /* Unicode for a bullet point */
+      color: #3182ce; /* Blue bullet point */
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+      position: absolute;
+      left: 0;
+    }
+
+    /* Responsive adjustments for the hero section - similar to DM.html */
+    .aboutus-hero {
+      background-size: cover;
+      background-position: center;
+      min-height: 300px; /* Ensure a minimum height */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden; /* Hide overflow from pseudo-element */
+    }
+
+    .aboutus-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+      z-index: 1;
+    }
+
+    .aboutus-hero-container {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+    }
+
+    .aboutus-hero h1 {
+      font-size: 3rem; /* Larger font size for hero heading */
+      font-weight: 800;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (min-width: 768px) {
+      .aboutus-hero h1 {
+        font-size: 4.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header will load here -->
+  <div id="header-placeholder"></div>
+
+  <main>
+
+    <!-- Hero Section for Technology Stack -->
+    <section class="aboutus-hero" style="background-image: url('https://placehold.co/1920x400/3182ce/ffffff?text=Technology+Stack');">
+      <div class="aboutus-hero-container">
+        <h1>MAJOR TECHNOLOGY STACK</h1>
+      </div>
+    </section>
+
+    <!-- Content Section for Technology Stack -->
+    <section class="tech-stack-section py-16 px-4 md:px-8 lg:px-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto">
+        <p class="text-xl text-gray-800 mb-12 text-center font-semibold">
+          Our diverse technology stack empowers us to deliver robust and innovative solutions across various domains.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+          <!-- Microsoft Technologies -->
+          <div class="tech-card bg-white rounded-lg shadow-xl p-8">
+            <h2 class="text-2xl font-bold mb-4">Microsoft Technologies</h2>
+            <ul>
+              <li>.NET (VB, C#, ASP)</li>
+            </ul>
+          </div>
+
+          <!-- QA Tools/Skills -->
+          <div class="tech-card bg-white rounded-lg shadow-xl p-8">
+            <h2 class="text-2xl font-bold mb-4">QA Tools/Skills</h2>
+            <ul>
+              <li>Selenium</li>
+              <li>Appium</li>
+              <li>Cypress</li>
+              <li>Katalon</li>
+              <li>Burp Suite</li>
+              <li>OWASP ZAP</li>
+              <li>Jmeter</li>
+            </ul>
+          </div>
+
+          <!-- Front End -->
+          <div class="tech-card bg-white rounded-lg shadow-xl p-8">
+            <h2 class="text-2xl font-bold mb-4">Front End</h2>
+            <ul>
+              <li>HTML, CSS, JS</li>
+              <li>Angular</li>
+              <li>React</li>
+              <li>Vue</li>
+              <li>Typescript</li>
+              <li>Next.js</li>
+              <li>Nuxt.js</li>
+            </ul>
+          </div>
+
+          <!-- Back End -->
+          <div class="tech-card bg-white rounded-lg shadow-xl p-8">
+            <h2 class="text-2xl font-bold mb-4">Back End</h2>
+            <ul>
+              <li>Java/J2EE</li>
+              <li>MEAN, MERN</li>
+              <li>PHP, Laravel</li>
+              <li>Node.js</li>
+              <li>Python (Django, Flask)</li>
+              <li>Golang</li>
+            </ul>
+          </div>
+
+          <!-- Mobile -->
+          <div class="tech-card bg-white rounded-lg shadow-xl p-8">
+            <h2 class="text-2xl font-bold mb-4">Mobile</h2>
+            <ul>
+              <li>Android</li>
+              <li>iOS (Swift, Objective C)</li>
+              <li>React Native</li>
+              <li>Flutter</li>
+              <li>Xamarin</li>
+              <li>Ionic</li>
+            </ul>
+          </div>
+
+          <!-- Database -->
+          <div class="tech-card bg-white rounded-lg shadow-xl p-8">
+            <h2 class="text-2xl font-bold mb-4">Database</h2>
+            <ul>
+              <li>MySQL</li>
+              <li>Microsoft SQL Server</li>
+              <li>PostgreSQL</li>
+              <li>MariaDB</li>
+              <li>Oracle</li>
+              <li>MongoDB</li>
+              <li>DynamoDB</li>
+            </ul>
+          </div>
+
+          <!-- CMS -->
+          <div class="tech-card bg-white rounded-lg shadow-xl p-8">
+            <h2 class="text-2xl font-bold mb-4">CMS</h2>
+            <ul>
+              <li>WordPress</li>
+              <li>Magento</li>
+              <li>Shopify</li>
+              <li>Drupal</li>
+              <li>Joomla</li>
+            </ul>
+          </div>
+
+          <!-- Cloud -->
+          <div class="tech-card bg-white rounded-lg shadow-xl p-8">
+            <h2 class="text-2xl font-bold mb-4">Cloud</h2>
+            <ul>
+              <li>AWS</li>
+              <li>Azure</li>
+              <li>Google</li>
+              <li>Sakura Cloud</li>
+            </ul>
+          </div>
+
+          <!-- Integration -->
+          <div class="tech-card bg-white rounded-lg shadow-xl p-8">
+            <h2 class="text-2xl font-bold mb-4">Integration</h2>
+            <ul>
+              <li>Web API</li>
+              <li>Google Maps</li>
+              <li>OpenCV</li>
+              <li>Firebase</li>
+              <li>Fabric</li>
+              <li>ChatGPT</li>
+            </ul>
+          </div>
+
+          <!-- Management -->
+          <div class="tech-card bg-white rounded-lg shadow-xl p-8">
+            <h2 class="text-2xl font-bold mb-4">Management</h2>
+            <ul>
+              <li>Jira</li>
+              <li>Redmine</li>
+              <li>Backlog</li>
+              <li>Trello</li>
+              <li>GoodDay</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer will load here -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript to Load Header & Footer -->
+  <script>
+    async function loadPartial(id, file) {
+      const res = await fetch(file);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+      // If header is loaded, initialize mobile navigation if the function exists
+      if (id === "header-placeholder" && typeof initMobileNavigation === 'function') {
+        initMobileNavigation();
+      }
+    }
+
+    loadPartial("header-placeholder", "header.html");
+    loadPartial("footer-placeholder", "footer.html");
+  </script>
+
+  <!-- Assuming draft.js contains other necessary scripts like initMobileNavigation -->
+  <script src="draft.js"></script>
+</body>
+
+</html>

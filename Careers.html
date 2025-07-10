@@ -72,9 +72,19 @@
         /* Image Layout Styles */
         .image-text-container {
             display: flex;
-            align-items: center;
+            align-items: flex-start; /* <-- change from center to flex-start */
             gap: 30px;
             margin-bottom: 40px;
+        }
+
+        .image-text-container .text-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        }
+
+        .image-text-container .text-content h3 {
+            margin-top: 0;
         }
 
         .image-right {
@@ -460,19 +470,20 @@
                 <button class="tab-button" data-tab="job-application">Job Application</button>
             </div>
 
-            <!-- Tab Content for Current Openings -->
-            <div id="current-openings" class="tab-content active">
-                <h3 class="job-listing-heading">Current Openings</h3>
-                <p>Find jobs, create great future with us.</p>
-                <a href="#" class="tech-read-more" id="careers-click-here"> Click Here <i class="fas fa-arrow-right"></i></a>
+            <!-- 
+                Tab Content for Current Openings
+                <div id="current-openings" class="tab-content active">
+                    <h3 class="job-listing-heading">Current Openings</h3>
+                    <p>Find jobs, create great future with us.</p>
+                    <a href="#" class="tech-read-more" id="careers-click-here"> Click Here <i class="fas fa-arrow-right"></i></a>
 
-                <!-- Hidden paragraph revealed after first click -->
-                <p id="no-openings-message">
-                    We do not have any job openings at the moment, but we frequently update our listings.
-                    Please check back regularly for new opportunities. In the meantime, feel free to
-                    send us your resume <a href="#" id="jobs-apply-link" style="color: #007bff; text-decoration: underline;">here</a>.
-                </p>
-            </div>
+                    <p id="no-openings-message">
+                        We do not have any job openings at the moment, but we frequently update our listings.
+                        Please check back regularly for new opportunities. In the meantime, feel free to
+                        send us your resume <a href="#" id="jobs-apply-link" style="color: #007bff; text-decoration: underline;">here</a>.
+                    </p>
+                </div>
+            -->
 
             <!-- Tab Content for Job Application Form -->
             <div id="job-application" class="tab-content">
