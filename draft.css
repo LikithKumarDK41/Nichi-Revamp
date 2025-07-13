@@ -4880,3 +4880,366 @@ main {
     #footer-placeholder {
       width: 100%;
     }
+
+
+/* DM_hero Section - Styles for the main hero banner */
+.DM_hero {
+  position: relative;
+  height: 16rem; /* Base height for hero section */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff; /* White text for hero content */
+  text-align: center;
+  overflow: hidden; /* Ensures any overflowing content/gradient is clipped */
+}
+
+/* Responsive adjustment for hero height on medium screens and up */
+@media (min-width: 768px) {
+  .DM_hero {
+    height: 20rem; /* Taller hero section for larger screens */
+  }
+}
+
+/* DM_hero-overlay - Styles for the gradient background overlay in the hero */
+.DM_hero-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
+}
+
+/* DM_hero-container - Styles for the content wrapper within the hero */
+.DM_hero-container {
+  position: relative;
+  z-index: 10; /* Ensures content is above the overlay */
+  max-width: 1200px; /* Maximum width for content */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 0 1rem; /* Horizontal padding for content */
+}
+
+/* DM_hero-container h1 - Styles for the main heading in the hero */
+.DM_hero-container h1 {
+  font-size: 2.25rem; /* Base font size for heading */
+  font-weight: 800; /* Extra bold font weight */
+  letter-spacing: -0.025em; /* Tight letter spacing */
+}
+
+/* Responsive adjustment for hero heading font size on medium screens and up */
+@media (min-width: 768px) {
+  .DM_hero-container h1 {
+    font-size: 3rem; /* Larger font size for heading on larger screens */
+  }
+}
+
+/* DM_methodology-section - Styles for the main content section containing methodology cards */
+.DM_methodology-section {
+  padding-top: 4rem; /* Vertical padding */
+  padding-bottom: 4rem; /* Vertical padding */
+  padding-left: 1rem; /* Horizontal padding */
+  padding-right: 1rem; /* Horizontal padding */
+}
+
+/* Responsive adjustments for section padding */
+@media (min-width: 768px) {
+  .DM_methodology-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .DM_methodology-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* DM_container - General container for content within sections */
+.DM_container {
+  margin-left: auto;
+  margin-right: auto; /* Center the container horizontally */
+}
+
+/* DM_intro-paragraph - Styles for the introductory paragraph */
+.DM_intro-paragraph {
+  font-size: 1.25rem; /* Base font size */
+  color: #374151; /* Dark gray text color */
+  margin-bottom: 3rem; /* Bottom margin */
+  line-height: 1.625; /* Relaxed line height */
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto; /* Center the paragraph horizontally */
+}
+
+/* Responsive adjustment for intro paragraph font size */
+@media (min-width: 768px) {
+  .DM_intro-paragraph {
+    font-size: 1.5rem; /* Larger font size on larger screens */
+  }
+}
+
+/* DM_grid-container - Styles for the grid layout of methodology cards */
+.DM_grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr)); /* Single column on small screens */
+  gap: 2rem; /* Gap between grid items */
+}
+
+/* Responsive adjustments for grid columns */
+@media (min-width: 768px) {
+  .DM_grid-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Two columns on medium screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .DM_grid-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* Three columns on large screens */
+  }
+}
+
+/* DM_methodology-card - Styles for individual methodology cards */
+.DM_methodology-card {
+  background-color: #fff; /* White background */
+  border-radius: 0.75rem; /* Rounded corners */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  padding: 2rem; /* Inner padding */
+  border: 1px solid #f3f4f6; /* Light gray border */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+/* Hover effects for methodology cards */
+.DM_methodology-card:hover {
+  transform: scale(1.05); /* Slightly enlarge card on hover */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* Enhanced shadow on hover */
+}
+
+/* DM_card-title - Styles for the title within each card */
+.DM_card-title {
+  font-size: 1.875rem; /* Large font size for title */
+  font-weight: 700; /* Bold font weight */
+  color: #111827; /* Dark text color */
+  margin-bottom: 1rem; /* Bottom margin */
+  display: flex;
+  align-items: center; /* Align icon and text vertically */
+}
+
+/* DM_card-title i - Styles for icons within card titles */
+.DM_card-title i {
+  margin-right: 0.75rem; /* Space between icon and text */
+}
+
+/* DM_card-paragraph - Styles for general paragraphs within cards */
+.DM_card-paragraph {
+  color: #374151; /* Dark gray text color */
+  margin-bottom: 1rem; /* Bottom margin for paragraphs */
+  line-height: 1.625; /* Relaxed line height */
+}
+
+/* DM_card-paragraph-last - Styles for the last paragraph in a card (no bottom margin) */
+.DM_card-paragraph-last {
+  color: #374151; /* Dark gray text color */
+  line-height: 1.625; /* Relaxed line height */
+  margin-bottom: 0; /* Ensures no extra margin on the very last paragraph in a card */
+}
+
+/* Icon Colors - Specific colors for Font Awesome icons */
+.DM_icon-blue {
+  color: #3b82f6; /* Blue color */
+}
+
+.DM_icon-green {
+  color: #22c55e; /* Green color */
+}
+
+.DM_icon-indigo {
+  color: #6366f1; /* Indigo color */
+}
+
+/* Hero Section */
+.tech-hero {
+  background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+
+.tech-hero-container {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+}
+
+.tech-hero h1 {
+  font-size: 2.5rem;
+  margin: 0 0 15px 0;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tech-hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0.9;
+  color: #ffffff;
+}
+
+/* Tech Stack Section */
+.tech-stack-section {
+  padding: 40px 20px;
+}
+
+.tech-stack-container {
+  margin: 0 auto;
+}
+
+.tech-stack-section h2 {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #222222;
+}
+
+.tech-intro {
+  font-size: 1.1rem;
+  color: #555;
+  text-align: center;
+  margin-bottom: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
+}
+
+/* Tech Grid */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 2fr);
+  gap: 25px;
+}
+
+.tech-card {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-top: 4px solid #000066;
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.tech-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #000066, #3355aa);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.tech-card:hover::after {
+  transform: scaleX(1);
+}
+
+.tech-card-icon {
+  font-size: 2.5rem;
+  color: #000066;
+  margin-bottom: 20px;
+}
+
+.tech-card-title {
+  font-size: 1.4rem;
+  color: #222222;
+  margin: 0 0 20px 0;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.tech-card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tech-card-list li {
+  padding: 8px 0;
+  color: #555;
+  position: relative;
+  padding-left: 25px;
+  font-size: 0.95rem;
+}
+
+.tech-card-list li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: #000066;
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tech-hero h1 {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-hero {
+    padding: 80px 20px;
+  }
+
+  .tech-hero h1 {
+    font-size: 2rem;
+  }
+
+  .tech-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .tech-card {
+    padding: 25px;
+  }
+
+  .tech-card-icon {
+    font-size: 2rem;
+  }
+
+  .tech-card-title {
+    font-size: 1.3rem;
+  }
+}
