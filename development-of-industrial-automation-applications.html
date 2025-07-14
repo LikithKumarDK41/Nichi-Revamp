@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Industrial Automation/IoT | Nichi-In Software Solutions</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="draft.css" />
+  <style>
+    /* Basic styling for the zigzag section */
+    .zigzag-section {
+      padding: 60px 20px;
+      margin: 0 auto; /* Center the section */
+      overflow: hidden; /* Clear floats */
+    }
+
+    .zigzag-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 40px; /* Space between rows */
+      background-color: #f9f9f9; /* Light background for rows */
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      padding: 20px;
+    }
+
+    .zigzag-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .zigzag-text,
+    .zigzag-image {
+      flex: 1;
+      min-width: 300px; /* Minimum width before stacking */
+      padding: 20px;
+    }
+
+    .zigzag-image img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px; /* Rounded corners for images */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Reverse order for alternate rows */
+    .zigzag-row.reverse {
+      flex-direction: row-reverse;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .zigzag-row {
+        flex-direction: column; /* Stack on small screens */
+      }
+      .zigzag-row.reverse {
+        flex-direction: column; /* Keep stacked for reverse as well */
+      }
+      .zigzag-text,
+      .zigzag-image {
+        min-width: unset; /* Remove min-width on small screens */
+      }
+    }
+
+    /* Styling for the hero section */
+    .ia-iot-hero {
+      background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 200px; /* Ensure a decent height */
+    }
+
+    .ia-iot-hero-container {
+      margin: 0 auto;
+    }
+
+    .ia-iot-hero h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    /* General styling for headings and paragraphs within zigzag */
+    .zigzag-text h2 {
+        font-size: 2.2em;
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .zigzag-text h3 {
+        font-size: 1.6em;
+        color: #555;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .zigzag-text p {
+        font-size: 1.1em;
+        line-height: 1.6;
+        color: #666;
+        margin-bottom: 15px;
+    }
+
+    .tech-read-more {
+        display: inline-block;
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        margin-top: 10px;
+    }
+
+    .tech-read-more:hover {
+        background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header will load here -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <!-- Hero section for Industrial Automation/IoT -->
+    <section class="ia-iot-hero">
+      <div class="ia-iot-hero-container">
+        <h1>Development of Industrial Automation Applications</h1>
+      </div>
+    </section>
+
+    <!-- Main content for Development of Industrial Automation Applications -->
+    <section class="zigzag-section">
+
+      <div class="zigzag-row">
+        <div class="zigzag-text">
+          <h3>Data Visualization</h3>
+          <p>Development of applications using PLC programming to SCADA along with various other technologies like Python, Microsoft .Net to Modbus TCP/IP, Socket communication, MQTT etc. Some of the key features to consider is real-time monitoring, predictive analytics, and integration with existing systems etc. </p>
+        </div>
+        <div class="zigzag-image">
+          <img src="images/services/Data-visualisation.png" alt="Data Visualization Image">
+        </div>
+      </div>
+
+      <div class="zigzag-row reverse">
+        <div class="zigzag-text">
+          <h3>Data management & analysis</h3>
+          <p>A computerized maintenance management system (CMMS) can collect data such as inventory, maintenance history, and work order schedules. This data can be used to do analysis and improve efficiency.</p>
+        </div>
+        <div class="zigzag-image">
+          <img src="images/services/Data-management-analysis.png" alt="Data Management Image">
+        </div>
+      </div>
+
+      <div class="zigzag-row">
+        <div class="zigzag-text">
+          <h3>Machine learning</h3>
+          <p>Machine learning and predictive analytics can be used to analyse data generated by automation systems. This can help leaders make better decisions and improve predictive maintenance. </p>
+        </div>
+        <div class="zigzag-image">
+          <img src="images/services/Machine-lerning.png" alt="Machine Learning Image">
+        </div>
+      </div>
+    </section>
+    <!-- End Zigzag Section -->
+
+  </main>
+
+  <!-- Footer will load here -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript to Load Header & Footer -->
+  <script>
+    async function loadPartial(id, file) {
+      const res = await fetch(file);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+      // If header is loaded, initialize mobile navigation (assuming initMobileNavigation is in draft.js or header.html)
+      if (id === "header-placeholder" && typeof initMobileNavigation === 'function') {
+        initMobileNavigation();
+      }
+    }
+
+    loadPartial("header-placeholder", "header.html");
+    loadPartial("footer-placeholder", "footer.html");
+  </script>
+
+  <!-- Link to your existing draft.js if it contains other scripts -->
+  <script src="draft.js"></script>
+</body>
+
+</html>

@@ -4124,7 +4124,7 @@ main {
 }
 
 .OFS_hero-section h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 20px;
 }
@@ -4184,10 +4184,6 @@ main {
     flex-direction: row; /* Content on right, image on left */
 }
 
-.OFS_zigzag-right {
-    flex-direction: row-reverse; /* Content on left, image on right */
-}
-
 .OFS_zigzag-content {
     flex: 1; /* Takes up remaining space */
     padding: 20px;
@@ -4221,18 +4217,6 @@ main {
     color: #222222;
     line-height: 1.7;
     margin-bottom: 20px;
-}
-
-.OFS_tech-read-more {
-    display: inline-block;
-    color: #007bff;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-.OFS_tech-read-more:hover {
-    color: #0056b3;
 }
 
 /* Detailed Services Section */
@@ -5242,4 +5226,270 @@ main {
   .tech-card-title {
     font-size: 1.3rem;
   }
+}
+
+/* Styles for the zigzag section in Our Offerings */
+.OO_zigzag_section {
+  padding: 40px 20px;
+  margin: 0 auto;
+}
+
+.zigzag-row {
+  display: flex;
+  flex-direction: column; /* Default to column for mobile */
+  align-items: center;
+  margin-bottom: 60px;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .zigzag-row {
+    flex-direction: row; /* Row for desktop */
+    justify-content: space-between;
+  }
+}
+
+.zigzag-row.reverse {
+  flex-direction: column-reverse; /* Reverse column for mobile */
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .zigzag-row.reverse {
+    flex-direction: row-reverse; /* Reverse row for desktop */
+  }
+}
+
+.zigzag-text,
+.zigzag-image {
+  flex: 1;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .zigzag-text,
+  .zigzag-image {
+    text-align: left;
+  }
+}
+
+.zigzag-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.zigzag-text h3 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.zigzag-text p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.tech-read-more {
+  display: inline-flex;
+  align-items: center;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.tech-read-more:hover {
+  background-color: #0056b3;
+}
+
+.tech-read-more i {
+  margin-left: 8px;
+}
+
+/* Specific styles for the hero section, assuming it's part of the overall page design */
+.leadership-hero {
+  background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.leadership-hero .hero-content h2 {
+  font-size: 2.5em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Styles for the EBA_section (first content block) */
+.EBA_section {
+  padding: 40px 20px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #333;
+  font-size: 1.1em;
+}
+
+.EBA_section p {
+  margin-bottom: 15px;
+}
+
+/* Styles for the EBA_section2 and EBA_duo (1x2 grid section) */
+.EBA_section2 {
+  padding: 40px 20px;
+  margin: 0 auto;
+}
+
+.EBA_duo {
+  display: flex;
+  flex-direction: column; /* Default to column layout for mobile */
+  gap: 40px; /* Space between the two content blocks */
+}
+
+@media (min-width: 768px) {
+  .EBA_duo {
+    flex-direction: row; /* Row layout for desktop */
+    justify-content: space-between;
+  }
+}
+
+.EBA_duo > div { /* Targeting the implicit divs created by the H2 and P tags */
+  flex: 1; /* Each child takes equal space */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.EBA_duo h2 {
+  font-size: 1.8em;
+  color: #222222; /* A distinct color for headings in this section */
+  margin-bottom: 15px;
+}
+
+.EBA_duo p {
+  font-size: 1.05em;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Styles for the bot_dev section */
+.bot_dev {
+  padding: 40px 20px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.bot_dev h2 {
+  font-size: 2.2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.bot_dev p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.bot_intro {
+  padding: 40px 20px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #333;
+  font-size: 1.1em;
+}
+
+.bot_intro p {
+  margin-bottom: 15px;
+}
+
+.bot_dev-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.bot_dev-text {
+  flex: 1 1 55%;
+}
+
+.bot_dev-image {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.bot_dev-image img {
+  max-width: 100%;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.bot_dev-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bot_dev-wrapper {
+    flex-direction: column;
+  }
+
+  .bot_dev-text,
+  .bot_dev-image {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .bot_dev-text {
+    text-align: left;
+  }
+}
+
+
+/* Styles for the dynamically rendered sections */
+.bot_features,
+.bot_advantages {
+  padding: 40px 20px;
+  margin: 0 auto 40px auto; /* Add margin-bottom for spacing between sections */
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.bot_features h2,
+.bot_advantages h2 {
+  font-size: 2em;
+  color: #222222;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.bot_features p,
+.bot_advantages p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.bot_features p strong,
+.bot_advantages p strong {
+  color: #333;
 }

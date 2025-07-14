@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Development of Enterprise Business Applications | Nichi-In Software Solutions</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="draft.css" />
+</head>
+
+<body>
+  <!-- Header will load here -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <section class="leadership-hero">
+      <div class="hero-content">
+        <h2>Development of Enterprise Business Applications</h2>
+      </div>
+    </section>
+
+    <section class="EBA_section">
+      <p>We help you overcome business challenges with custom implementations
+        of web & mobile based solutions.</p>
+
+      <p>Nichi-In Software started its journey with Customized Desktop
+        and Client Server Applications for SMEs and large enterprises
+        covering various verticals. We augmented that with Web application
+        development skills and have developed and deployed a multitude of them over the years.</p>
+
+      <p>Our motive is to provide your organization with continuous
+        competitive advantage with not just the help of cutting edge
+        technologies and flexible processes but also amending the
+        deficiencies in the existing business processes of your
+        organization. Our dedicated team of experts strives to
+        align your business processes making it more cost effective and improving efficiency.</p>
+    </section>
+
+    <section class="EBA_section2">
+      <div class="EBA_duo">
+        <!-- Web Application Development Block -->
+        <div>
+          <h2>Web Application Development</h2>
+          <p>Nichi-In Software has experience of developing a wide range of web
+            applications ranging from simple to complex ones across various platforms
+            for both B2B and B2C customers.<br><br>
+            We lay emphasis on customer user experience, which
+            most of the times forms the single biggest factor in ensuring higher degree of customer
+            satisfaction.</p>
+        </div>
+
+        <!-- Desktop and Client Server Application Development Block -->
+        <div>
+          <h2>Desktop and Client Server Application Development</h2>
+          <p>
+            Nichi-In Software has experience of developing a wide
+            range of desktop and client-server applications ranging
+            from simple to complex ones across various platforms
+            for both B2B and B2C customers.<br><br>
+            We lay emphasis on customer user experience, which most of the times
+            forms the single biggest factor in ensuring higher degree of customer
+            satisfaction.
+          </p>
+          <p>
+            The following are some of the main focus areas
+            during desktop and client-server application development: <br><br>
+            <ul>
+              <li>User Experience</li>
+              <li>OS and Platform compatibility</li>
+              <li>Load</li>
+              <li>Interaction between the Front end and the Backend</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer will load here -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript to Load Header & Footer -->
+  <script>
+    async function loadPartial(id, file) {
+      const res = await fetch(file);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+      // If header is loaded, initialize mobile navigation
+      if (id === "header-placeholder") {
+        if (typeof initMobileNavigation === 'function') {
+          initMobileNavigation();
+        }
+      }
+    }
+
+    // Load header and footer when the page loads
+    window.addEventListener('DOMContentLoaded', (event) => {
+      loadPartial("header-placeholder", "header.html");
+      loadPartial("footer-placeholder", "footer.html");
+    });
+  </script>
+
+  <script src="draft.js"></script>
+</body>
+
+</html>

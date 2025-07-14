@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nichi-In Software - Industry Solutions</title>
+    <title>Industry-Focus | Nichi-In Software Solutions</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,7 +35,7 @@
         }
 
         .slider-wrapper {
-            height: 60vh; /* Reduced height */
+            height: 75vh;
             position: relative;
         }
 
@@ -47,16 +47,16 @@
             height: 8px;
             transform: scaleX(0%);
             transform-origin: center left;
-            background-color: #f4d35e;
+            background-color: #0b0564;
             will-change: transform;
             z-index: 10;
-            box-shadow: 0 0 15px rgba(244, 211, 94, 0.4);
+            box-shadow: 0 0 15px #3e85c766;
         }
 
         .progress-counter {
             position: absolute;
-            bottom: 1rem;
-            right: 2.5rem;
+            bottom: 1rem; /* Reverted to bottom */
+            right: 2.5rem; /* Reverted to right */
             color: #fff;
             z-index: 10;
             text-shadow: 5px 5px 15px rgb(0 0 0 / 15%);
@@ -76,7 +76,7 @@
             width: 100vw;
             height: 100%;
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* Changed to column to stack headings */
             justify-content: center;
             align-items: center;
             padding: 2rem;
@@ -86,22 +86,52 @@
             overflow: hidden;
         }
 
-        .industry-slide h1 {
-            font-family: 'Anton', sans-serif;
-            font-size: 8vw;
-            font-weight: 400;
+        /* Overlay for slider images */
+        .industry-slide::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3); /* Light blackish overlay */
+            z-index: 1; /* Ensure it's above the image but below text */
+        }
+
+        /* Styling for the new "Industry Focus" heading (now h1) */
+        .industry-slide .main-heading {
+            font-family: 'Inter', sans-serif;
+            font-size: 4rem; /* Made bigger */
+            font-weight: 700; /* Increased weight for prominence */
+            margin-bottom: 1rem; /* Space between "Industry Focus" and industry name */
+            z-index: 2; /* Ensure text is above overlay */
+            opacity: 0;
+            transform: translateY(-20px); /* Initial state for animation */
+            transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1), transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+        }
+
+        .industry-slide h2 { /* This is for the specific industry name (now h2) */
+            font-family: 'Inter', sans-serif;
+            font-size: 2.5rem; /* Made smaller */
+            font-weight: 600; /* Adjusted weight */
             text-transform: uppercase;
             line-height: 1.1;
-            letter-spacing: -2px;
+            letter-spacing: -1px; /* Adjusted letter spacing */
             margin: 0;
-            z-index: 2;
+            z-index: 2; /* Ensure text is above overlay */
             opacity: 0;
             transform: scale(0.9);
             transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1), transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
             text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
         }
 
-        .industry-slide.is-active h1 {
+        .industry-slide.is-active .main-heading {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .industry-slide.is-active h2 { /* Changed to h2 */
             opacity: 1;
             transform: scale(1);
         }
@@ -116,7 +146,7 @@
             background-size: cover;
             background-position: center;
             opacity: 1;
-            z-index: 1;
+            /* z-index: 1; This was causing the overlay to be behind the image */
             transition: opacity 0.6s ease-out;
             /* Placeholder image in case the actual image fails to load */
             background-image: url('https://placehold.co/1920x1080/4a4a4a/ffffff?text=Image+Loading...');
@@ -230,7 +260,7 @@
         }
 
         .vertical-content.show {
-            padding: 0 1.5rem 1.5rem;
+            padding: 1.5rem 1.5rem;
             max-height: 500px; /* Adjust as needed for content length */
             border-top-color: #eee;
         }
@@ -241,12 +271,18 @@
                 height: 50vh;
             }
 
-            .industry-slide h1 {
-                font-size: 10vw;
+            .industry-slide .main-heading {
+                font-size: 2.5rem; /* Adjusted for smaller screens */
+                margin-bottom: 0.5rem;
+            }
+
+            .industry-slide h2 { /* Changed to h2 */
+                font-size: 7vw; /* Adjusted for smaller screens */
             }
 
             .progress-counter {
                 font-size: 1.5rem;
+                bottom: 1rem;
                 right: 1.5rem;
             }
 
@@ -274,12 +310,18 @@
                 height: 40vh;
             }
 
-            .industry-slide h1 {
-                font-size: 12vw;
+            .industry-slide .main-heading {
+                font-size: 2rem; /* Adjusted for smaller screens */
+                margin-bottom: 0.3rem;
+            }
+
+            .industry-slide h2 { /* Changed to h2 */
+                font-size: 9vw; /* Adjusted for smaller screens */
             }
 
             .progress-counter {
                 font-size: 1.2rem;
+                bottom: 0.8rem;
                 right: 1rem;
             }
 
@@ -303,18 +345,39 @@
             <div class="slider-wrapper">
                 <div class="progress-bar"></div>
                 <div class="progress-counter">
-                    <h1>0%</h1>
+                    <span>0%</span>
                 </div>
 
                 <div class="scroller">
                     <!-- Industry Slides -->
-                    <section class="industry-slide" data-index="0"><h1>Manufacturing</h1></section>
-                    <section class="industry-slide" data-index="1"><h1>Retail</h1></section>
-                    <section class="industry-slide" data-index="2"><h1>Automotive</h1></section>
-                    <section class="industry-slide" data-index="3"><h1>Healthcare</h1></section>
-                    <section class="industry-slide" data-index="4"><h1>Fintech</h1></section>
-                    <section class="industry-slide" data-index="5"><h1>Education</h1></section>
-                    <section class="industry-slide" data-index="6"><h1>Travel & Tourism</h1></section>
+                    <section class="industry-slide" data-index="0">
+                        <h1 class="main-heading">Industry Focus</h1>
+                        <h2>Manufacturing</h2>
+                    </section>
+                    <section class="industry-slide" data-index="1">
+                        <h1 class="main-heading">Industry Focus</h1>
+                        <h2>Retail</h2>
+                    </section>
+                    <section class="industry-slide" data-index="2">
+                        <h1 class="main-heading">Industry Focus</h1>
+                        <h2>Automotive</h2>
+                    </section>
+                    <section class="industry-slide" data-index="3">
+                        <h1 class="main-heading">Industry Focus</h1>
+                        <h2>Healthcare</h2>
+                    </section>
+                    <section class="industry-slide" data-index="4">
+                        <h1 class="main-heading">Industry Focus</h1>
+                        <h2>Fintech</h2>
+                    </section>
+                    <section class="industry-slide" data-index="5">
+                        <h1 class="main-heading">Industry Focus</h1>
+                        <h2>Education</h2>
+                    </section>
+                    <section class="industry-slide" data-index="6">
+                        <h1 class="main-heading">Industry Focus</h1>
+                        <h2>Travel & Tourism</h2>
+                    </section>
                 </div>
 
                 <div class="pagination-dots">
@@ -437,7 +500,7 @@
         document.addEventListener("DOMContentLoaded", () => {
             const container = document.querySelector(".slider-wrapper");
             const scroller = document.querySelector(".scroller");
-            const progressCounter = document.querySelector(".progress-counter h1");
+            const progressCounterSpan = document.querySelector(".progress-counter span");
             const progressBar = document.querySelector(".progress-bar");
             const paginationDotsContainer = document.querySelector(".pagination-dots");
             const industrySlides = Array.from(document.querySelectorAll(".industry-slide"));
@@ -513,7 +576,7 @@
             const updateUI = () => {
                 const percentage = maxScrollX === 0 ? 0 : (currentScrollX / maxScrollX) * 100;
                 targetProgressScale = percentage / 100;
-                progressCounter.textContent = `${Math.round(percentage)}%`;
+                progressCounterSpan.textContent = `${Math.round(percentage)}%`;
 
                 currentProgressScale = lerp(currentProgressScale, targetProgressScale, smoothFactor);
                 progressBar.style.transform = `scaleX(${currentProgressScale})`;

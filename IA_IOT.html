@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Industrial Automation/IoT | Nichi-In Software Solutions</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="draft.css" />
+  <style>
+    /* Basic styling for the zigzag section */
+    .zigzag-section {
+      padding: 40px 20px;
+      overflow: hidden; /* Clear floats */
+    }
+
+    .zigzag-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 40px; /* Space between rows */
+    }
+
+    .zigzag-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .zigzag-text,
+    .zigzag-image {
+      flex: 1;
+      min-width: 300px; /* Minimum width before stacking */
+    }
+
+    .zigzag-image img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px; /* Rounded corners for images */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Reverse order for alternate rows */
+    .zigzag-row.reverse {
+      flex-direction: row-reverse;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .zigzag-row {
+        flex-direction: column; /* Stack on small screens */
+      }
+      .zigzag-row.reverse {
+        flex-direction: column; /* Keep stacked for reverse as well */
+      }
+      .zigzag-text,
+      .zigzag-image {
+        min-width: unset; /* Remove min-width on small screens */
+      }
+    }
+
+    /* Styling for the hero section */
+    .ia-iot-hero {
+      background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 300px; /* Ensure a decent height */
+    }
+
+    .ia-iot-hero-container {
+      margin: 0 auto;
+    }
+
+    .ia-iot-hero h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Original IA_IOT_Section styling (adjust as needed) */
+    .IA_IOT_Section {
+        padding: 40px 20px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        text-align: center;
+    }
+
+    .IA_IOT_Section h3 {
+        font-size: 1.8em;
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .IA_IOT_Section p {
+        font-size: 1.1em;
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    .IA_IOT_Section img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+    }
+
+    .tech-read-more {
+        display: inline-block;
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .tech-read-more:hover {
+        background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header will load here -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <!-- Hero section for Industrial Automation/IoT -->
+    <section class="ia-iot-hero">
+      <div class="ia-iot-hero-container">
+        <h1>INDUSTRIAL AUTOMATION/IOT Applications</h1>
+      </div>
+    </section>
+
+    <!-- Zigzag Section Example -->
+    <section class="zigzag-section">
+      <div class="zigzag-row">
+        <div class="zigzag-text">
+          <h2>Development of Industrial Automation Applications</h2>
+          <p>Enables effective and agile customer experiences for SMEs or large enterprises, in the process of becoming future Digital enterprises. Our solutions focus on integrating cutting-edge automation tools to optimize workflows, reduce human error, and provide real-time data insights for informed decision-making.</p>
+          <a href="#" class="tech-read-more">
+            Read More <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="zigzag-image">
+          <img src="images/services/Industrial-Automation-application.png" alt="Industrial Automation Application">
+        </div>
+      </div>
+
+      <div class="zigzag-row reverse">
+        <div class="zigzag-text">
+          <h2>Development of Industrial IoT Applications</h2>
+          <p>The Internet of Things (IoT) is a network of physical objects or things that are connected to the internet. As internet requires data input through human interactions, the concept of Internet of Things – IoT – has evolved to evade the human to machine interactions.</p>
+          <a href="#" class="tech-read-more">
+            Read More <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="zigzag-image">
+          <img src="images/services/IOT-A.png" alt="Industrial IoT Application">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer will load here -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript to Load Header & Footer -->
+  <script>
+    async function loadPartial(id, file) {
+      const res = await fetch(file);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+      // If header is loaded, initialize mobile navigation (assuming initMobileNavigation is in draft.js or header.html)
+      if (id === "header-placeholder" && typeof initMobileNavigation === 'function') {
+        initMobileNavigation();
+      }
+    }
+
+    loadPartial("header-placeholder", "header.html");
+    loadPartial("footer-placeholder", "footer.html");
+  </script>
+
+  <!-- Link to your existing draft.js if it contains other scripts -->
+  <script src="draft.js"></script>
+</body>
+
+</html>
