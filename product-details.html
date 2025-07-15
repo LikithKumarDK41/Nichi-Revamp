@@ -56,7 +56,7 @@
             padding: 40px 20px; /* Adjusted padding for a cleaner look */
             margin: 0 auto;
             min-height: calc(100vh - 100px); /* Adjust based on header/footer height */
-            text-align: left; /* Align text left for a natural flow */
+            /* Removed text-align: left here to allow individual components to align */
         }
 
         /* Styling for dynamically loaded content */
@@ -83,16 +83,16 @@
             width: 100%; /* Ensure it's responsive within its column */
             max-width: 300px; /* Smaller size */
             height: auto;
-            margin-bottom: 20px; /* Space below image when stacked */
             object-fit: cover;
             border-radius: 8px; /* Added for better aesthetics */
+            margin-bottom: 0; /* Remove default margin-bottom to avoid extra space in flex */
         }
 
         .product-details-section p {
             font-size: 1.15rem;
             color: #4a5568;
             line-height: 1.8;
-            margin-bottom: 25px;
+            margin-bottom: 25px; /* Default margin for paragraphs */
         }
 
         .product-details-section ul {
@@ -170,26 +170,51 @@
         }
 
         /* Wrapper for image and features, specifically for Kisanbandhu */
+        /* This old class is now deprecated for Kisanbandhu and replaced by .kisanbandhu-main-content-wrapper */
         .image-features-wrapper {
+            display: none; /* Hide this old wrapper for Kisanbandhu */
+        }
+
+        /* Specific styles for Kisanbandhu content layout */
+        .kisanbandhu-main-content-wrapper {
             display: flex;
-            flex-wrap: wrap; /* Allows image and features to stack on small screens */
-            gap: 20px; /* Default gap */
-            flex: 1 1 50%; /* Takes up similar space as features-column */
-            align-items: flex-start; /* Align items to the top */
+            flex-direction: column; /* Default to column on small screens */
+            align-items: center; /* Center items when stacked */
+            gap: 30px; /* Space between text and image */
+            margin: 0 auto; /* Center the wrapper itself */
+            max-width: 1000px; /* Max width for content */
+            padding: 20px; /* Add some padding */
         }
 
-        /* Adjust gap for Kisanbandhu layout to bring image closer to features */
-        .image-features-wrapper.kisanbandhu-layout {
-            gap: 0px; /* Reduced gap to push image further left */
+        .kisanbandhu-text-content p {
+            margin-bottom: 0; /* Remove default paragraph margin within this flex item */
+            text-align: left; /* Center text for mobile */
         }
 
-        /* Specific order for Kisanbandhu image and features */
-        .kisanbandhu-layout .features-column {
-            order: 1; /* Features first */
-        }
+        @media (min-width: 768px) {
+            .kisanbandhu-main-content-wrapper {
+                flex-direction: row; /* Row direction on larger screens */
+                justify-content: center; /* Center content horizontally */
+                align-items: center; /* Align items vertically in the center */
+            }
 
-        .kisanbandhu-layout .product-image-inline-features {
-            order: 2; /* Image second */
+            .kisanbandhu-text-content {
+                flex: 1; /* Take up available space */
+                padding-right: 30px; /* Space between text and image */
+                max-width: 60%; /* Limit text width */
+                text-align: left; /* Align text left on larger screens */
+            }
+
+            .kisanbandhu-image-content {
+                flex: 0 0 auto; /* Don't grow, take natural width */
+                max-width: 40%; /* Limit image width */
+            }
+
+            .kisanbandhu-image-content .product-image-inline-features {
+                width: 100%; /* Make image responsive within its container */
+                height: auto;
+                display: block; /* Ensure no extra space below image */
+            }
         }
 
 
@@ -249,10 +274,6 @@
             }
 
             /* Stack image and features on smaller screens for Kisanbandhu */
-            .image-features-wrapper {
-                flex-direction: column;
-                align-items: center;
-            }
             .product-image-inline-features {
                 margin-bottom: 20px; /* Ensure space when stacked */
             }
@@ -355,7 +376,8 @@
             "Kisanbandhu": {
                 title: "Kisanbandhu",
                 image: "images/products/KB-1.png", /* Assuming .png extension */
-                description: "Kisanbandu is a digital platform which creates a marketplace to connect farmers with distribution centres to sell their agricultural produce/ dairy products to consumers at fair price. This application has 3 stakeholders namely farmers, distribution centres and the consumers.",
+                // Modified description to be 3 lines
+                description: "Kisanbandhu is a digital platform which creates a marketplace to connect farmers with distribution centres to sell their agricultural produce/ dairy products to consumers at fair price.<br>This application has 3 stakeholders namely farmers, distribution centres and the consumers.<br>It streamlines the supply chain and ensures fair pricing.",
                 features: [
                     "Direct connection between farmers and distribution centers",
                     "Marketplace for agricultural produce and dairy products",
@@ -464,13 +486,18 @@
                         // Conditional rendering for Kisanbandhu image and features layout
                         if (decodedProductName === "Kisanbandhu") {
                             mainImageHtml = ''; // No main image for Kisanbandhu as it's placed inline
-                            featuresAndImageLayoutHtml = `
-                                <div class="image-features-wrapper kisanbandhu-layout">
-                                    <div class="features-column">
-                                        ${featuresListHtml}
+                            // Construct the new flex layout for Kisanbandhu content
+                            detailsContainer.innerHTML = `
+                                <div class="kisanbandhu-main-content-wrapper">
+                                    <div class="kisanbandhu-text-content">
+                                        <p>${product.description}</p>
                                     </div>
-                                    <img src="${product.image}" alt="${product.title} Image" onerror="this.onerror=null;this.src='https://placehold.co/300x200/cccccc/333333?text=Image+Not+Found';" class="product-image-inline-features">
+                                    <div class="kisanbandhu-image-content">
+                                        <img src="${product.image}" alt="${product.title} Image" onerror="this.onerror=null;this.src='https://placehold.co/300x200/cccccc/333333?text=Image+Not+Found';" class="product-image-inline-features">
+                                    </div>
                                 </div>
+                                ${youtubeVideoContent}
+                                ${visitLinkContent}
                             `;
                         } else {
                             // Default layout for other products
@@ -480,17 +507,16 @@
                                     ${featuresListHtml}
                                 </div>
                             `;
+                            detailsContainer.innerHTML = `
+                                ${mainImageHtml}
+                                <p>${product.description}</p>
+                                <div class="features-video-wrapper">
+                                    ${featuresAndImageLayoutHtml}
+                                    ${youtubeVideoContent}
+                                </div>
+                                ${visitLinkContent}
+                            `;
                         }
-
-                        detailsContainer.innerHTML = `
-                            ${mainImageHtml}
-                            <p>${product.description}</p>
-                            <div class="features-video-wrapper">
-                                ${featuresAndImageLayoutHtml}
-                                ${youtubeVideoContent}
-                            </div>
-                            ${visitLinkContent}
-                        `;
                         document.title = `${product.title} Details | Nichi-In Software Solutions`;
                     } else {
                         // Product not found, clear hero and show message
