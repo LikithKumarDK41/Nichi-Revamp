@@ -19,7 +19,8 @@
   <style>
     /* Basic styling for the zigzag section */
     .zigzag-section {
-      padding: 60px 20px;
+      /* Increased padding for a nicer look */
+      padding: 40px 0; /* Top/bottom 80px, left/right 40px */
       margin: 0 auto; /* Center the section */
       overflow: hidden; /* Clear floats */
     }
@@ -42,6 +43,8 @@
     .zigzag-image {
       flex: 1;
       min-width: 300px; /* Minimum width before stacking */
+      /* Added padding to the content within each zigzag row */
+      padding: 40px 20px;
     }
 
     .zigzag-image img {
@@ -68,6 +71,7 @@
       .zigzag-text,
       .zigzag-image {
         min-width: unset; /* Remove min-width on small screens */
+        padding: 20px; /* Slightly less padding on small screens */
       }
     }
 
