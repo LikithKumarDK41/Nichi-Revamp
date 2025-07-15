@@ -176,46 +176,44 @@
         }
 
         /* Specific styles for Kisanbandhu content layout */
-        .kisanbandhu-main-content-wrapper {
-            display: flex;
-            flex-direction: column; /* Default to column on small screens */
-            align-items: center; /* Center items when stacked */
-            gap: 30px; /* Space between text and image */
-            margin: 0 auto; /* Center the wrapper itself */
-            max-width: 1000px; /* Max width for content */
-            padding: 20px; /* Add some padding */
-        }
+.kisanbandhu-main-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  margin: 40px auto;
+}
 
         .kisanbandhu-text-content p {
             margin-bottom: 0; /* Remove default paragraph margin within this flex item */
             text-align: left; /* Center text for mobile */
         }
 
-        @media (min-width: 768px) {
-            .kisanbandhu-main-content-wrapper {
-                flex-direction: row; /* Row direction on larger screens */
-                justify-content: center; /* Center content horizontally */
-                align-items: center; /* Align items vertically in the center */
-            }
+@media (min-width: 768px) {
+  .kisanbandhu-main-content-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
 
-            .kisanbandhu-text-content {
-                flex: 1; /* Take up available space */
-                padding-right: 30px; /* Space between text and image */
-                max-width: 60%; /* Limit text width */
-                text-align: left; /* Align text left on larger screens */
-            }
+.kisanbandhu-text-content {
+  flex: 1;
+  text-align: left;
+  padding-right: 20px;
+}
 
-            .kisanbandhu-image-content {
-                flex: 0 0 auto; /* Don't grow, take natural width */
-                max-width: 40%; /* Limit image width */
-            }
+.kisanbandhu-image-content {
+  flex-shrink: 0;
+  align-self: flex-start;
+}
 
-            .kisanbandhu-image-content .product-image-inline-features {
-                width: 100%; /* Make image responsive within its container */
-                height: auto;
-                display: block; /* Ensure no extra space below image */
-            }
-        }
+.kisanbandhu-image-content .product-image-inline-features {
+  max-width: 200px;
+  height: auto;
+  display: block;
+}
+}
+
 
 
         .link-wrapper {
@@ -377,7 +375,7 @@
                 title: "Kisanbandhu",
                 image: "images/products/KB-1.png", /* Assuming .png extension */
                 // Modified description to be 3 lines
-                description: "Kisanbandhu is a digital platform which creates a marketplace to connect farmers with distribution centres to sell their agricultural produce/ dairy products to consumers at fair price.<br>This application has 3 stakeholders namely farmers, distribution centres and the consumers.<br>It streamlines the supply chain and ensures fair pricing.",
+                description: "Kisanbandhu is a digital platform which creates a marketplace to connect farmers with distribution centres to sell their agricultural produce/ dairy products to consumers at fair price.<br><br>This application has 3 stakeholders namely farmers, distribution centres and the consumers.<br>",
                 features: [
                     "Direct connection between farmers and distribution centers",
                     "Marketplace for agricultural produce and dairy products",
@@ -386,7 +384,7 @@
                     "Streamlines the supply chain"
                 ],
                 // Bonus: Custom tagline and hero background
-                tagline: "Kisanbandhu", // Added a tagline
+                tagline: "An App friendly to Farmers", // Added a tagline
                 heroStyle: "background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);" // Applied to all products
             }
         };

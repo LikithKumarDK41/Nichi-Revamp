@@ -2802,8 +2802,8 @@ body {
 }
 
 .leadership-hero h1 {
-  font-size: 3rem;
-  font-weight: 800;
+  font-size: 2.5rem;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
@@ -3559,8 +3559,8 @@ main {
 }
 
 .onsite_hero h1 {
-  font-size: 3rem;
-  font-weight: 800;
+  font-size: 2.5rem;
+  font-weight: 700;
   color: white;
   margin-bottom: 20px;
   letter-spacing: 1px;
@@ -3603,8 +3603,8 @@ main {
 }
 
 .offshore-hero h1 {
-  font-size: 3rem;
-  font-weight: 800;
+  font-size: 2.5rem;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
@@ -4345,7 +4345,7 @@ main {
         }
 
         .products-hero h2 {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 15px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -4489,7 +4489,7 @@ main {
 }
 
 .aboutus-hero h1 {
-  font-size: 3.5em;
+  font-size: 2.5em;
   margin: 0;
   font-weight: 800;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -4906,7 +4906,7 @@ main {
 
 /* DM_hero-container h1 - Styles for the main heading in the hero */
 .DM_hero-container h1 {
-  font-size: 2.25rem; /* Base font size for heading */
+  font-size: 2.5rem; /* Base font size for heading */
   font-weight: 800; /* Extra bold font weight */
   letter-spacing: -0.025em; /* Tight letter spacing */
 }
@@ -4914,7 +4914,7 @@ main {
 /* Responsive adjustment for hero heading font size on medium screens and up */
 @media (min-width: 768px) {
   .DM_hero-container h1 {
-    font-size: 3rem; /* Larger font size for heading on larger screens */
+    font-size: 2.5rem; /* Larger font size for heading on larger screens */
   }
 }
 
