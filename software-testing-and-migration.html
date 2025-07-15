@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Industrial Automation/IoT | Nichi-In Software Solutions</title>
+  <title>Software Testing and Migration | Nichi-In Software Solutions</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,15 +19,17 @@
   <style>
     /* Basic styling for the zigzag section */
     .zigzag-section {
-      padding: 40px 20px;
+      padding: 60px 20px;
+      margin: 0 auto; /* Center the section */
       overflow: hidden; /* Clear floats */
     }
 
     .zigzag-row {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
+      align-items: start;
       margin-bottom: 40px; /* Space between rows */
+      border-radius: 10px;
     }
 
     .zigzag-row:last-child {
@@ -68,7 +70,7 @@
     }
 
     /* Styling for the hero section */
-    .ia-iot-hero {
+    .testing-migration-hero {
       background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
       color: white;
       text-align: center;
@@ -79,45 +81,35 @@
       min-height: 300px; /* Ensure a decent height */
     }
 
-    .ia-iot-hero-container {
+    .testing-migration-hero-container {
       margin: 0 auto;
     }
 
-    .ia-iot-hero h1 {
-      font-size: 3em;
+    .testing-migration-hero h1 {
+      font-size: 2.5em;
       margin-bottom: 10px;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
-    /* Original IA_IOT_Section styling (adjust as needed) */
-    .IA_IOT_Section {
-        padding: 40px 20px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 40px;
-        text-align: center;
-    }
-
-    .IA_IOT_Section h3 {
-        font-size: 1.8em;
-        color: #333;
+    /* General styling for headings and paragraphs within zigzag */
+    .zigzag-text h2 {
+        font-size: 2.2em;
+        color: #222222;
         margin-bottom: 15px;
     }
 
-    .IA_IOT_Section p {
-        font-size: 1.1em;
-        line-height: 1.6;
-        color: #555;
-        margin-bottom: 20px;
+    .zigzag-text h3 {
+        font-size: 1.5em;
+        color: #222222;
+        margin-top: 20px;
+        margin-bottom: 10px;
     }
 
-    .IA_IOT_Section img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        margin-top: 20px;
+    .zigzag-text p {
+        font-size: 1.1em;
+        line-height: 1.6;
+        color: #666;
+        margin-bottom: 15px;
     }
 
     .tech-read-more {
@@ -128,6 +120,7 @@
         border-radius: 5px;
         text-decoration: none;
         transition: background-color 0.3s ease;
+        margin-top: 10px;
     }
 
     .tech-read-more:hover {
@@ -141,41 +134,42 @@
   <div id="header-placeholder"></div>
 
   <main>
-    <!-- Hero section for Industrial Automation/IoT -->
-    <section class="ia-iot-hero">
-      <div class="ia-iot-hero-container">
-        <h1>INDUSTRIAL AUTOMATION/IOT Applications</h1>
+    <!-- Hero section for Software Testing and Migration -->
+    <section class="testing-migration-hero">
+      <div class="testing-migration-hero-container">
+        <h1>SOFTWARE TESTING AND MIGRATION</h1>
       </div>
     </section>
 
-    <!-- Zigzag Section Example -->
+    <!-- Main content for Software Testing and Migration -->
     <section class="zigzag-section">
       <div class="zigzag-row">
         <div class="zigzag-text">
-          <h2>Development of Industrial Automation Applications</h2>
-          <p>Enables effective and agile customer experiences for SMEs or large enterprises, in the process of becoming future Digital enterprises. Our solutions focus on integrating cutting-edge automation tools to optimize workflows, reduce human error, and provide real-time data insights for informed decision-making.</p>
-          <a href="development-of-industrial-automation-applications.html" class="tech-read-more">
+          <h3>Testing and Quality Assurance</h3>
+          <p>Nichi-In Software’s pronounced Testing and Quality Assurance occupies one of the key steps in Software Development Life Cycle that shapes the speed and ease of adaptability of applications and products, ensuring delivery of world class Quality services.</p>
+          <a href="testing-quality-assurance.html" class="tech-read-more">
             Read More <i class="fas fa-arrow-right"></i>
           </a>
         </div>
         <div class="zigzag-image">
-          <img src="images/services/Industrial-Automation-application.png" alt="Industrial Automation Application">
+          <img src="images/services/Testing-and-Quality-Assurance.jpg" alt="Testing and Quality Assurance Image">
         </div>
       </div>
 
       <div class="zigzag-row reverse">
         <div class="zigzag-text">
-          <h2>Development of Industrial IoT Applications</h2>
-          <p>The Internet of Things (IoT) is a network of physical objects or things that are connected to the internet. As internet requires data input through human interactions, the concept of Internet of Things – IoT – has evolved to evade the human to machine interactions.</p>
-          <a href="iot-application-development.html" class="tech-read-more">
+          <h3>Migration and Legacy System Modernization</h3>
+          <p>In this rapidly changing business scenario and equations, it is pertinent to adapt and be abreast with new technology and platforms for facing the challenges. Migration and re-engineering of software applications from one environment to another has become inevitable. Legacy system modernization has become an ongoing task for many of the enterprises across the globe.</p>
+          <a href="migration-legacy-system-modernization.html" class="tech-read-more">
             Read More <i class="fas fa-arrow-right"></i>
           </a>
         </div>
         <div class="zigzag-image">
-          <img src="images/services/IOT-A.png" alt="Industrial IoT Application">
+          <img src="images/services/MIGRATION-LEGACY-SYSTEM-MODERNIZATION.jpg" alt="Migration and Legacy System Modernization Image">
         </div>
       </div>
     </section>
+    <!-- End Zigzag Section -->
 
   </main>
 

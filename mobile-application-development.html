@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Application Development | Nichi-In Software Solutions</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="draft.css" />
+
+  <style>
+    /* Base Styles */
+    :root {
+      --primary-color: #2563eb;
+      --primary-dark: #1d4ed8;
+      --dark-color: #1e293b;
+      --light-color: #f8fafc;
+      --gray-color: #64748b;
+      --light-gray: #e2e8f0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark-color);
+      line-height: 1.6;
+      background-color: #ffffff;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .container {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 6rem 0;
+      background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
+      color: white;
+      text-align: center;
+    }
+
+    .hero-content {
+      margin: 0 auto;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-content p {
+      font-size: 1.25rem;
+      opacity: 0.9;
+    }
+
+    /* Content Sections */
+    .content-section {
+      padding: 40px 0;
+    }
+
+        /* Flex container */
+    .mobile-flex-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    }
+
+    /* Text column */
+    .mobile-text {
+    flex: 1 1 55%;
+    }
+
+    /* Image column */
+    .mobile-image {
+    flex: 1 1 40%;
+    display: flex;
+    justify-content: center;
+    }
+
+    .mobile-image img {
+    max-width: 100%;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .mobile-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Responsive stacking */
+    @media (max-width: 768px) {
+    .mobile-flex-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .mobile-text,
+    .mobile-image {
+        flex: 1 1 100%;
+    }
+
+    .mobile-image img {
+        max-width: 90%;
+        margin-top: 20px;
+    }
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 2.25rem;
+      color: var(--dark-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      color: var(--gray-color);
+      margin: 0 auto;
+    }
+
+    .section-text {
+      margin: 0 auto 2rem;
+      color: var(--gray-color);
+    }
+
+    /* Services List */
+    .services-list {
+      margin: 0 auto;
+    }
+
+    .service-item {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--light-gray);
+      padding-bottom: 2rem;
+    }
+
+    .service-item:last-child {
+      border-bottom: none;
+    }
+
+    .service-header {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      padding: 1rem 0;
+      justify-content: space-between;
+    }
+
+    .service-header-inner {
+      display: flex;
+      align-items: center;
+    }
+
+    .service-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: rgba(37, 99, 235, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      color: var(--primary-color);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .service-title {
+      font-size: 1.5rem;
+      color: var(--dark-color);
+    }
+
+    .service-toggle {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      transition: transform 0.3s ease;
+    }
+
+    .service-item.active .service-toggle {
+      transform: rotate(45deg);
+    }
+
+    .service-content {
+      padding-left: 3.5rem;
+      display: none;
+    }
+
+    .service-content.show {
+      display: block;
+    }
+
+    .service-description {
+      color: var(--gray-color);
+      margin-top: 1rem;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 4rem 0;
+      }
+      
+      .hero-content h1 {
+        font-size: 2.25rem;
+      }
+      
+      .hero-content p {
+        font-size: 1.1rem;
+      }
+      
+      .section-title {
+        font-size: 1.75rem;
+      }
+      
+      .service-title {
+        font-size: 1.3rem;
+      }
+      
+      .service-content {
+        padding-left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header will load here -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <!-- Hero section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Mobile Application Development</h1>
+          <p>We design and build Native and Hybrid/Cross Platform Web and Mobile Applications for SMEs to Large Enterprises, to effectively digitize their operations for better accuracy and maintainability.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="content-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Empowering Your Business with Mobile Solutions</h2>
+        </div>
+        <p class="section-text">
+          Today's mobile platforms are very robust in terms of capabilities and performance enabling new breed of applications to be developed and enable the existing applications to be migrated to mobile platform, thereby increasing the user experience and reach. We design and build mobile applications for SMEs to large enterprises for Native and Hybrid/Cross platforms. From initial UI / UX design through launch in the app store, our team works closely with you in building custom mobile applications.
+        </p>
+      </div>
+    </section>
+
+<!-- Why Choose Us Section -->
+<section class="content-section bg-light">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Why Nichi-In Software's Mobile Development Services?</h2>
+    </div>
+    <div class="mobile-flex-wrapper">
+      <div class="mobile-text">
+        <p class="section-text">
+          High performance mobile app development fosters businesses of varied domains and verticals. We boast highly skilled and experienced technical specialists who are adept at creating Cross platform/Hybrid mobile app solutions using HTML5, CSS3, JavaScript, Titanium, Phonegap, etc. Our rigorous mobile application testing ensures high quality app development.
+        </p>
+      </div>
+      <div class="mobile-image">
+        <img src="images/services/mobile.png" alt="Mobile Development">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Services Section -->
+    <section class="content-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Our Mobile Development Offerings</h2>
+        </div>
+        
+        <div class="services-list">
+          <!-- Service 1 -->
+          <div class="service-item">
+            <div class="service-header" onclick="toggleService(this)">
+              <div class="service-header-inner">
+                <div class="service-icon">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3 class="service-title">Native Mobile Application Development</h3>
+              </div>
+              <span class="service-toggle">+</span>
+            </div>
+            <div class="service-content">
+              <p class="service-description">
+                Native apps deliver the best device troth, user experience and hardware specific features. In Nichi-In Software we provide native application development services for all the main mobile platforms – Android, Windows and iOS to deliver the best device.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Service 2 -->
+          <div class="service-item">
+            <div class="service-header" onclick="toggleService(this)">
+              <div class="service-header-inner">
+                <div class="service-icon">
+                  <i class="fas fa-code"></i>
+                </div>
+                <h3 class="service-title">Cross Platform/Hybrid Apps Development</h3>
+              </div>
+              <span class="service-toggle">+</span>
+            </div>
+            <div class="service-content">
+              <p class="service-description">
+                Hybrid mobile apps using HTML5, CSS3, JavaScript, Flutter, React Native, Ionic, Kotlin etc.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Service 3 -->
+          <div class="service-item">
+            <div class="service-header" onclick="toggleService(this)">
+              <div class="service-header-inner">
+                <div class="service-icon">
+                  <i class="fas fa-building"></i>
+                </div>
+                <h3 class="service-title">Enterprise Mobility Services</h3>
+              </div>
+              <span class="service-toggle">+</span>
+            </div>
+            <div class="service-content">
+              <p class="service-description">
+                Customized enterprise applications for various industries and functions on Mobile.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Service 4 -->
+          <div class="service-item">
+            <div class="service-header" onclick="toggleService(this)">
+              <div class="service-header-inner">
+                <div class="service-icon">
+                  <i class="fas fa-bug"></i>
+                </div>
+                <h3 class="service-title">Mobile Application Testing</h3>
+              </div>
+              <span class="service-toggle">+</span>
+            </div>
+            <div class="service-content">
+              <p class="service-description">
+                Testing of already developed Mobile applications on various mobile platforms – Android, Windows and iOS.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Service 5 -->
+          <div class="service-item">
+            <div class="service-header" onclick="toggleService(this)">
+              <div class="service-header-inner">
+                <div class="service-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="service-title">Mobile Application Data Analytics</h3>
+              </div>
+              <span class="service-toggle">+</span>
+            </div>
+            <div class="service-content">
+              <p class="service-description">
+                To collect, consolidate and analyze the data through the mobile channel using Analytics.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Service 6 -->
+          <div class="service-item">
+            <div class="service-header" onclick="toggleService(this)">
+              <div class="service-header-inner">
+                <div class="service-icon">
+                  <i class="fas fa-exchange-alt"></i>
+                </div>
+                <h3 class="service-title">Mobile Application Migration services</h3>
+              </div>
+              <span class="service-toggle">+</span>
+            </div>
+            <div class="service-content">
+              <p class="service-description">
+                Migration of existing mobile applications to different platforms.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Service 7 -->
+          <div class="service-item">
+            <div class="service-header" onclick="toggleService(this)">
+              <div class="service-header-inner">
+                <div class="service-icon">
+                  <i class="fas fa-cloud"></i>
+                </div>
+                <h3 class="service-title">Enterprise Mobility – Cloud</h3>
+              </div>
+              <span class="service-toggle">+</span>
+            </div>
+            <div class="service-content">
+              <p class="service-description">
+                Customized enterprise applications for various industries and functions that run on Mobile with Cloud backend.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer will load here -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript -->
+  <script>
+    // Load header and footer
+    async function loadPartial(id, file) {
+      const res = await fetch(file);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+    }
+
+    loadPartial("header-placeholder", "header.html");
+    loadPartial("footer-placeholder", "footer.html");
+
+    // Toggle service content
+    function toggleService(element) {
+      const serviceItem = element.closest('.service-item');
+      const content = serviceItem.querySelector('.service-content');
+      const toggle = serviceItem.querySelector('.service-toggle');
+      
+      // Toggle active class on service item
+      serviceItem.classList.toggle('active');
+      
+      // Toggle content visibility
+      if (content.classList.contains('show')) {
+        content.classList.remove('show');
+        toggle.textContent = '+';
+      } else {
+        content.classList.add('show');
+        toggle.textContent = '-';
+      }
+    }
+  </script>
+</body>
+</html>
