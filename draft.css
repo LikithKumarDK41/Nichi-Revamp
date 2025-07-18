@@ -777,7 +777,8 @@ body {
 /* Technological Expertise */
 
 .tech-modern-section {
-  background: linear-gradient(to bottom right, #f1f5f9, #e2f0ff);
+  /* background: linear-gradient(to bottom right, #f1f5f9, #e2f0ff); */
+  background: #27538c;
   padding: 100px 24px;
   font-family: 'Inter', sans-serif;
 }
@@ -810,7 +811,8 @@ body {
 
 /* Content styling */
 .content-panel {
-  background: rgba(255, 255, 255, 0.75);
+  /* background: rgba(255, 255, 255, 0.75); */
+  background: rgb(248, 248, 248);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 40px;
@@ -958,7 +960,7 @@ body {
 /* Industries Section */
 
 .industry-modern-section {
-  background: linear-gradient(to right, #f9fbff, #eef2f7);
+  background: #27538c;
   padding: 100px 20px;
   font-family: 'Inter', sans-serif;
 }
@@ -972,13 +974,13 @@ body {
 .industry-title {
   font-size: 2.75rem;
   font-weight: 800;
-  color: #1e293b;
+  color: #fff;
   margin-bottom: 12px;
 }
 
 .industry-subtitle {
   font-size: 1.15rem;
-  color: #475569;
+  color: #fff;
   max-width: 750px;
   margin: 0 auto 60px;
 }
@@ -1123,8 +1125,13 @@ body {
 
 .testimonials-section {
   padding: 40px 20px;
- background: linear-gradient(to right, #f9fbff, #eef2f7);
+  background: #27538c;
+ /* background: linear-gradient(to right, #f9fbff, #eef2f7); */
   text-align: center;
+}
+
+.testimonials-section  h2{
+  color:#fff;
 }
 
 .testimonials-slider-main {
@@ -1225,7 +1232,7 @@ body {
 }
 
 .testimonial-dot-main.active {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   transform: scale(1.2);
 }
 
@@ -1245,7 +1252,8 @@ body {
 /* Our Members Section */
 .our-members-modern {
   padding: 100px 20px;
-  background: linear-gradient(120deg, #f4f6f8, #e9eff5);
+  background: #27538c;
+  /* background: linear-gradient(120deg, #f4f6f8, #e9eff5); */
   font-family: 'Inter', sans-serif;
   text-align: center;
 }
@@ -1258,13 +1266,13 @@ body {
 .members-heading {
   font-size: 2.6rem;
   font-weight: 800;
-  color: #1f2937;
+  color: #fff;
   margin-bottom: 16px;
 }
 
 .members-subtext {
   font-size: 1.15rem;
-  color: #475569;
+  color: #fff;
   margin-bottom: 50px;
 }
 
