@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Nichi-In Software Solutions</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/assets/css/header_footer/header_footer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom CSS (Vanilla CSS equivalent of Tailwind styles) -->
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f3f4f6; /* bg-gray-100 */
+    }
+
+    .container {
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 20px; /* px-4 */
+      padding-right: 20px; /* px-4 */
+      padding-top: 2rem; /* py-8 */
+      padding-bottom: 2rem; /* py-8 */
+    }
+
+    /* Services Hero Section */
+    .services-hero {
+      background: linear-gradient(135deg, #5077b1, #000066, #380597);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 80px;
+      margin-bottom: 2rem; /* mb-8 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+    }
+
+    .services-hero h2 {
+      font-size: 2.5rem; /* text-5xl */
+      font-weight: 700; /* font-extrabold */
+      letter-spacing: -0.05em; /* tracking-tight */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* drop-shadow-lg */
+    }
+
+    @media (min-width: 768px) {
+      .services-hero h2 {
+        font-size: 2.5rem; /* md:text-6xl */
+      }
+    }
+
+    /* Main Heading for Services Description */
+    .main-heading {
+      font-size: 1.5rem; /* text-3xl */
+      font-weight: 600; /* font-bold */
+      text-align: center;
+      margin-bottom: 3rem; /* mb-12 */
+      color: #1a202c; /* text-gray-900 */
+      line-height: 1.25; /* leading-tight */
+    }
+
+    @media (min-width: 768px) {
+      .main-heading {
+        font-size: 1.5rem; /* md:text-4xl */
+      }
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr; /* grid-cols-1 */
+      gap: 2rem; /* gap-8 */
+    }
+
+    @media (min-width: 768px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(4, 1fr); /* lg:grid-cols-4 */
+      }
+    }
+
+    /* Individual Service Section Styling */
+    .service-section {
+      background-color: #ffffff;
+      padding: 2rem; /* p-8 */
+      border-radius: 0.75rem; /* rounded-xl */
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.3s ease-in-out; /* transition-all duration-300 ease-in-out */
+    }
+
+    .service-section:hover {
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* hover:shadow-2xl */
+      transform: translateY(-8px); /* hover:-translate-y-2 (approx) */
+    }
+
+    .service-section div[class*="text-"] { /* Targeting the icon wrapper */
+      font-size: 3rem; /* text-5xl */
+      margin-bottom: 1.5rem; /* mb-6 */
+    }
+
+    .service-section h3 {
+      font-size: 1.5rem; /* text-2xl */
+      font-weight: 600; /* font-semibold */
+      margin-bottom: 1rem; /* mb-4 */
+      color: #1a202c; /* text-gray-900 */
+    }
+
+    .service-section p {
+      font-size: 1rem; /* text-gray-600 */
+      color: #4b5563; /* text-gray-600 */
+      margin-bottom: 1.5rem; /* mb-6 */
+      flex-grow: 1;
+      text-align: left;
+    }
+
+    .service-section .tech-read-more .fas {
+      margin-left: 0.5rem; /* ml-2 */
+    }
+
+    /* Specific button colors */
+    .service-section:nth-child(1) .tech-read-more {
+      background-color: #2563eb; /* bg-blue-600 */
+    }
+    .service-section:nth-child(1) .tech-read-more:hover {
+      background-color: #1d4ed8; /* hover:bg-blue-700 */
+    }
+    .service-section:nth-child(1) .tech-read-more:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #3b82f6, 0 0 0 4px rgba(59, 130, 246, 0.5); /* focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 */
+    }
+
+    .service-section:nth-child(2) .tech-read-more {
+      background-color: #16a34a; /* bg-green-600 */
+    }
+    .service-section:nth-child(2) .tech-read-more:hover {
+      background-color: #15803d; /* hover:bg-green-700 */
+    }
+    .service-section:nth-child(2) .tech-read-more:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #22c55e, 0 0 0 4px rgba(34, 197, 94, 0.5); /* focus:ring-2 focus:ring-green-500 focus:ring-offset-2 */
+    }
+
+    .service-section:nth-child(3) .tech-read-more {
+      background-color: #9333ea; /* bg-purple-600 */
+    }
+    .service-section:nth-child(3) .tech-read-more:hover {
+      background-color: #7e22ce; /* hover:bg-purple-700 */
+    }
+    .service-section:nth-child(3) .tech-read-more:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #a855f7, 0 0 0 4px rgba(168, 85, 247, 0.5); /* focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 */
+    }
+
+    .service-section:nth-child(4) .tech-read-more {
+      background-color: #dc2626; /* bg-red-600 */
+    }
+    .service-section:nth-child(4) .tech-read-more:hover {
+      background-color: #b91c1c; /* hover:bg-red-700 */
+    }
+    .service-section:nth-child(4) .tech-read-more:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #ef4444, 0 0 0 4px rgba(239, 68, 68, 0.5); /* focus:ring-2 focus:ring-red-500 focus:ring-offset-2 */
+    }
+
+    .service-section img {
+      max-width: 100%;
+      height: 12rem; /* h-48 */
+      object-fit: cover; /* object-cover */
+      border-radius: 0.5rem; /* rounded-lg */
+      margin-top: 1.5rem; /* mt-6 */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* shadow-md */
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800 leading-relaxed">
+  <!-- Header will load here -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <!-- Services Hero Section -->
+    <section class="services-hero">
+      <h2>Our Services</h2>
+    </section>
+
+    <div class="container">
+      <!-- Main Heading for Services Description -->
+      <h2 class="main-heading">
+        We help you overcome business challenges with custom implementations of web & mobile based solutions.
+      </h2>
+
+      <!-- Services Grid -->
+      <div class="services-grid">
+
+        <!-- Offshore Services Section -->
+        <section class="service-section">
+          <div class="text-blue-600">
+            <i class="fas fa-globe"></i> <!-- Globe icon for Offshore Services -->
+          </div>
+          <h3>Offshore Services</h3>
+          <p>
+            Nichi-In Software is a nimble footed custom application services provider that always keeps its services up to date with the latest market trends, providing the customers all over the world with optimal services for a wide spectrum of verticals.
+          </p>
+          <a href="Offshore_Services.html" class="tech-read-more">
+            Read More <i class="fas fa-arrow-right"></i>
+          </a>
+          <img src="../assets/img/services/Offshore-Services-1.jpg" alt="Offshore Services">
+        </section>
+
+        <!-- Onsite Consulting Section -->
+        <section class="service-section">
+          <div class="text-green-600">
+            <i class="fas fa-handshake"></i> <!-- Handshake icon for Onsite Consulting -->
+          </div>
+          <h3>Onsite Consulting</h3>
+          <p>
+            We depute bilingual professionals with technical skills at client place. Provide onsite support including software development, testing and other consulting services.
+          </p>
+          <a href="Onsite_Consulting.html" class="tech-read-more">
+            Read More <i class="fas fa-arrow-right"></i>
+          </a>
+          <img src="../assets/img/services/2.gif" alt="Onsite Consulting">
+        </section>
+
+        <!-- Managed IT Services Section -->
+        <section class="service-section">
+          <div class="text-purple-600">
+            <i class="fas fa-cogs"></i> <!-- Cogs icon for Managed IT Services -->
+          </div>
+          <h3>Managed IT Services</h3>
+          <p>
+            We support our customers in Application customization and maintenance in Oracle DBA and EBS services, BI Tool Integration, L2/L3 Technical support services.
+          </p>
+          <a href="Managed_IT_Services.html" class="tech-read-more">
+            Read More <i class="fas fa-arrow-right"></i>
+          </a>
+          <img src="../assets/img/services/IT-Support-Service.jpg" alt="Managed IT Services">
+        </section>
+
+        <!-- Product Development Section -->
+        <section class="service-section">
+          <div class="text-red-600">
+            <i class="fas fa-lightbulb"></i> <!-- Lightbulb icon for Product Development -->
+          </div>
+          <h3>Product Development</h3>
+          <p>
+            We develop products with cutting edge technology to help our customers reduce efforts and cost with seamless user experience.
+          </p>
+          <a href="Product_Development.html" class="tech-read-more">
+            Read More <i class="fas fa-arrow-right"></i>
+          </a>
+          <img src="../assets/img/services/3.jpg" alt="Product Development">
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer will load here -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript to Load Header & Footer -->
+  <script>
+    async function loadPartial(id, file) {
+      try {
+        const res = await fetch(file);
+        if (!res.ok) {
+          console.error(`Failed to load ${file}: ${res.statusText}`);
+          return;
+        }
+        const html = await res.text();
+        document.getElementById(id).innerHTML = html;
+        // If header is loaded, initialize mobile navigation
+        if (id === "header-placeholder") {
+          // Assuming initMobileNavigation is defined in draft.js or similar
+          if (typeof initMobileNavigation === 'function') {
+            initMobileNavigation();
+          } else {
+            console.warn("initMobileNavigation function not found. Mobile navigation might not be initialized.");
+          }
+        }
+      } catch (error) {
+        console.error(`Error loading partial ${file}:`, error);
+      }
+    }
+
+    // Load header and footer when the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', () => {
+        loadPartial("header-placeholder", "../assets/header_footer/header.html");
+        loadPartial("footer-placeholder", "../assets/header_footer/footer.html");
+    });
+  </script>
+
+  <!-- Assuming draft.js contains initMobileNavigation and other scripts -->
+  <script src="../assets/js/draft.js"></script>
+</body>
+
+</html>

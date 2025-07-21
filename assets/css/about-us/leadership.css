@@ -1,0 +1,285 @@
+/* =============== Leadership Section =============== */
+
+.leadership-hero {
+  background: linear-gradient(135deg, #5077b1, #000066, #380597);
+  padding: 40px 20px;
+  color: white;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.leadership-hero .hero-content {
+  margin: 0 auto;
+}
+
+.leadership-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.leadership-hero p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .leadership-hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .leadership-hero p {
+    font-size: 1rem;
+  }
+}
+
+
+
+.leadership-section {
+  padding: 40px 20px;
+  background-color: #f9f9fb;
+  font-family: 'Inter', sans-serif;
+}
+
+.leadership-content-wrapper {
+  margin: 0 auto; /* Centered content */
+}
+
+/* Section Title */
+.leadership-section-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #222222;
+  text-align: center;
+  padding: 40px 0px 0px
+}
+
+.leadership-intro-text {
+  font-size: 1.1rem;
+  color: #444;
+  text-align: left !important;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.leadership-intro-text1 {
+  font-size: 1.1rem;
+  color: #444;
+  text-align: left !important;
+  line-height: 1.7;
+}
+
+
+/* Category Title */
+.leadership-category-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  color: #222222;
+  border-left: 6px solid #000066;
+  padding-left: 12px;
+}
+
+/* =============== Grid Layout =============== */
+.leadership-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem; /* Tight gap between cards */
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+/* For a single card in a grid, center it */
+.leadership-grid.single-card {
+  grid-template-columns: 1fr; /* Force single column */
+  justify-content: center; /* Center the grid container */
+  display: flex; /* Use flexbox to center the single item */
+}
+
+/* =============== Team Card =============== */
+.team-member-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  width: 280px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Passport-style Photo */
+.member-photo {
+  width: 120px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+/* Name & Title */
+.member-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000066;
+  margin-bottom: 0.4rem;
+}
+
+.member-title {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  flex-grow: 1; /* Allow title to take available space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Details Link */
+.member-details-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #000066;
+  text-decoration: none;
+  background-color: #e9f3ff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.member-details-link:hover {
+  background-color: #000066;
+  color: #fff;
+}
+
+.member-details-link i {
+  transition: transform 0.3s ease;
+}
+
+.member-details-link:hover i {
+  transform: translateX(4px);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.linkedin-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #0a66c2;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.linkedin-link i {
+  font-size: 1rem;
+}
+
+.linkedin-link:hover {
+  background-color: #004182;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* =============== Responsive =============== */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .leadership-intro-text {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .leadership-category-title {
+    font-size: 1.4rem;
+  }
+
+  .leadership-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.75rem; /* Smaller gap for mobile */
+  }
+
+  .team-member-card {
+    width: 250px; /* Adjusted width for smaller screens */
+    height: 350px; /* Adjusted height for smaller screens */
+    padding: 1.2rem 0.8rem;
+  }
+
+  .member-photo {
+    width: 100px;
+    height: 130px;
+  }
+
+  .member-name {
+    font-size: 1.1rem;
+  }
+
+  .member-title {
+    font-size: 0.9rem;
+  }
+
+  .member-details-link {
+    font-size: 0.85rem;
+    padding: 7px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .leadership-grid {
+    grid-template-columns: 1fr; /* Stack cards on very small screens */
+    gap: 1rem;
+  }
+
+  .team-member-card {
+    width: 90%; /* Make cards take almost full width */
+    max-width: 300px; /* Max width to prevent overly wide cards on small screens */
+    height: auto; /* Auto height for better content fit */
+    padding: 1.5rem 1rem;
+  }
+  .member-title {
+    min-height: unset; /* Remove min-height on small screens */
+  }
+}
+
+/* Dropdown container */
+.nav-links .dropdown {
+  position: relative;
+}

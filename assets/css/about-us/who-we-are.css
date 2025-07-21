@@ -3073,6 +3073,57 @@ body {
   position: relative;
 }
 
+/* Hide dropdown menu initially */
+/* This is already defined above, but ensuring consistency */
+/* .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 220px;
+  z-index: 1000;
+  padding: 10px 0;
+  border-radius: 4px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+} */
+
+/* Style the dropdown items */
+/* This is already defined above, but ensuring consistency */
+/* .dropdown-menu li {
+  display: block;
+  padding: 8px 20px;
+  white-space: nowrap;
+} */
+
+/* .dropdown-menu li a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  transition: background 0.2s ease;
+} */
+
+/* .dropdown-menu li a:hover {
+  background-color: #f0f0f0;
+} */
+
+/* Show dropdown on hover */
+/* This is already defined above, but ensuring consistency */
+/* .dropdown:hover .dropdown-menu {
+  display: block;
+} */
+
+/* Optional: caret icon styling */
+/* This is already defined above, but ensuring consistency */
+/* .dropdown > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+} */
+
+/* ========================================================================== */
+/* Who We Are Page Specific Styles */
+/* ========================================================================== */
 
 /* Main content area padding */
 main {

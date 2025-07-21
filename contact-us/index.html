@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Nichi-In Software Solutions</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/header_footer/header_footer.css" />
+    <style>
+        /* Basic Flexbox styles for the desired layout */
+        .contact-section {
+            padding: 40px 20px 20px;
+            margin: 0 auto; /* Center the content */
+        }
+
+        .contact-section h3 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .contact-section p {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .contact-info-grid {
+            display: flex;
+            flex-wrap: wrap; /* Allows items to wrap to the next line */
+            justify-content: center; /* Center items horizontally */
+            gap: 30px; /* Space between items */
+            padding: 20px 0;
+        }
+
+        .contact-item {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            padding: 25px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-height: 220px; /* Ensure consistent height */
+            box-sizing: border-box;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .contact-item i {
+            font-size: 2.5rem;
+            color: #007bff; /* A nice blue color */
+            margin-bottom: 15px;
+        }
+
+        .contact-item h4 {
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .contact-item p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 5px;
+            text-align: center; /* Ensure text is centered within the item */
+        }
+
+        /* First row: 4 items */
+        .contact-item:nth-child(1),
+        .contact-item:nth-child(2),
+        .contact-item:nth-child(3),
+        .contact-item:nth-child(4) {
+            flex: 1 1 calc(25% - 30px); /* 4 items per row, accounting for gap */
+            max-width: calc(25% - 30px); /* Ensure max width for 4 items */
+        }
+
+        /* Second row: 3 items, alternating */
+        .contact-item:nth-child(5),
+        .contact-item:nth-child(6),
+        .contact-item:nth-child(7) {
+            flex: 1 1 calc(33.33% - 30px); /* 3 items per row, accounting for gap */
+            max-width: calc(33.33% - 30px); /* Ensure max width for 3 items */
+        }
+
+        /* Responsive adjustments for 4+3 grid */
+        @media (max-width: 1024px) {
+            .contact-item:nth-child(1),
+            .contact-item:nth-child(2),
+            .contact-item:nth-child(3),
+            .contact-item:nth-child(4),
+            .contact-item:nth-child(5),
+            .contact-item:nth-child(6),
+            .contact-item:nth-child(7) {
+                flex: 1 1 calc(50% - 30px); /* 2 items per row on medium screens */
+                max-width: calc(50% - 30px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-item {
+                flex: 1 1 calc(100% - 30px); /* 1 item per row on smaller screens */
+                max-width: calc(100% - 30px);
+            }
+            .contact-section h3 {
+                font-size: 2rem;
+            }
+            .contact-section p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Hero section specific styles */
+        .contact-hero {
+            background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 250px;
+            margin-top: 80px;
+        }
+
+        .contact-hero h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Styles for the new sections */
+        .location-section, .form-section, .career-enquiry-section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .location-section h2, .form-section h3, .career-enquiry-section h4 {
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 400px; /* Fixed height for the map */
+            background-color: #f0f0f0;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* New Flex container for form and enquiries */
+        .contact-details-and-form-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px; /* Gap between the two main columns */
+            padding: 20px 20px 40px;
+            margin: 0 auto;
+        }
+
+        .form-section, .enquiries-group {
+            flex: 1 1 calc(50% - 20px); /* Each takes roughly half width */
+            box-sizing: border-box;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .form-section {
+            text-align: left; /* Align form labels/inputs to left */
+        }
+
+        .enquiries-group {
+            /* Removed display: flex; to stack elements naturally */
+            /* Removed flex-direction: column; as it's not needed without display: flex; */
+            justify-content: flex-start; /* Align items to the start */
+            gap: 20px; /* Space between individual enquiry sections */
+            text-align: left; /* Align enquiry text to left */
+            padding: 30px; /* Add padding to the group itself */
+        }
+
+        .contact-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .contact-form .full-width {
+            grid-column: 1 / -1; /* Spans across all columns */
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form input[type="tel"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            box-sizing: border-box; /* Include padding in width */
+            font-family: Inter;
+        }
+
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+            margin-bottom: 25px;
+            grid-column: 1 / -1;
+        }
+
+        .checkbox-container input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .checkbox-container label {
+            margin-bottom: 0;
+            font-weight: 400;
+            color: #555;
+        }
+
+        .submit-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none; /* For the anchor tag */
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Improved styling for individual enquiry sections within the group */
+        .career-enquiry-section {
+            background-color: #fff; /* White background for each section */
+            border: 1px solid #e0e0e0;
+            border-radius: 10px; /* Slightly smaller radius for internal sections */
+            padding: 20px; /* Internal padding */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex; /* Use flexbox for icon and text alignment */
+            flex-direction: column; /* Stack content vertically */
+            align-items: flex-start; /* Align content to the start */
+            text-align: left;
+
+            margin-bottom: 30px;
+        }
+
+        .career-enquiry-section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .career-enquiry-section h4 {
+            font-size: 1.5rem; /* Slightly smaller heading */
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Space between icon and text */
+        }
+
+        .career-enquiry-section h4 i {
+            font-size: 1.8rem; /* Icon size within heading */
+            color: #007bff;
+            margin-bottom: 0; /* Reset margin from general i rule */
+        }
+
+        .career-enquiry-section p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 5px; /* Space between paragraphs */
+            text-align: left;
+        }
+
+        /* Responsive adjustments for form and enquiries group */
+        @media (max-width: 1024px) {
+            .form-section, .enquiries-group {
+                flex: 1 1 calc(100% - 20px); /* Stack columns on medium screens */
+                max-width: 100%;
+            }
+            .contact-form {
+                grid-template-columns: 1fr; /* Single column on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header will load here -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="contact-hero">
+            <h2>Contact Us</h2>
+        </div>
+
+        <section class="contact-section">
+            <h3>Get in Touch with Us</h3>
+            <p>Thank you for your interest in Nichi-In Software and our services.
+                Please feel free to approach us with any questions that you might
+                have. We will be glad to hear from you!</p>
+
+            <div class="contact-info-grid">
+                <div class="contact-item">
+                    <i class="fas fa-headset"></i> <!-- Icon for Marketing & Sales -->
+                    <h4>Marketing & Sales Enquiries:</h4>
+                    <p>Email: sales@nichi.com</p>
+                    <p>Telephone: +91-80-26720882/3/4</p>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-globe"></i> <!-- Icon for Website Enquiries -->
+                    <h4>Website related Enquiries:</h4>
+                    <p>Email: webmaster@nichi.com</p>
+                    <p>Fax: +91-80-26726861</p>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-info-circle"></i> <!-- Icon for General Information -->
+                    <h4>General Information & Enquiries:</h4>
+                    <p>Email: contact@nichi.com</p>
+                    <p>Telephone: +91-80-26720882/3/4</p>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-building"></i> <!-- Icon for Corporate Office -->
+                    <h4>Corporate Office:</h4>
+                    <p>#813, Dr. Puneeth Rajkumar Road, Hosakerehalli, Banashankari 3rd Stage, Bengaluru – 560 085, India</p>
+                </div>
+
+                <!-- Second row items start here -->
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i> <!-- Icon for Development Center 2 -->
+                    <h4>Development Center 2:</h4>
+                    <p>#812, 1st Floor, Dr. Puneeth Rajkumar Road, Hosakerehalli, Banashankari 3rd Stage, Bengaluru - 560 085, India</p>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-flag-usa"></i> <!-- Icon for USA Office -->
+                    <h4>Nichi-In Software Solutions – USA:</h4>
+                    <p>1095 Evergreen Circle, Suite 200-458 The Woodlands, Texas 77380, USA</p>
+                    <p>Dir : +1(832) 241 2236</p>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-plane"></i> <!-- Icon for Middle East Office -->
+                    <h4>Nichi-In Software Solutions – Middle East:</h4>
+                    <p>Q1-08-005A, SAIF Zone, Sharjah-UAE</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Location Section -->
+        <section class="location-section">
+            <h2>Our Location</h2>
+            <div class="map-container">
+                <!-- Google Maps Embed - Replace with your actual map embed code -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.608664508616!2d77.53747757380961!3d12.932854915729118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3e38642b6843%3A0x7dbdde9667e8c8ba!2sNichi%20In%20Software%20Solutions%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1752060267508!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+        <!-- New Flex Container for Form and Enquiries -->
+        <div class="contact-details-and-form-wrapper">
+            <!-- Write To Us Section (Contact Form) -->
+            <section class="form-section">
+                <h3>Write To Us</h3>
+                <form class="contact-form">
+                    <div>
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
+                    </div>
+                    <div>
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Your last name" required>
+                    </div>
+                    <div class="full-width">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your email address" required>
+                    </div>
+                    <div class="full-width">
+                        <label for="mobile">Mobile No</label>
+                        <input type="tel" id="mobile" name="mobile" placeholder="Your mobile number">
+                    </div>
+                    <div class="full-width">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Your message" required></textarea>
+                    </div>
+                    <div class="checkbox-container full-width">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <label for="consent">I consent to Nichi-In Software collecting my details through this form.</label>
+                    </div>
+                    <div class="full-width">
+                        <button type="submit" class="submit-btn">
+                            Submit <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <div class="enquiries-group">
+                <!-- Career Information & Enquiries Section -->
+                <section class="career-enquiry-section">
+                    <h4><i class="fas fa-user-tie"></i> Career Information & Enquiries :</h4>
+                    <p>Email: hrd@nichi.com</p>
+                </section>
+
+                <!-- General Enquiries (from original file, if different from above) -->
+                <section class="career-enquiry-section">
+                    <h4><i class="fas fa-question-circle"></i> General Enquiries:</h4>
+                    <p>Email: contact@nichi.com</p>
+                    <p>Fax: +91-80-26726861</p>
+                </section>
+            </div>
+        </div>
+
+    </main>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript to Load Header & Footer -->
+  <script>
+    async function loadPartial(id, file) {
+      const res = await fetch(file);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+      // If header is loaded, initialize mobile navigation
+      if (id === "header-placeholder") {
+        // Assuming initMobileNavigation is defined in draft.js or elsewhere
+        // If not, this line might cause an error, but it's consistent with aboutus.html
+        if (typeof initMobileNavigation === 'function') {
+          initMobileNavigation();
+        }
+      }
+    }
+
+  loadPartial("header-placeholder", "../assets/header_footer/header.html");
+  loadPartial("footer-placeholder", "../assets/header_footer/footer.html");
+
+  function initMobileNavigation() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  }
+</script>
+
+  <!-- Assuming draft.js contains any necessary JS for the page, consistent with aboutus.html -->
+  <script src="../assets/js/draft.js"></script>
+</body>
+
+</html>
