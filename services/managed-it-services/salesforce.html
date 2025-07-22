@@ -13,119 +13,10 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="draft.css">
 
-  <!-- Custom CSS -->
-  <style>
-    /* General Body Styles */
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      color: #333;
-      line-height: 1.6;
-    }
+  <link rel="stylesheet" href="/assets/css/header_footer/header_footer.css" />
+  <link rel="stylesheet" href="/assets/css/services/managed-it-services/salesforce.css" />
 
-    .Odoo-hero h2 {
-      font-size: 2.5em;
-      margin: 0;
-    }
-
-    /* Introduction Sections */
-    .sf_intro1,
-    .sf_intro2 {
-      background-color: #f9f9f9;
-      padding: 20px;
-      margin-bottom: 30px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      font-size: 1.15rem;
-    }
-
-    .sf_intro2 h2 {
-      color: #222222;
-      margin-top: 0;
-      font-size: 2rem;
-    }
-
-    /* Zigzag Section Styles */
-    .sf_zigzag_section {
-      padding: 40px 20px;
-    }
-
-    .sf_zigzag_section h2 {
-      text-align: center;
-      color: #222222;
-      font-size: 2.5em;
-      margin-bottom: 50px;
-    }
-
-    .zigzag-item {
-      display: flex;
-      flex-direction: column;
-      align-items: start;
-      margin-bottom: 60px;
-      gap: 30px;
-    }
-
-    .zigzag-item:nth-child(even) {
-      flex-direction: column-reverse; /* For mobile, keep consistent */
-    }
-
-    .zigzag-content,
-    .zigzag-image {
-      flex: 1;
-      width: 100%;
-    }
-
-    .zigzag-content h3 {
-      color: #222222;
-      font-size: 1.8em;
-      margin-bottom: 15px;
-    }
-
-    .zigzag-content ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .zigzag-content ul li {
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%230056b3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>') no-repeat left center;
-      background-size: 18px;
-      padding-left: 20px;
-      margin-bottom: 10px;
-    }
-
-    .zigzag-image img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    }
-
-    /* Desktop styles for zigzag */
-    @media (min-width: 768px) {
-      .zigzag-item {
-        flex-direction: row;
-        text-align: left;
-      }
-
-      .zigzag-item:nth-child(even) {
-        flex-direction: row-reverse;
-      }
-
-      .zigzag-content {
-        padding-right: 30px;
-      }
-
-      .zigzag-item:nth-child(even) .zigzag-content {
-        padding-right: 0;
-        padding-left: 30px;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -160,7 +51,7 @@
           </ul>
         </div>
         <div class="zigzag-image">
-          <img src="images/Salesforce/Salesforce-Implementation.png" alt="Salesforce Implementation">
+          <img src="../../assets/img/services/Salesforce/Salesforce-Implementation.png" alt="Salesforce Implementation">
         </div>
       </div>
 
@@ -175,7 +66,7 @@
           </ul>
         </div>
         <div class="zigzag-image">
-          <img src="images/Salesforce/Salesforce-Customization-Development.png" alt="Salesforce Customization & Development">
+          <img src="../../assets/img/services/Salesforce/Salesforce-Customization-Development.png" alt="Salesforce Customization & Development">
         </div>
       </div>
 
@@ -190,7 +81,7 @@
           </ul>
         </div>
         <div class="zigzag-image">
-          <img src="images/Salesforce/Salesforce-Support-Maintenance.png" alt="Salesforce Support & Maintenance">
+          <img src="../../assets/img/services/Salesforce/Salesforce-Support-Maintenance.png" alt="Salesforce Support & Maintenance">
         </div>
       </div>
 
@@ -205,7 +96,7 @@
           </ul>
         </div>
         <div class="zigzag-image">
-          <img src="images/Salesforce/Salesforce-Integration-Services.png" alt="Salesforce Integration Services">
+          <img src="../../assets/img/services/Salesforce/Salesforce-Integration-Services.png" alt="Salesforce Integration Services">
         </div>
       </div>
 
@@ -220,7 +111,7 @@
           </ul>
         </div>
         <div class="zigzag-image">
-          <img src="images/Salesforce/Salesforce-Managed-Services.png" alt="Salesforce Managed Services">
+          <img src="../../assets/img/services/Salesforce/Salesforce-Managed-Services.png" alt="Salesforce Managed Services">
         </div>
       </div>
     </section>
@@ -255,11 +146,11 @@
 
     // Load the header and footer when the DOM is fully loaded
     document.addEventListener('DOMContentLoaded', () => {
-      loadPartial("header-placeholder", "header.html");
-      loadPartial("footer-placeholder", "footer.html");
+        loadPartial("header-placeholder", "../../assets/header_footer/header.html");
+        loadPartial("footer-placeholder", "../../assets/header_footer/footer.html");
     });
   </script>
-  <script src="draft.js"></script>
+  <script src="../../assets/js/draft.js"></script>
 </body>
 
 </html>

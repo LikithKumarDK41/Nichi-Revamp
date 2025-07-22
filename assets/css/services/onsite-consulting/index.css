@@ -1,0 +1,180 @@
+.aboutus-hero {
+  background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+  margin-top: 80px;
+}
+
+.aboutus-hero-container {
+  margin: 0 auto;
+}
+
+.aboutus-hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.aboutus-hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .aboutus-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .aboutus-hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
+
+.aboutus-section {
+  padding: 40px 20px;
+  background-color: #ebedf1;
+  text-align: center;
+}
+
+
+.infrastructure-section {
+  padding: 40px 20px;
+  background-color: #f0f4f8;
+}
+
+.aboutus-section .section-title,
+.infrastructure-section .section-title {
+  font-size: 2.5rem;
+  margin-bottom: 24px;
+  color: #222222;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Paragraph Styles */
+.aboutus-section p,
+.infrastructure-section p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+/*===============================
+  Zigzag Layout
+===============================*/
+.zigzag-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.zigzag-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.zigzag-text {
+  flex: 1 1 50%;
+  text-align: left;
+}
+
+.zigzag-text p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.zigzag-image {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.zigzag-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.zigzag-image img:hover { transform: scale(1.03); transition: transform 0.3s ease; }
+
+/*===============================
+  Responsive Design
+===============================*/
+@media (max-width: 768px) {
+  .aboutus-section,
+  .infrastructure-section {
+    padding: 60px 15px;
+  }
+
+  .aboutus-section .section-title,
+  .infrastructure-section .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .zigzag-row {
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 12px;
+  }
+
+  .zigzag-row.reverse {
+    flex-direction: column;
+  }
+
+  .zigzag-text,
+  .zigzag-image {
+    flex: 1 1 100%;
+    text-align: center;
+    padding: 0;
+  }
+
+  .zigzag-text p {
+    text-align: left;
+    padding: 0 1rem;
+  }
+
+  .zigzag-image img {
+    width: 100%;
+    max-width: 90vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutus-section,
+  .infrastructure-section {
+    padding: 40px 10px;
+  }
+
+  .aboutus-section .section-title,
+  .infrastructure-section .section-title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .zigzag-text p {
+    font-size: 1rem;
+    padding: 0 0.75rem;
+  }
+
+  .zigzag-image img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+}

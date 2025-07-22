@@ -1,0 +1,64 @@
+.leadership-hero {
+  background: linear-gradient(135deg, #5077b1, #000066, #380597);
+  padding: 40px 20px;
+  color: white;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.leadership-hero h2 {
+  font-size: 2.5rem;       /* Bigger font size */
+  font-weight: 700;      /* Bold for emphasis */
+  margin: 0;             /* Remove default margins if unnecessary */
+}
+
+.EBA_section {
+  padding: 40px 20px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #333;
+  font-size: 1.1em;
+}
+
+.EBA_section p {
+  margin-bottom: 15px;
+}
+
+/* Styles for the EBA_section2 and EBA_duo (1x2 grid section) */
+.EBA_section2 {
+  padding: 40px 20px;
+  margin: 0 auto;
+}
+
+.EBA_duo {
+  display: flex;
+  flex-direction: column; /* Default to column layout for mobile */
+  gap: 40px; /* Space between the two content blocks */
+}
+
+@media (min-width: 768px) {
+  .EBA_duo {
+    flex-direction: row; /* Row layout for desktop */
+    justify-content: space-between;
+  }
+}
+
+.EBA_duo > div { /* Targeting the implicit divs created by the H2 and P tags */
+  flex: 1; /* Each child takes equal space */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.EBA_duo h2 {
+  font-size: 1.8em;
+  color: #222222; /* A distinct color for headings in this section */
+  margin-bottom: 15px;
+}
+
+.EBA_duo p {
+  font-size: 1.05em;
+  line-height: 1.6;
+  color: #555;
+}
