@@ -1,0 +1,244 @@
+    /* Base Styles */
+    :root {
+      --primary-color: #2563eb;
+      --primary-dark: #1d4ed8;
+      --dark-color: #1e293b;
+      --light-color: #f8fafc;
+      --gray-color: #64748b;
+      --light-gray: #e2e8f0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark-color);
+      line-height: 1.6;
+      background-color: #ffffff;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .container {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 6rem 0;
+      background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
+      color: white;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .hero-content {
+      margin: 0 auto;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-content p {
+      font-size: 1.25rem;
+      opacity: 0.9;
+    }
+
+    /* Content Sections */
+    .content-section {
+      padding: 40px 0;
+    }
+
+        /* Flex container */
+    .mobile-flex-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    }
+
+    /* Text column */
+    .mobile-text {
+    flex: 1 1 55%;
+    }
+
+    /* Image column */
+    .mobile-image {
+    flex: 1 1 40%;
+    display: flex;
+    justify-content: center;
+    }
+
+    .mobile-image img {
+    max-width: 100%;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .mobile-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Responsive stacking */
+    @media (max-width: 768px) {
+    .mobile-flex-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .mobile-text,
+    .mobile-image {
+        flex: 1 1 100%;
+    }
+
+    .mobile-image img {
+        max-width: 90%;
+        margin-top: 20px;
+    }
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 2.25rem;
+      color: var(--dark-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      color: var(--gray-color);
+      margin: 0 auto;
+    }
+
+    .section-text {
+      margin: 0 auto 2rem;
+      color: var(--gray-color);
+    }
+
+    /* Services List */
+    .services-list {
+      margin: 0 auto;
+    }
+
+    .service-item {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--light-gray);
+      padding-bottom: 2rem;
+    }
+
+    .service-item:last-child {
+      border-bottom: none;
+    }
+
+    .service-header {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      padding: 1rem 0;
+      justify-content: space-between;
+    }
+
+    .service-header-inner {
+      display: flex;
+      align-items: center;
+    }
+
+    .service-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: rgba(37, 99, 235, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      color: var(--primary-color);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .service-title {
+      font-size: 1.5rem;
+      color: var(--dark-color);
+    }
+
+    .service-toggle {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      transition: transform 0.3s ease;
+    }
+
+    .service-item.active .service-toggle {
+      transform: rotate(45deg);
+    }
+
+    .service-content {
+      padding-left: 3.5rem;
+      display: none;
+    }
+
+    .service-content.show {
+      display: block;
+    }
+
+    .service-description {
+      color: var(--gray-color);
+      margin-top: 1rem;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 4rem 0;
+      }
+      
+      .hero-content h1 {
+        font-size: 2.25rem;
+      }
+      
+      .hero-content p {
+        font-size: 1.1rem;
+      }
+      
+      .section-title {
+        font-size: 1.75rem;
+      }
+      
+      .service-title {
+        font-size: 1.3rem;
+      }
+      
+      .service-content {
+        padding-left: 0;
+      }
+    }

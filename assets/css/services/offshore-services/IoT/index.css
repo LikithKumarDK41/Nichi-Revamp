@@ -22,12 +22,19 @@
       min-width: 300px; /* Minimum width before stacking */
     }
 
+
     .zigzag-image img {
       max-width: 100%;
       height: auto;
       display: block;
-      border-radius: 8px; /* Rounded corners for images */
+      border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    }
+
+    .zigzag-image img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
     }
 
     /* Reverse order for alternate rows */

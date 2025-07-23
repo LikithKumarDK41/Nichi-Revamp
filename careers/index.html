@@ -6,6 +6,7 @@
     <title>Careers & Job Application | Nichi-In Software Solutions</title>
 
     <!-- Fonts -->
+    <link rel="icon" type="image/png" href="/assets/img/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -101,6 +102,12 @@
             border-radius: 8px;
             object-fit: cover;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-text-container img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
         }
 
         .text-content {
