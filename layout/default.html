@@ -3,14 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Default Page</title>
-    <script src="/layout/include.js"></script>
+    <title>Page Title</title>
+    <meta name="description" content="A concise and accurate description of the page content for SEO.">
+    <meta name="keywords" content="keyword1, keyword2, keyword3">
+    <meta name="author" content="Your Name or Company Name">
+    <script src="/assets/js/main.js"></script>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"> 
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+            xintegrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0x30z6J0R0JkF5x3t5n0P4v3/i6/Vq7E3s/o0A/3K2z/A0Q2p4J8X2B4F5g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link rel="stylesheet" href="draft.css">
 </head>
 <body>
-    <html-include src="/layout/header.html"></html-include>
+    <html-include src="/layout/header.html" lang="en"></html-include>
     <div id="content">
         <h2>This is the dynamic content</h2>
     </div>
-    <html-include src="/layout/footer.html"></html-include>
+    <html-include src="/layout/footer.html" lang="en"></html-include>
 </body>
 </html>
