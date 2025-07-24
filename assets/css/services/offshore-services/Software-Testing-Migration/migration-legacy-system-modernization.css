@@ -1,0 +1,135 @@
+    /* Hero Section Styling */
+    .migration-hero {
+      background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 200px;
+      position: relative;
+      overflow: hidden;
+      margin-top: 80px;
+    }
+
+    .migration-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.05);
+      transform: rotate(45deg);
+      animation: hero-bg-animation 15s infinite linear;
+    }
+
+    @keyframes hero-bg-animation {
+      0% { transform: rotate(0deg) scale(1); opacity: 0.05; }
+      50% { transform: rotate(180deg) scale(1.1); opacity: 0.1; }
+      100% { transform: rotate(360deg) scale(1); opacity: 0.05; }
+    }
+
+    .migration-hero-container {
+      margin: 0 auto;
+      position: relative; /* Ensure content is above pseudo-element */
+      z-index: 1;
+    }
+
+    .migration-hero h1 {
+      font-size: 3.5em;
+      margin-bottom: 20px;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+      letter-spacing: 1px;
+    }
+
+    .migration-hero p {
+      font-size: 1.3em;
+      line-height: 1.6;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    /* General Section Styling */
+    .content-section {
+      padding: 40px 20px;
+      margin: 0 auto;
+      text-align: center; /* Center align section titles */
+    }
+
+    .content-section h2, .content-section h3 {
+      font-size: 2.5em;
+      color: #333;
+      margin-bottom: 40px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .content-section p {
+      font-size: 1.1em;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 25px;
+      text-align: left; /* Align text left within the section */
+    }
+
+    /* Offerings List Styling */
+    .offerings-list {
+      list-style: none; /* Remove default bullet points */
+      padding: 0;
+      margin: 0 auto; /* Center the grid container */
+      display: grid;
+      grid-template-columns: repeat(2, minmax(300px, 1fr)); /* 2 columns */
+      gap: 20px;
+      text-align: left; /* Align list items left */
+      max-width: 900px; /* Limit width for 2 columns to look good */
+    }
+
+    .offerings-list li {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      padding: 20px 25px;
+      font-size: 1.05em;
+      color: #222222;
+      position: relative;
+      padding-left: 45px; /* Space for icon */
+      line-height: 1.5;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .offerings-list li:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+    }
+
+    .offerings-list li::before {
+      content: "\f0ae"; /* Font Awesome list-alt icon or similar */
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      color: #041c83; /* Match hero gradient */
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2em;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .migration-hero h1 {
+        font-size: 2.5em;
+      }
+      .migration-hero p {
+        font-size: 1em;
+      }
+      .content-section h2, .content-section h3 {
+        font-size: 2em;
+      }
+      .offerings-list {
+        grid-template-columns: 1fr; /* Stack on small screens */
+        max-width: unset; /* Remove max-width for single column */
+      }
+    }

@@ -1,0 +1,242 @@
+    /* Global Body and Main Styling */
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f0f2f5; /* Lighter background */
+      margin: 0;
+      padding: 0;
+    }
+
+    main {
+      padding: 0; /* Remove main padding, sections will handle it */
+    }
+
+    /* Hero Section Styling */
+    .smac-hero {
+      background: linear-gradient(135deg, #004aad, #240b77, #0a0e27); /* User-specified gradient */
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 200px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      margin-top: 80px;
+    }
+
+    p a {
+    color: #007bff;
+    text-decoration: underline;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    }
+
+    p a:hover {
+    color: #0056b3;
+    }
+
+    .smac-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.08);
+      transform: rotate(45deg);
+      animation: hero-bg-animation 20s infinite linear;
+    }
+
+    @keyframes hero-bg-animation {
+      0% { transform: rotate(0deg) scale(1); opacity: 0.08; }
+      50% { transform: rotate(180deg) scale(1.1); opacity: 0.12; }
+      100% { transform: rotate(360deg) scale(1); opacity: 0.08; }
+    }
+
+    .smac-hero-container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .smac-hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 25px;
+      text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
+      letter-spacing: 1.5px;
+      font-weight: 800;
+    }
+
+    .smac-hero p {
+      font-size: 1.4em;
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.95;
+      font-weight: 400;
+    }
+
+    /* General Content Section Styling */
+    .content-section {
+      padding: 40px 20px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      margin-top: -80px; /* Overlap with hero for visual flow */
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .content-section:not(:first-of-type) {
+        margin-top: 30px; /* Space between subsequent sections */
+    }
+
+    /* Headings within content sections */
+    .content-section h2 {
+      font-size: 2.8em;
+      color: #222222;
+      margin-bottom: 40px;
+      padding-bottom: 10px;
+      position: relative;
+    }
+
+    .content-section h2::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background-color: #004aad; /* Match hero primary color */
+      border-radius: 2px;
+    }
+
+    .content-section h3 {
+      font-size: 2.2em;
+      color: #222222;
+      margin-top: 40px;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .content-section p {
+      font-size: 1.15em;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 25px;
+      text-align: justify;
+    }
+
+    /* Collapsible Sections Styling */
+    .collapsible-container {
+      margin-top: 50px;
+      text-align: left; /* Align collapsible headers left */
+    }
+
+    .collapsible-header {
+      cursor: pointer;
+      background-color: #e8f0fe; /* Light blue background */
+      padding: 20px 30px;
+      border: 1px solid #c5d8ff;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      font-weight: 600;
+    }
+
+    .collapsible-header:hover {
+      background-color: #d2e3fc;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .collapsible-header h3 {
+      margin: 0;
+      color: #222222;
+      font-size: 1.6em;
+    }
+
+    .collapsible-header .icon {
+      font-size: 1.4em;
+      color: #004aad; /* Match hero primary color */
+      transition: transform 0.3s ease;
+    }
+
+    .collapsible-header.active .icon {
+      transform: rotate(45deg); /* Rotate to form a cross/X */
+    }
+
+    .collapsible-content {
+      padding: 15px 30px;
+      border: 1px solid #c5d8ff;
+      border-top: none;
+      border-radius: 0 0 10px 10px;
+      margin-bottom: 20px;
+      display: none;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+      max-height: 0;
+    }
+
+    .collapsible-content.show {
+      display: block;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    /* Lists within collapsible content */
+    .collapsible-content ul {
+        list-style-type: disc;
+        margin-left: 30px;
+        padding: 0;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .collapsible-content ul li {
+        margin-bottom: 8px;
+        line-height: 1.6;
+        color: #666;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .smac-hero {
+        padding: 80px 15px;
+        min-height: 350px;
+      }
+      .smac-hero h1 {
+        font-size: 2.5em;
+      }
+      .smac-hero p {
+        font-size: 1.1em;
+      }
+      .content-section {
+        padding: 40px 15px;
+        margin-top: -50px;
+      }
+      .content-section h2 {
+        font-size: 2em;
+      }
+      .content-section h3 {
+        font-size: 1.8em;
+      }
+      .collapsible-header {
+        padding: 15px 20px;
+      }
+      .collapsible-header h3 {
+        font-size: 1.4em;
+      }
+      .collapsible-content {
+        padding: 10px 20px;
+      }
+    }

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Development Methodology | Nichi-In Software Solutions</title>
+
+  <!-- Fonts -->
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom CSS for all styles -->
+  <link rel="stylesheet" href="/assets/css/header-footer/header-footer.css" />
+
+  <link rel="stylesheet" href="/assets/css/services/offshore-services/development-methodology.css" />
+
+</head>
+
+<body class="DM_body">
+  <!-- Header will load here -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <!-- Hero Section for Development Methodology -->
+    <section class="DM_hero">
+      <div class="DM_hero-overlay"></div>
+      <div class="DM_hero-container">
+        <h1>DEVELOPMENT METHODOLOGY</h1>
+      </div>
+    </section>
+
+    <!-- Content Section for Development Methodology -->
+    <section class="DM_methodology-section">
+      <div class="DM_container">
+        <p class="DM_intro-paragraph">
+          We adopt methodologies flexibly based on the requirements of the project and the customer’s reciprocation.
+        </p>
+
+        <div class="DM_grid-container">
+          <!-- Agile Models Section -->
+          <div class="DM_methodology-card">
+            <h2 class="DM_card-title">
+              <i class="fas fa-rocket DM_icon-blue"></i> Agile Models (Scrum/XP)
+            </h2>
+            <p class="DM_card-paragraph">
+              Though there are many agile models, in order to provide maximum benefits to customers, we particularly prefer Scrum and Extreme Programming (XP).
+            </p>
+            <p class="DM_card-paragraph">
+              With Extreme Programming (XP), changes in a project can be smoothly incorporated in a cost-effective manner without disturbing the development process cycle.
+            </p>
+            <p class="DM_card-paragraph">
+              With Scrum, cross-functional teams develop software products in an iterative, incremental manner in cycles of work called Sprints. Each Sprint delivers usable software. With the completion of the Sprint, the final software is ready for customer demonstration.
+            </p>
+            <p class="DM_card-paragraph-last">
+              Depending on the project needs, we also follow a hybrid model that incorporates the benefits of XP and Scrum methods to provide maximum gains associated with the project.
+            </p>
+          </div>
+
+          <!-- Prototyping Model Section -->
+          <div class="DM_methodology-card">
+            <h2 class="DM_card-title">
+              <i class="fas fa-drafting-compass DM_icon-green"></i> Prototyping Model
+            </h2>
+            <p class="DM_card-paragraph">
+              In the prototyping model, an early approximation of the final product or system (termed as a prototype) is built, tested, and delivered to the customer for evaluation. Any suggestion made by the customer on improvements on the prototype is implemented and sent to the customer for re-evaluation. This process continues until an acceptable prototype is achieved from which the complete product or system is developed.
+            </p>
+            <p class="DM_card-paragraph-last">
+              The model works best in scenarios where all requirements related to the project are obscure or not known in detail ahead of time.
+            </p>
+          </div>
+
+          <!-- Waterfall Model Section -->
+          <div class="DM_methodology-card">
+            <h2 class="DM_card-title">
+              <i class="fas fa-water DM_icon-indigo"></i> Waterfall Model
+            </h2>
+            <p class="DM_card-paragraph-last">
+              The Waterfall model is a well-structured model where development progresses steadily downwards, completing each phase in a sequential manner. The next phase of development starts upon the achievement of defined goals of the previous phase.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer will load here -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript to Load Header & Footer -->
+  <script>
+    async function loadPartial(id, file) {
+      try {
+        const res = await fetch(file);
+        if (!res.ok) {
+          console.error(`Failed to load ${file}: ${res.statusText}`);
+          return;
+        }
+        const html = await res.text();
+        document.getElementById(id).innerHTML = html;
+        // If header is loaded, initialize mobile navigation if the function exists
+        if (id === "header-placeholder" && typeof initMobileNavigation === 'function') {
+          initMobileNavigation();
+        }
+      } catch (error) {
+        console.error(`Error loading partial ${file}:`, error);
+      }
+    }
+
+    // Load header and footer. Assuming these files exist in the same directory.
+        loadPartial("header-placeholder", "../../assets/header-footer/header.html");
+        loadPartial("footer-placeholder", "../../assets/header-footer/footer.html");
+  </script>
+
+  <!-- Assuming draft.js contains other necessary scripts like initMobileNavigation -->
+  <script src="../../assets/js/draft.js"></script>
+</body>
+
+</html>

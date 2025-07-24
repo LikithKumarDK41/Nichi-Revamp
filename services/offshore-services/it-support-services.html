@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Managed IT Services | Nichi-In Software Solutions</title>
+
+  <!-- Fonts -->
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/header-footer/header-footer.css" />
+
+  <link rel="stylesheet" href="/assets/css/services/offshore-services/it-support-services.css">
+  
+</head>
+
+<body>
+  <!-- Header will load here -->
+  <div id="header-placeholder"></div>
+
+  <main>
+
+    <section class="aboutus-hero">
+      <div class="aboutus-hero-container">
+        <h1>MANAGED IT SERVICES</h1>
+      </div>
+    </section>
+
+    <section class="it-services-intro-section">
+      <div class="it-services-intro-container">
+        <p>We support our customers in Application customization and maintenance in Oracle DBA and EBS services, BI Tool Integration, L2/L3 Technical support services.</p>
+      </div>
+    </section>
+
+    <section class="it-services-grid-section">
+      <div class="it-services-grid-container">
+
+        <!-- Row 1 -->
+        <div class="it-service-item">
+          <h3>ORACLE</h3>
+          <img src="/assets/img/services/IT_services/oracle.png" alt="Oracle Logo">
+          <p>DBA, Apps DBA, EBS Services</p>
+        </div>
+
+        <div class="it-service-item">
+          <h3>ODOO</h3>
+          <img src="/assets/img/services/IT_services/Odoo_Official_Logo.png" alt="Odoo Logo">
+          <p>Implementation, Customization & Migration</p>
+        </div>
+
+        <div class="it-service-item">
+          <h3>SERVICE NOW</h3>
+          <img src="/assets/img/services/IT_services/ServiceNow.png" alt="ServiceNow Logo">
+          <p>Migration, Implementation</p>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="it-service-item">
+          <h3>BI TOOL</h3>
+          <img src="/assets/img/services/IT_services/BI.png" alt="BI Tool Logo">
+          <p>BI Tool Integration Power BI, Tableau, QlikView etc,</p>
+        </div>
+
+        <div class="it-service-item">
+          <h3>SALESFORCE</h3>
+          <img src="/assets/img/services/IT_services/salesforce.jpg" alt="Salesforce Logo">
+          <p>Sales/ Service/ Education/ Experience Cloud Administration, Customization</p>
+        </div>
+
+        <div class="it-service-item">
+          <h3>L2/L3 Technical Support Services</h3>
+          <img src="/assets/img/services/IT_services/L3.png" alt="L2/L3 Technical Support Services Icon">
+          <p>Comprehensive technical support for various applications.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer will load here -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript to Load Header & Footer -->
+  <script>
+    async function loadPartial(id, file) {
+      const res = await fetch(file);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+      // If header is loaded, initialize mobile navigation
+      if (id === "header-placeholder") {
+        initMobileNavigation(); // Assuming this function exists in draft.js or similar
+      }
+    }
+
+        loadPartial("header-placeholder", "../../assets/header-footer/header.html");
+        loadPartial("footer-placeholder", "../../assets/header-footer/footer.html");
+  </script>
+
+  <!-- Assuming draft.js contains initMobileNavigation if needed -->
+  <script src="../../assets/js/draft.js"></script>
+</body>
+
+</html>

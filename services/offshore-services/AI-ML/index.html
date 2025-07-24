@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Development of AI/ML solutions | Nichi-In Software Solutions</title>
+
+  <!-- Fonts -->
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/header-footer/header-footer.css" />
+
+  <link rel="stylesheet" href="/assets/css/services/offshore-services/AI-ML/index.css" />
+</head>
+
+<body>
+  <!-- Header will load here -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <section class="leadership-hero">
+      <div class="hero-content">
+        <h2>Development of AI/ML solutions</h2>
+      </div>
+    </section>
+
+    <section class="bot_dev">
+    <div class="bot_dev-wrapper">
+        <div class="bot_dev-text">
+        <h2>Bot Development</h2>
+        <p>
+            Nichi-in Software has a pre-eminent understanding about the basic
+            technologies that goes into the Bot development process.
+        </p>
+        <a href="bot-development.html" class="tech-read-more">
+            Read More <i class="fas fa-arrow-right"></i>
+        </a>
+        </div>
+        <div class="bot_dev-image">
+        <img src="/assets/img/services/Offshore_Services/AI-ML/Bot-Development.jpg" alt="Bot Development">
+        </div>
+    </div>
+    </section>
+
+
+  </main>
+
+  <!-- Footer will load here -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript to Load Header & Footer -->
+  <script>
+    // Function to load partial HTML content into a placeholder
+    async function loadPartial(id, file) {
+      try {
+        const res = await fetch(file);
+        const html = await res.text();
+        document.getElementById(id).innerHTML = html;
+        // If header is loaded, initialize mobile navigation if the function exists
+        if (id === "header-placeholder") {
+          if (typeof initMobileNavigation === 'function') {
+            initMobileNavigation();
+          }
+        }
+      } catch (error) {
+        console.error(`Error loading partial ${file}:`, error);
+      }
+    }
+
+    // Load header and footer when the page loads
+    window.addEventListener('DOMContentLoaded', (event) => {
+        loadPartial("header-placeholder", "../../../assets/header-footer/header.html");
+        loadPartial("footer-placeholder", "../../../assets/header-footer/footer.html");
+      // Removed renderDynamicSections and related event listeners as content is now in a new file
+    });
+  </script>
+
+  <!-- Assuming draft.js contains other necessary scripts, if any -->
+  <script src="../../../assets/js/draft.js"></script>
+</body>
+
+</html>

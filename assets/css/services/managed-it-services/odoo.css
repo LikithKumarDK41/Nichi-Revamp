@@ -1,0 +1,137 @@
+    /* Odoo Hero Section - Retained for context, adjust as needed */
+    .Odoo-hero {
+      background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .Odoo-hero h2 {
+      font-size: clamp(1.8rem, 5vw, 2.5rem); /* Responsive font size */
+      margin-bottom: 20px;
+    }
+
+    .Odoo-hero p {
+      font-size: clamp(1rem, 2.5vw, 1.1rem); /* Responsive font size */
+      line-height: 1.6;
+      margin: 0 auto 20px auto;
+      text-align: center; /* Centered for better readability in hero */
+    }
+
+    .Odoo-hero a {
+      color: #fff;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    /* Odoo Services Section - New Structure & Styles */
+    .odoo-services-section {
+      padding: 40px 20px;
+      background-color: #ffffff;
+    }
+
+    .odoo-services-section > h2 {
+      text-align: center;
+      font-size: clamp(2rem, 5vw, 3rem); /* Large, responsive heading */
+      color: #222222; /* Darker color for prominence */
+      margin-bottom: 30px;
+    }
+
+    .service-block {
+      display: flex;
+      flex-direction: column; /* Default: stack image above text on mobile */
+      align-items: start;
+      gap: 30px; /* Space between image and text */
+      background-color: #e9eeed;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Softer shadow */
+      margin-bottom: 40px; /* Space between blocks */
+      overflow: hidden; /* Ensures rounded corners apply correctly */
+    }
+
+    .service-block:last-child {
+      margin-bottom: 0; /* No margin after the last block */
+    }
+
+    .service-content {
+      flex: 1; /* Allows content to take available space */
+      text-align: center; /* Center text on mobile */
+      padding: 10px; /* Consistent internal padding */
+    }
+
+    .service-content h3 {
+      font-size: clamp(1.5rem, 4vw, 2rem); /* Responsive heading size */
+      color: #222222; /* Primary brand color */
+      margin-bottom: 15px;
+    }
+
+    .service-content p {
+      font-size: clamp(0.95rem, 2.2vw, 1.1rem); /* Responsive paragraph size */
+      line-height: 1.7;
+      color: #555;
+    }
+
+    .service-image-wrapper {
+      flex-shrink: 0; /* Prevents image from shrinking */
+      width: 100%; /* Full width on mobile */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px; /* Consistent internal padding */
+    }
+
+    .service-image-wrapper img {
+      width: 100%; /* Image takes full width of its wrapper on mobile */
+      height: 250px; /* Consistent image height */
+      object-fit: contain; /* Ensures image fits without cropping, maintains aspect ratio */
+      border-radius: 8px;
+      transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+    }
+
+    .service-image-wrapper img:hover {
+        transform: scale(1.03); /* Slight zoom on hover */
+    }
+
+
+    /* Desktop Layout (min-width: 768px) */
+    @media (min-width: 768px) {
+      .service-block {
+        flex-direction: row; /* Zigzag: image and text side-by-side */
+        text-align: left; /* Align text left on desktop */
+        padding: 40px; /* More padding on desktop */
+      }
+
+      .service-block:nth-child(odd) {
+        /* Image on left, text on right for odd blocks */
+        flex-direction: row;
+      }
+
+      .service-block:nth-child(even) {
+        /* Image on right, text on left for even blocks */
+        flex-direction: row-reverse;
+      }
+
+      .service-content {
+        text-align: left; /* Align text left on desktop */
+        padding: 0 30px; /* More horizontal padding */
+      }
+
+      .service-image-wrapper {
+        width: 45%; /* Image takes about 45% width */
+        padding: 0; /* No extra padding here, controlled by parent flex gap */
+      }
+
+      .service-image-wrapper img {
+        width: 100%; /* Image fills its container */
+        height: 300px; /* Slightly taller on desktop */
+      }
+    }
+
+
+    /* General utility classes (if needed, e.g., for header/footer placeholders) */
+    #header-placeholder,
+    #footer-placeholder {
+      width: 100%;
+    }

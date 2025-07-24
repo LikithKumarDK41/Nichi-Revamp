@@ -1,0 +1,212 @@
+.leadership-hero {
+  background: linear-gradient(135deg, #5077b1, #000066, #380597);
+  padding: 40px 20px;
+  color: white;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.leadership-hero h2 {
+  font-size: 2.5rem;       /* Bigger font size */
+  font-weight: 700;      /* Bold for emphasis */
+  margin: 0;      
+  color: white;       
+}
+
+.bot_dev {
+  padding: 40px 20px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.bot_dev h2 {
+  font-size: 2.2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.bot_dev p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.bot_intro {
+  padding: 40px 20px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #333;
+  font-size: 1.1em;
+}
+
+.bot_intro p {
+  margin-bottom: 15px;
+}
+
+.bot_dev-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.bot_dev-text {
+  flex: 1 1 55%;
+}
+
+.bot_dev-image {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.bot_dev-image img {
+  max-width: 100%;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.bot_dev-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bot_dev-wrapper {
+    flex-direction: column;
+  }
+
+  .bot_dev-text,
+  .bot_dev-image {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .bot_dev-text {
+    text-align: left;
+  }
+}
+
+
+/* Styles for the dynamically rendered sections */
+.bot_features,
+.bot_advantages {
+  padding: 40px 20px;
+  margin: 0 auto 40px auto; /* Add margin-bottom for spacing between sections */
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.bot_features h2,
+.bot_advantages h2 {
+  font-size: 2em;
+  color: #222222;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.bot_features p,
+.bot_advantages p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.bot_features p strong,
+.bot_advantages p strong {
+  color: #333;
+}
+
+    /* Basic styling for the dropdown sections */
+    .dropdown-section {
+      margin-bottom: 15px; /* Slightly reduced margin for individual points */
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden; /* Ensures rounded corners apply to content */
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Lighter shadow for individual points */
+    }
+
+    /* Styling for the clickable header of each dropdown */
+    .dropdown-header {
+      background-color: #f9f9f9; /* Lighter background for headers */
+      padding: 12px 18px; /* Slightly smaller padding for point headers */
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.1em; /* Slightly smaller font for point headers */
+      font-weight: 600;
+      color: #444;
+      border-bottom: 1px solid #eee;
+      transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    }
+
+    /* Hover effect for the dropdown header */
+    .dropdown-header:hover {
+      background-color: #f0f0f0;
+    }
+
+    /* Styling for the arrow icon */
+    .dropdown-header .icon {
+      transition: transform 0.3s ease; /* Smooth rotation for the icon */
+    }
+
+    /* Rotate the arrow icon when the dropdown is active (open) */
+    .dropdown-header.active .icon {
+      transform: rotate(90deg);
+    }
+
+    /* Styling for the content area of the dropdown */
+    .dropdown-content {
+      padding: 0 18px; /* Initial padding, will expand when shown */
+      max-height: 0; /* Initially hidden */
+      overflow: hidden;
+      /* Adjusted transition for faster and smoother animation */
+      transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+      background-color: #fff;
+    }
+
+    /* Class to show the content when dropdown is active */
+    .dropdown-content.show {
+      max-height: 500px; /* A value large enough to contain the content */
+      padding: 12px 18px; /* Expanded padding when shown */
+    }
+
+    /* Basic paragraph styling within dropdown content */
+    .dropdown-content p {
+      margin-bottom: 10px;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    /* Styling for main section titles that are not dropdowns themselves */
+    main section h2 {
+      margin-bottom: 25px;
+      font-size: 2em;
+      color: #222;
+      text-align: center;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .dropdown-header {
+        font-size: 1em;
+        padding: 10px 12px;
+      }
+      .dropdown-content {
+        padding: 0 12px;
+      }
+      .dropdown-content.show {
+        padding: 10px 12px;
+      }
+      main section h2 {
+        font-size: 1.7em;
+      }
+    }

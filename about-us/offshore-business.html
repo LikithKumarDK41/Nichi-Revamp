@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Offshore Business | Nichi-In Software Solutions</title>
+
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="draft.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom CSS -->
+  <!-- Assuming 'draft.css' contains the necessary styles for zigzag layouts and other custom elements -->
+  <link rel="stylesheet" href="/assets/css/about-us/offshore-business.css" />
+  <link rel="stylesheet" href="/assets/css/header-footer/header-footer.css" />
+
+</head>
+
+<body>
+  <!-- Header will load here -->
+  <div id="header-placeholder"></div>
+
+    <main>
+      <section class="offshore-hero">
+  <div class="hero-content">
+    <h1>Offshore Business</h1>
+    <p style="text-align: center; margin: 0 auto;">We Provide Optimal IT Solutions and 
+      Services to Customers Around The Globe</p>
+  </div>
+</section>
+
+      <section class="offshore-container">
+          <div class="offshore-heading-wrapper">
+          <div class="offshore-heading">
+          <h3>"Business Models Catering to the Diverse Needs of Customers Globally."</h3>
+          <p>Nichi-In Software offers distinct offshore business models that are in tune with the diverse needs of customers globally, with flexible approaches to cater to them.</p>
+          <p>Offshore Business Models have various variants tailor-made for different scenarios. Each has its own advantages and can be finalized based on the requirement and mutual understanding.</p>
+          <h4>Enhance Your Business Strategy</h4>
+          <p>To take flexibility to the next level, we are open to further customizing these models based on mutual discussion.</p>
+        </div>
+        <div class="offshore-heading-image">
+          <img src="../assets/img/about-us/offshore_business/13569.jpg" alt="Offshore Business">
+        </div>
+      </div>
+
+        <div class="offshore-zigzag">
+          <!-- Fixed Price -->
+          <div class="offshore-row">
+            <div class="offshore-image">
+              <img src="../assets/img/about-us/offshore_business/20488.jpg" alt="Fixed Price Model">
+            </div>
+            <div class="offshore-content">
+              <h3>Fixed Price</h3>
+              <p>Nichi-In Software proposes this model when the project scope and specifications are clear and well defined. We collaborate with customers to define deliverables and timelines to estimate time and cost.</p>
+            </div>
+          </div>
+
+          <!-- Time & Material -->
+          <div class="offshore-row offshore-reverse">
+            <div class="offshore-image">
+              <img src="../assets/img/about-us/offshore_business/time.jpg" alt="Time and Material Model">
+            </div>
+            <div class="offshore-content">
+              <h3>Time & Material</h3>
+              <p>Ideal when project scope is unclear or may change. Customers can alter specifications at will. Billing is done hourly/monthly. Team size can be revised to optimize project cost and duration.</p>
+            </div>
+          </div>
+
+          <!-- Dedicated Development Center -->
+          <div class="offshore-row">
+            <div class="offshore-image">
+              <img src="../assets/img/about-us/offshore_business/dedicated_centre.jpg" alt="Dedicated Development Center">
+            </div>
+            <div class="offshore-content">
+              <h3>Dedicated Development Center</h3>
+              <p>Teams with PMs, infrastructure, and tools are formed per customer requirements. Long-term productivity increases as domain knowledge is retained. Ideal for extended contracts.</p>
+            </div>
+          </div>
+
+          <!-- SES Model -->
+          <div class="offshore-row offshore-reverse">
+            <div class="offshore-image">
+              <img src="../assets/img/about-us/offshore_business/Ses-model-3.png" alt="SES Model">
+            </div>
+            <div class="offshore-content">
+              <h3>SES Model</h3>
+              <p>Like Dedicated Development Center, this model provides complete control to the customer over scheduling, team composition, and resource usage as per contract.</p>
+            </div>
+          </div>
+
+          <!-- BOT Model -->
+          <div class="offshore-row">
+            <div class="offshore-image">
+              <img src="../assets/img/about-us/offshore_business/BOT.jpg" alt="BOT Model">
+            </div>
+            <div class="offshore-content">
+              <h3>Build-Operate-Transfer (BOT) Model</h3>
+              <p>Nichi-In Software builds and operates like an extension of the customer's facility and ensures a smooth transition post-agreement. Benefits include lower costs, flexibility, reduced risk, and process expertise.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  <!-- Footer will load here -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript to Load Header & Footer -->
+  <script>
+    async function loadPartial(id, file) {
+      const res = await fetch(file);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+      // If header is loaded, initialize mobile navigation
+      if (id === "header-placeholder") {
+        // Assuming initMobileNavigation is defined in draft.js or elsewhere
+        // If not, this line might cause an error, but it's consistent with aboutus.html
+        if (typeof initMobileNavigation === 'function') {
+          initMobileNavigation();
+        }
+      }
+    }
+
+  loadPartial("header-placeholder", "../assets/header-footer/header.html");
+  loadPartial("footer-placeholder", "../assets/header-footer/footer.html");
+
+  function initMobileNavigation() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  }
+</script>
+
+  <!-- Assuming draft.js contains any necessary JS for the page, consistent with aboutus.html -->
+  <script src="../assets/js/draft.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Development | Nichi-In Software Solutions</title>
+
+  <!-- Fonts -->
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/header-footer/header-footer.css" />
+  <link rel="stylesheet" href="/assets/css/services/product-development/index.css" />
+</head>
+
+<body>
+  <!-- Header will load here -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="aboutus-hero">
+      <div class="aboutus-hero-container">
+        <h1>Product Development</h1>
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="it-services-intro-section">
+      <div class="it-services-intro-container">
+        <p>We develop products with cutting-edge technology to help our customers reduce efforts and costs with seamless user experience.</p>
+      </div>
+    </section>
+
+    <!-- Product Development Content -->
+    <section class="product-development-content-section">
+      <div class="product-development-content-container">
+
+        <article class="content-block">
+          <h3>
+            <img src="../../assets/img/services/product-development/SD.png" />
+            Software Product Development
+          </h3>
+          <p>Software products have become ubiquitous across industries. With Agile methodologies gaining traction and technologies like cloud and mobile converging, product development has acquired new significance. At Nichi-In, agility, innovation, and the right tech stack are the keys to successful software products.</p>
+        </article>
+
+        <article class="content-block">
+          <h3>
+            <img src="../../assets/img/services/product-development/CD.png" alt="Lifecycle Icon" />
+            Complete Product Life Cycle Management
+          </h3>
+          <ul>
+            <li>Rapid Prototyping</li>
+            <li>Product Design and Development</li>
+            <li>Full Product Testing Cycle</li>
+            <li>Product Customization</li>
+            <li>Product Maintenance and Support</li>
+          </ul>
+        </article>
+
+        <article class="content-block">
+          <h3>
+            <img src="../../assets/img/services/product-development/PD.png" alt="Offerings Icon" />
+            Nichi-In’s Product Development Offerings
+          </h3>
+          <ul>
+            <li>Building proof of concept or prototype after requirement analysis</li>
+            <li>Architecting and designing with industry-standard tools, technologies, and platforms</li>
+            <li>Exhaustive testing & quality assurance for a bug-free product</li>
+            <li>SaaS enablement on platforms like AWS, Google Cloud, Azure</li>
+            <li>Mobile enabling across various devices and OS platforms</li>
+            <li>Cross-platform compatibility (Windows/Linux)</li>
+            <li>Re-engineering, migration, and modernization of legacy systems</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer will load here -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Load Header and Footer -->
+  <script>
+    async function loadPartial(id, file) {
+      const res = await fetch(file);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+
+      if (id === "header-placeholder" && typeof initMobileNavigation === 'function') {
+        initMobileNavigation();
+      }
+    }
+
+        loadPartial("header-placeholder", "../../assets/header-footer/header.html");
+        loadPartial("footer-placeholder", "../../assets/header-footer/footer.html");
+  </script>
+
+  <script src="../../assets/js/draft.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,265 @@
+/* Offshore Section Styling */
+
+.offshore-hero {
+  background: linear-gradient(135deg, #5077b1, #000066, #380597);
+  padding: 40px 20px;
+  color: white;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.offshore-hero .hero-content {
+  margin: 0 auto;
+}
+
+.offshore-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.offshore-hero p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .offshore-hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .offshore-hero p {
+    font-size: 1rem;
+  }
+}
+
+
+.offshore-container {
+  margin: 0 auto;
+  padding: 40px 20px; /* Vertical padding and horizontal padding for smaller screens */
+  box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+.offshore-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.offshore-heading h2 {
+  font-size: 44px; /* Slightly larger for main heading */
+  font-weight: 800; /* Bolder for impact */
+  margin-bottom: 15px; /* More space below heading */
+  color: #1a202c; /* Darker, more professional color */
+  line-height: 1.2; /* Improve readability */
+}
+
+.offshore-heading-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.offshore-heading {
+  flex: 1 1 60%;
+}
+
+.offshore-heading-image {
+  flex: 1 1 35%;
+  min-width: 280px;
+}
+
+.offshore-heading-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.offshore-heading-image img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.offshore-heading p,
+.offshore-heading h3,
+.offshore-heading h4 {
+  margin: 15px auto; /* Consistent margin */
+  font-size: 18px;
+  line-height: 1.7; /* Increased line-height for better readability */
+  color: #4a5568; /* Softer text color */
+  text-align: left;
+}
+
+.offshore-heading h3 {
+  font-size: 30px; /* Larger sub-heading */
+  font-weight: 700;
+  color: #2d3748; /* Slightly darker than body text */
+  margin-top: 40px; /* More space above this sub-heading */
+  margin-bottom: 20px;
+}
+
+.offshore-heading h4 {
+  font-size: 22px; /* Distinct for a sub-heading below h3 */
+  font-weight: 600;
+  color: #2d3748;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.offshore-zigzag {
+  display: flex;
+  flex-direction: column;
+  gap: 80px; /* Increased gap between zigzag rows for more breathing room */
+}
+
+.offshore-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start; 
+  gap: 40px;
+}
+
+.offshore-reverse {
+  flex-direction: row-reverse;
+}
+
+.offshore-image {
+  flex: 1 1 45%; /* Flex-grow, flex-shrink, flex-basis. Allows image to take almost half width */
+  min-width: 320px; /* Slightly increased min-width to prevent squishing */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 12px; /* Slightly more rounded corners */
+  overflow: hidden; /* Ensures image respects border-radius */
+}
+
+.offshore-image img {
+  width: 100%;
+  max-height: 300px; 
+  display: block;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.offshore-image img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.offshore-content {
+  flex: 1 1 50%; /* Content takes slightly more than half to balance */
+  min-width: 320px;
+  padding: 10px 0; /* Some vertical padding if needed, but usually handled by line-height */
+}
+
+.offshore-content h3 {
+  font-size: 28px; /* Slightly larger for section-specific heading */
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #222222; /* A slightly darker, more prominent blue */
+  line-height: 1.3;
+}
+
+.offshore-content p {
+  font-size: 17px; /* Slightly larger for main content readability */
+  line-height: 1.8; /* Increased line-height for body text */
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) { /* Adjust breakpoint for tablets */
+  .offshore-container {
+    padding: 40px 15px;
+  }
+
+  .offshore-heading h2 {
+    font-size: 38px;
+  }
+
+  .offshore-heading p,
+  .offshore-heading h3,
+  .offshore-heading h4 {
+    font-size: 17px;
+  }
+
+  .offshore-heading h3 {
+    font-size: 26px;
+  }
+
+  .offshore-heading h4 {
+    font-size: 20px;
+  }
+
+  .offshore-row,
+  .offshore-reverse {
+    flex-direction: column; /* Stack vertically on tablets and smaller */
+    text-align: center; /* Center text when stacked */
+  }
+
+  .offshore-image {
+    flex: 1 1 100%; /* Image takes full width */
+    min-width: unset; /* Remove min-width to allow shrinking */
+  }
+
+  .offshore-content {
+    flex: 1 1 100%; /* Content takes full width */
+    min-width: unset;
+  }
+
+  .offshore-content h3 {
+    font-size: 24px;
+    margin-top: 20px; /* Add space above heading when stacked */
+  }
+
+  .offshore-content p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) { /* Mobile specific adjustments */
+  .offshore-heading h2 {
+    font-size: 32px;
+  }
+
+  .offshore-heading p,
+  .offshore-heading h3,
+  .offshore-heading h4 {
+    font-size: 16px;
+  }
+
+  .offshore-heading h3 {
+    font-size: 24px;
+  }
+
+  .offshore-heading h4 {
+    font-size: 18px;
+  }
+
+  .offshore-zigzag {
+    gap: 50px; /* Reduce gap on mobile */
+  }
+
+  .offshore-row {
+    gap: 30px; /* Reduce gap between elements on mobile */
+  }
+
+  .offshore-content h3 {
+    font-size: 22px;
+  }
+
+  .offshore-content p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) { /* Smaller mobile adjustments */
+  .offshore-heading h2 {
+    font-size: 28px;
+  }
+}

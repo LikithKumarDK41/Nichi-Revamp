@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Software Testing & Quality Assurance | Nichi-In Software Solutions</title>
+
+  <!-- Fonts -->
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/header-footer/header-footer.css" />
+
+  <link rel="stylesheet" href="/assets/css/services/offshore-services/Software-Testing-Migration/testing-quality-assurance.css">
+
+</head>
+
+<body>
+  <!-- Header will load here -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <!-- Hero section for Software Testing and Quality Assurance -->
+    <section class="testing-qa-hero">
+      <div class="testing-qa-hero-container">
+        <h1>TESTING & QUALITY ASSURANCE</h1>
+      </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="content-section">
+      <p>We adhere to the Software Testing Life Cycle process to enable Quality Assurance of the highest order for your applications and products.</p>
+      <p>Nichi-In Software’s pronounced Testing and Quality Assurance occupies one of the key steps in Software Development Life Cycle that shapes the speed and ease of adaptability of applications and products, ensuring delivery of world class Quality services.</p>
+      <p>The demand on Testing and Quality Assurance has grown significantly for enterprises of today. Fluid and dynamic market trends and the rapidly changing technology landscape with the emergence of disruptive technologies such as cloud, mobility and social media have resulted in new scenarios warranting quality assurance.</p>
+      <p>On one hand, there exists the need for testing of desktop and web applications and products. On the other hand, mobile enabling, social enabling and cloud enabling of existing applications and products has increased dramatically. Any migration or localization activity has only further increased the need.</p>
+    </section>
+
+    <!-- Nichi-In Software's Quality Assurance and Testing Offerings Section -->
+    <section class="content-section">
+      <h3>Nichi-In Software's Quality Assurance and Testing Offerings</h3>
+      <p>We at Nichi-In Software use time tested testing tools, create test plans, create customized test scripts in order to automate the testing process and adhere to the Software Testing Life Cycle process to enable Quality assurance of the highest order for your applications and products.</p>
+
+      <ul class="offerings-list">
+        <li>End to End Application and Product Testing</li>
+        <li>Performance Testing of migrated applications and products</li>
+        <li>Testing of mobile enabled applications and products</li>
+        <li>Testing of cloud enabled applications and products</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer will load here -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript to Load Header & Footer -->
+  <script>
+    async function loadPartial(id, file) {
+      const res = await fetch(file);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+      // If header is loaded, initialize mobile navigation (assuming initMobileNavigation is in draft.js or header.html)
+      if (id === "header-placeholder" && typeof initMobileNavigation === 'function') {
+        initMobileNavigation();
+      }
+    }
+
+        loadPartial("header-placeholder", "../../../assets/header-footer/header.html");
+        loadPartial("footer-placeholder", "../../../assets/header-footer/footer.html");
+  </script>
+
+  <!-- Link to your existing draft.js if it contains other scripts -->
+  <script src="../../../assets/js/draft.js"></script>
+</body>
+
+</html>

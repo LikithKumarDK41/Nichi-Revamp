@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Odoo | Nichi-In Software Solutions</title>
+
+  <!-- Fonts -->
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/assets/css/header-footer/header-footer.css" />
+  <link rel="stylesheet" href="/assets/css/services/managed-it-services/odoo-about.css" />
+</head>
+
+<body>
+  <!-- Header will load here -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <section class="Odoo-hero">
+      <h2>About Odoo</h2>
+    </section>
+
+    <section class="about-odoo">
+      <p>Odoo is an open-source business management software suite that
+        includes a wide range of applications for CRM, accounting, inventory,
+        manufacturing, eCommerce, and more. It is highly modular, allowing
+        businesses to customize and integrate various apps based on their needs.
+        Odoo offers both a free community edition and a paid enterprise edition
+        with additional features and support. It is widely used by businesses
+        of all sizes for streamlining operations and improving efficiency.
+      </p>
+    </section>
+
+    <section class="Odoo-flex">
+      <h3>Advantages of Odoo</h3>
+      <p>Odoo has several advantages over other ERP systems, making it a popular choice for businesses of all sizes. Here are some key benefits:</p>
+
+      <!-- Each li will now act as a card in the grid -->
+      <ul>
+        <li>
+          <strong>Cost-Effective:</strong> Odoo's Community Edition is free, while its Enterprise Edition is more affordable than many traditional ERP solutions like SAP and Oracle.
+        </li>
+        <li>
+          <strong>Modular & Scalable:</strong> Businesses can start with essential modules and expand as needed, making it highly scalable.
+        </li>
+        <li>
+          <strong>User-Friendly Interface:</strong> Odoo has a modern and intuitive UI, making it easier for employees to learn and use compared to complex ERP systems.
+        </li>
+        <li>
+          <strong>Fully Integrated:</strong> All Odoo applications work seamlessly together, eliminating the need for third-party integrations in many cases.
+        </li>
+        <li>
+          <strong>Open Source & Customizable:</strong> Odoo's open-source nature allows businesses to customize and modify the software according to their specific needs.
+        </li>
+        <li>
+          <strong>Cloud & On-Premise Options:</strong> Companies can choose between cloud hosting and on-premise deployment based on their security and operational preferences.
+        </li>
+        <li>
+          <strong>Strong Community Support:</strong> A large developer and user community continuously improves the platform and provides support.
+        </li>
+        <li>
+          <strong>Faster Implementation:</strong> Compared to legacy ERP systems, Odoo can be implemented more quickly, reducing downtime and costs.
+        </li>
+        <li>
+          <strong>All-in-One Solution:</strong> Odoo covers a wide range of business needs, from CRM and HRM to eCommerce and project management, reducing dependency on multiple software solutions.
+        </li>
+        <li>
+          <strong>Regular Updates & Innovations:</strong> Odoo frequently releases updates and new features, ensuring businesses stay ahead with the latest technology.
+        </li>
+      </ul>
+      <p>These advantages make Odoo a flexible and powerful ERP solution for startups, SMEs, and large enterprises.</p>
+    </section>
+  </main>
+
+  <!-- Footer will load here -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript to Load Header & Footer -->
+  <script>
+    /**
+     * Loads an HTML partial into a specified placeholder element.
+     * @param {string} id - The ID of the placeholder div.
+     * @param {string} file - The path to the HTML partial file.
+     */
+    async function loadPartial(id, file) {
+      try {
+        const res = await fetch(file);
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        const html = await res.text();
+        document.getElementById(id).innerHTML = html;
+        // If header is loaded, initialize mobile navigation (assuming initMobileNavigation is defined in draft.js or header.html)
+        if (id === "header-placeholder" && typeof initMobileNavigation === 'function') {
+          initMobileNavigation();
+        }
+      } catch (error) {
+        console.error(`Failed to load partial ${file}:`, error);
+      }
+    }
+
+    // Load header and footer when the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', () => {
+        loadPartial("header-placeholder", "../../assets/header-footer/header.html");
+        loadPartial("footer-placeholder", "../../assets/header-footer/footer.html");
+    });
+  </script>
+  <!-- Assuming draft.js contains any necessary scripts like initMobileNavigation -->
+  <script src="../../assets/js/draft.js"></script>
+</body>
+
+</html>

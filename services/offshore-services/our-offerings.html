@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Offerings | Nichi-In Software Solutions</title>
+
+  <!-- Fonts -->
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/header-footer/header-footer.css" />
+
+  <link rel="stylesheet" href="/assets/css/services/offshore-services/our-offerings.css" />
+
+</head>
+
+<body>
+  <!-- Header will load here -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <section class="leadership-hero">
+      <div class="hero-content">
+        <h2>OUR OFFERINGS</h2>
+      </div>
+    </section>
+
+    <section class="OO_zigzag_section">
+
+      <!-- Development of Enterprise Business Applications -->
+      <div class="zigzag-row">
+        <div class="zigzag-text">
+          <h3>Development of Enterprise Business Applications</h3>
+          <p>Enterprise Application Development at Nichi-In
+            Software works with a motive of aligning your business processes.</p>
+          <a href="EBA.html" class="tech-read-more">
+            Read More <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="zigzag-image">
+          <img src="/assets/img/services/Our-Offerings/Development-of-Enterprise-Application.png" alt="Enterprise Application Development">
+        </div>
+      </div>
+
+      <!-- Development of AI/ML solutions -->
+      <div class="zigzag-row reverse">
+        <div class="zigzag-text">
+          <h3>Development of AI/ML solutions</h3>
+          <p>We assist you in developing AI/Machine Learning
+            solutions with professionals trained in AI & ML.</p>
+          <a href="AI-ML/index.html" class="tech-read-more">
+            Read More <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="zigzag-image">
+          <img src="/assets/img/services/Our-Offerings/AI-a.png" alt="AI/ML Solutions">
+        </div>
+      </div>
+
+      <!-- Development of Industrial Automation/IoT Applications -->
+      <div class="zigzag-row">
+        <div class="zigzag-text">
+          <h3>Development of Industrial Automation/IoT Applications</h3>
+          <p>Industrial Automation enables effective and agile customer
+            experiences for SMEs or large enterprises, in the
+            process of becoming future Digital enterprises.
+
+            The Internet of Things (IoT) is a network of physical
+            objects or things that are connected to the internet.
+            As internet requires data input through human interactions,
+            the concept of Internet of Things – IoT – has evolved to evade
+            the human to machine interactions.</p>
+          <a href="IoT/index.html" class="tech-read-more">
+            Read More <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="zigzag-image">
+          <img src="/assets/img/services/Our-Offerings/IA-IOT-1.png" alt="Industrial Automation/IoT Applications">
+        </div>
+      </div>
+
+      <!-- DX (Digital Transformation) Services -->
+      <div class="zigzag-row reverse">
+        <div class="zigzag-text">
+          <h3>DX (Digital Transformation) Services</h3>
+          <p>Digital transformation is the integration of
+            digital technology into all areas of a business,
+            including operations and delivery. We help our
+            clients in this paradigm shift from analog,
+            paper to digitization of data and the effective
+            utilization of the same to offer better value
+            to their customers.</p>
+          <a href="DX/index.html" class="tech-read-more">
+            Read More <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="zigzag-image">
+          <img src="/assets/img/services/Our-Offerings/DX.png" alt="Digital Transformation Services">
+        </div>
+      </div>
+
+      <!-- Managed IT Services -->
+      <div class="zigzag-row">
+        <div class="zigzag-text">
+          <h3>Managed IT Services</h3>
+          <p>We support our customers in Application customization
+            and maintenance, Database administration, testing,
+            ERP implementation, CRM customization,
+            BI Tool Integration, L2/L3 Technical support services.</p>
+          <a href="it-support-services.html" class="tech-read-more">
+            Read More <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="zigzag-image">
+          <img src="/assets/img/services/Our-Offerings/image-5.png" alt="Managed IT Services">
+        </div>
+      </div>
+
+      <!-- Software Testing and Migration -->
+      <div class="zigzag-row reverse">
+        <div class="zigzag-text">
+          <h3>Software Testing and Migration</h3>
+          <p>We adhere to the Software Testing Life Cycle
+            process to enable Quality Assurance of the highest
+            order for your applications and products. Reuse and
+            modernize your time-tested business applications
+            to newer technologies and strategic platforms with
+            Nichi-In Software’s Application Migration Services.</p>
+          <a href="Software-Testing-Migration/index.html" class="tech-read-more">
+            Read More <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="zigzag-image">
+          <img src="/assets/img/services/Our-Offerings/SOFTWARE-TESTING.png" alt="Software Testing and Migration">
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Footer will load here -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript to Load Header & Footer -->
+  <script>
+    async function loadPartial(id, file) {
+      const res = await fetch(file);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+      // If header is loaded, initialize mobile navigation (assuming initMobileNavigation is defined in draft.js or header.html)
+      if (id === "header-placeholder") {
+        // You might need to ensure initMobileNavigation() is available globally or loaded after header.html
+        // For now, we'll assume it's either in draft.js or handled by the header itself.
+        if (typeof initMobileNavigation === 'function') {
+          initMobileNavigation();
+        }
+      }
+    }
+
+    // Load header and footer when the page loads
+    window.addEventListener('DOMContentLoaded', (event) => {
+        loadPartial("header-placeholder", "../../assets/header-footer/header.html");
+        loadPartial("footer-placeholder", "../../assets/header-footer/footer.html");
+    });
+  </script>
+
+  <!-- Assuming draft.js contains other page-specific scripts like initMobileNavigation if needed -->
+  <script src="../../assets/js/draft.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onsite Consulting | Nichi-In Software Solutions</title>
+
+  <!-- Fonts -->
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/header-footer/header-footer.css" />
+  <link rel="stylesheet" href="/assets/css/services/onsite-consulting/index.css" />
+</head>
+
+<body>
+  <!-- Header will load here -->
+  <div id="header-placeholder"></div>
+
+  <main>
+
+    <section class="aboutus-hero">
+      <div class="aboutus-hero-container">
+        <h1>Onsite Consulting</h1>
+      </div>
+    </section>
+
+    <section class="infrastructure-section" id="consulting-services">
+      <div class="zigzag-row reverse">
+        <div class="zigzag-text">
+          <h2 class="section-title">Consulting Services</h2>
+          <p>Identify suitable resources either in-house or source from the market based on customer requirements.</p>
+          <p>Depute suitable resources on short-term or long-term basis, depending on project needs.</p>
+          <p>Work permits etc., are to be taken care of by the customer/partner companies.</p>
+          <p>We charge a consulting fee on a monthly basis.</p>
+        </div>
+        <div class="zigzag-image">
+          <img src="../../assets/img/consulting/Consulting-service.jpg" alt="Staff Augmentation Services Image">
+        </div>
+      </div>
+    </section>
+
+    <section class="aboutus-section" id="staff-augmentation">
+      <div class="zigzag-row">
+        <div class="zigzag-text">
+          <h2 class="section-title">Staff Augmentation Services</h2>
+          <p>Identify suitable resources based on the business requirements of the Customer.</p>
+          <p>Screen, evaluate, and provide fitment details of the candidates to the Customer.</p>
+          <p>Facilitate Customer interviews of candidates.</p>
+          <p>Ensure smooth transition in onboarding candidates to Customer payrolls.</p>
+          <p>We charge a one-time consulting fee after onboarding the candidate.</p>
+        </div>
+        <div class="zigzag-image">
+          <img src="../../assets/img/consulting/Staff-Augmentation-Services.jpg" alt="Consulting Service Image">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer will load here -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript to Load Header & Footer -->
+  <script>
+    async function loadPartial(id, file) {
+      const res = await fetch(file);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+      // If header is loaded, initialize mobile navigation
+      if (id === "header-placeholder") {
+        initMobileNavigation(); // Assuming this function exists in draft.js or similar
+      }
+    }
+
+        loadPartial("header-placeholder", "../../assets/header-footer/header.html");
+        loadPartial("footer-placeholder", "../../assets/header-footer/footer.html");
+  </script>
+
+  <!-- Assuming draft.js contains initMobileNavigation if needed -->
+  <script src="../../assets/js/draft.js"></script>
+</body>
+
+</html>

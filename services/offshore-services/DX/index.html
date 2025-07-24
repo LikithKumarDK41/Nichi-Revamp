@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DX (Digital Transformation) Services | Nichi-In Software Solutions</title>
+
+  <!-- Fonts -->
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/header-footer/header-footer.css" />
+
+  <link rel="stylesheet" href="/assets/css/services/offshore-services/DX/index.css" />
+</head>
+
+<body>
+  <!-- Header will load here -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <!-- Hero section for DX (Digital Transformation) Services -->
+    <section class="dx-services-hero">
+      <div class="dx-services-hero-container">
+        <h1>DX (DIGITAL TRANSFORMATION) SERVICES</h1>
+      </div>
+    </section>
+
+    <!-- Main content for DX Services -->
+    <section class="zigzag-section">
+      <div class="zigzag-row">
+        <div class="zigzag-text">
+          <h3>Mobile Application Development</h3>
+          <p>Today’s mobile platforms are very robust in terms of capabilities and performance enabling new breed of applications to be developed and enable the existing applications to be migrated to mobile platform, thereby increasing the user experience and reach.</p>
+          <a href="mobile-application-development.html" class="tech-read-more">
+            Read More <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="zigzag-image">
+          <img src="/assets/img/services/Offshore_Services/DX/Mob-1.png" alt="Mobile Application Development Image">
+        </div>
+      </div>
+
+      <div class="zigzag-row reverse">
+        <div class="zigzag-text">
+          <h3>Cloud Application Development and Management</h3>
+          <p>Cloud Application Development and Management involves designing, building, and maintaining software applications that leverage cloud environments such as AWS, Azure, GCS etc. It emphasizes scalability, cost-efficiency, continuous delivery, and seamless integration. Effective management ensures optimized performance, secure data handling, and alignment with evolving business needs.</p>
+          <a href="smac-applications.html" class="tech-read-more">
+            Read More <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="zigzag-image">
+          <img src="/assets/img/services/Offshore_Services/DX/SMAC-APPLICATIONS.jpg" alt="Cloud Application Development Image">
+        </div>
+      </div>
+    </section>
+    <!-- End Zigzag Section -->
+
+  </main>
+
+  <!-- Footer will load here -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript to Load Header & Footer -->
+  <script>
+    async function loadPartial(id, file) {
+      const res = await fetch(file);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+      // If header is loaded, initialize mobile navigation (assuming initMobileNavigation is in draft.js or header.html)
+      if (id === "header-placeholder" && typeof initMobileNavigation === 'function') {
+        initMobileNavigation();
+      }
+    }
+
+        loadPartial("header-placeholder", "../../../assets/header-footer/header.html");
+        loadPartial("footer-placeholder", "../../../assets/header-footer/footer.html");
+  </script>
+
+  <!-- Link to your existing draft.js if it contains other scripts -->
+  <script src="../../../assets/js/draft.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Products | Nichi-In Software Solutions</title>
+
+    <!-- Fonts -->
+    <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/assets/css/header-footer/header-footer.css" />
+    <link rel="stylesheet" href="/assets/css/products/index.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <!-- Header will load here -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="hero-products">
+            <div class="products-hero">
+                <h2> Our Products </h2>
+                <p>We help you overcome business challenges with custom implementations of web & mobile based solutions.</p>
+            </div>
+        </section>
+
+        <section class="products-section">
+            <div class="product-card">
+                <h3>StayInSmart</h3>
+                <img src="../assets/img/products/sis.png" alt="StayInSmart Product Image">
+                <p>StayInSmart is a user-friendly IoT mobile app for hotels, allowing guests to control room appliances, unlock doors, order food, and more from their smartphone or smartwatch.</p>
+                <a href="product-details.html?product=StayInSmart" class="tech-read-more">
+                    Read More <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="product-card">
+                <h3>McDataArchiver</h3>
+                <img src="../assets/img/products/Mc.png" alt="McDataArchiver Product Image">
+                <p>This application is used to take backup of CNC/PLC/HMI machines either manually or automatically through scheduled backup.</p>
+                <a href="product-details.html?product=McDataArchiver" class="tech-read-more">
+                    Read More <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="product-card">
+                <h3>Kisanbandhu</h3>
+                <img src="../assets/img/products/KB-2-1.png" alt="Kisanbandhu Product Image">
+                <p>Kisanbandu is a digital platform which creates a marketplace to connect farmers with distribution centres to sell their agricultural produce/ dairy products to consumers at fair price.</p>
+                <a href="product-details.html?product=Kisanbandhu" class="tech-read-more">
+                    Read More <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer will load here -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Function to load header and footer
+        async function loadPartial(id, file) {
+            try {
+                const res = await fetch(file);
+                if (!res.ok) {
+                    throw new Error(`HTTP error! status: ${res.status}`);
+                }
+                const html = await res.text();
+                document.getElementById(id).innerHTML = html;
+                console.log(`Successfully loaded ${file} into ${id}`); // Added console log
+                if (id === "header-placeholder") {
+                    if (typeof initMobileNavigation === 'function') {
+                        initMobileNavigation();
+                    }
+                }
+            } catch (error) {
+                console.error(`Failed to load ${file}:`, error);
+            }
+        }
+
+        // Load header and footer when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+        loadPartial("header-placeholder", "../assets/header-footer/header.html");
+        loadPartial("footer-placeholder", "../assets/header-footer/footer.html");
+        });
+    </script>
+    <script src="../assets/js/draft.js"></script>
+</body>
+</html>
