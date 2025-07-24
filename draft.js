@@ -6,9 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize all core functionalities on DOM load.
     initMobileNavigation();
     initBackToTop();
-    // Removed initIndustryCarousel() call as it's not used with the current HTML structure.
     initLogoCarousel();
-    initTestimonialsSlider();
+    initTestimonialsSlider(); // Call the hero slider initialization
     initHeroSlider(); // Call the hero slider initialization
     initFactsheetSlider(); // Call the factsheet slider initialization
 
@@ -440,40 +439,210 @@ function initHeroSlider() {
 
 /**
  * Initializes the Testimonials Slider functionality.
+ * This function now handles a single testimonial slide at a time
+ * with left/right navigation buttons and pagination dots.
  */
 function initTestimonialsSlider() {
-    const slides = document.querySelectorAll('.testimonial-main-slide');
-    const dots = document.querySelectorAll('.testimonial-dot-main');
+    const testimonialsData = [
+        {
+            text: "We consider Nichi-In Software as one of our strong partners due to their Japanese language expertise and experience of their team in delivering quality solutions.",
+            author: "Client",
+            designation: "",
+            company: "Mitsubishi Electric India Pvt. Ltd.",
+            logo: "/assets/img/dashboard/testimonials/Client_Mitsubishi.jpg"
+        },
+        {
+            text: "Working with Nichi-In was a strategic decision. Their software testing capabilities and attention to detail helped us deliver robust products in record time.",
+            author: "Akiko Sato",
+            designation: "QA Lead",
+            company: "Sony Corporation",
+            logo: "/assets/img/dashboard/testimonials/Client_Sony.jpg"
+        },
+        {
+            text: "The Nichi-In team delivered outstanding support across multiple ERP modules. Their blend of technical and business understanding was a major asset.",
+            author: "Hiroshi Tanaka",
+            designation: "ERP Program Head",
+            company: "Toshiba",
+            logo: "/assets/img/dashboard/testimonials/Toshiba-logo.png"
+        },
+        {
+            text: "Nichi-In Software is supporting us in offshore software development, onsite software development support and is a very important vendor for us.",
+            author: "Client",
+            designation: "",
+            company: "Toyota Connected India Pvt. Ltd.",
+            logo: "/assets/img/dashboard/testimonials/Client_Toyota.jpg"
+        },
+        {
+            text: "We evaluated Nichi-In Software in terms of design ability, schedule management, issue management. We found Nichi-In Software very professional in all these and we are happy to work with Nichi-In Software as one of the preferred outsourcing partners.",
+            author: "Client",
+            designation: "",
+            company: "Nomura Research Institute (NRI)",
+            logo: "/assets/img/dashboard/testimonials/Client_NRI.jpg"
+        },
+        {
+            text: "Nichi-In’s DevOps services helped us improve our CI/CD pipeline and cloud infrastructure. They’re highly competent and responsive.",
+            author: "Shunsuke Kato",
+            designation: "CTO",
+            company: "Fixer Inc.",
+            logo: "/assets/img/dashboard/testimonials/Client_Fixer.jpg"
+        },
+        {
+            text: "With bilingual system engineers who can speak Japanese, the Nichi-In team understands the client's perspective and provides support. They are flexible, have high technical skills, and have also created high-quality design documents. They also provided prompt and thorough support after implementation. They are a reliable partner that takes the initiative in development by making proposals rather than waiting for instructions.",
+            author: "Client",
+            designation: "",
+            company: "Telenet Co., Ltd.",
+            logo: "/assets/img/dashboard/testimonials/Telenet.png"
+        },
+        {
+            text: "Nichi-In Software supported us in the development of software based on our intrinsic base concept. Since the structure of the existing software is very different from the usual one, there were a few hurdles initially. However, Nichi-In Software team was able to adapt quickly and fulfill the expectations and requirements of basic software structure, maintainability etc. Further, even though our PIC was in Japan and Nichi-In Software members had to shift to Work From Home during lockdown due to Covid-19, they were able to successfully complete the development without any significant delay by using Azure Devops, Skype etc. We can confidently say that development work can be outsourced to Nichi-In Software without any concerns about being in a different country or flexibility in project execution.",
+            author: "Client",
+            designation: "",
+            company: "Japan Automatic Machine Co., Ltd. (JAM)",
+            logo: "/assets/img/dashboard/testimonials/Client_JAM.jpg"
+        },
+        {
+            text: "We created a good partnership with Nichi-In Software as their dedication to our projects and visions is evident in all aspects of their deliverance. We appreciate their attention to detail and creative approach of bringing out projects to life on time.",
+            author: "Client",
+            designation: "",
+            company: "Cosmos Impex(I) Pvt. Ltd.",
+            logo: "/assets/img/dashboard/testimonials/Client_Cosmos.jpg"
+        },
+        {
+            text: "Nichi-In Software Solutions – USA is supporting us in offshore software development, QA Testing, Production DBA and application support , onsite software development and support. Nichi-In Software Solutions – USA is a very important vendor for us and we are pleased with their service and commitment.",
+            author: "Associate Vice President",
+            designation: "Enterprise Technology",
+            company: "A Top 10 U.S University",
+            logo: "https://placehold.co/100x50/CCCCCC/333333?text=University" // Placeholder
+        },
+        {
+            text: "Our experience over the years with Nichi-In Software has been just excellent. Their work is exemplary backed by a very professional and capable technical team. Their team has extensive experience and expertise in custom application development in dotnet framework, API development, and IOS and Android based Mobile App development. A definite recommendation!",
+            author: "CEO",
+            designation: "Custom Technology Solutions",
+            company: "Houston, Texas, USA",
+            logo: "https://placehold.co/100x50/CCCCCC/333333?text=CustomTech" // Placeholder
+        },
+        {
+            text: "The professionals at Nichi-In Software Solutions are knowledgeable and experienced in the IT industry. In the early 2000’s Phoenix Solutions engaged Nichi-In Software as a trusted partner to develop a unique speech processing system for providing a single best answer to a question. Nichi-In Software delivered the most efficient solution and highest quality product consistent with our specifications. The outcomes were highly successful - their work enabled Phoenix to develop an extensive intellectual property portfolio encompassing distributed speech recognition and semantic speech understanding and other key contributions to the present burgeoning speech conversational market.",
+            author: "Client",
+            designation: "",
+            company: "Phoenix Solutions Inc.",
+            logo: "https://placehold.co/100x50/CCCCCC/333333?text=Phoenix" // Placeholder
+        }
+    ];
+
+    const sliderMain = document.getElementById('testimonials-slider-main');
+    const prevButton = document.querySelector('.testimonial-slider-wrapper .prev-button');
+    const nextButton = document.querySelector('.testimonial-slider-wrapper .next-button');
+    const paginationDotsContainer = document.getElementById('testimonial-pagination-dots-main');
 
     let currentIndex = 0;
     let autoSlideInterval;
+    const autoSlideDuration = 6000; // 6 seconds for auto-slide
 
-    if (slides.length === 0 || dots.length === 0) {
-        console.warn("Testimonial slider elements not found or insufficient for functionality.");
+    if (!sliderMain || !prevButton || !nextButton || !paginationDotsContainer || testimonialsData.length === 0) {
+        console.warn("Testimonial slider elements or data not found or insufficient for functionality.");
         return;
     }
 
     /**
-     * Displays the testimonial slide at the given index and updates pagination dots.
-     * @param {number} index - The index of the slide to display.
+     * Renders the testimonial slides and pagination dots based on the testimonialsData.
      */
-    function showTestimonialSlide(index) {
-        // Ensure index wraps around for continuous loop
-        currentIndex = (index + slides.length) % slides.length;
+    function renderSlidesAndDots() {
+        sliderMain.innerHTML = ''; // Clear existing slides
+        paginationDotsContainer.innerHTML = ''; // Clear existing dots
 
-        slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === currentIndex);
-        });
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === currentIndex);
+        testimonialsData.forEach((testimonial, index) => {
+            // Create slide item
+            const slideItem = document.createElement('div');
+            slideItem.classList.add('testimonial-slide-item');
+            slideItem.setAttribute('data-slide-index', index);
+
+            // Create testimonial card content
+            slideItem.innerHTML = `
+                <div class="testimonial-card">
+                    ${testimonial.logo ? `<img src="${testimonial.logo}" alt="${testimonial.company} Logo" class="company-logo">` : ''}
+                    <p class="testimonial-text">"${testimonial.text}"</p>
+                    <div class="testimonial-author">
+                        <span class="author-name">${testimonial.author}</span>
+                        ${testimonial.designation ? `<span class="author-designation">${testimonial.designation}</span>` : ''}
+                        <span class="author-company">${testimonial.company}</span>
+                    </div>
+                </div>
+            `;
+            sliderMain.appendChild(slideItem);
+
+            // Create pagination dot
+            const dot = document.createElement('span');
+            dot.classList.add('testimonial-dot-main');
+            dot.setAttribute('data-slide-index', index);
+            dot.addEventListener('click', () => {
+                showTestimonialSlide(index);
+                resetAutoSlide();
+            });
+            paginationDotsContainer.appendChild(dot);
         });
     }
 
     /**
-     * Moves to the next testimonial slide automatically.
+     * Displays the testimonial slide at the given index and updates pagination dots.
+     * Handles slide transitions.
+     * @param {number} index - The index of the slide to display.
+     * @param {string} [direction='next'] - The direction of the slide ('next' or 'prev').
+     */
+    function showTestimonialSlide(index, direction = 'next') {
+        const slides = document.querySelectorAll('.testimonial-slide-item');
+        const dots = document.querySelectorAll('.testimonial-dot-main');
+
+        if (slides.length === 0) return;
+
+        // Determine the old index for transition
+        const oldIndex = currentIndex;
+
+        // Normalize index to loop around
+        currentIndex = (index + slides.length) % slides.length;
+
+        // Remove active and direction classes from all slides
+        slides.forEach(slide => {
+            slide.classList.remove('active', 'prev', 'next');
+        });
+
+        // Add appropriate classes for transition
+        if (oldIndex !== currentIndex) {
+            // If moving from oldIndex to currentIndex
+            if (direction === 'next' || index > oldIndex) { // 'next' or forward jump
+                slides[oldIndex].classList.add('prev'); // Old slide moves left
+                slides[currentIndex].classList.add('active'); // New slide comes from right
+            } else { // 'prev' or backward jump
+                slides[oldIndex].classList.add('next'); // Old slide moves right (off-screen)
+                slides[currentIndex].classList.add('active'); // New slide comes from left
+            }
+        } else {
+            // If it's the initial load or clicking the current dot, just make it active
+            slides[currentIndex].classList.add('active');
+        }
+
+
+        // Update dots
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+
+        // Restart the auto-slide timer whenever a slide is shown (manual or auto)
+        resetAutoSlide();
+    }
+
+    /**
+     * Moves to the next testimonial slide.
      */
     function nextTestimonial() {
-        showTestimonialSlide(currentIndex + 1);
+        showTestimonialSlide(currentIndex + 1, 'next');
+    }
+
+    /**
+     * Moves to the previous testimonial slide.
+     */
+    function prevTestimonial() {
+        showTestimonialSlide(currentIndex - 1, 'prev');
     }
 
     /**
@@ -481,20 +650,23 @@ function initTestimonialsSlider() {
      */
     function resetAutoSlide() {
         clearInterval(autoSlideInterval);
-        autoSlideInterval = setInterval(nextTestimonial, 6000); // 6 seconds for testimonial auto-slide
+        autoSlideInterval = setInterval(nextTestimonial, autoSlideDuration);
     }
 
-    // Attach click events to pagination dots
-    dots.forEach(dot => {
-        dot.addEventListener('click', () => {
-            const index = parseInt(dot.getAttribute('data-slide-index'));
-            showTestimonialSlide(index);
-            resetAutoSlide(); // Reset timer on manual navigation
-        });
+    // Attach click events to navigation buttons
+    prevButton.addEventListener('click', () => {
+        prevTestimonial();
+        resetAutoSlide(); // Reset timer on manual navigation
     });
 
-    // Initialize the testimonials slider
-    showTestimonialSlide(currentIndex);
+    nextButton.addEventListener('click', () => {
+        nextTestimonial();
+        resetAutoSlide(); // Reset timer on manual navigation
+    });
+
+    // Initial setup
+    renderSlidesAndDots(); // Populate slides and dots
+    showTestimonialSlide(currentIndex); // Display the first slide
     resetAutoSlide(); // Start auto-sliding
 }
 
