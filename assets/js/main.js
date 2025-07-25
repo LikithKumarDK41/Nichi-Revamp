@@ -89,3 +89,4 @@ class HTMLInclude extends HTMLElement {
 if (!customElements.get('html-include')) {
   customElements.define('html-include', HTMLInclude);
 }
+

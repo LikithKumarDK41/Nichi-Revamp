@@ -346,7 +346,7 @@
     top: 0;
     right: 0;
     height: 100dvh;
-    width: 70vw;
+    width: 300px;
     max-width: 420px;
     background: #e6e6f4;
     backdrop-filter: blur(12px);
@@ -368,11 +368,27 @@
     pointer-events: auto;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* dim effect */
+  z-index: 999; /* behind the sidebar */
+  display: none;
+}
+
+.overlay.active {
+  display: block;
+}
+
+
 /* ===============================
    Inner Nav Wrapper
 ================================= */
 .mobile-nav {
-    padding: 2rem 1.5rem;
+    padding: 4rem 1.5rem;
     width: 100%;
     flex-grow: 1;
 }
@@ -592,9 +608,6 @@
         align-items: center;
     }
 
-    .mobile-nav-links a {
-        font-size: 1.5rem;
-    }
 }
 
 /* Extra small devices (phones) */
@@ -637,9 +650,6 @@
         align-items: center;
     }
 
-    .mobile-nav-links a {
-        font-size: 1.5rem;
-    }
 }
 
 /* Tiny phones */
@@ -682,9 +692,6 @@
         align-items: center;
     }
 
-    .mobile-nav-links a {
-        font-size: 1.5rem;
-    }
 }
 
 @media (max-width: 768px) {
