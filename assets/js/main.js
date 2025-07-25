@@ -9,38 +9,84 @@ class HTMLInclude extends HTMLElement {
   }
 
   connectedCallback() {
-    this.fetchAndSetHTML(this.getAttribute('src'));
-  }
-
-  async fetchAndSetHTML(src) {
+    const src = this.getAttribute('src');
     if (!src) {
       console.error('HTMLInclude: src attribute is missing.');
       return;
     }
 
+    this.fetchAndSetHTML(src);
+  }
+
+  async fetchAndSetHTML(src) {
     try {
       const response = await fetch(src);
-      if (!response.ok) {
-        throw new Error(`Failed to fetch ${src}: ${response.statusText}`);
-      }
+      if (!response.ok) throw new Error(`Failed to fetch ${src}: ${response.statusText}`);
+
       const html = await response.text();
       this.innerHTML = html;
+
+      // After content is loaded, initialize functionality
+      this.initializeMobileMenu();
+      this.highlightActiveMenuItems();
     } catch (error) {
       console.error(`Error loading content for HTMLInclude:`, error);
       this.innerHTML = `<p style="color:red">Error loading content from ${src}</p>`;
     }
   }
+
+  initializeMobileMenu() {
+    // Hamburger toggle
+    const hamburger = this.querySelector('#hamburger-menu');
+    const overlay = this.querySelector('#mobile-nav-overlay');
+
+    if (hamburger && overlay) {
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        overlay.classList.toggle('open');
+      });
+    }
+
+    // Mobile dropdown toggle
+    const dropdownLinks = this.querySelectorAll('.dropdown-mobile > a');
+    dropdownLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const parentLi = link.closest('li');
+        parentLi.classList.toggle('open');
+        const submenu = parentLi.querySelector('ul');
+        if (submenu) submenu.classList.toggle('open');
+      });
+    });
+  }
+
+  highlightActiveMenuItems() {
+    const currentPath = window.location.pathname;
+    const allLinks = this.querySelectorAll('.mobile-nav a, .main-nav a');
+
+    allLinks.forEach(link => {
+      const href = new URL(link.href, window.location.origin).pathname;
+
+      if (currentPath === href || currentPath.startsWith(href)) {
+        link.classList.add('active');
+
+        // Mark all parent dropdowns active and expand their menus
+        let li = link.closest('li');
+        while (li) {
+          li.classList.add('active');
+
+          const submenu = li.querySelector('ul');
+          if (submenu) submenu.classList.add('open');
+
+          li = li.parentElement.closest('li.dropdown-mobile, li.dropdown');
+        }
+      }
+    });
+  }
 }
 
 // Define the custom element
 if (!customElements.get('html-include')) {
-    customElements.define('html-include', HTMLInclude);
+  customElements.define('html-include', HTMLInclude);
 }
 
-// Load global CSS
-// document.addEventListener('DOMContentLoaded', () => {
-//     const link = document.createElement('link');
-//     link.rel = 'stylesheet';
-//     link.href = '/assets/css/global.css';
-//     document.head.appendChild(link);
-// });

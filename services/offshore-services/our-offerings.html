@@ -5,27 +5,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Offerings | Nichi-In Software Solutions</title>
-
-  <!-- Fonts -->
-  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="/assets/css/header-footer/header-footer.css" />
-
-  <link rel="stylesheet" href="/assets/css/services/offshore-services/our-offerings.css" />
-
+  <html-include src="/layout/script.html" lang="en"></html-include>
+  <link rel="stylesheet" href="/assets/css/global.css">  
 </head>
 
 <body>
   <!-- Header will load here -->
-  <div id="header-placeholder"></div>
-
+  <html-include src="/layout/header.html" lang="en"></html-include>
+  <div id="content">
   <main>
     <section class="leadership-hero">
       <div class="hero-content">
@@ -145,35 +132,11 @@
 
     </section>
   </main>
+  </div>
+   <html-include src="/layout/footer.html" lang="en"></html-include>
+    <script src="/assets/js/main.js"></script>
+    <script src="/backup/draft.js"></script>
 
-  <!-- Footer will load here -->
-  <div id="footer-placeholder"></div>
-
-  <!-- JavaScript to Load Header & Footer -->
-  <script>
-    async function loadPartial(id, file) {
-      const res = await fetch(file);
-      const html = await res.text();
-      document.getElementById(id).innerHTML = html;
-      // If header is loaded, initialize mobile navigation (assuming initMobileNavigation is defined in draft.js or header.html)
-      if (id === "header-placeholder") {
-        // You might need to ensure initMobileNavigation() is available globally or loaded after header.html
-        // For now, we'll assume it's either in draft.js or handled by the header itself.
-        if (typeof initMobileNavigation === 'function') {
-          initMobileNavigation();
-        }
-      }
-    }
-
-    // Load header and footer when the page loads
-    window.addEventListener('DOMContentLoaded', (event) => {
-        loadPartial("header-placeholder", "../../assets/header-footer/header.html");
-        loadPartial("footer-placeholder", "../../assets/header-footer/footer.html");
-    });
-  </script>
-
-  <!-- Assuming draft.js contains other page-specific scripts like initMobileNavigation if needed -->
-  <script src="../../assets/js/draft.js"></script>
 </body>
 
 </html>
