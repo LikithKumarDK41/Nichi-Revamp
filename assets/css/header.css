@@ -1,4 +1,11 @@
 /* Header Styles */
+.mobile-nav-links a.active {
+  background: linear-gradient(135deg, #120270, #60efff);
+  color: white;
+  font-weight: 700;
+}
+
+
 .main-header {
     position: fixed;
     top: 0;
