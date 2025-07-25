@@ -443,92 +443,71 @@ function initHeroSlider() {
  * with left/right navigation buttons and pagination dots.
  */
 function initTestimonialsSlider() {
-    const testimonialsData = [
-        {
-            text: "We consider Nichi-In Software as one of our strong partners due to their Japanese language expertise and experience of their team in delivering quality solutions.",
-            author: "Client",
-            designation: "",
-            company: "Mitsubishi Electric India Pvt. Ltd.",
-            logo: "/assets/img/dashboard/testimonials/Client_Mitsubishi.jpg"
-        },
-        {
-            text: "Working with Nichi-In was a strategic decision. Their software testing capabilities and attention to detail helped us deliver robust products in record time.",
-            author: "Akiko Sato",
-            designation: "QA Lead",
-            company: "Sony Corporation",
-            logo: "/assets/img/dashboard/testimonials/Client_Sony.jpg"
-        },
-        {
-            text: "The Nichi-In team delivered outstanding support across multiple ERP modules. Their blend of technical and business understanding was a major asset.",
-            author: "Hiroshi Tanaka",
-            designation: "ERP Program Head",
-            company: "Toshiba",
-            logo: "/assets/img/dashboard/testimonials/Toshiba-logo.png"
-        },
-        {
-            text: "Nichi-In Software is supporting us in offshore software development, onsite software development support and is a very important vendor for us.",
-            author: "Client",
-            designation: "",
-            company: "Toyota Connected India Pvt. Ltd.",
-            logo: "/assets/img/dashboard/testimonials/Client_Toyota.jpg"
-        },
-        {
-            text: "We evaluated Nichi-In Software in terms of design ability, schedule management, issue management. We found Nichi-In Software very professional in all these and we are happy to work with Nichi-In Software as one of the preferred outsourcing partners.",
-            author: "Client",
-            designation: "",
-            company: "Nomura Research Institute (NRI)",
-            logo: "/assets/img/dashboard/testimonials/Client_NRI.jpg"
-        },
-        {
-            text: "Nichi-In’s DevOps services helped us improve our CI/CD pipeline and cloud infrastructure. They’re highly competent and responsive.",
-            author: "Shunsuke Kato",
-            designation: "CTO",
-            company: "Fixer Inc.",
-            logo: "/assets/img/dashboard/testimonials/Client_Fixer.jpg"
-        },
-        {
-            text: "With bilingual system engineers who can speak Japanese, the Nichi-In team understands the client's perspective and provides support. They are flexible, have high technical skills, and have also created high-quality design documents. They also provided prompt and thorough support after implementation. They are a reliable partner that takes the initiative in development by making proposals rather than waiting for instructions.",
-            author: "Client",
-            designation: "",
-            company: "Telenet Co., Ltd.",
-            logo: "/assets/img/dashboard/testimonials/Telenet.png"
-        },
-        {
-            text: "Nichi-In Software supported us in the development of software based on our intrinsic base concept. Since the structure of the existing software is very different from the usual one, there were a few hurdles initially. However, Nichi-In Software team was able to adapt quickly and fulfill the expectations and requirements of basic software structure, maintainability etc. Further, even though our PIC was in Japan and Nichi-In Software members had to shift to Work From Home during lockdown due to Covid-19, they were able to successfully complete the development without any significant delay by using Azure Devops, Skype etc. We can confidently say that development work can be outsourced to Nichi-In Software without any concerns about being in a different country or flexibility in project execution.",
-            author: "Client",
-            designation: "",
-            company: "Japan Automatic Machine Co., Ltd. (JAM)",
-            logo: "/assets/img/dashboard/testimonials/Client_JAM.jpg"
-        },
-        {
-            text: "We created a good partnership with Nichi-In Software as their dedication to our projects and visions is evident in all aspects of their deliverance. We appreciate their attention to detail and creative approach of bringing out projects to life on time.",
-            author: "Client",
-            designation: "",
-            company: "Cosmos Impex(I) Pvt. Ltd.",
-            logo: "/assets/img/dashboard/testimonials/Client_Cosmos.jpg"
-        },
-        {
-            text: "Nichi-In Software Solutions – USA is supporting us in offshore software development, QA Testing, Production DBA and application support , onsite software development and support. Nichi-In Software Solutions – USA is a very important vendor for us and we are pleased with their service and commitment.",
-            author: "Associate Vice President",
-            designation: "Enterprise Technology",
-            company: "A Top 10 U.S University",
-            logo: "https://placehold.co/100x50/CCCCCC/333333?text=University" // Placeholder
-        },
-        {
-            text: "Our experience over the years with Nichi-In Software has been just excellent. Their work is exemplary backed by a very professional and capable technical team. Their team has extensive experience and expertise in custom application development in dotnet framework, API development, and IOS and Android based Mobile App development. A definite recommendation!",
-            author: "CEO",
-            designation: "Custom Technology Solutions",
-            company: "Houston, Texas, USA",
-            logo: "https://placehold.co/100x50/CCCCCC/333333?text=CustomTech" // Placeholder
-        },
-        {
-            text: "The professionals at Nichi-In Software Solutions are knowledgeable and experienced in the IT industry. In the early 2000’s Phoenix Solutions engaged Nichi-In Software as a trusted partner to develop a unique speech processing system for providing a single best answer to a question. Nichi-In Software delivered the most efficient solution and highest quality product consistent with our specifications. The outcomes were highly successful - their work enabled Phoenix to develop an extensive intellectual property portfolio encompassing distributed speech recognition and semantic speech understanding and other key contributions to the present burgeoning speech conversational market.",
-            author: "Client",
-            designation: "",
-            company: "Phoenix Solutions Inc.",
-            logo: "https://placehold.co/100x50/CCCCCC/333333?text=Phoenix" // Placeholder
-        }
-    ];
+const testimonialsData = [
+    {
+        text: "We consider Nichi-In Software as one of our strong partners due to their Japanese language expertise and experience of their team in delivering quality solutions.",
+        author: "Client",
+        designation: "",
+        company: "Mitsubishi Electric India Pvt. Ltd.",
+        logo: "/assets/img/dashboard/testimonials/Client_Mitsubishi.jpg"
+    },
+    {
+        text: "Nichi-In Software is supporting us in offshore software development, onsite software development support and is a very important vendor for us.",
+        author: "Client",
+        designation: "",
+        company: "Toyota Connected India Pvt. Ltd.",
+        logo: "/assets/img/dashboard/testimonials/Client_Toyota.jpg"
+    },
+    {
+        text: "We evaluated Nichi-In Software in terms of design ability, schedule management, issue management. We found Nichi-In Software very professional in all these and we are happy to work with Nichi-In Software as one of the preferred outsourcing partners.",
+        author: "Client",
+        designation: "",
+        company: "NRI, Nomura Research Institute", // Updated company name for clarity
+        logo: "/assets/img/dashboard/testimonials/Client_NRI.jpg"
+    },
+    {
+        text: "With bilingual system engineers who can speak Japanese, the Nichi-In team understands the client's perspective and provides support. They are flexible, have high technical skills, and have also created high-quality design documents. They also provided prompt and thorough support after implementation. They are a reliable partner that takes the initiative in development by making proposals rather than waiting for instructions.",
+        author: "Client",
+        designation: "",
+        company: "Telenet Co., Ltd.",
+        logo: "/assets/img/dashboard/testimonials/Telenet.png"
+    },
+    {
+        text: "Nichi-In Software supported us in the development of software based on our intrinsic base concept. Since the structure of the existing software is very different from the usual one, there were a few hurdles initially. However, Nichi-In Software team was able to adapt quickly and fulfill the expectations and requirements of basic software structure, maintainability etc. Further, even though our PIC was in Japan and Nichi-In Software members had to shift to Work From Home during lockdown due to Covid-19, they were able to successfully complete the development without any significant delay by using Azure Devops, Skype etc. We can confidently say that development work can be outsourced to Nichi-In Software without any concerns about being in a different country or flexibility in project execution.",
+        author: "Client",
+        designation: "",
+        company: "Japan Automatic Machine Co., Ltd.", // Simplified company name
+        logo: "/assets/img/dashboard/testimonials/Client_JAM.jpg"
+    },
+    {
+        text: "We created a good partnership with Nichi-In Software as their dedication to our projects and visions is evident in all aspects of their deliverance. We appreciate their attention to detail and creative approach of bringing out projects to life on time.",
+        author: "Client",
+        designation: "",
+        company: "Cosmos Impex(I) Pvt. Ltd.",
+        logo: "/assets/img/dashboard/testimonials/Client_Cosmos.jpg"
+    },
+    {
+        text: "Nichi-In Software Solutions – USA is supporting us in offshore software development, QA Testing, Production DBA and application support , onsite software development and support. Nichi-In Software Solutions – USA is a very important vendor for us and we are pleased with their service and commitment.",
+        author: "Associate Vice President",
+        designation: "Enterprise Technology",
+        company: "A Top 10 U.S University",
+        logo: "https://placehold.co/100x50/CCCCCC/333333?text=University" // Placeholder
+    },
+    {
+        text: "Our experience over the years with Nichi-In Software has been just excellent. Their work is exemplary backed by a very professional and capable technical team. Their team has extensive experience and expertise in custom application development in dotnet framework, API development, and IOS and Android based Mobile App development. A definite recommendation!",
+        author: "CEO",
+        designation: "Custom Technology Solutions",
+        company: "Houston, Texas, USA",
+        logo: "https://placehold.co/100x50/CCCCCC/333333?text=CustomTech" // Placeholder
+    },
+    {
+        text: "The professionals at Nichi-In Software Solutions are knowledgeable and experienced in the IT industry. In the early 2000’s Phoenix Solutions engaged Nichi-In Software as a trusted partner to develop a unique speech processing system for providing a single best answer to a question. Nichi-In Software delivered the most efficient solution and highest quality product consistent with our specifications. The outcomes were highly successful - their work enabled Phoenix to develop an extensive intellectual property portfolio encompassing distributed speech recognition and semantic speech understanding and other key contributions to the present burgeoning speech conversational market.",
+        author: "Client",
+        designation: "",
+        company: "Phoenix Solutions Inc., Palo Alto", // Included location for clarity
+        logo: "https://placehold.co/100x50/CCCCCC/333333?text=Phoenix" // Placeholder
+    }
+];
 
     const sliderMain = document.getElementById('testimonials-slider-main');
     const prevButton = document.querySelector('.testimonial-slider-wrapper .prev-button');

@@ -7,52 +7,11 @@
   <title>Leadership Profile | Nichi-In Software Solutions</title>
 
   <!-- Fonts -->
-  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="/assets/css/header-footer/header-footer.css" />
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <html-include src="/layout/script.html" lang="en"></html-include>
+    <link rel="stylesheet" href="/assets/css/global.css"> 
 
   <!-- Internal CSS for this page -->
   <style>
-    /* Global styles */
-    :root {
-      --primary-color: #00C2B8;
-      --secondary-color: #6F42C1;
-      --accent-color: #F4D35E;
-      --text-color-dark: #2d3748;
-      --text-color-light: #e2e8f0;
-      --bg-dark: #ffffff;
-      --bg-light: #f7fafc;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    html,
-    body {
-      overflow-x: hidden;
-      max-width: 100%;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      background-color: #f9f9fb;
-      color: #2d3748;
-      overflow-x: hidden;
-    }
 
     /* Profile Section - Full Width */
     .profile-section {
@@ -61,19 +20,42 @@
       background-color: #f9f9fb;
       min-height: calc(100vh - 100px);
       font-family: 'Inter', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
     }
 
     .profile-container {
       padding: 0 20px;
-      margin-top: 30px;
+      max-width: 1000px;
+      width: 100%;
+      margin-top: 60px;
     }
 
-        /* Profile Display - Spacious Layout */
+    /* Profile Display - Spacious Layout */
     .profile-display {
       display: flex;
       flex-direction: column;
       gap: 3rem;
       width: 100%;
+      align-items: center;
+    }
+
+    /* Glassmorphic card effect for the main profile wrapper */
+    .glass-card {
+      background-color: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 15px;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      width: 100%; /* Equivalent to w-full */
+      display: flex; /* Equivalent to flex */
+      flex-direction: column; /* Equivalent to flex-col */
+      gap: 1.5rem; /* Equivalent to gap-6 (1.5rem = 24px) */
+      align-items: flex-start; /* Equivalent to items-start */
     }
 
     .profile-header {
@@ -91,93 +73,107 @@
       box-shadow: none !important;
       border-radius: 0 !important;
       padding: 0 !important;
-    }
-
-    .profile-image-container {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .profile-image-container {
-      width: 220px;
-      height: 280px;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .profile-image-container img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      display: flex;
+      justify-content: center;
+    }
+
+    .profile-image-card { /* New class for leftCard */
+      background-color: #fff; /* Equivalent to bg-white */
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Equivalent to shadow-md */
+      border-radius: 0.75rem; /* Equivalent to rounded-xl */
+      overflow: hidden; /* Equivalent to overflow-hidden */
+      width: 100%; /* Equivalent to w-full */
+      text-align: center; /* Equivalent to text-center */
+      position: relative; /* Equivalent to relative */
+    }
+
+    .profile-image-wrapper { /* New class for imgWrapper */
+      position: relative; /* Equivalent to relative */
+    }
+
+    .profile-image-card img {
+      width: 100%; /* Equivalent to w-full */
+      height: 20rem; /* Equivalent to h-80 (20rem = 320px) */
+      object-fit: cover; /* Equivalent to object-cover */
       display: block;
     }
 
-    .profile-header-content {
-      text-align: center;
-      width: 100%;
+    .linkedin-badge { /* New class for badge */
+      position: absolute; /* Equivalent to absolute */
+      top: 0.5rem; /* Equivalent to top-2 (0.5rem = 8px) */
+      right: 0.5rem; /* Equivalent to right-2 (0.5rem = 8px) */
+      background-color: #0a66c2; /* Equivalent to bg-[#0a66c2] */
+      color: #fff; /* Equivalent to text-white */
+      width: 2rem; /* Equivalent to w-8 (2rem = 32px) */
+      height: 2rem; /* Equivalent to h-8 (2rem = 32px) */
+      display: flex; /* Equivalent to flex */
+      align-items: center; /* Equivalent to items-center */
+      justify-content: center; /* Equivalent to justify-center */
+      border-radius: 9999px; /* Equivalent to rounded-full */
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Equivalent to shadow-md */
+      transition: background-color 0.3s ease; /* Equivalent to transition-colors duration-300 */
     }
 
-    .profile-header-content h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #000066;
-      margin-bottom: 0.5rem;
-      line-height: 1.2;
+    .linkedin-badge:hover {
+      background-color: #004182; /* Equivalent to hover:bg-[#004182] */
     }
 
-    .profile-header-content .title {
-      font-size: 1.4rem;
-      color: #555;
-      margin-bottom: 1.5rem;
-      font-weight: 500;
+    .name-title-div { /* New class for nameTitleDiv */
+      padding-left: 1rem; /* Equivalent to px-4 */
+      padding-right: 1rem; /* Equivalent to px-4 */
+      padding-top: 1rem; /* Equivalent to py-4 */
+      padding-bottom: 1rem; /* Equivalent to py-4 */
     }
 
-    .profile-details {
-      width: 100%;
-      padding: 0 1rem;
+    .name-title-div h3 {
+      font-size: 1.125rem; /* Equivalent to text-lg (1.125rem = 18px) */
+      font-weight: 600; /* Equivalent to font-semibold */
+      color: #2d3748; /* Equivalent to text-gray-800 */
     }
 
-    .profile-details p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #4a5568;
-      margin-bottom: 1.5rem;
-      text-align: left;
+    .name-title-div p {
+      font-size: 0.875rem; /* Equivalent to text-sm (0.875rem = 14px) */
+      color: #a0a0a0; /* Equivalent to text-gray-500 */
     }
 
-    .profile-details h3 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: #222222;
-      margin-top: 2.5rem;
-      margin-bottom: 1.5rem;
-      position: relative;
-      padding-bottom: 0.5rem;
+    .right-content { /* New class for rightContent */
+      flex-grow: 1; /* Equivalent to flex-1 */
     }
 
-    .profile-details h3::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background-color: var(--primary-color);
+    .right-content h2 {
+      font-size: 1.5rem; /* Equivalent to text-2xl (1.5rem = 24px) */
+      font-weight: 700; /* Equivalent to font-bold */
+      color: #2d3748; /* Equivalent to text-gray-800 */
+      margin-bottom: 0.25rem; /* Equivalent to mb-1 (0.25rem = 4px) */
     }
 
-    .profile-details ul {
-      list-style: disc;
-      margin-left: 1.5rem;
-      margin-bottom: 2rem;
-      color: #4a5568;
+    .right-content .title {
+      font-size: 1rem; /* Equivalent to text-md (1rem = 16px) */
+      font-weight: 600; /* Equivalent to font-semibold */
+      color: #718096; /* Equivalent to text-gray-600 */
+      margin-bottom: 1rem; /* Equivalent to mb-4 (1rem = 16px) */
     }
 
-    .profile-details ul li {
-      margin-bottom: 0.8rem;
-      font-size: 1.1rem;
-      line-height: 1.7;
+    .details-list { /* New class for detailsList */
+      list-style-type: disc; /* Equivalent to list-disc */
+      padding-left: 1.5rem; /* Equivalent to pl-6 (1.5rem = 24px) */
+      margin-bottom: 1rem; /* Equivalent to mb-4 (1rem = 16px) */
+      color: #4a5568; /* Equivalent to text-gray-700 */
+    }
+
+    .major-roles-heading { /* New class for heading */
+      font-size: 1rem; /* Equivalent to text-md (1rem = 16px) */
+      font-weight: 600; /* Equivalent to font-semibold */
+      color: #2d3748; /* Equivalent to text-gray-800 */
+      margin-top: 1rem; /* Equivalent to mt-4 (1rem = 16px) */
+      margin-bottom: 0.5rem; /* Equivalent to mb-2 (0.5rem = 8px) */
+    }
+
+    .roles-list { /* New class for rolesList */
+      list-style-type: disc; /* Equivalent to list-disc */
+      padding-left: 1.5rem; /* Equivalent to pl-6 (1.5rem = 24px) */
+      color: #4a5568; /* Equivalent to text-gray-700 */
     }
 
     .profile-links {
@@ -235,6 +231,12 @@
 
     /* Responsive adjustments */
     @media (min-width: 768px) {
+      .glass-card {
+        flex-direction: row; /* Equivalent to md:flex-row */
+      }
+      .profile-image-card {
+        width: 18rem; /* Equivalent to md:w-72 (18rem = 288px) */
+      }
       .profile-header {
         flex-direction: row;
         align-items: flex-start;
@@ -310,8 +312,8 @@
 </head>
 
 <body>
-  <!-- Header will load here -->
-  <div id="header-placeholder"></div>
+    <html-include src="/layout/header.html" lang="en"></html-include>
+    <div id="content">
 
   <main>
     <section class="profile-section">
@@ -327,9 +329,12 @@
       </div>
     </section>
   </main>
+      </div>
+    <html-include src="/layout/footer.html" lang="en"></html-include>
+    <script src="/assets/js/main.js"></script>
+    <script src="/backup/draft.js"></script>
 
   <!-- Footer will load here -->
-  <div id="footer-placeholder"></div>
 
   <script>
     // Data for leadership profiles
@@ -484,92 +489,92 @@
     ];
 
     // Function to create a spacious profile display
-function createProfileDisplay(person) {
-  const wrapper = document.createElement('div');
-  wrapper.className = 'w-full bg-white shadow-lg rounded-xl p-6 flex flex-col md:flex-row gap-6 items-start';
+    function createProfileDisplay(person) {
+      const wrapper = document.createElement('div');
+      // Applied new class for styling
+      wrapper.classList.add('glass-card');
 
-  // LEFT CARD
-  const leftCard = document.createElement('div');
-  leftCard.className = 'bg-white shadow-md rounded-xl overflow-hidden w-full md:w-72 text-center relative';
+      // LEFT CARD - Image and Name/Title below it
+      const leftCard = document.createElement('div');
+      leftCard.classList.add('profile-image-card'); // Applied new class
 
-  const imgWrapper = document.createElement('div');
-  imgWrapper.className = 'relative';
+      const imgWrapper = document.createElement('div');
+      imgWrapper.classList.add('profile-image-wrapper'); // Applied new class
 
-  const img = document.createElement('img');
-  img.src = person.imageUrl;
-  img.alt = person.name;
-  img.className = 'w-full h-80 object-cover';
-  imgWrapper.appendChild(img);
+      const img = document.createElement('img');
+      img.src = person.imageUrl;
+      img.alt = person.name;
+      img.classList.add('profile-image-card-img'); // Applied new class
+      imgWrapper.appendChild(img);
 
-  // LinkedIn icon (if exists)
-  if (person.linkedinUrl) {
-    const badge = document.createElement('a');
-    badge.href = person.linkedinUrl;
-    badge.target = '_blank';
-    badge.rel = 'noopener noreferrer';
-    badge.className = 'absolute top-2 right-2 bg-[#0a66c2] text-white w-8 h-8 flex items-center justify-center rounded-full';
-    badge.innerHTML = '<i class="fab fa-linkedin"></i>';
-    imgWrapper.appendChild(badge);
-  }
+      // LinkedIn icon (if exists) - positioned at top-right of the image
+      if (person.linkedinUrl) {
+        const badge = document.createElement('a');
+        badge.href = person.linkedinUrl;
+        badge.target = '_blank';
+        badge.rel = 'noopener noreferrer';
+        badge.classList.add('linkedin-badge'); // Applied new class
+        badge.innerHTML = '<i class="fab fa-linkedin"></i>';
+        imgWrapper.appendChild(badge);
+      }
 
-  leftCard.appendChild(imgWrapper);
+      leftCard.appendChild(imgWrapper);
 
-  const nameTitleDiv = document.createElement('div');
-  nameTitleDiv.className = 'px-4 py-4';
-  nameTitleDiv.innerHTML = `
-    <h3 class="text-lg font-semibold text-gray-800">${person.name}</h3>
-    <p class="text-sm text-gray-500">${person.title}</p>
-  `;
-  leftCard.appendChild(nameTitleDiv);
+      const nameTitleDiv = document.createElement('div');
+      nameTitleDiv.classList.add('name-title-div'); // Applied new class
+      nameTitleDiv.innerHTML = `
+        <h3>${person.name}</h3>
+        <p>${person.title}</p>
+      `;
+      leftCard.appendChild(nameTitleDiv);
 
-  // RIGHT CONTENT
-  const rightContent = document.createElement('div');
-  rightContent.className = 'flex-1';
+      // RIGHT CONTENT - Details and Major Roles
+      const rightContent = document.createElement('div');
+      rightContent.classList.add('right-content'); // Applied new class
 
-  const nameHeading = document.createElement('h2');
-  nameHeading.className = 'text-2xl font-bold text-gray-800 mb-1';
-  nameHeading.textContent = person.name;
-  rightContent.appendChild(nameHeading);
+      const nameHeading = document.createElement('h2');
+      nameHeading.textContent = person.name;
+      rightContent.appendChild(nameHeading);
 
-  const title = document.createElement('p');
-  title.className = 'text-md font-semibold text-gray-600 mb-4';
-  title.textContent = person.title;
-  rightContent.appendChild(title);
+      const title = document.createElement('p');
+      title.classList.add('title'); // Applied new class
+      title.textContent = person.title;
+      rightContent.appendChild(title);
 
-  // Details
-  const detailsList = document.createElement('ul');
-  detailsList.className = 'list-disc pl-6 mb-4 text-gray-700';
+      // Details
+      const detailsList = document.createElement('ul');
+      detailsList.classList.add('details-list'); // Applied new class
 
-  person.details.forEach(d => {
-    const li = document.createElement('li');
-    li.innerHTML = d;
-    detailsList.appendChild(li);
-  });
-  rightContent.appendChild(detailsList);
+      person.details.forEach(d => {
+        const li = document.createElement('li');
+        li.innerHTML = d;
+        detailsList.appendChild(li);
+      });
+      rightContent.appendChild(detailsList);
 
-  // Major roles
-  if (person.majorRoles?.length) {
-    const heading = document.createElement('h3');
-    heading.textContent = 'Major Roles:';
-    heading.className = 'text-md font-semibold text-gray-800 mt-4 mb-2';
-    rightContent.appendChild(heading);
+      // Major roles
+      if (person.majorRoles?.length) {
+        const heading = document.createElement('h3');
+        heading.textContent = 'Major Roles:';
+        heading.classList.add('major-roles-heading'); // Applied new class
+        rightContent.appendChild(heading);
 
-    const rolesList = document.createElement('ul');
-    rolesList.className = 'list-disc pl-6 text-gray-700';
-    person.majorRoles.forEach(role => {
-      const li = document.createElement('li');
-      li.textContent = role;
-      rolesList.appendChild(li);
-    });
-    rightContent.appendChild(rolesList);
-  }
+        const rolesList = document.createElement('ul');
+        rolesList.classList.add('roles-list'); // Applied new class
+        person.majorRoles.forEach(role => {
+          const li = document.createElement('li');
+          li.textContent = role;
+          rolesList.appendChild(li);
+        });
+        rightContent.appendChild(rolesList);
+      }
 
-  // Append cards
-  wrapper.appendChild(leftCard);
-  wrapper.appendChild(rightContent);
+      // Append left and right sections to the wrapper
+      wrapper.appendChild(leftCard);
+      wrapper.appendChild(rightContent);
 
-  return wrapper;
-}
+      return wrapper;
+    }
 
 
     // Function to render profiles based on URL parameter
@@ -597,29 +602,8 @@ function createProfileDisplay(person) {
       }
     }
 
-    // Function to load header and footer
-    async function loadPartial(id, file) {
-      try {
-        const res = await fetch(file);
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        const html = await res.text();
-        document.getElementById(id).innerHTML = html;
-        if (id === "header-placeholder") {
-          if (typeof initMobileNavigation === 'function') {
-            initMobileNavigation();
-          }
-        }
-      } catch (error) {
-        console.error(`Failed to load ${file}:`, error);
-      }
-    }
-
     // Load header, footer, and render profiles when the DOM is fully loaded
     document.addEventListener('DOMContentLoaded', () => {
-  loadPartial("header-placeholder", "../assets/header-footer/header.html");
-  loadPartial("footer-placeholder", "../assets/header-footer/footer.html");
       renderLeadershipProfiles();
     });
   </script>
