@@ -90,3 +90,49 @@ if (!customElements.get('html-include')) {
   customElements.define('html-include', HTMLInclude);
 }
 
+// Define the custom element
+if (!customElements.get('html-include')) {
+  customElements.define('html-include', HTMLInclude);
+}
+
+// Back to Top setup
+function initializeBackToTopButton() {
+  const backToTopButton = document.getElementById('back-to-top');
+
+  if (!backToTopButton) return;
+
+  // Show/hide button on scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopButton.classList.add('visible');
+    } else {
+      backToTopButton.classList.remove('visible');
+    }
+  });
+
+  // Scroll to top on click
+  backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
+// Run it after everything's loaded
+document.addEventListener('DOMContentLoaded', () => {
+  // In case the button exists in the base HTML
+  initializeBackToTopButton();
+
+  // Also observe the DOM for when back-to-top is included later via <html-include>
+  const observer = new MutationObserver(() => {
+    const button = document.getElementById('back-to-top');
+    if (button && !button.dataset.initialized) {
+      button.dataset.initialized = 'true';
+      initializeBackToTopButton();
+    }
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+});
+
