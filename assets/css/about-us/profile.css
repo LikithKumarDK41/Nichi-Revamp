@@ -129,6 +129,7 @@
       font-weight: 700; /* Equivalent to font-bold */
       color: #2d3748; /* Equivalent to text-gray-800 */
       margin-bottom: 0.25rem; /* Equivalent to mb-1 (0.25rem = 4px) */
+      text-align: left;
     }
 
     .right-content .title {

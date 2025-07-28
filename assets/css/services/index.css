@@ -17,6 +17,7 @@
       font-weight: 700; /* font-extrabold */
       letter-spacing: -0.05em; /* tracking-tight */
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* drop-shadow-lg */
+      color: white;
     }
 
     @media (min-width: 768px) {

@@ -1,8 +1,7 @@
-/*section title and subtitle*/
 .section-title {
     font-family: 'Inter', sans-serif;
     font-size: 2.8rem;
-    font-weight: 800;
+    font-weight: 700;
     margin-bottom: 24px;
     text-shadow: 2px 2px 5px var(--shadow-color-dark);
 }
@@ -66,6 +65,8 @@
     font-weight: 700;
     margin-bottom: 0.5rem;
     line-height: 1.2;
+    text-align: left;
+    color: rgb(247, 241, 241);
 }
 
 .slide-text-container h3 {
@@ -222,7 +223,7 @@
 .tech-expertise-heading {
     text-align: center;
     font-size: 2.5rem;
-    font-weight: 800;
+    font-weight: 700;
     color: #1a202c;
     margin-bottom: 40px;
 }
@@ -337,7 +338,7 @@
     font-size: 2.5rem;
     margin-bottom: 40px;
     color: #222222;
-    font-weight: 600;
+    font-weight: 700;
     position: relative;
     z-index: 2;
 }
@@ -417,6 +418,7 @@
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 40px;
+    color: #222222
 }
 
 /* Layout */
@@ -925,7 +927,7 @@
     font-size: 2.4rem;
     font-weight: 700;
     color: #222222;
-    margin-bottom: 24px;
+    margin-bottom: 40px;
 }
 
 /* ✅ Updated: was h3, now targets <p> inside .partnerships */
@@ -977,7 +979,7 @@
     font-size: 2.4rem;
     font-weight: 700;
     color: #222222;
-    padding-bottom: 1.5rem;
+    margin-bottom: 40px;
 }
 
 /* Changed from h3 to p */
@@ -1737,6 +1739,7 @@
 
     .slide-text-container h2 {
         font-size: 1.8rem;
+        text-align: center;
     }
 
     .slide-text-container h3 {
