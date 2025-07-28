@@ -5,88 +5,66 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Software Testing and Migration | Nichi-In Software Solutions</title>
-
-  <!-- Fonts -->
-  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="/assets/css/header-footer/header-footer.css" />
-
-  <link rel="stylesheet" href="/assets/css/services/offshore-services/Software-Testing-Migration/index.css">
-
+  <link rel="icon" href="/assets/img/favicon.png">
+  <html-include src="/layout/script.html" lang="en"></html-include>
+  <link rel="stylesheet" href="/assets/css/global.css">
 </head>
 
 <body>
+
   <!-- Header will load here -->
-  <div id="header-placeholder"></div>
+  <html-include src="/layout/header.html" lang="en"></html-include>
+  <div id="content">
 
-  <main>
-    <!-- Hero section for Software Testing and Migration -->
-    <section class="testing-migration-hero">
-      <div class="testing-migration-hero-container">
-        <h1>SOFTWARE TESTING AND MIGRATION</h1>
-      </div>
-    </section>
-
-    <!-- Main content for Software Testing and Migration -->
-    <section class="zigzag-section">
-      <div class="zigzag-row">
-        <div class="zigzag-text">
-          <h3>Testing and Quality Assurance</h3>
-          <p>Nichi-In Software’s pronounced Testing and Quality Assurance occupies one of the key steps in Software Development Life Cycle that shapes the speed and ease of adaptability of applications and products, ensuring delivery of world class Quality services.</p>
-          <a href="testing-quality-assurance.html" class="tech-read-more">
-            Read More <i class="fas fa-arrow-right"></i>
-          </a>
+    <main>
+      <!-- Hero section for Software Testing and Migration -->
+      <section class="testing-migration-hero">
+        <div class="testing-migration-hero-container">
+          <h1>SOFTWARE TESTING AND MIGRATION</h1>
         </div>
-        <div class="zigzag-image">
-          <img src="/assets/img/services/Software-Testing/Testing-and-Quality-Assurance.jpg" alt="Testing and Quality Assurance Image">
+      </section>
+
+      <!-- Main content for Software Testing and Migration -->
+      <section class="zigzag-section">
+        <div class="zigzag-row">
+          <div class="zigzag-text">
+            <h3>Testing and Quality Assurance</h3>
+            <p>Nichi-In Software’s pronounced Testing and Quality Assurance occupies one of the key steps in Software
+              Development Life Cycle that shapes the speed and ease of adaptability of applications and products,
+              ensuring delivery of world class Quality services.</p>
+            <a href="testing-quality-assurance.html" class="tech-read-more">
+              Read More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          <div class="zigzag-image">
+            <img src="/assets/img/services/Software-Testing/Testing-and-Quality-Assurance.jpg"
+              alt="Testing and Quality Assurance Image">
+          </div>
         </div>
-      </div>
 
-      <div class="zigzag-row reverse">
-        <div class="zigzag-text">
-          <h3>Migration and Legacy System Modernization</h3>
-          <p>In this rapidly changing business scenario and equations, it is pertinent to adapt and be abreast with new technology and platforms for facing the challenges. Migration and re-engineering of software applications from one environment to another has become inevitable. Legacy system modernization has become an ongoing task for many of the enterprises across the globe.</p>
-          <a href="migration-legacy-system-modernization.html" class="tech-read-more">
-            Read More <i class="fas fa-arrow-right"></i>
-          </a>
+        <div class="zigzag-row reverse">
+          <div class="zigzag-text">
+            <h3>Migration and Legacy System Modernization</h3>
+            <p>In this rapidly changing business scenario and equations, it is pertinent to adapt and be abreast with
+              new technology and platforms for facing the challenges. Migration and re-engineering of software
+              applications from one environment to another has become inevitable. Legacy system modernization has become
+              an ongoing task for many of the enterprises across the globe.</p>
+            <a href="migration-legacy-system-modernization.html" class="tech-read-more">
+              Read More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          <div class="zigzag-image">
+            <img src="/assets/img/services/Software-Testing/MIGRATION-LEGACY-SYSTEM-MODERNIZATION.jpg"
+              alt="Migration and Legacy System Modernization Image">
+          </div>
         </div>
-        <div class="zigzag-image">
-          <img src="/assets/img/services/Software-Testing/MIGRATION-LEGACY-SYSTEM-MODERNIZATION.jpg" alt="Migration and Legacy System Modernization Image">
-        </div>
-      </div>
-    </section>
-    <!-- End Zigzag Section -->
+      </section>
+      <!-- End Zigzag Section -->
 
-  </main>
-
-  <!-- Footer will load here -->
-  <div id="footer-placeholder"></div>
-
-  <!-- JavaScript to Load Header & Footer -->
-  <script>
-    async function loadPartial(id, file) {
-      const res = await fetch(file);
-      const html = await res.text();
-      document.getElementById(id).innerHTML = html;
-      // If header is loaded, initialize mobile navigation (assuming initMobileNavigation is in draft.js or header.html)
-      if (id === "header-placeholder" && typeof initMobileNavigation === 'function') {
-        initMobileNavigation();
-      }
-    }
-
-        loadPartial("header-placeholder", "../../../assets/header-footer/header.html");
-        loadPartial("footer-placeholder", "../../../assets/header-footer/footer.html");
-  </script>
-
-  <!-- Link to your existing draft.js if it contains other scripts -->
-  <script src="../../../assets/js/draft.js"></script>
+    </main>
+    <html-include src="/layout/footer.html" lang="en"></html-include>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/home.js"></script>
 </body>
 
 </html>
