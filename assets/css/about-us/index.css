@@ -98,77 +98,75 @@
   Factsheet Section
 ================================*/
 /* Factsheet Section Styles */
+/* Factsheet Section (Slider) */
 .factsheet-section {
   position: relative;
-  background: linear-gradient(to bottom, #f0f4f8, #dbe9f4);
-  height: 80vh; /* Increased height */
+  background: linear-gradient(to bottom, #e0eafc, #cfdef3); /* Lighter, modern gradient */
+  height: 90vh; /* Increased height for more visual space */
   display: flex;
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
-  /* Removed padding-bottom and padding-top to prevent gaps */
-  width: 100%; /* Make it touch left and right */
-  margin-bottom: 0; /* Ensures no gap below this section */
+  width: 100%;
+  margin-bottom: 0;
+  border-radius: 0; /* No border-radius for full-width section */
+  box-shadow: none;
 }
 
-/* Container spans full width */
 .factsheet-container {
-  max-width: 100%; /* New: Set a max-width for the container to 100% */
-  width: 100%; /* New: Ensure it's full width */
-  margin: 0 auto; /* New: Center the container */
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
   text-align: center;
   position: relative;
-  border-radius: 0; /* Changed to 0 to touch edges */
-  box-shadow: none; /* Removed shadow for full width */
-  overflow: hidden; /* Ensure content respects border-radius */
+  overflow: hidden;
+  height: 100%; /* Ensure container takes full height */
 }
 
-/* Scrollable area for slides */
 .factsheet-scroll-area {
-  height: 90vh; /* Increased height */
-  overflow-y: hidden;
-  /* Removed scroll-snap-type from here as it's not needed with overflow: hidden */
-  -webkit-overflow-scrolling: touch;
+  height: 100%; /* Full height of its parent */
+  overflow: hidden; /* Changed from 'scroll' to 'hidden' to disable scrolling */
+  /* Removed scroll-snap-type: y mandatory; */
+  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS (still useful for touch devices, even if not scrollable by user) */
   position: relative;
-  /* Removed scroll-behavior: smooth; as it's now handled by JS scrollTo */
-  touch-action: none; /* Disable all touch actions to prevent scrolling */
 }
 
-/* Slide list setup */
 .factsheet-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  height: 100%; /* Ensure list takes full height of scroll area */
+  height: 100%;
+  display: flex;
+  flex-direction: column; /* Stack slides vertically */
+  transition: transform 0.5s ease-in-out; /* Smooth transition for automatic sliding */
 }
 
-/* Each slide spans the viewport */
 .factsheet-slide {
-  scroll-snap-align: start; /* Still good to have for potential future use or if overflow changes */
-  height: 100%; /* Make slide take full height of its parent (factsheet-scroll-area) */
-  width: 100%; /* Make slide take full width of its parent (factsheet-container) */
+  scroll-snap-align: start; /* Kept for potential future use, though not active with overflow:hidden */
+  height: 100%;
+  width: 100%;
   position: relative;
-  flex-shrink: 0; /* Prevent items from shrinking */
+  overflow: hidden; /* Ensures overlay is fully rendered within the slide */
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-/* Slide images span entire screen */
 .factsheet-slide img {
-  width: 100%; /* Make image fill its slide container */
-  height: 100%; /* Make image fill its slide container */
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 0; /* Keep 0 as the container has border-radius */
-  box-shadow: none;
+  display: block; /* Remove extra space below image */
+  z-index: 1;
 }
 
 /* Overlay content on each slide */
 .factsheet-slide .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.65); /* Darker blackish overlay */
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -176,52 +174,64 @@
   justify-content: center;
   text-align: center;
   padding: 2rem;
+  transition: background 0.3s ease; /* Smooth transition for overlay */
+  z-index: 2; /* Ensure overlay appears above the image */
+  pointer-events: none; /* Allows clicking through if needed */
 }
 
 .factsheet-slide .overlay h2.section-title {
-  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-size: clamp(2rem, 5vw, 3rem); /* Larger and more responsive */
   font-weight: 800;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   color: #fff;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* Stronger shadow for text */
 }
 
 .factsheet-slide .overlay p {
-  font-size: clamp(1rem, 2.8vw, 1.5rem);
+  font-size: clamp(1.2rem, 3.5vw, 1.8rem); /* Larger and more responsive */
   font-weight: 600;
-  max-width: 90%;
+  max-width: 80%; /* Slightly narrower text block */
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.7;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
 }
 
 /* Vertical Pagination Bars */
 .factsheet-pagination {
   position: absolute;
   top: 50%;
-  right: 20px;
+  right: 30px; /* More space from the right edge */
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  z-index: 10;
+  gap: 12px; /* Increased gap */
+  z-index: 20;
+  pointer-events: auto; /* Ensure clickable */
 }
 
 .factsheet-pagination .bar {
-  width: 8px; /* Increased width */
-  height: 8px;
-  background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 50%; /* Made circular */
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.8); /* Added border for better visibility */
+  width: 10px; /* Increased width */
+  height: 10px; /* Increased height */
+  background-color: rgba(255, 255, 255, 0.5); /* Lighter default */
+  border-radius: 50%;
+  transition: all 0.3s ease, transform 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.7); /* Thicker border */
+  cursor: pointer; /* Indicate clickability */
 }
 
 .factsheet-pagination .bar.active {
   background-color: #ffffff;
-  height: 16px; /* Slightly elongated when active */
-  border-radius: 4px; /* Rounded rectangle when active */
-  transform: scale(1.2); /* Slightly larger when active */
+  height: 20px; /* More elongated when active */
+  border-radius: 5px; /* Rounded rectangle */
+  transform: scale(1.1); /* Slightly larger */
+  border-color: #ffffff; /* Solid white border */
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8); /* Glow effect */
 }
 
+.factsheet-pagination .bar:hover:not(.active) {
+  background-color: rgba(255, 255, 255, 0.8); /* Brighter on hover */
+  transform: scale(1.05);
+}
 
 
 /*===============================

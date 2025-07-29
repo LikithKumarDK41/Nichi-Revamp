@@ -1,16 +1,3 @@
-    /* Global Body and Main Styling */
-    body {
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #f0f2f5; /* Lighter background */
-      margin: 0;
-      padding: 0;
-    }
-
-    main {
-      padding: 0; /* Remove main padding, sections will handle it */
-    }
 
     /* Hero Section Styling */
     .smac-hero {
@@ -94,7 +81,7 @@
     }
 
     .content-section:not(:first-of-type) {
-        margin-top: 30px; /* Space between subsequent sections */
+        margin-top: 10px; /* Space between subsequent sections */
     }
 
     /* Headings within content sections */
@@ -129,7 +116,7 @@
     .content-section p {
       font-size: 1.15em;
       line-height: 1.8;
-      color: #555;
+      color: #222222;
       margin-bottom: 25px;
       text-align: justify;
     }
@@ -162,7 +149,7 @@
     .collapsible-header h3 {
       margin: 0;
       color: #222222;
-      font-size: 1.6em;
+      font-size: 1.25rem;
     }
 
     .collapsible-header .icon {
