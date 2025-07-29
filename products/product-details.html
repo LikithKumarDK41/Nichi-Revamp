@@ -14,7 +14,7 @@
 
     <main>
         <!-- Product Hero Section Placeholder -->
-        <section id="product-hero-section" class="product-hero-section"></section>
+        <section id="product-hero-section" class="inner-hero-section"></section>
 
         <section class="product-details-section">
             <div id="product-details-content">
@@ -114,10 +114,8 @@
                         }
 
                         heroContainer.innerHTML = `
-                            <div style="${heroStyle}" class="w-full h-full flex flex-col justify-center items-center rounded-b-lg p-8">
-                                <h1 class="text-white text-5xl md:text-6xl font-extrabold mb-4">${product.title}</h1>
-                                <p class="tagline text-white text-xl md:text-2xl font-medium opacity-90">${tagline}</p>
-                            </div>
+                                <h1 >${product.title}</h1>
+                                <p >${tagline}</p>
                         `;
                         // Apply hero style directly to the heroContainer for consistent background application
                         heroContainer.style = heroStyle;
