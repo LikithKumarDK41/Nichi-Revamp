@@ -88,6 +88,7 @@
             transform: translateY(-20px); /* Initial state for animation */
             transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1), transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
             text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+            color: white;
         }
 
         .industry-slide h2 { /* This is for the specific industry name (now h2) */
@@ -103,6 +104,7 @@
             transform: scale(0.9);
             transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1), transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
             text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+            color: white;
         }
 
         .industry-slide.is-active .main-heading {
