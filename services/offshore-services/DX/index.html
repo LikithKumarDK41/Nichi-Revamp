@@ -8,29 +8,19 @@
 
   <!-- Fonts -->
   <link rel="icon" type="image/png" href="/assets/img/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="/assets/css/header-footer/header-footer.css" />
-
-  <link rel="stylesheet" href="/assets/css/services/offshore-services/DX/index.css" />
+    <html-include src="/layout/script.html" lang="en"></html-include>
+    <link rel="stylesheet" href="/assets/css/global.css">
 </head>
 
 <body>
   <!-- Header will load here -->
-  <div id="header-placeholder"></div>
+    <html-include src="/layout/header.html" lang="en"></html-include>
+    <div id="content">
 
   <main>
     <!-- Hero section for DX (Digital Transformation) Services -->
-    <section class="dx-services-hero">
-      <div class="dx-services-hero-container">
+    <section class="inner-hero-section">
         <h1>DX (DIGITAL TRANSFORMATION) SERVICES</h1>
-      </div>
     </section>
 
     <!-- Main content for DX Services -->
@@ -64,25 +54,11 @@
     <!-- End Zigzag Section -->
 
   </main>
+  </div>
 
-  <!-- Footer will load here -->
-  <div id="footer-placeholder"></div>
-
-  <!-- JavaScript to Load Header & Footer -->
-  <script>
-    async function loadPartial(id, file) {
-      const res = await fetch(file);
-      const html = await res.text();
-      document.getElementById(id).innerHTML = html;
-      // If header is loaded, initialize mobile navigation (assuming initMobileNavigation is in draft.js or header.html)
-      if (id === "header-placeholder" && typeof initMobileNavigation === 'function') {
-        initMobileNavigation();
-      }
-    }
-
-        loadPartial("header-placeholder", "../../../assets/header-footer/header.html");
-        loadPartial("footer-placeholder", "../../../assets/header-footer/footer.html");
-  </script>
+    <html-include src="/layout/footer.html" lang="en"></html-include>
+    <script src="/assets/js/main.js"></script>
+    <script src="/backup/draft.js"></script>
 
   <!-- Link to your existing draft.js if it contains other scripts -->
   <script src="../../../assets/js/draft.js"></script>

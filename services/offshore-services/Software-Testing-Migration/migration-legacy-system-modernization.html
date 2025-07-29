@@ -5,33 +5,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Migration & Legacy System Modernization | Nichi-In Software Solutions</title>
-
-  <!-- Fonts -->
-  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="/assets/css/header-footer/header-footer.css" />
-
-  <link rel="stylesheet" href="/assets/css/services/offshore-services/Software-Testing-Migration/migration-legacy-system-modernization.css">
+    <link rel="icon" href="/assets/img/favicon.png">
+    <html-include src="/layout/script.html" lang="en"></html-include>
+    <link rel="stylesheet" href="/assets/css/global.css">  
 
 </head>
 
 <body>
-  <!-- Header will load here -->
-  <div id="header-placeholder"></div>
-
+    <!-- Header will load here -->
+    <html-include src="/layout/header.html" lang="en"></html-include>
+    <div id="content">
   <main>
     <!-- Hero section for Migration & Legacy System Modernization -->
-    <section class="migration-hero">
-      <div class="migration-hero-container">
+    <section class="inner-hero-section">
         <h1>MIGRATION & LEGACY SYSTEM MODERNIZATION</h1>
-      </div>
     </section>
 
     <!-- Introduction Section -->
@@ -55,28 +42,9 @@
       </ul>
     </section>
   </main>
-
-  <!-- Footer will load here -->
-  <div id="footer-placeholder"></div>
-
-  <!-- JavaScript to Load Header & Footer -->
-  <script>
-    async function loadPartial(id, file) {
-      const res = await fetch(file);
-      const html = await res.text();
-      document.getElementById(id).innerHTML = html;
-      // If header is loaded, initialize mobile navigation (assuming initMobileNavigation is in draft.js or header.html)
-      if (id === "header-placeholder" && typeof initMobileNavigation === 'function') {
-        initMobileNavigation();
-      }
-    }
-
-        loadPartial("header-placeholder", "../../../assets/header-footer/header.html");
-        loadPartial("footer-placeholder", "../../../assets/header-footer/footer.html");
-  </script>
-
-  <!-- Link to your existing draft.js if it contains other scripts -->
-  <script src="../../../assets/js/draft.js"></script>
+    <html-include src="/layout/footer.html" lang="en"></html-include>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/home.js"></script>
 </body>
 
 </html>

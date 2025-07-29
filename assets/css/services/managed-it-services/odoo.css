@@ -10,6 +10,7 @@
     .Odoo-hero h2 {
       font-size: clamp(1.8rem, 5vw, 2.5rem); /* Responsive font size */
       margin-bottom: 20px;
+      color: white;
     }
 
     .Odoo-hero p {
