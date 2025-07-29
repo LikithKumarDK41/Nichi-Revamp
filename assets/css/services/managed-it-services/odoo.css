@@ -39,7 +39,7 @@
       margin-bottom: 30px;
     }
 
-    .service-block {
+    .odoo-service-block {
       display: flex;
       flex-direction: column; /* Default: stack image above text on mobile */
       align-items: start;
@@ -52,29 +52,29 @@
       overflow: hidden; /* Ensures rounded corners apply correctly */
     }
 
-    .service-block:last-child {
+    .odoo-service-block:last-child {
       margin-bottom: 0; /* No margin after the last block */
     }
 
-    .service-content {
+    .odoo-service-content {
       flex: 1; /* Allows content to take available space */
       text-align: center; /* Center text on mobile */
       padding: 10px; /* Consistent internal padding */
     }
 
-    .service-content h3 {
+    .odoo-service-content h3 {
       font-size: clamp(1.5rem, 4vw, 2rem); /* Responsive heading size */
       color: #222222; /* Primary brand color */
       margin-bottom: 15px;
     }
 
-    .service-content p {
+    .odoo-service-content p {
       font-size: clamp(0.95rem, 2.2vw, 1.1rem); /* Responsive paragraph size */
       line-height: 1.7;
       color: #555;
     }
 
-    .service-image-wrapper {
+    .odoo-service-image-wrapper {
       flex-shrink: 0; /* Prevents image from shrinking */
       width: 100%; /* Full width on mobile */
       display: flex;
@@ -83,7 +83,7 @@
       padding: 10px; /* Consistent internal padding */
     }
 
-    .service-image-wrapper img {
+    .odoo-service-image-wrapper img {
       width: 100%; /* Image takes full width of its wrapper on mobile */
       height: 250px; /* Consistent image height */
       object-fit: contain; /* Ensures image fits without cropping, maintains aspect ratio */
@@ -91,40 +91,40 @@
       transition: transform 0.3s ease-in-out; /* Smooth hover effect */
     }
 
-    .service-image-wrapper img:hover {
+    .odoo-service-image-wrapper img:hover {
         transform: scale(1.03); /* Slight zoom on hover */
     }
 
 
     /* Desktop Layout (min-width: 768px) */
     @media (min-width: 768px) {
-      .service-block {
+      .odoo-service-block { /* Changed from .service-block */
         flex-direction: row; /* Zigzag: image and text side-by-side */
         text-align: left; /* Align text left on desktop */
         padding: 40px; /* More padding on desktop */
       }
 
-      .service-block:nth-child(odd) {
+      .odoo-service-block:nth-child(odd) {
         /* Image on left, text on right for odd blocks */
         flex-direction: row;
       }
 
-      .service-block:nth-child(even) {
+      .odoo-service-block:nth-child(even) {
         /* Image on right, text on left for even blocks */
         flex-direction: row-reverse;
       }
 
-      .service-content {
+      .odoo-service-content { /* Changed from .service-content */
         text-align: left; /* Align text left on desktop */
         padding: 0 30px; /* More horizontal padding */
       }
 
-      .service-image-wrapper {
+      .odoo-service-image-wrapper { /* Changed from .service-image-wrapper */
         width: 45%; /* Image takes about 45% width */
         padding: 0; /* No extra padding here, controlled by parent flex gap */
       }
 
-      .service-image-wrapper img {
+      .odoo-service-image-wrapper img { /* Changed from .service-image-wrapper img */
         width: 100%; /* Image fills its container */
         height: 300px; /* Slightly taller on desktop */
       }
@@ -136,3 +136,4 @@
     #footer-placeholder {
       width: 100%;
     }
+      

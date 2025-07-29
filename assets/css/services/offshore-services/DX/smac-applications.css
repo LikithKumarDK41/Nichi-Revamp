@@ -193,20 +193,6 @@
       padding-bottom: 15px;
     }
 
-    /* Lists within collapsible content */
-    .collapsible-content ul {
-        list-style-type: disc;
-        margin-left: 30px;
-        padding: 0;
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
-
-    .collapsible-content ul li {
-        margin-bottom: 8px;
-        line-height: 1.6;
-        color: #666;
-    }
 
     /* Responsive adjustments */
     @media (max-width: 768px) {
