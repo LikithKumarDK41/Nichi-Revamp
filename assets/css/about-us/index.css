@@ -125,7 +125,7 @@
 
 /* Scrollable area for slides */
 .factsheet-scroll-area {
-  height: 80vh; /* Increased height */
+  height: 90vh; /* Increased height */
   overflow-y: hidden;
   /* Removed scroll-snap-type from here as it's not needed with overflow: hidden */
   -webkit-overflow-scrolling: touch;
