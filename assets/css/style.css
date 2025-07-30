@@ -34,6 +34,7 @@
   --card-header-ftSize: 1.15rem;
   --card-content-ftSize: 1rem;
   --desc-ftSize: 1rem;
+  --desc-ftSize2: 0.9rem;
   /* Font Weight */
   --ftWt1: bold;
   --ftWt2: 500;
@@ -104,7 +105,7 @@ body {
 
 /* Common Padding */
 .common-padding {
-  padding:40px 20px;
+  padding: 40px 20px;
 }
 
 @media screen and (max-width: 500px) {

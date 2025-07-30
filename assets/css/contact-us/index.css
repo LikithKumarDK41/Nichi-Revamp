@@ -14,7 +14,7 @@
         .contact-section p {
             text-align: center;
             font-size: 1.1rem;
-            color: #555;
+            color: #222222;
             margin-bottom: 40px;
             line-height: 1.6;
         }
@@ -49,7 +49,7 @@
 
         .contact-item i {
             font-size: 2.5rem;
-            color: #007bff; /* A nice blue color */
+            color: #000066; /* A nice blue color */
             margin-bottom: 15px;
         }
 
@@ -300,7 +300,7 @@
 
         .career-enquiry-section h4 i {
             font-size: 1.8rem; /* Icon size within heading */
-            color: #007bff;
+            color: #000066;
             margin-bottom: 0; /* Reset margin from general i rule */
         }
 

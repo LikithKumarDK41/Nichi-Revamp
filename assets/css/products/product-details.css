@@ -23,6 +23,13 @@
             margin: 0 auto 30px auto; /* Center image and add bottom margin */
             display: block; /* Ensure image is block level for margin auto to work */
             object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        
+        .product-main-image:hover {
+        transform: scale(1.05);
         }
 
         /* Styling for the smaller image next to features (Kisanbandhu specific) */
@@ -33,11 +40,16 @@
             object-fit: cover;
             border-radius: 8px; /* Added for better aesthetics */
             margin-bottom: 0; /* Remove default margin-bottom to avoid extra space in flex */
+            transition: transform 0.3s ease;
+        }
+
+        .product-image-inline-features:hover{
+            transform: scale(1.05);
         }
 
         .product-details-section p {
-            font-size: 1.15rem;
-            color: #4a5568;
+            font-size: var(--desc-ftSize);
+            color: #222222;
             line-height: 1.8;
             margin-bottom: 25px; /* Default margin for paragraphs */
         }
@@ -49,8 +61,8 @@
         }
 
         .product-details-section ul li {
-            font-size: 1.1rem;
-            color: #4a5568;
+            font-size: var(--desc-ftSize2);
+            color: #222222;
             line-height: 1.7;
             margin-bottom: 8px;
         }
@@ -123,43 +135,43 @@
         }
 
         /* Specific styles for Kisanbandhu content layout */
-.kisanbandhu-main-content-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 30px;
-  margin: 40px auto;
-}
+        .kisanbandhu-main-content-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 30px;
+        margin: 40px auto;
+        }
 
         .kisanbandhu-text-content p {
             margin-bottom: 0; /* Remove default paragraph margin within this flex item */
             text-align: left; /* Center text for mobile */
         }
 
-@media (min-width: 768px) {
-  .kisanbandhu-main-content-wrapper {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
+        @media (min-width: 768px) {
+        .kisanbandhu-main-content-wrapper {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
 
-.kisanbandhu-text-content {
-  flex: 1;
-  text-align: left;
-  padding-right: 20px;
-}
+        .kisanbandhu-text-content {
+        flex: 1;
+        text-align: left;
+        padding-right: 20px;
+        }
 
-.kisanbandhu-image-content {
-  flex-shrink: 0;
-  align-self: flex-start;
-}
+        .kisanbandhu-image-content {
+        flex-shrink: 0;
+        align-self: flex-start;
+        }
 
-.kisanbandhu-image-content .product-image-inline-features {
-  max-width: 200px;
-  height: auto;
-  display: block;
-}
-}
+        .kisanbandhu-image-content .product-image-inline-features {
+        max-width: 200px;
+        height: auto;
+        display: block;
+        }
+        }
 
 
 
