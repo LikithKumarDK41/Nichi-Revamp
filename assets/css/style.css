@@ -102,6 +102,11 @@ body {
   color: var(--common-text-color-dark);
 }
 
+/* Common Padding */
+.common-padding {
+  padding:40px 20px;
+}
+
 @media screen and (max-width: 500px) {
   .inner-hero-section p {
     display: block;
