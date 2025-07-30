@@ -36,7 +36,8 @@
   --desc-ftSize: 1rem;
   /* Font Weight */
   --ftWt1: bold;
-  --ftWt2: 500;
+  --ftWt2:600;
+  --ftWt3: 500;
   --card-header-ftWt: 700;
   --card-content-ftWt: 500;
 }
