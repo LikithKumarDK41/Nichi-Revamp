@@ -53,13 +53,13 @@
     }
 
     /* General Section Styling */
-    .content-section {
+    .migration-content-section {
       padding: 40px 20px;
       margin: 0 auto;
       text-align: center; /* Center align section titles */
     }
 
-    .content-section h2, .content-section h3 {
+    .migration-content-section h2, .migration-content-section h3 {
       font-size: 2.5em;
       color: #333;
       margin-bottom: 40px;
@@ -67,7 +67,7 @@
       padding-bottom: 10px;
     }
 
-    .content-section p {
+    .migration-content-section p {
       font-size: 1.1em;
       line-height: 1.8;
       color: #555;
@@ -76,7 +76,7 @@
     }
 
     /* Offerings List Styling */
-    .offerings-list {
+    .migration-list {
       list-style: none; /* Remove default bullet points */
       padding: 0;
       margin: 0 auto; /* Center the grid container */
@@ -87,7 +87,7 @@
       max-width: 900px; /* Limit width for 2 columns to look good */
     }
 
-    .offerings-list li {
+    .migration-list li {
       background-color: #ffffff;
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
@@ -100,12 +100,12 @@
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .offerings-list li:hover {
+    .migration-list li:hover {
       transform: translateY(-5px);
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
     }
 
-    .offerings-list li::before {
+    .migration-list li::before {
       content: "\f0ae"; /* Font Awesome list-alt icon or similar */
       font-family: "Font Awesome 5 Free";
       font-weight: 900;
@@ -125,10 +125,10 @@
       .migration-hero p {
         font-size: 1em;
       }
-      .content-section h2, .content-section h3 {
+      .migration-content-section h2, .migration-content-section h3 {
         font-size: 2em;
       }
-      .offerings-list {
+      .migration-list {
         grid-template-columns: 1fr; /* Stack on small screens */
         max-width: unset; /* Remove max-width for single column */
       }
