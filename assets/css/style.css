@@ -25,9 +25,20 @@
   /* Light shadow for light mode */
   --shadow-color-light: rgba(0, 0, 0, 0.05);
   --first-section-bg: #fff;
-  --first-section-text-color: #000;
-  --alternate-section-bg: rgb(39, 83, 140);
-  --alternate-section-text-color: #fff;
+  --alternate-section-bg: linear-gradient(135deg, #f9fafb, #edf2f7);
+  --common-text-color-dark: #000;
+  --common-text-color-light: #fff;
+  /* Font size */
+  --ftSize1: 40px;
+  --ftSize2: 28px;
+  --card-header-ftSize: 1.15rem;
+  --card-content-ftSize: 1rem;
+  --desc-ftSize: 1rem;
+  /* Font Weight */
+  --ftWt1: bold;
+  --ftWt2: 500;
+  --card-header-ftWt: 700;
+  --card-content-ftWt: 500;
 }
 
 /* Global styles */
@@ -60,45 +71,53 @@ body {
   /* Prevent horizontal scroll from layout shifts */
 }
 
-.first-section {
-  background: var(--first-section-bg);
-  color: var(--first-section-text-color);
-}
-
-.alternate-section {
-  background: var(--alternate-section-bg);
-  color: var(--alternate-section-text-color);
-}
-
-
 /* Inner page hero Section */
 .inner-hero-section {
-    background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
-    color: white;
-    text-align: center;
-    padding: 80px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 250px;
-    margin-top: 80px;
-    flex-direction: column;
+  background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  margin-top: 80px;
+  flex-direction: column;
 }
 
-.inner-hero-section h1{
-    font-size:40px;
+.inner-hero-section h1 {
+  font-size: 40px;
 }
 
-.inner-hero-section p{
-    font-size:16px;
+.inner-hero-section p {
+  font-size: 16px;
+}
+
+/* Section Title */
+.section-title {
+  text-align: center;
+  font-size: var(--ftSize1);
+  font-weight: var(--ftWt1);
+  margin-bottom: 40px;
+  color: var(--common-text-color-dark);
+}
+
+/* Common Padding */
+.common-padding {
+  padding:40px 20px;
 }
 
 @media screen and (max-width: 500px) {
   .inner-hero-section p {
-    display: block; /* Ensure the <p> is rendered */
+    display: block;
+    /* Ensure the <p> is rendered */
   }
 
   .inner-hero-section:has(p) {
-    height: 400px;
+    height: auto;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
   }
 }

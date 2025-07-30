@@ -13,10 +13,14 @@
 
         .contact-section p {
             text-align: center;
-            font-size: 1.1rem;
-            color: #555;
+            font-size: var(--desc-ftSize);
             margin-bottom: 40px;
             line-height: 1.6;
+            color:black;
+        }
+        .contact-section p a {
+        color: black;
+        text-decoration: none; /* Remove underline */
         }
 
         .contact-info-grid {
@@ -54,18 +58,19 @@
         }
 
         .contact-item h4 {
-            font-size: 1.4rem;
-            color: #333;
+            font-size: var(--card-header-ftSize);
+            color: black;
             margin-bottom: 10px;
-            font-weight: 600;
+            font-weight: var(--card-header-ftWt);
         }
 
         .contact-item p {
-            font-size: 1rem;
-            color: #666;
+            font-size: var(--card-content-ftSize);
+            color: black;
             line-height: 1.5;
             margin-bottom: 5px;
             text-align: center; /* Ensure text is centered within the item */
+            font-weight: var(--card-content-ftWt);
         }
 
         /* First row: 4 items */
@@ -80,9 +85,11 @@
         /* Second row: 3 items, alternating */
         .contact-item:nth-child(5),
         .contact-item:nth-child(6),
-        .contact-item:nth-child(7) {
-            flex: 1 1 calc(33.33% - 30px); /* 3 items per row, accounting for gap */
-            max-width: calc(33.33% - 30px); /* Ensure max width for 3 items */
+        .contact-item:nth-child(7),
+        .contact-item:nth-child(8)
+         {
+            flex: 1 1 calc(25% - 30px); /* 3 items per row, accounting for gap */
+            max-width: calc(25% - 30px); /* Ensure max width for 3 items */
         }
 
         /* Responsive adjustments for 4+3 grid */
@@ -93,16 +100,17 @@
             .contact-item:nth-child(4),
             .contact-item:nth-child(5),
             .contact-item:nth-child(6),
-            .contact-item:nth-child(7) {
+            .contact-item:nth-child(7),
+            .contact-item:nth-child(8) {
                 flex: 1 1 calc(50% - 30px); /* 2 items per row on medium screens */
                 max-width: calc(50% - 30px);
             }
         }
 
         @media (max-width: 768px) {
-            .contact-item {
-                flex: 1 1 calc(100% - 30px); /* 1 item per row on smaller screens */
-                max-width: calc(100% - 30px);
+            .contact-info-grid .contact-item {
+                flex: 1 1 100%;
+                max-width: 100%;
             }
             .contact-section h3 {
                 font-size: 2rem;
@@ -207,7 +215,7 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
-            color: #333;
+            color: black;
         }
 
         .contact-form input[type="text"],
@@ -243,7 +251,7 @@
         .checkbox-container label {
             margin-bottom: 0;
             font-weight: 400;
-            color: #555;
+            color: black;
         }
 
         .submit-btn {
@@ -322,3 +330,46 @@
                 grid-template-columns: 1fr; /* Single column on smaller screens */
             }
         }
+    .contact-section-part {
+    padding: 40px 22px;
+    background: radial-gradient(circle at top left, #8bb1c5, #f1fff7 60%, #ffffff 100%);
+}
+.contact-flex-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 40px 20px;
+    align-items: stretch; /* Stretch both columns to equal height */
+    height: 100%;
+}
+
+.form-section,
+.map-section {
+    flex: 1 1 48%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 30px;
+}
+
+.map-container {
+    width: 100%;
+    flex: 1 1 auto;
+    min-height: 450px;
+    padding: 30px;
+}
+
+@media (max-width: 768px) {
+    .contact-flex-wrapper {
+        flex-direction: column;
+    }
+
+    .form-section,
+    .map-section {
+        flex: 1 1 100%;
+    }
+}
+.contact-background-section {
+    background: var(--alternate-section-bg);
+}
