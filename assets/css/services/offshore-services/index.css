@@ -22,7 +22,6 @@
 /* OFS_ Specific Classes */
 .OFS_container {
     margin: 0 auto; /* Centers the container horizontally. */
-    padding: 0 20px; /* Adds horizontal padding to the container. */
 }
 
 .OFS_section-heading {
@@ -37,8 +36,7 @@
 
 /* Offerings Section - Zigzag Layout */
 .OFS_offerings-section {
-    padding: 40px 0; /* Adds vertical padding. */
-    background-color: #fff; /* Sets a white background. */
+    background: var(--first-section-bg); /* Sets a white background. */
 }
 
 .OFS_zigzag-container {
@@ -89,23 +87,22 @@
 }
 
 .OFS_card-title {
-    font-size: 1.7rem;
-    font-weight: 600;
-    color: #222222;
+    font-size: var(--ftSize2);
+    font-weight: var(--ftWt2);
+    color: var(--common-text-color-dark);
     margin-bottom: 15px;
 }
 
 .OFS_card-description {
-    font-size: 1rem;
-    color: #222222;
+    font-size: var(--desc-ftSize);
+    color: var(--common-text-color-dark);
     line-height: 1.7;
     margin-bottom: 20px;
 }
 
 /* Detailed Services Section */
 .OFS_detailed-services-section {
-    padding: 40px 0; /* Adds vertical padding. */
-    background-color: #f0f4f8; /* Sets a light background color. */
+    background-color: var(--alternate-section-bg); /* Sets a light background color. */
 }
 
 .OFS_detailed-services-flexbox {
@@ -142,22 +139,16 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects. */
 }
 
-.OFS_service-image:hover {
-    transform: scale(1.05); /* Slightly enlarges the image on hover. */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Enhances shadow on hover. */
-}
-
-
 .OFS_service-item .OFS_service-title {
-    font-size: 1.5rem; /* Sets the font size for service titles. */
-    font-weight: 600; /* Sets the font weight. */
-    color: #34495e; /* Sets the color of the service title. */
+    font-size: var(--card-header-ftSize); /* Sets the font size for service titles. */
+    font-weight: var(--card-header-ftWt); /* Sets the font weight. */
+    color: var(--common-text-color-dark); /* Sets the color of the service title. */
     margin-bottom: 10px; /* Adds space below the title. */
 }
 
 .OFS_service-item .OFS_service-description {
-    font-size: 0.95rem; /* Sets the font size for service descriptions. */
-    color: #777; /* Sets the color of the description. */
+    font-size: var(--card-content-ftSize); /* Sets the font size for service descriptions. */
+    color:  var(--common-text-color-dark); /* Sets the color of the description. */
     line-height: 1.7; /* Increases line height for readability. */
 }
 
@@ -200,18 +191,10 @@
         width: 80px; /* Reduces image size on smaller screens. */
         height: 80px; /* Reduces image size on smaller screens. */
     }
-
-    .OFS_service-item .OFS_service-title {
-        font-size: 1.3rem; /* Reduces font size of service titles. */
-    }
 }
 
 @media (max-width: 480px) { /* Styles for screens up to 480px wide (e.g., smaller phones). */
     .OFS_section-heading {
         font-size: 1.8rem; /* Further reduces font size of section headings. */
-    }
-
-    .OFS_card-title {
-        font-size: 1.3rem; /* Further reduces font size of card titles. */
     }
 }

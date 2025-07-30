@@ -51,12 +51,11 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 40px;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 .section-content.reverse {
   flex-direction: row-reverse;
+  padding: 40px 20px;
 }
 
 .text-content {
@@ -64,11 +63,18 @@
   min-width: 300px;
 }
 
+.double-text-content {
+  padding: 0 20px;
+  flex: 1 1 50%;
+  text-align: left;
+}
+
 .text-content h2 {
-  font-size: 2em;
+  font-size: var(--ftSize2);
   font-weight: 700;
-  color: #2d3748;
+  color: #222222;
   margin-bottom: 20px;
+  text-align: left;
 }
 
 .text-content p {
@@ -98,6 +104,7 @@
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  padding: 0 20px;
 }
 
 .image-content.side-by-side img {

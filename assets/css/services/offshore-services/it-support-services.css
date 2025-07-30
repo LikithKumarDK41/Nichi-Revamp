@@ -40,16 +40,13 @@
 
 /* IT Services Grid Section (2x3 Layout) */
 .it-services-grid-section {
-  padding: 50px 20px;
-  background-color: #f9f9f9;
+ background: var(--alternate-section-bg);
 }
 
 .it-services-grid-container {
   display: grid; /* Using CSS Grid for a more robust 2x3 layout */
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns, min width 280px */
+  grid-template-columns: repeat(3, 1fr); /* Responsive columns, min width 280px */
   gap: 30px; /* Space between grid items */
-  max-width: 1200px; /* Max width of the grid container */
-  margin: 0 auto; /* Center the grid container */
 }
 
 .it-service-item {
@@ -72,7 +69,7 @@
 }
 
 .it-service-item h3 {
-  font-size: 1.8em;
+  font-size: var(--card-header-ftSize);
   color: #003366;
   margin-top: 0; /* Remove default top margin */
   margin-bottom: 15px; /* Consistent spacing below heading */
@@ -87,8 +84,8 @@
 }
 
 .it-service-item p {
-  font-size: 1em;
-  color: #666;
+  font-size: var(--card-content-ftSize);
+  color: var(--common-text-color-dark);
   margin: 0; /* Remove default margins, space-between handles vertical distribution */
 }
 
@@ -103,10 +100,6 @@
     min-height: 260px;
     padding: 25px;
   }
-
-  .it-service-item h3 {
-    font-size: 1.6em;
-  }
 }
 
 @media (max-width: 768px) {
@@ -118,10 +111,6 @@
   .it-service-item {
     min-height: auto; /* Allow height to adjust on mobile if content is very short */
     padding: 20px;
-  }
-
-  .it-service-item h3 {
-    font-size: 1.5em;
   }
 
   .it-service-item img {

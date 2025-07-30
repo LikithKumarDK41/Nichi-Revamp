@@ -189,9 +189,9 @@
     /* Styling for main section titles that are not dropdowns themselves */
     main section h2 {
       margin-bottom: 25px;
-      font-size: 2em;
+      font-size: var(--ftSize2);
       color: #222;
-      text-align: center;
+      text-align: left;
     }
 
     /* Responsive adjustments */
