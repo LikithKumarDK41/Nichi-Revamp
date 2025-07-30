@@ -1,4 +1,289 @@
-/*Onsite Business*/
+/* Global Body and Main Styling */
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+  color: #333;
+  background-color: #f0f2f5; /* Lighter background for contrast */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+main {
+  margin: 0 auto; /* Center the main content */
+}
+
+/* Hero Section Styling */
+.privacy-hero {
+  background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
+  color: white;
+  text-align: center;
+  padding: 80px 20px; /* Increased padding for more visual impact */
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 60px;
+  margin-top: 0; /* Remove top margin, let header handle spacing */
+  border-bottom-left-radius: 20px; /* Rounded corners for a softer look */
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  
+  /* New styles for full width */
+  width: 100vw; /* Make it span the full viewport width */
+  left: 50%; /* Move element's center to viewport center */
+  transform: translateX(-50%); /* Shift element left by half its width to truly center it */
+  box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+.privacy-hero h1 {
+  font-size: 4em; /* Larger font size for prominence */
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -1px; /* Tighter letter spacing */
+  position: relative;
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
+}
+
+/* Content Section Styling */
+.content-section {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 80px;
+  padding: 0; /* Remove padding here, sections will have their own */
+}
+
+/* Card Layout for Content Sections */
+.content-section > h2 {
+  font-size: 2.8em; /* Larger and more impactful */
+  color: #0a0e27;
+  margin-bottom: 50px; /* More space below the main title */
+  font-weight: 800;
+  text-align: center; /* Center the main section title */
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.content-section > h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px; /* Underline effect */
+  height: 4px;
+  background: linear-gradient(90deg, #004aad, #240b77);
+  border-radius: 2px;
+}
+
+/* Individual Content Cards */
+.content-section h3 {
+  font-size: 1.8em; /* Slightly larger for section titles */
+  color: #004aad; /* Primary brand color */
+  margin-top: 40px;
+  margin-bottom: 25px;
+  font-weight: 700;
+  border-bottom: 2px solid #e0e0e0; /* Subtle underline for sub-sections */
+  padding-bottom: 10px;
+}
+
+.content-section h4 {
+  font-size: 1.4em;
+  color: #240b77; /* Secondary brand color */
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Paragraphs */
+.content-section p {
+  font-size: 1.1em; /* Slightly larger text for readability */
+  line-height: 1.9; /* Increased line height */
+  color: #4a5568;
+  margin-bottom: 20px;
+}
+
+/* Lists */
+.content-section ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.content-section ul li {
+  position: relative;
+  padding-left: 35px; /* More space for the bullet */
+  margin-bottom: 12px; /* Tighter spacing for list items */
+  color: #4a5568;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.content-section ul li::before {
+  content: '\2022'; /* Unicode bullet point */
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2em; /* Larger bullet */
+  color: #004aad; /* Brand color bullet */
+  font-weight: bold;
+}
+
+/* Links */
+.content-section a {
+  color: #004aad;
+  text-decoration: none;
+  font-weight: 600; /* Bolder links */
+  transition: all 0.3s ease-in-out; /* Smoother transition */
+  border-bottom: 1px solid transparent; /* Underline on hover */
+}
+
+.content-section a:hover {
+  color: #240b77;
+  text-decoration: none; /* Remove default underline */
+  border-color: #240b77; /* Show underline on hover */
+}
+
+/* Contact Info */
+.contact-info {
+  background-color: #ffffff; /* White background for contact card */
+  padding: 40px; /* More padding */
+  border-radius: 12px; /* More rounded corners */
+  margin-top: 50px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Stronger shadow for emphasis */
+  border: 1px solid #e0e0e0; /* Subtle border */
+  text-align: center; /* Center contact info */
+}
+
+.contact-info p {
+  margin-bottom: 15px;
+  color: #4a5568;
+  font-size: 1.1em;
+}
+
+.contact-info a {
+  color: #004aad;
+  font-weight: 700;
+}
+
+/* General Card Styling for sections */
+.content-section > div {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px; /* Space between cards */
+  border: 1px solid #f0f0f0;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Hover effect */
+}
+
+.content-section > div:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Specific styling for the initial paragraphs outside of a card structure */
+.content-section > p {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+  border: 1px solid #f0f0f0;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .privacy-hero h1 {
+    font-size: 3.5em;
+  }
+
+  .content-section > h2 {
+    font-size: 2.4em;
+  }
+}
+
+@media (max-width: 768px) {
+  .privacy-hero {
+    padding: 60px 20px;
+    margin-bottom: 40px;
+  }
+  
+  .privacy-hero h1 {
+    font-size: 2.8em;
+  }
+  
+  .content-section > h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+  
+  .content-section h3 {
+    font-size: 1.6em;
+  }
+  
+  .content-section h4 {
+    font-size: 1.3em;
+  }
+  
+  .content-section p, 
+  .content-section ul li {
+    font-size: 1em;
+  }
+
+  .content-section > div,
+  .content-section > p {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .contact-info {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacy-hero {
+    padding: 40px 15px;
+  }
+
+  .privacy-hero h1 {
+    font-size: 2.2em;
+  }
+
+  .content-section > h2 {
+    font-size: 1.8em;
+  }
+
+  .content-section h3 {
+    font-size: 1.4em;
+  }
+
+  .content-section h4 {
+    font-size: 1.2em;
+  }
+
+  .content-section p,
+  .content-section ul li {
+    font-size: 0.95em;
+  }
+
+  .content-section ul li::before {
+    top: 5px; /* Adjust bullet position for smaller screens */
+  }
+
+  .content-section > div,
+  .content-section > p {
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .contact-info {
+    padding: 20px;
+  }
+}
+
+/* Onsite Business */
 
 /* Hero Section: Onsite Business */
 .onsite_hero {
@@ -51,11 +336,25 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 40px;
+  /* Card styles */
+  background-color: #ffffff;
+  padding: 30px; /* Adjust padding as needed for the card look */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px; /* Space between cards */
+  border: 1px solid #f0f0f0;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Hover effect */
+}
+
+.section-content:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 .section-content.reverse {
   flex-direction: row-reverse;
-  padding: 40px 20px;
+  /* Remove padding here if the new card padding is sufficient, or adjust */
+  padding: 30px; /* Adjusted to match new card padding */
 }
 
 .text-content {
@@ -95,9 +394,11 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 30px;
+  /* Removed hover effect from image */
 }
 
-.image-content img:hover { transform: scale(1.03); transition: transform 0.3s ease; }
+/* Removed image hover effect */
+/* .image-content img:hover { transform: scale(1.03); transition: transform 0.3s ease; } */
 
 /* Side by side images */
 .image-content.side-by-side {

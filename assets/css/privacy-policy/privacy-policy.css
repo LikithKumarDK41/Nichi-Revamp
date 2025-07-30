@@ -37,7 +37,6 @@ main {
   position: relative;
   z-index: 2;
   margin-bottom: 80px;
-  padding: 0; /* Remove padding here, sections will have their own */
 }
 
 /* Card Layout for Content Sections */
