@@ -5,6 +5,8 @@
     align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding: 20px;
+    padding-bottom: 0px;
 }
 .product-details-image-col {
     flex: 1 1 320px;
@@ -15,7 +17,7 @@
     justify-content: center;
 }
 .product-details-content-col {
-    flex: 2 1 400px;
+    flex: 2 1 100px;
     min-width: 260px;
     display: flex;
     flex-direction: column;
@@ -25,9 +27,11 @@
 @media (max-width: 900px) {
     .product-details-flex-row {
         flex-direction: column;
+        align-items: center;
         gap: 24px;
     }
     .product-details-image-col, .product-details-content-col {
+        flex: 1 1 100%;
         max-width: 100%;
         min-width: 0;
     }
@@ -161,6 +165,7 @@
         /* New CSS for the layout - simplified */
         .features-video-wrapper {
             padding: 20px;
+            padding-top:0px;
             display: flex;
             flex-wrap: wrap;
             gap: 32px;
@@ -187,6 +192,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
+            padding-top: 18px;
         }
 
         /* Wrapper for image and features, specifically for Kisanbandhu */
@@ -215,6 +221,15 @@
             font-size: var(--desc-ftSize);
             color: #374151;
         }
+         .product-details-image-col {
+    display: flex;
+    justify-content: center;
+  }
+
+  .product-details-content-col {
+    padding: 0 12px;
+    text-align: center; /* optional if you want text to center on small screens */
+  }
 
 @media (min-width: 768px) {
   .kisanbandhu-main-content-wrapper {
@@ -359,6 +374,10 @@
             .product-hero-section p {
                 font-size: 0.95rem;
             }
+             .product-details-content-col {
+    padding: 0 8px;
+  }
+
         }
 .product-etails-background-section {
     background: var(--alternate-section-bg);

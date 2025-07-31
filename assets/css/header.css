@@ -1,7 +1,7 @@
 /* Header Styles */
 .mobile-nav-links a.active {
-  background: linear-gradient(135deg, #120270, #60efff);
-  color: white;
+  background: var(--hover-bg-color);
+  color: var(--hover-text-color);
   font-weight: 700;
 }
 
@@ -57,6 +57,37 @@
     align-items: center;
     border: none;
 }
+/* Highlight active link */
+.main-nav a.active,
+.mobile-nav a.active {
+  font-weight: bold;
+  color: var(--active-btn-bg);
+}
+
+/* Ensure open submenu is visible */
+.main-nav .nav-links li ul.open,
+.mobile-nav .dropdown-mobile-menu.open {
+  display: block !important;
+}
+
+/* Optional: Highlight parent li too */
+.main-nav li.active > a,
+.mobile-nav li.active > a {
+
+  font-weight: bold;
+}
+/* Submenu active link style */
+.main-nav ul li.submenu-active > a,
+.main-nav ul li a.active {
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Ensure submenu is visible if matched */
+.main-nav ul.open {
+  display: block !important;
+}
+
 
 /* NAV LINKS WRAPPER */
 .nav-links {
@@ -388,7 +419,7 @@
    Inner Nav Wrapper
 ================================= */
 .mobile-nav {
-    padding: 4rem 1.5rem;
+    padding-top: 100px;
     width: 100%;
     flex-grow: 1;
 }
@@ -420,9 +451,7 @@
     font-size: 1.1rem;
     font-weight: 600;
     color: #16293b;
-    background: linear-gradient(145deg, #f0f4ff, #e4ecff);
-    border: 1px solid #c9d7f1;
-    border-radius: 16px;
+    background: #e6f3fc;
     text-decoration: none;
     box-shadow:
         inset 2px 2px 5px rgba(255, 255, 255, 0.6),
@@ -452,9 +481,9 @@
 }
 
 .mobile-nav-links a:hover {
-    color: #ffffff;
+    color: var(--hover-text-color);
     transform: scale(1.02);
-    background: linear-gradient(135deg, #120270, #60efff);
+    background: var(--hover-bg-color);
     box-shadow:
         0 8px 24px rgba(0, 91, 187, 0.25),
         inset 1px 1px 4px rgba(255, 255, 255, 0.3);
@@ -470,17 +499,29 @@
     padding-right: 2.5rem;
 }
 
+/* Base arrow style */
 .dropdown-arrow {
     position: absolute;
-    right: 1.2rem;
+    right: 1rem;
     top: 50%;
     transform: translateY(-50%) rotate(0deg);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease, color 0.3s ease;
+    font-size: 0.9rem;
+    color: #555; /* Neutral by default */
+    pointer-events: none;
 }
 
-.dropdown-mobile.open>a .dropdown-arrow {
+/* Rotate when open */
+.dropdown-mobile.open > a .dropdown-arrow {
     transform: translateY(-50%) rotate(180deg);
+    color: #0077cc; /* Accent color when open */
 }
+
+/* Optional: hover effect for parent link */
+.dropdown-mobile > a:hover .dropdown-arrow {
+    color: #0077cc;
+}
+
 
 /* ===============================
    Dropdown Menus (First & Second Level)
@@ -523,7 +564,7 @@
 .dropdown-mobile-menu li a:hover,
 .dropdown-mobile-submenu li a:hover {
     background-color: rgba(0, 0, 0, 0.05);
-    color: white;
+    color: var(--hover-text-color);
 }
 
 /* Indentation for nesting */
