@@ -1,42 +1,7 @@
-    /* Odoo Hero Section - Retained for context, adjust as needed */
-    .Odoo-hero {
-      background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-      margin-top: 80px;
-    }
-
-    .Odoo-hero h2 {
-      font-size: clamp(1.8rem, 5vw, 2.5rem); /* Responsive font size */
-      margin-bottom: 20px;
-      color: white;
-    }
-
-    .Odoo-hero p {
-      font-size: clamp(1rem, 2.5vw, 1.1rem); /* Responsive font size */
-      line-height: 1.6;
-      margin: 0 auto 20px auto;
-      text-align: center; /* Centered for better readability in hero */
-    }
-
-    .Odoo-hero a {
-      color: #fff;
-      text-decoration: underline;
-      font-weight: 600;
-    }
 
     /* Odoo Services Section - New Structure & Styles */
     .odoo-services-section {
-      padding: 40px 20px;
-      background-color: #ffffff;
-    }
-
-    .odoo-services-section > h2 {
-      text-align: center;
-      font-size: clamp(2rem, 5vw, 3rem); /* Large, responsive heading */
-      color: #222222; /* Darker color for prominence */
-      margin-bottom: 30px;
+      background-color: var(--first-section-bg);
     }
 
     .odoo-service-block {
@@ -44,12 +9,18 @@
       flex-direction: column; /* Default: stack image above text on mobile */
       align-items: start;
       gap: 30px; /* Space between image and text */
-      background-color: #e9eeed;
+      background-color: #f0f4f8;
       padding: 30px;
-      border-radius: 12px;
+      border-radius: 15px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Softer shadow */
       margin-bottom: 40px; /* Space between blocks */
       overflow: hidden; /* Ensures rounded corners apply correctly */
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .odoo-service-block:hover {
+      transform: translateY(-5px);
+     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
     }
 
     .odoo-service-block:last-child {
@@ -63,15 +34,16 @@
     }
 
     .odoo-service-content h3 {
-      font-size: clamp(1.5rem, 4vw, 2rem); /* Responsive heading size */
-      color: #222222; /* Primary brand color */
+      font-size: var(--ftSize2); /* Responsive heading size */
+      color: var(--common-text-color-dark); /* Primary brand color */
       margin-bottom: 15px;
     }
 
     .odoo-service-content p {
-      font-size: clamp(0.95rem, 2.2vw, 1.1rem); /* Responsive paragraph size */
+      font-size: var(--desc-ftSize); /* Responsive paragraph size */
       line-height: 1.7;
-      color: #555;
+      color: var(--common-text-color-dark); /* Dark text for readability */
+      font-weight: var(--ftWt3); /* Lighter font weight for body text */
     }
 
     .odoo-service-image-wrapper {
@@ -92,7 +64,7 @@
     }
 
     .odoo-service-image-wrapper img:hover {
-        transform: scale(1.03); /* Slight zoom on hover */
+        /* transform: scale(1.03); Slight zoom on hover */
     }
 
 

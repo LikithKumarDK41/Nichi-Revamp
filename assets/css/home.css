@@ -260,37 +260,6 @@
     max-width: 700px;
 }
 
-.tech-read-more {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 22px;
-    font-weight: 600;
-    color: #fff;
-    background: linear-gradient(135deg, #4f46e5, #6d28d9);
-    border-radius: 8px;
-    text-decoration: none;
-    transition: all 0.3s aboutease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    width: fit-content;
-    font-size: 1rem;
-}
-
-.tech-read-more i {
-    font-size: 1rem;
-    transition: transform 0.3s ease;
-}
-
-.tech-read-more:hover {
-    background: linear-gradient(135deg, #4338ca, #5b21b6);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-}
-
-.tech-read-more:hover i {
-    transform: translateX(4px);
-}
-
 @media (max-width: 768px) {
     .tech-expertise-container {
         flex-direction: column;
@@ -308,10 +277,6 @@
     .tech-expertise-content p {
         font-size: 1rem;
         max-width: 100%;
-    }
-
-    .tech-read-more {
-        margin: 0 auto;
     }
 }
 
@@ -919,7 +884,7 @@
 /* ✅ Updated: was h3, now targets <p> inside .partnerships */
 .partnerships p {
     font-size: var(--desc-ftSize);
-    font-weight: var(--ftWt2);
+    font-weight: var(--ftWt3);
     color: var(--common-text-color-dark);
     margin-bottom: 2.5rem;
     max-width: 700px;
@@ -1005,7 +970,7 @@
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background-color: #0057B8;
+    background-color: var(--button-bg);
     color: white;
     border: none;
     display: flex;
@@ -1018,7 +983,7 @@
 }
 
 .back-to-top-button:hover {
-    background-color: #007BFF;
+    background-color: var(--button-hover-bg);
     transform: scale(1.05);
     box-shadow: 0 6px 16px rgba(0, 123, 255, 0.5);
 }

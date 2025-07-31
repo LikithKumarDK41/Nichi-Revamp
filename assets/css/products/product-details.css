@@ -1,9 +1,58 @@
+/* Flex row for product details (image left, content right) */
+.product-details-flex-row {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.product-details-image-col {
+    flex: 1 1 320px;
+    max-width: 420px;
+    min-width: 260px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.product-details-content-col {
+    flex: 2 1 400px;
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+@media (max-width: 900px) {
+    .product-details-flex-row {
+        flex-direction: column;
+        gap: 24px;
+    }
+    .product-details-image-col, .product-details-content-col {
+        max-width: 100%;
+        min-width: 0;
+    }
+}
         /* Simplified product details section */
         .product-details-section {
-            padding: 40px 20px; /* Adjusted padding for a cleaner look */
+            padding: 40px 0;
             margin: 0 auto;
-            min-height: calc(100vh - 100px); /* Adjust based on header/footer height */
-            /* Removed text-align: left here to allow individual components to align */
+            min-height: calc(100vh - 100px);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background: linear-gradient(135deg, #f8fafc 60%, #e0e7ff 100%);
+        }
+
+        .product-details-card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 1.5px 4px rgba(0,0,0,0.04);
+            padding: 40px 32px 32px 32px;
+            max-width: 1300px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         /* Styling for dynamically loaded content */
@@ -18,18 +67,18 @@
         /* Styling for the main product image (default, larger size) */
         .product-main-image {
             width: 100%;
-            max-width: 500px; /* Larger image size */
+            max-width: 480px;
             height: auto;
-            margin: 0 auto 30px auto; /* Center image and add bottom margin */
-            display: block; /* Ensure image is block level for margin auto to work */
+            margin: 0 auto 32px auto;
+            display: block;
             object-fit: cover;
-            border-radius: 12px;
-            transition: transform 0.3s ease;
+            border-radius: 14px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
         }
-
-        
         .product-main-image:hover {
-        transform: scale(1.05);
+            transform: scale(1.03);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.13);
         }
 
         /* Styling for the smaller image next to features (Kisanbandhu specific) */
@@ -49,31 +98,47 @@
 
         .product-details-section p {
             font-size: var(--desc-ftSize);
+<<<<<<< HEAD
             color: #222222;
+=======
+            color: black;
+>>>>>>> f1b321720e0db8fab5c5b544081ff42a182ad0de
             line-height: 1.8;
-            margin-bottom: 25px; /* Default margin for paragraphs */
+            margin-bottom: 25px;
+            text-align: left;
         }
 
         .product-details-section ul {
-            list-style: disc;
-            margin-left: 25px;
+            list-style: disc inside;
+            margin-left: 0;
             margin-bottom: 25px;
+
+            border-radius: 10px;
+            padding: 18px 22px 18px 32px;
+       
         }
 
         .product-details-section ul li {
+<<<<<<< HEAD
             font-size: var(--desc-ftSize2);
             color: #222222;
+=======
+            font-size: var(--desc-ftSize);
+            color: black;
+>>>>>>> f1b321720e0db8fab5c5b544081ff42a182ad0de
             line-height: 1.7;
             margin-bottom: 8px;
         }
 
         .video-container {
             width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%;
             position: relative;
             background: #000;
             overflow: hidden;
-            margin-bottom: 25px; /* Add margin below video */
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
         }
 
         .video-container iframe {
@@ -82,47 +147,35 @@
             left: 0;
             width: 100%;
             height: 100%;
-        }
-
-        .tech-read-more {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 24px;
-            font-size: 1rem;
-            font-weight: 600;
-            color: #ffffff;
-            background: linear-gradient(135deg, #4f46e5, #6d28d9);
-            border-radius: 8px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 194, 184, 0.4);
-        }
-
-        .tech-read-more:hover {
-            background: linear-gradient(135deg, #4338ca, #5b21b6);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 194, 184, 0.6);
+            border-radius: 12px;
         }
 
         /* New CSS for the layout - simplified */
         .features-video-wrapper {
+            padding: 20px;
             display: flex;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 32px;
             justify-content: space-between;
-            margin-top: 40px;
             width: 100%;
+            background: var(--alternate-section-bg);
+            border-radius: 15px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
         }
 
         .features-column {
             flex: 1 1 50%;
-            min-width: 300px;
+            min-width: 260px;
+
+            border-radius: 10px;
+            padding: 18px 20px 10px 24px;
+ 
         }
 
         .video-column {
             flex: 1 1 40%;
-            min-width: 300px;
+            min-width: 260px;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -136,16 +189,31 @@
 
         /* Specific styles for Kisanbandhu content layout */
         .kisanbandhu-main-content-wrapper {
+<<<<<<< HEAD
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
         gap: 30px;
         margin: 40px auto;
+=======
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 36px;
+            margin: 40px auto 0 auto;
+    
+            border-radius: 14px;
+
+            padding: 32px 24px;
+            max-width: 900px;
+>>>>>>> f1b321720e0db8fab5c5b544081ff42a182ad0de
         }
 
         .kisanbandhu-text-content p {
-            margin-bottom: 0; /* Remove default paragraph margin within this flex item */
-            text-align: left; /* Center text for mobile */
+            margin-bottom: 0;
+            text-align: left;
+            font-size: var(--desc-ftSize);
+            color: #374151;
         }
 
         @media (min-width: 768px) {
@@ -184,94 +252,114 @@
 
         /* Hero Section Styling */
         .product-hero-section {
-            padding: 40px 20px;
+            padding: 56px 20px 48px 20px;
             text-align: center;
-            color: #ffffff; /* Default text color for hero */
-            background-color: #333; /* Fallback background color */
+            color: #fff;
+            background-color: #333;
             background-size: cover;
             background-position: center;
-            margin-bottom: 30px; /* Space between hero and content */
+            margin-bottom: 0;
             margin-top: 80px;
+            border-radius: 0 0 24px 24px;
+            box-shadow: 0 6px 32px rgba(0,0,0,0.10);
+            position: relative;
+            z-index: 1;
         }
 
         .product-hero-section h1 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             font-weight: 800;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.10);
         }
 
-        .product-hero-section p.tagline {
-            font-size: 1.5rem;
+        .product-hero-section p {
+            font-size: 1.35rem;
             font-weight: 500;
-            opacity: 0.9;
+            opacity: 0.96;
+            margin-bottom: 0;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.08);
         }
 
         /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .product-details-card, .kisanbandhu-main-content-wrapper {
+                max-width: 98vw;
+                padding: 24px 8px;
+            }
+        }
+
         @media (max-width: 768px) {
             .product-details-section {
-                padding: 30px 15px;
+                padding: 18px 0;
             }
-
+            .product-details-card {
+                padding: 18px 4px 24px 4px;
+            }
             .product-details-section h2 {
-                font-size: 2.5rem;
+                font-size: 2.1rem;
             }
-
             .product-details-section p,
             .product-details-section ul li {
-                font-size: 1rem;
+                font-size: 0.98rem;
             }
-
             .features-video-wrapper {
                 flex-direction: column;
                 align-items: center;
             }
-
             .features-column, .video-column {
                 width: 100%;
                 min-width: unset;
+                padding: 0;
             }
-
-            /* Stack image and features on smaller screens for Kisanbandhu */
+            .product-main-image {
+                max-width: 98vw;
+            }
+            .kisanbandhu-main-content-wrapper {
+                flex-direction: column;
+                align-items: center;
+                gap: 18px;
+                padding: 18px 4px;
+            }
             .product-image-inline-features {
-                margin-bottom: 20px; /* Ensure space when stacked */
+                margin-bottom: 20px;
             }
-
             .product-hero-section {
-                padding: 60px 15px;
+                padding: 40px 8px 32px 8px;
             }
-
             .product-hero-section h1 {
-                font-size: 2.8rem;
+                font-size: 2.1rem;
             }
-
-            .product-hero-section p.tagline {
-                font-size: 1.3rem;
+            .product-hero-section p {
+                font-size: 1.08rem;
             }
         }
 
         @media (max-width: 480px) {
             .product-details-section {
-                padding: 20px 10px;
+                padding: 8px 0;
             }
-
+            .product-details-card {
+                padding: 8px 0 12px 0;
+            }
             .product-details-section h2 {
-                font-size: 2rem;
+                font-size: 1.3rem;
             }
-
             .product-details-section p,
             .product-details-section ul li {
+                font-size: 0.93rem;
+            }
+            .product-hero-section {
+                padding: 24px 2px 18px 2px;
+            }
+            .product-hero-section h1 {
+                font-size: 1.2rem;
+            }
+            .product-hero-section p {
                 font-size: 0.95rem;
             }
-
-            .product-hero-section {
-                padding: 40px 10px;
-            }
-
-            .product-hero-section h1 {
-                font-size: 2rem;
-            }
-
-            .product-hero-section p.tagline {
-                font-size: 1.1rem;
-            }
         }
+.product-etails-background-section {
+    background: var(--alternate-section-bg);
+}
