@@ -94,31 +94,6 @@
             margin-bottom: 20px;
         }
 
-        /* Tech Read More Button (reused for Careers and Jobs) */
-        .tech-read-more {
-            display: inline-flex;
-            align-items: center;
-            background-color: #007bff; /* Blue button */
-            color: #fff;
-            padding: 12px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            margin-top: 20px;
-            border: none; /* Ensure button has no default border */
-            cursor: pointer; /* Indicate it's clickable */
-        }
-
-        .tech-read-more:hover {
-            background-color: #0056b3; /* Darker blue on hover */
-            transform: translateY(-2px);
-        }
-
-        .tech-read-more i {
-            margin-left: 8px;
-        }
-
         /* Job Application Form Container */
         .application-form-container {
             max-width: 700px;
@@ -348,11 +323,6 @@
             }
 
             .careers-main-section p {
-                font-size: 0.9rem;
-            }
-
-            .tech-read-more {
-                padding: 10px 20px;
                 font-size: 0.9rem;
             }
 

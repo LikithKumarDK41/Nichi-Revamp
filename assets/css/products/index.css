@@ -26,7 +26,6 @@
         }
 
         .products-section {
-            padding: 60px 20px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -51,15 +50,15 @@
         }
 
         .product-card h3 {
-            font-size: 2rem;
+            font-size: var(--card-header-ftSize);
             font-weight: 700;
             color: #222222;
             margin-bottom: 15px;
         }
 
         .product-card p {
-            font-size: 1.1rem;
-            color: #4a5568;
+            font-size: var(--card-content-ftSize);
+            color: #222222;
             line-height: 1.7;
             margin-bottom: 25px;
             flex-grow: 1; 
@@ -134,11 +133,6 @@
             }
 
             .product-card p {
-                font-size: 0.9rem;
-            }
-
-            .tech-read-more {
-                padding: 10px 20px;
                 font-size: 0.9rem;
             }
         }

@@ -28,16 +28,19 @@
   --alternate-section-bg: linear-gradient(135deg, #f9fafb, #edf2f7);
   --common-text-color-dark: #000;
   --common-text-color-light: #fff;
+  --button-bg:#000066;
+  --button-hover-bg: #000080;
   /* Font size */
   --ftSize1: 40px;
   --ftSize2: 28px;
   --card-header-ftSize: 1.15rem;
   --card-content-ftSize: 1rem;
   --desc-ftSize: 1rem;
+  --desc-ftSize2: 0.9rem;
   /* Font Weight */
   --ftWt1: bold;
   --ftWt2:600;
-  --ftWt3: 500;
+  --ftWt3: 400;
   --card-header-ftWt: 700;
   --card-content-ftWt: 500;
   --alternate-section-bg: linear-gradient(135deg, #f9fafb, #edf2f7);
@@ -111,7 +114,40 @@ body {
 
 /* Common Padding */
 .common-padding {
-  padding:40px 20px;
+  padding: 40px 20px;
+}
+
+
+/* Read More button */
+.tech-read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 22px;
+    font-weight: 600;
+    color: #fff;
+    background: var(--button-bg);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s aboutease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: fit-content;
+    font-size: 1rem;
+}
+
+.tech-read-more i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.tech-read-more:hover {
+    background: var(--button-hover-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.tech-read-more:hover i {
+    transform: translateX(4px);
 }
 
 @media screen and (max-width: 500px) {
@@ -127,4 +163,8 @@ body {
   .section-title {
     font-size: 1.75rem;
   }
+
+  .tech-read-more {
+        margin: 0 auto;
+    }
 }

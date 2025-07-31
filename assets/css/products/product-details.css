@@ -93,11 +93,20 @@
             object-fit: cover;
             border-radius: 8px; /* Added for better aesthetics */
             margin-bottom: 0; /* Remove default margin-bottom to avoid extra space in flex */
+            transition: transform 0.3s ease;
+        }
+
+        .product-image-inline-features:hover{
+            transform: scale(1.05);
         }
 
         .product-details-section p {
             font-size: var(--desc-ftSize);
+<<<<<<< HEAD
+            color: #222222;
+=======
             color: black;
+>>>>>>> f1b321720e0db8fab5c5b544081ff42a182ad0de
             line-height: 1.8;
             margin-bottom: 25px;
             text-align: left;
@@ -114,8 +123,13 @@
         }
 
         .product-details-section ul li {
+<<<<<<< HEAD
+            font-size: var(--desc-ftSize2);
+            color: #222222;
+=======
             font-size: var(--desc-ftSize);
             color: black;
+>>>>>>> f1b321720e0db8fab5c5b544081ff42a182ad0de
             line-height: 1.7;
             margin-bottom: 8px;
         }
@@ -138,28 +152,6 @@
             width: 100%;
             height: 100%;
             border-radius: 12px;
-        }
-
-        .tech-read-more {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 13px 28px;
-            font-size: 1.08rem;
-            font-weight: 600;
-            color: #fff;
-            background: linear-gradient(135deg, #2563eb, #7c3aed);
-            border-radius: 10px;
-            text-decoration: none;
-            transition: all 0.2s;
-            box-shadow: 0 4px 18px rgba(124, 58, 237, 0.13);
-            margin-top: 10px;
-        }
-
-        .tech-read-more:hover {
-            background: linear-gradient(135deg, #1e40af, #6d28d9);
-            transform: translateY(-2px) scale(1.04);
-            box-shadow: 0 8px 28px rgba(124, 58, 237, 0.18);
         }
 
         /* New CSS for the layout - simplified */
@@ -203,6 +195,13 @@
 
         /* Specific styles for Kisanbandhu content layout */
         .kisanbandhu-main-content-wrapper {
+<<<<<<< HEAD
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 30px;
+        margin: 40px auto;
+=======
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
@@ -213,6 +212,7 @@
 
             padding: 32px 24px;
             max-width: 900px;
+>>>>>>> f1b321720e0db8fab5c5b544081ff42a182ad0de
         }
 
         .kisanbandhu-text-content p {
@@ -231,30 +231,30 @@
     text-align: center; /* optional if you want text to center on small screens */
   }
 
-@media (min-width: 768px) {
-  .kisanbandhu-main-content-wrapper {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
+        @media (min-width: 768px) {
+        .kisanbandhu-main-content-wrapper {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
 
-.kisanbandhu-text-content {
-  flex: 1;
-  text-align: left;
-  padding-right: 20px;
-}
+        .kisanbandhu-text-content {
+        flex: 1;
+        text-align: left;
+        padding-right: 20px;
+        }
 
-.kisanbandhu-image-content {
-  flex-shrink: 0;
-  align-self: flex-start;
-}
+        .kisanbandhu-image-content {
+        flex-shrink: 0;
+        align-self: flex-start;
+        }
 
-.kisanbandhu-image-content .product-image-inline-features {
-  max-width: 200px;
-  height: auto;
-  display: block;
-}
-}
+        .kisanbandhu-image-content .product-image-inline-features {
+        max-width: 200px;
+        height: auto;
+        display: block;
+        }
+        }
 
 
 

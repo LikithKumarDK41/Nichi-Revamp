@@ -34,7 +34,8 @@
     padding-bottom: 10px; /* Adds padding below the text for the underline. */
 }
 
-/* Offerings Section - Zigzag Layout */
+/* Offerings Section - Zigzag Layout */  
+/* This we have used in Our-offerings, online-consulting, Careers screen */
 .OFS_offerings-section {
     background: var(--first-section-bg); /* Sets a white background. */
 }

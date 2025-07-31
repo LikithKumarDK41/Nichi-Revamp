@@ -173,26 +173,22 @@
         /* Verticals Section Styles */
         .verticals-section {
             font-family: 'Inter', sans-serif;
-            padding: 4rem 2rem;
-            background-color: #f8f9fa;
+            padding: 40px 20px;
+            background-color: var(--alternate-section-bg);
             color: #333;
         }
 
         .verticals-title {
-            font-family: 'Inter', sans-serif;
-            font-size: 2.5rem;
             text-align: center;
             margin-bottom: 2rem;
-            font-weight: 600;
-            color: #0d1117;
         }
 
         .verticals-intro {
             text-align: center;
-            max-width: 800px;
             margin: 0 auto 3rem;
-            font-size: 1.1rem;
+            font-size: var(--desc-ftSize);
             line-height: 1.6;
+            font-weight: var(--ftWt3);
         }
 
         .vertical-item {
@@ -211,9 +207,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-family: 'Inter', sans-serif;
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: var(--card-header-ftSize);
             transition: background-color 0.3s ease;
         }
 
@@ -238,6 +233,8 @@
             transition: max-height 0.3s ease, padding 0.3s ease;
             border-top: 1px solid transparent;
             line-height: 1.6;
+            font-size: var(--card-content-ftSize);
+            font-weight: var(--card-content-ftWt);
         }
 
         .vertical-content.show {
@@ -276,13 +273,8 @@
                 height: 0.6rem;
             }
 
-            .verticals-title {
-                font-size: 2rem;
-            }
-
             .vertical-header {
                 padding: 1rem;
-                font-size: 1.1rem;
             }
         }
 
@@ -304,13 +296,5 @@
                 font-size: 1.2rem;
                 bottom: 0.8rem;
                 right: 1rem;
-            }
-
-            .verticals-section {
-                padding: 2rem 1rem;
-            }
-
-            .verticals-title {
-                font-size: 1.8rem;
             }
         }
