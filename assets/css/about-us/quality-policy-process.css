@@ -45,7 +45,7 @@
 }
 
 .qpp h2 {
-  font-size: 32px;
+  font-size: var(--ftSize1);
   font-weight: 700;
   color: #222;
   margin-bottom: 16px;
@@ -53,7 +53,7 @@
 }
 
 .qpp p {
-  font-size: 18px;
+  font-size: var(--desc-ftSize);
   line-height: 1.6;
   margin-bottom: 16px;
   text-align: left;
@@ -81,15 +81,15 @@
 }
 
 .qpp_certification h2 {
-  font-size: 28px;
+  font-size: var(--ftSize2);
   font-weight: 700;
-  color: #222;
+  color: var(--common-text-color-dark);
   text-align: center;
   margin-bottom: 16px;
 }
 
 .qpp_certification p {
-  font-size: 18px;
+  font-size: var(--desc-ftSize);
   line-height: 1.6;
   text-align: center;
   margin-bottom: 12px;
@@ -132,14 +132,14 @@
 }
 
 .qpp_trio h3 {
-  font-size: 22px;
+  font-size: var(--card-header-ftSize);
   font-weight: 700;
-  color: #222;
+  color: var(--common-text-color-dark);
   margin-bottom: 12px;
 }
 
 .qpp_trio p {
-  font-size: 17px;
+  font-size: var(--card-content-ftSize);
   line-height: 1.6;
   text-align: left;
 }
@@ -154,19 +154,19 @@
 }
 
 .qpp_approach h2 {
-  font-size: 30px;
+  font-size: var(--ftSize2);
   font-weight: 700;
-  color: #222;
+  color: var(--common-text-color-dark);
   margin-bottom: 20px;
   text-align: center;
 }
 
 .qpp_approach p {
-  font-size: 18px;
+  font-size: var(--desc-ftSize);
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
-  color: #222;
+  color: var(--common-text-color-dark);
 }
 
 /* ----------------------------------------
@@ -179,18 +179,18 @@
 }
 
 .qpp_development h2 {
-  font-size: 28px;
+  font-size: var(--ftSize2);
   font-weight: 700;
-  color: #222;
+  color: var(--common-text-color-dark);
   margin-top: 32px;
   margin-bottom: 16px;
   text-align: left;
 }
 
 .qpp_development p {
-  font-size: 17px;
+  font-size: var( --desc-ftSize);
   line-height: 1.6;
-  color: #333;
+  color: var(--common-text-color-dark);
   margin-bottom: 12px;
 }
 
@@ -201,9 +201,9 @@
 }
 
 .qpp_development li {
-  font-size: 17px;
+  font-size: var(--desc-ftSize2);
   line-height: 1.5;
-  color: #444;
+  color: var(--common-text-color-dark);
   margin-bottom: 8px;
 }
 

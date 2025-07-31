@@ -40,6 +40,160 @@
             color: black;
 
         }
+        
+        /* Tab Navigation Styling */
+.tab-nav {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.tab-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid #007bff;
+  background-color: #fff;
+  color: #007bff;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tab-button:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.tab-button.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Tab Content Sections */
+.tab-content {
+  display: none;
+  padding: 20px 20px 60px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Job Listings */
+.job-listing-heading {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+}
+
+.current-openings-description {
+  font-size: 16px;
+  color: #555;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Individual Job Card */
+.job-card {
+  background-color: #f9f9f9;
+  border-left: 5px solid #007bff;
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+}
+
+.job-card h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.job-card p {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+/* Requirements List */
+.requirements ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.requirements li {
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #444;
+}
+
+/* Apply Now Button */
+.apply-now-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #007bff;
+  color: #fff !important;
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.apply-now-btn:hover {
+  background-color: #0056b3;
+}
+
+/* No Openings Message */
+#no-openings-message {
+  font-size: 15px;
+  color: #666;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.jobs-apply-link {
+  color: #007bff;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.jobs-apply-link:hover {
+  color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .job-card {
+    padding: 20px;
+  }
+
+  .tab-button {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+
+  .job-listing-heading {
+    font-size: 24px;
+  }
+}
+
 
         /* Image Layout Styles */
         .image-text-container {

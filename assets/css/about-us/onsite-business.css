@@ -3,14 +3,14 @@ body {
   font-family: 'Inter', sans-serif;
   line-height: 1.7;
   color: #333;
-  background-color: #f0f2f5; /* Lighter background for contrast */
+  background-color: #f0f2f5;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden;
 }
 
 main {
-  margin: 0 auto; /* Center the main content */
+  margin: 0 auto;
 }
 
 /* Hero Section Styling */
@@ -18,30 +18,28 @@ main {
   background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
   color: white;
   text-align: center;
-  padding: 80px 20px; /* Increased padding for more visual impact */
+  padding: 80px 20px;
   position: relative;
   overflow: hidden;
   margin-bottom: 60px;
-  margin-top: 0; /* Remove top margin, let header handle spacing */
-  border-bottom-left-radius: 20px; /* Rounded corners for a softer look */
+  margin-top: 0;
+  border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  
-  /* New styles for full width */
-  width: 100vw; /* Make it span the full viewport width */
-  left: 50%; /* Move element's center to viewport center */
-  transform: translateX(-50%); /* Shift element left by half its width to truly center it */
-  box-sizing: border-box; /* Include padding in the width calculation */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
 }
 
 .privacy-hero h1 {
-  font-size: 4em; /* Larger font size for prominence */
+  font-size: 4em;
   margin: 0;
   font-weight: 800;
-  letter-spacing: -1px; /* Tighter letter spacing */
+  letter-spacing: -1px;
   position: relative;
   z-index: 2;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Content Section Styling */
@@ -49,16 +47,15 @@ main {
   position: relative;
   z-index: 2;
   margin-bottom: 80px;
-  padding: 0; /* Remove padding here, sections will have their own */
+  padding: 0;
 }
 
-/* Card Layout for Content Sections */
 .content-section > h2 {
-  font-size: 2.8em; /* Larger and more impactful */
+  font-size: 2.8em;
   color: #0a0e27;
-  margin-bottom: 50px; /* More space below the main title */
+  margin-bottom: 50px;
   font-weight: 800;
-  text-align: center; /* Center the main section title */
+  text-align: center;
   position: relative;
   padding-bottom: 20px;
 }
@@ -69,40 +66,37 @@ main {
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  width: 80px; /* Underline effect */
+  width: 80px;
   height: 4px;
   background: linear-gradient(90deg, #004aad, #240b77);
   border-radius: 2px;
 }
 
-/* Individual Content Cards */
 .content-section h3 {
-  font-size: 1.8em; /* Slightly larger for section titles */
-  color: #004aad; /* Primary brand color */
+  font-size: 1.8em;
+  color: #004aad;
   margin-top: 40px;
   margin-bottom: 25px;
   font-weight: 700;
-  border-bottom: 2px solid #e0e0e0; /* Subtle underline for sub-sections */
+  border-bottom: 2px solid #e0e0e0;
   padding-bottom: 10px;
 }
 
 .content-section h4 {
   font-size: 1.4em;
-  color: #240b77; /* Secondary brand color */
+  color: #240b77;
   margin-top: 30px;
   margin-bottom: 15px;
   font-weight: 600;
 }
 
-/* Paragraphs */
 .content-section p {
-  font-size: 1.1em; /* Slightly larger text for readability */
-  line-height: 1.9; /* Increased line height */
+  font-size: 1.1em;
+  line-height: 1.9;
   color: #4a5568;
   margin-bottom: 20px;
 }
 
-/* Lists */
 .content-section ul {
   list-style: none;
   padding: 0;
@@ -111,47 +105,45 @@ main {
 
 .content-section ul li {
   position: relative;
-  padding-left: 35px; /* More space for the bullet */
-  margin-bottom: 12px; /* Tighter spacing for list items */
+  padding-left: 35px;
+  margin-bottom: 12px;
   color: #4a5568;
   line-height: 1.8;
   text-align: left;
 }
 
 .content-section ul li::before {
-  content: '\2022'; /* Unicode bullet point */
+  content: '\2022';
   position: absolute;
   left: 0;
   top: 0;
-  font-size: 1.2em; /* Larger bullet */
-  color: #004aad; /* Brand color bullet */
+  font-size: 1.2em;
+  color: #004aad;
   font-weight: bold;
 }
 
-/* Links */
 .content-section a {
   color: #004aad;
   text-decoration: none;
-  font-weight: 600; /* Bolder links */
-  transition: all 0.3s ease-in-out; /* Smoother transition */
-  border-bottom: 1px solid transparent; /* Underline on hover */
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  border-bottom: 1px solid transparent;
 }
 
 .content-section a:hover {
   color: #240b77;
-  text-decoration: none; /* Remove default underline */
-  border-color: #240b77; /* Show underline on hover */
+  text-decoration: none;
+  border-color: #240b77;
 }
 
 /* Contact Info */
 .contact-info {
-  background-color: #ffffff; /* White background for contact card */
-  padding: 40px; /* More padding */
-  border-radius: 12px; /* More rounded corners */
+  background-color: transparent;
+  padding: 0;
   margin-top: 50px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Stronger shadow for emphasis */
-  border: 1px solid #e0e0e0; /* Subtle border */
-  text-align: center; /* Center contact info */
+  text-align: center;
+  border: none;
+  box-shadow: none;
 }
 
 .contact-info p {
@@ -165,34 +157,132 @@ main {
   font-weight: 700;
 }
 
-/* General Card Styling for sections */
-.content-section > div {
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  margin-bottom: 30px; /* Space between cards */
-  border: 1px solid #f0f0f0;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Hover effect */
+/* Remove all card effects */
+.content-section > div,
+.content-section > p {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 30px;
+  border: none;
+  transition: none;
 }
 
 .content-section > div:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  transform: none;
+  box-shadow: none;
 }
 
-/* Specific styling for the initial paragraphs outside of a card structure */
-.content-section > p {
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  margin-bottom: 30px;
-  border: 1px solid #f0f0f0;
+/* Onsite Business Hero Section */
+.onsite_hero {
+  background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 80px;
 }
 
+.onsite_hero .container {
+  margin: 0 auto;
+}
 
-/* Responsive adjustments */
+.onsite_hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.onsite_hero .subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Layout Section */
+.section-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  transition: none;
+}
+
+.section-content:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.section-content.reverse {
+  flex-direction: row-reverse;
+  padding: 0 20px;
+}
+
+.text-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.double-text-content {
+  flex: 1 1 50%;
+  text-align: left;
+}
+
+.text-content h2 {
+  font-size: var(--ftSize2);
+  font-weight: 700;
+  color: var(--common-text-color-dark);
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.text-content p {
+  font-size: var(--desc-ftSize);
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: var(--common-text-color-dark);
+}
+
+.image-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.image-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: none;
+  margin-top: 30px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.image-content img:hover {
+  transform: scale(1.05);
+}
+
+/* Side-by-side images */
+.image-content.side-by-side {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.image-content.side-by-side img {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Responsive Styles - Retained */
 @media (max-width: 1024px) {
   .privacy-hero h1 {
     font-size: 3.5em;
@@ -208,37 +298,37 @@ main {
     padding: 60px 20px;
     margin-bottom: 40px;
   }
-  
+
   .privacy-hero h1 {
     font-size: 2.8em;
   }
-  
+
   .content-section > h2 {
     font-size: 2em;
     margin-bottom: 30px;
   }
-  
+
   .content-section h3 {
     font-size: 1.6em;
   }
-  
+
   .content-section h4 {
     font-size: 1.3em;
   }
-  
-  .content-section p, 
+
+  .content-section p,
   .content-section ul li {
     font-size: 1em;
   }
 
-  .content-section > div,
-  .content-section > p {
-    padding: 20px;
-    margin-bottom: 20px;
+  .contact-info {
+    padding: 0;
   }
 
-  .contact-info {
-    padding: 30px;
+  .content-section > div,
+  .content-section > p {
+    padding: 0;
+    margin-bottom: 20px;
   }
 }
 
@@ -269,146 +359,16 @@ main {
   }
 
   .content-section ul li::before {
-    top: 5px; /* Adjust bullet position for smaller screens */
+    top: 5px;
   }
 
   .content-section > div,
   .content-section > p {
-    padding: 15px;
-    border-radius: 8px;
+    padding: 0;
+    border-radius: 0;
   }
 
   .contact-info {
-    padding: 20px;
+    padding: 0;
   }
-}
-
-/* Onsite Business */
-
-/* Hero Section: Onsite Business */
-.onsite_hero {
-  background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
-  padding: 40px 20px;
-  text-align: center;
-  margin-top: 80px;
-}
-
-.onsite_hero .container {
-  margin: 0 auto;
-}
-
-.onsite_hero h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: white;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.onsite_hero .subtitle {
-  font-size: 1.25rem;
-  font-weight: 400;
-  color: white;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-/* Responsive: Onsite Hero */
-@media (max-width: 768px) {
-  .onsite_hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .onsite_hero .subtitle {
-    font-size: 1rem;
-    padding: 0 10px;
-  }
-}
-
-.zigzag-section {
-  margin-bottom: 60px;
-}
-
-.section-content {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 40px;
-  /* Card styles */
-  background-color: #ffffff;
-  padding: 30px; /* Adjust padding as needed for the card look */
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  margin-bottom: 30px; /* Space between cards */
-  border: 1px solid #f0f0f0;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Hover effect */
-}
-
-.section-content:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-}
-
-.section-content.reverse {
-  flex-direction: row-reverse;
-  /* Remove padding here if the new card padding is sufficient, or adjust */
-  padding: 30px; /* Adjusted to match new card padding */
-}
-
-.text-content {
-  flex: 1;
-  min-width: 300px;
-}
-
-.double-text-content {
-  padding: 0 20px;
-  flex: 1 1 50%;
-  text-align: left;
-}
-
-.text-content h2 {
-  font-size: var(--ftSize2);
-  font-weight: 700;
-  color: #222222;
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-.text-content p {
-  font-size: 1em;
-  line-height: 1.6;
-  margin-bottom: 15px;
-  color: #4a5568;
-}
-
-.image-content {
-  flex: 1;
-  min-width: 300px;
-}
-
-.image-content img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 30px;
-  /* Removed hover effect from image */
-}
-
-/* Removed image hover effect */
-/* .image-content img:hover { transform: scale(1.03); transition: transform 0.3s ease; } */
-
-/* Side by side images */
-.image-content.side-by-side {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  padding: 0 20px;
-}
-
-.image-content.side-by-side img {
-  flex: 1;
-  min-width: 200px;
 }

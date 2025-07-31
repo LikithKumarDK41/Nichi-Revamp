@@ -18,16 +18,16 @@
 }
 
 .leadership-intro-text {
-  font-size: 1.1rem;
-  color: #444;
+  font-size: var(--card-content-ftSize);
+  color: var(--common-text-color-dark);
   text-align: left !important;
   line-height: 1.7;
   margin-bottom: 1.5rem;
 }
 
 .leadership-intro-text1 {
-  font-size: 1.1rem;
-  color: #444;
+  font-size: var(--card-header-ftSize);
+  color: var(--common-text-color-dark);
   text-align: left !important;
   line-height: 1.7;
 }

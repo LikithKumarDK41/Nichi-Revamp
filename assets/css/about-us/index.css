@@ -1,3 +1,14 @@
+.aboutus-hero-container {
+  width: 100%;
+}
+
+.aboutus-hero h1 {
+  font-size: 2.5em;
+  margin: 0;
+  font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 .aboutus-section {
   padding: 40px 20px;
   background-color: #ebedf1;
@@ -6,11 +17,21 @@
 
 .aboutus-section .section-title,
 .infrastructure-section .section-title {
-  font-size: 2.5rem;
+  font-size: var(--ftSize2);
   margin-bottom: 24px;
-  color: #222222;
+  color: var(--common-text-color-dark);
   font-weight: 700;
   text-align: center;
+}
+
+.factsheet-title{
+  text-align: center;
+  font-size: var(--ftSize2) !important;
+  color: var(--common-text-color-light);
+}
+
+.factsheet-text p{
+  font-size: var(--desc-ftSize2) !important;
 }
 
 /* Paragraph Styles */
@@ -36,36 +57,38 @@
   flex-direction: row-reverse;
 }
 
-.zigzag-text {
+.zigzag-text-about {
   flex: 1 1 50%;
   text-align: left;
   padding-right: 20px;
 }
 
-.zigzag-text p {
-  font-size: 1.125rem;
+.zigzag-text-about p {
+  font-size: var(--card-content-ftSize);
   line-height: 1.8;
-  color: #4a5568;
+  color: var(--common-text-color-dark);
   margin-bottom: 1.5rem;
   text-align: justify;
 }
 
-.zigzag-image {
-  flex: 1 1 45%;
+.about-us-zigzag-image {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 16px;
+  overflow: hidden; /* Important for containing the zoom effect */
 }
 
-.zigzag-image img {
+.about-us-zigzag-image img {
   max-width: 100%;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.zigzag-image img:hover { transform: scale(1.03); transition: transform 0.3s ease; }
+.about-us-zigzag-image img:hover {
+  transform: scale(1.03);
+}
+
 
 /*===============================
   Factsheet Section
@@ -366,48 +389,18 @@
 }
 
 .brochure-heading {
-  font-size: 2rem;
+  font-size: var(--ftSize2);
   font-weight: 700;
-  color: #222; /* Override original dark text to white */
+  color: var(--common-text-color-dark); /* Override original dark text to white */
   margin-bottom: 1rem;
 }
 
 .brochure-subtext {
-  font-size: 1.125rem;
-  color: #222222;
+  font-size: var(--card-header-ftSize);
+  color: var(--common-text-color-dark);
   margin-bottom: 2rem;
   font-style: italic;
 }
-
-.brochure-download-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 24px;
-  font-weight: 600;
-  font-size: 1rem;
-  color: #ffffff;
-  background: linear-gradient(135deg, #4f46e5, #6d28d9);
-  border-radius: 8px;
-  text-decoration: none;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-}
-
-.brochure-download-btn:hover {
-  background: linear-gradient(135deg, #4338ca, #5b21b6);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.brochure-download-btn i {
-  transition: transform 0.3s ease;
-}
-
-.brochure-download-btn:hover i {
-  transform: translateX(4px);
-}
-
 
 @media (max-width: 768px) {
   .brochure-heading {
