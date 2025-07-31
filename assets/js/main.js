@@ -60,29 +60,49 @@ class HTMLInclude extends HTMLElement {
     });
   }
 
-  highlightActiveMenuItems() {
-    const currentPath = window.location.pathname;
-    const allLinks = this.querySelectorAll('.mobile-nav a, .main-nav a');
+ highlightActiveMenuItems() {
+  const currentUrl = window.location.href;
+  const currentPath = window.location.pathname.replace(/\/$/, '');
+  const allLinks = this.querySelectorAll('.main-nav a, .mobile-nav a');
 
-    allLinks.forEach(link => {
-      const href = new URL(link.href, window.location.origin).pathname;
+  allLinks.forEach(link => {
+    const linkUrl = new URL(link.href, window.location.origin);
+    const linkPath = linkUrl.pathname.replace(/\/$/, '');
 
-      if (currentPath === href || currentPath.startsWith(href)) {
-        link.classList.add('active');
+    const isExactMatch = currentUrl === linkUrl.href;
+    const isPathMatch = currentPath === linkPath;
+    const isSectionMatch = linkPath !== '/index.html' && currentPath.startsWith(linkPath);
 
-        // Mark all parent dropdowns active and expand their menus
-        let li = link.closest('li');
-        while (li) {
-          li.classList.add('active');
+    if (isExactMatch || isPathMatch || isSectionMatch) {
+      link.classList.add('active');
 
-          const submenu = li.querySelector('ul');
-          if (submenu) submenu.classList.add('open');
+      // Highlight submenu path
+      let li = link.closest('li');
+      while (li) {
+        const parentLi = li.closest('ul')?.closest('li');
+        if (parentLi) {
+          parentLi.classList.add('submenu-active');
 
-          li = li.parentElement.closest('li.dropdown-mobile, li.dropdown');
+          const parentLink = parentLi.querySelector('a');
+          if (parentLink) parentLink.classList.add('active');
+
+          const submenu = parentLi.querySelector('ul');
+          if (submenu) {
+            submenu.classList.add('open');
+            submenu.style.display = 'block';
+          }
         }
+        li = parentLi;
       }
-    });
-  }
+    }
+  });
+}
+
+
+
+
+
+
 }
 
 // Define the custom element

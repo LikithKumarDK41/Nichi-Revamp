@@ -43,6 +43,12 @@
   --ftWt3: 400;
   --card-header-ftWt: 700;
   --card-content-ftWt: 500;
+  --alternate-section-bg: linear-gradient(135deg, #f9fafb, #edf2f7);
+--hover-bg-color: #d0e8fa;  /* very light blue */
+--hover-text-color: #08306b; /* deep blue for readability */
+--active-btn-bg: #062b5c;      /* soft active blue */
+--active-btn-color: #062b5c; 
+
 }
 
 /* Global styles */

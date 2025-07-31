@@ -1,16 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nichi-In Header</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
 <header class="main-header" id="main-header">
   <div class="header-content">
-    <!-- Logo -->
     <div class="logo">
       <a href="/index.html">
         <img src="/assets/img/Nichi-logo.png" alt="Nichi-In Company Logo">
       </a>
     </div>
 
-    <!-- Desktop Navigation -->
+    <!-- Desktop Nav -->
     <nav class="main-nav">
       <ul class="nav-links">
-        <li><a href="/index.html" class="active">Home</a></li>
+        <li><a href="/index.html" class="">Home</a></li>
         <li class="dropdown">
           <a href="/about-us/index.html">About Us</a>
           <ul class="dropdown-menu">
@@ -22,42 +31,36 @@
           </ul>
         </li>
 
-                <!-- Services -->
         <li class="dropdown">
           <a href="/services/index.html">Services</a>
           <ul class="dropdown-menu">
-                        <li class="dropdown">
-                            <a href="/services/offshore-services/index.html">Offshore Services</a>
-                            <ul class="dropdown-submenu">
-                                <li><a href="/services/offshore-services/our-offerings.html">Our Offerings</a></li>
-                                <li><a href="/services/offshore-services/industry-focus.html">Industry Focus</a></li>
-                                <li><a href="/services/offshore-services/development-methodology.html">Development
-                                        Methodology</a></li>
-                                <li><a href="/services/offshore-services/major-technology-stack.html">Major Technology
-                                        Stack</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="/services/onsite-consulting/index.html">Onsite Consulting</a>
-                            <ul class="dropdown-submenu">
-                                <li><a href="/services/onsite-consulting/index.html#consulting-services">Consulting
-                                        Services</a></li>
-                                <li><a href="/services/onsite-consulting/index.html#staff-augmentation">Staff Augmenting
-                                        Services</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="/services/managed-it-services/index.html">Managed IT Services</a>
-                            <ul class="dropdown-submenu">
-                                <li><a href="/services/managed-it-services/Odoo.html">Odoo</a></li>
-                                <li><a href="/services/managed-it-services/salesforce.html">Salesforce</a></li>
-                            </ul>
-                        </li>
+            <li class="dropdown">
+              <a href="/services/offshore-services/index.html">Offshore Services</a>
+              <ul class="dropdown-submenu">
+                <li><a href="/services/offshore-services/our-offerings.html">Our Offerings</a></li>
+                <li><a href="/services/offshore-services/industry-focus.html">Industry Focus</a></li>
+                <li><a href="/services/offshore-services/development-methodology.html">Development Methodology</a></li>
+                <li><a href="/services/offshore-services/major-technology-stack.html">Major Technology Stack</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="/services/onsite-consulting/index.html">Onsite Consulting</a>
+              <ul class="dropdown-submenu">
+                <li><a href="/services/onsite-consulting/index.html#consulting-services">Consulting Services</a></li>
+                <li><a href="/services/onsite-consulting/index.html#staff-augmentation">Staff Augmenting Services</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="/services/managed-it-services/index.html">Managed IT Services</a>
+              <ul class="dropdown-submenu">
+                <li><a href="/services/managed-it-services/Odoo.html">Odoo</a></li>
+                <li><a href="/services/managed-it-services/salesforce.html">Salesforce</a></li>
+              </ul>
+            </li>
             <li><a href="/services/product-development/index.html">Product Development</a></li>
           </ul>
         </li>
 
-                <!-- Products -->
         <li class="dropdown">
           <a href="/products/index.html">Products</a>
           <ul class="dropdown-menu">
@@ -66,12 +69,13 @@
             <li><a href="/products/product-details.html?product=Kisanbandhu">KISANBANDHU</a></li>
           </ul>
         </li>
+
         <li><a href="/careers/index.html">Careers</a></li>
         <li><a href="/contact-us/index.html">Contact Us</a></li>
       </ul>
     </nav>
 
-    <!-- Mobile Actions -->
+    <!-- Mobile Nav Button -->
     <div class="header-actions">
       <button id="translate-btn" class="translate" aria-label="Translate">
         <img src="/assets/img/translation.png" alt="Translate" width="24" height="24">
@@ -84,34 +88,27 @@
     </div>
   </div>
 
-  <!-- Mobile Sidebar -->
-<!-- MOBILE NAV SIDEBAR -->
-<div class="mobile-nav-overlay" id="mobile-nav-overlay">
-  <nav class="mobile-nav">
-    <ul class="mobile-nav-links">
-      <li><a href="/index.html">Home</a></li>
-
-      <!-- About Us -->
-      <li class="dropdown-mobile">
-        <a href="/about-us/index.html">About Us <span class="dropdown-arrow">▼</span></a>
-        <ul class="dropdown-mobile-menu">
-          <li><a href="/about-us/who-we-are.html">Who We Are?</a></li>
-          <li><a href="/about-us/leadership.html">Our Leadership Team</a></li>
-          <li><a href="/about-us/offshore-business.html">Offshore Business</a></li>
-          <li><a href="/about-us/onsite-business.html">Onsite Business</a></li>
-          <li><a href="/about-us/quality-policy-process.html">Quality Policy &amp; Process</a></li>
-        </ul>
-      </li>
-
-      <!-- Services -->
-      <div class="overlay" id="mobileOverlay"></div>
-
-      <li class="dropdown-mobile">
-        <a href="/services/index.html">Services <span class="dropdown-arrow">▼</span></a>
-        <ul class="dropdown-mobile-menu">
+  <!-- Mobile Sidebar Navigation -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay">
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-links">
+        <li><a href="/index.html">Home</a></li>
+        <li class="dropdown-mobile">
+          <a href="/about-us/index.html">About Us <span class="dropdown-arrow">▼</span></a>
+          <ul class="dropdown-mobile-menu">
+            <li><a href="/about-us/who-we-are.html">Who We Are?</a></li>
+            <li><a href="/about-us/leadership.html">Our Leadership Team</a></li>
+            <li><a href="/about-us/offshore-business.html">Offshore Business</a></li>
+            <li><a href="/about-us/onsite-business.html">Onsite Business</a></li>
+            <li><a href="/about-us/quality-policy-process.html">Quality Policy &amp; Process</a></li>
+          </ul>
+        </li>
+        <li class="dropdown-mobile">
+          <a href="/services/index.html">Services <span class="dropdown-arrow">▼</span></a>
+          <ul class="dropdown-mobile-menu">
 
           <li class="dropdown-mobile">
-            <a href="/services/offshore-services/index.html">Offshore Services <span class="dropdown-arrow">›</span></a>
+            <a href="/services/offshore-services/index.html">Offshore Services <span class="dropdown-arrow">▼</span></a>
             <ul class="dropdown-mobile-submenu">
               <li><a href="/services/offshore-services/our-offerings.html">Our Offerings</a></li>
               <li><a href="/services/offshore-services/industry-focus.html">Industry Focus</a></li>
@@ -121,7 +118,7 @@
           </li>
 
           <li class="dropdown-mobile">
-            <a href="/services/onsite-consulting/index.html">Onsite Consulting <span class="dropdown-arrow">›</span></a>
+            <a href="/services/onsite-consulting/index.html">Onsite Consulting <span class="dropdown-arrow">▼</span></a>
             <ul class="dropdown-mobile-submenu">
               <li><a href="/services/onsite-consulting/index.html#consulting-services">Consulting Services</a></li>
               <li><a href="/services/onsite-consulting/index.html#staff-augmentation">Staff Augmenting Services</a></li>
@@ -129,38 +126,38 @@
           </li>
 
           <li class="dropdown-mobile">
-            <a href="/services/managed-it-services/index.html">Managed IT Services <span class="dropdown-arrow">›</span></a>
+            <a href="/services/managed-it-services/index.html">Managed IT Services <span class="dropdown-arrow">▼</span></a>
             <ul class="dropdown-mobile-submenu">
               <li><a href="/services/managed-it-services/Odoo.html">Odoo</a></li>
               <li><a href="/services/managed-it-services/salesforce.html">Salesforce</a></li>
             </ul>
           </li>
 
-          <li><a href="/services/product-development/index.html">Product Development</a></li>
-        </ul>
-      </li>
-
-      <!-- Products -->
-      <li class="dropdown-mobile">
-        <a href="/products/index.html">Products <span class="dropdown-arrow">▼</span></a>
-        <ul class="dropdown-mobile-menu">
-          <li><a href="/products/product-details.html?product=StayInSmart">STAYINSMART</a></li>
-          <li><a href="/products/product-details.html?product=McDataArchiver">McDataArchiver</a></li>
-          <li><a href="/products/product-details.html?product=Kisanbandhu">KISANBANDHU</a></li>
-        </ul>
-      </li>
-
-      <li><a href="/careers/index.html">Careers</a></li>
-      <li><a href="/contact-us/index.html">Contact Us</a></li>
-    </ul>
-  </nav>
-</div>
+            <li><a href="/services/product-development/index.html">Product Development</a></li>
+          </ul>
+        </li>
+        <li class="dropdown-mobile">
+          <a href="/products/index.html">Products <span class="dropdown-arrow">▼</span></a>
+          <ul class="dropdown-mobile-menu">
+            <li><a href="/products/product-details.html?product=StayInSmart">STAYINSMART</a></li>
+            <li><a href="/products/product-details.html?product=McDataArchiver">McDataArchiver</a></li>
+            <li><a href="/products/product-details.html?product=Kisanbandhu">KISANBANDHU</a></li>
+          </ul>
+        </li>
+        <li><a href="/careers/index.html">Careers</a></li>
+        <li><a href="/contact-us/index.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
-        <!-- Back to Top Button -->
-        <button id="back-to-top" class="back-to-top-button" aria-label="Back to top">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="18 15 12 9 6 15"></polyline>
-            </svg>
-        </button>
+<!-- Back to Top -->
+<button id="back-to-top" class="back-to-top-button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+       stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"></polyline>
+  </svg>
+</button>
+
+</body>
+</html>
