@@ -20,25 +20,25 @@
 
         /* Main Careers Content Section */
         .careers-main-section {
-            padding: 20px;
+             padding: 40px 20px 20px;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
         }
 
         .careers-main-section h3 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #222222;
+
+            color: black;
             margin-top: 30px;
             margin-bottom: 15px;
         }
 
         .careers-main-section p {
-            font-size: 1.1rem;
+
             line-height: 1.8;
             margin-bottom: 20px;
-            color: #555;
+            color: black;
+
         }
 
         /* Image Layout Styles */
@@ -281,6 +281,8 @@
         .tab-content {
             display: none;
             animation: fadeIn 0.5s ease-in-out;
+            padding-left: 20px;
+            padding-right: 20px;
         }
 
         .tab-content.active {

@@ -17,9 +17,11 @@
         <section id="product-hero-section" class="inner-hero-section"></section>
 
         <section class="product-details-section">
-            <div id="product-details-content">
-                <!-- Product details will be dynamically loaded here -->
-                <p class="text-center text-gray-600 text-xl font-semibold">Loading product details...</p>
+            <div class="product-details-card">
+                <div id="product-details-content">
+                    <!-- Product details will be dynamically loaded here -->
+                    <p class="text-center text-gray-600 text-xl font-semibold">Loading product details...</p>
+                </div>
             </div>
         </section>
     </main>
@@ -174,33 +176,35 @@
 
                         // Conditional rendering for Kisanbandhu image and features layout
                         if (decodedProductName === "Kisanbandhu") {
-                            mainImageHtml = ''; // No main image for Kisanbandhu as it's placed inline
-                            // Construct the new flex layout for Kisanbandhu content
+                            mainImageHtml = '';
                             detailsContainer.innerHTML = `
                                 <div class="kisanbandhu-main-content-wrapper">
+                                     <div class="kisanbandhu-image-content">
+                                        <img src="${product.image}" alt="${product.title} Image" onerror="this.onerror=null;this.src='https://placehold.co/300x200/cccccc/333333?text=Image+Not+Found';" class="product-image-inline-features">
+                                    </div>
                                     <div class="kisanbandhu-text-content">
                                         <p>${product.description}</p>
                                     </div>
-                                    <div class="kisanbandhu-image-content">
-                                        <img src="${product.image}" alt="${product.title} Image" onerror="this.onerror=null;this.src='https://placehold.co/300x200/cccccc/333333?text=Image+Not+Found';" class="product-image-inline-features">
-                                    </div>
+                                   
                                 </div>
                                 ${youtubeVideoContent}
                                 ${visitLinkContent}
                             `;
                         } else {
-                            // Default layout for other products
-                            mainImageHtml = `<img src="${product.image}" alt="${product.title} Image" onerror="this.onerror=null;this.src='https://placehold.co/500x300/cccccc/333333?text=Image+Not+Found';" class="product-main-image">`;
-                            featuresAndImageLayoutHtml = `
-                                <div class="features-column">
-                                    ${featuresListHtml}
-                                </div>
-                            `;
+                            // Image left, description right, features/video below
                             detailsContainer.innerHTML = `
-                                ${mainImageHtml}
-                                <p>${product.description}</p>
+                                <div class="product-details-flex-row">
+                                    <div class="product-details-image-col">
+                                        <img src="${product.image}" alt="${product.title} Image" onerror="this.onerror=null;this.src='https://placehold.co/500x300/cccccc/333333?text=Image+Not+Found';" class="product-main-image">
+                                    </div>
+                                    <div class="product-details-content-col">
+                                        <p>${product.description}</p>
+                                    </div>
+                                </div>
                                 <div class="features-video-wrapper">
-                                    ${featuresAndImageLayoutHtml}
+                                    <div class="features-column">
+                                        ${featuresListHtml}
+                                    </div>
                                     ${youtubeVideoContent}
                                 </div>
                                 ${visitLinkContent}
