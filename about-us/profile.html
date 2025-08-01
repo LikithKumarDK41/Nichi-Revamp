@@ -17,13 +17,20 @@
     <div id="content">
 
   <main>
+    <!-- Hero Section: This will display the leader's name dynamically -->
+    <section class="inner-hero-section">
+      <div class="inner-hero-content">
+        <h1 id="hero-name">Leadership Profile</h1> <!-- This will be dynamically updated -->
+      </div>
+    </section>
+
     <section class="profile-section">
       <div class="profile-container">
         <div id="leadership-profiles">
           <!-- Profiles will be dynamically loaded here -->
         </div>
         <div class="back-button-container">
-          <a href="javascript:history.back()" class="back-button">
+          <a href="javascript:history.back()" class="tech-read-more">
             <i class="fas fa-arrow-left"></i> Back to Leadership
           </a>
         </div>
@@ -283,6 +290,7 @@
       const urlParams = new URLSearchParams(window.location.search);
       const personName = urlParams.get('name');
       const container = document.getElementById('leadership-profiles');
+      const heroNameEl = document.getElementById('hero-name'); // Get the hero name element
 
       if (container) {
         if (personName) {
@@ -291,14 +299,25 @@
           if (person) {
             const display = createProfileDisplay(person);
             container.appendChild(display);
+            // Set the page title
             document.title = `${person.name} | Nichi-In Software Solutions`;
+            // Inject the person's name into the hero section
+            if (heroNameEl) {
+              heroNameEl.textContent = person.name;
+            }
           } else {
             container.innerHTML = '<p class="text-center text-red-500 text-xl font-semibold">Profile not found.</p>';
             document.title = 'Profile Not Found | Nichi-In Software Solutions';
+            if (heroNameEl) {
+                heroNameEl.textContent = 'Leadership Profile'; // Fallback for hero section
+            }
           }
         } else {
           container.innerHTML = '<p class="text-center text-gray-600 text-xl font-semibold">Please select a team member from the leadership page.</p>';
           document.title = 'Select a Profile | Nichi-In Software Solutions';
+          if (heroNameEl) {
+            heroNameEl.textContent = 'Leadership Profile'; // Default for hero section
+          }
         }
       }
     }
