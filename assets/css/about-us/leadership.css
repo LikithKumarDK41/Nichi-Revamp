@@ -26,18 +26,18 @@
 }
 
 .leadership-intro-text1 {
-  font-size: var(--card-header-ftSize);
+  font-size: var(--card-content-ftSize);
   color: var(--common-text-color-dark);
   text-align: left !important;
   line-height: 1.7;
 }
 
 .leadership-category-title {
-  font-size: 1.75rem;
+  font-size: var(--ftSize2);
   font-weight: 700;
   margin-top: 3rem;
   margin-bottom: 1.5rem;
-  color: #222222;
+  color: var(--common-text-color-dark);
   text-align: center;
 }
 
@@ -93,8 +93,8 @@
 }
 
 .member-title {
-  font-size: 0.95rem;
-  color: #555;
+  font-size: var(--desc-ftSize2);
+  color: var( --common-text-color-dark);
   margin-bottom: 1rem;
   line-height: 1.4;
   flex-grow: 1; 
