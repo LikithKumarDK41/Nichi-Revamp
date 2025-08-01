@@ -72,7 +72,7 @@
       padding: 40px 20px;
       margin: 0 auto;
       background-color: #ffffff;
-      border-radius: 12px;
+      
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
       margin-top: -80px; /* Overlap with hero for visual flow */
       position: relative;
@@ -81,12 +81,12 @@
     }
 
     .content-section:not(:first-of-type) {
-        margin-top: 10px; /* Space between subsequent sections */
+        margin-top: 0px; /* Space between subsequent sections */
     }
 
     /* Headings within content sections */
     .content-section h2 {
-      font-size: 2.8em;
+      font-size: var(--ftSize1);
       color: #222222;
       margin-bottom: 40px;
       padding-bottom: 10px;
@@ -106,7 +106,7 @@
     }
 
     .content-section h3 {
-      font-size: 2.2em;
+       font-size: var(--ftSize2);
       color: #222222;
       margin-top: 40px;
       margin-bottom: 25px;

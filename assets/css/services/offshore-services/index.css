@@ -47,23 +47,17 @@
 }
 
 .OFS_zigzag-item {
-    display: flex;
-    align-items: center;
-    gap: 40px; /* Space between image and content */
-    background-color: #f0f4f8; /* Light background for each item */
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    padding: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
-.OFS_zigzag-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
-}
 
 .OFS_zigzag-left {
     flex-direction: row; /* Content on right, image on left */
+
 }
 
 .OFS_zigzag-content {
@@ -77,6 +71,10 @@
     justify-content: center;
     align-items: center;
     min-width: 300px; /* Minimum width for the image wrapper */
+}
+.OFS_zigzag-image-wrapper :hover{
+    transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .OFS_zigzag-image {

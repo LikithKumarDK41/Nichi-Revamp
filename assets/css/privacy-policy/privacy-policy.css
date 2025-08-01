@@ -4,50 +4,37 @@ main {
 }
 
 /* Hero Section Styling */
-.privacy-hero {
+.inner-hero-section {
   background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
   color: white;
   text-align: center;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 60px;
-  margin-top: 80px;
-  margin-top: 0; /* Remove top margin, let header handle spacing */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  
-  /* New styles for full width */
-  width: 100vw; /* Make it span the full viewport width */
-  left: 50%; /* Move element's center to viewport center */
-  transform: translateX(-50%); /* Shift element left by half its width to truly center it */
-  box-sizing: border-box; /* Include padding in the width calculation */
+  padding: 80px 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
 }
 
-.privacy-hero h1 {
-  font-size: 4rem; /* Larger font size for prominence */
+.inner-hero-section h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
   margin: 0;
-  font-weight: 800;
-  letter-spacing: -1px; /* Tighter letter spacing */
-  position: relative;
-  z-index: 2;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
+  letter-spacing: -1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Content Section Styling */
+/* Content Section Layout */
 .content-section {
-  position: relative;
-  z-index: 2;
-  margin-bottom: 80px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
 }
 
-/* Card Layout for Content Sections */
 .content-section > h2 {
-  font-size: 2.8em; /* Larger and more impactful */
+  font-size: 2.8em;
   color: #0a0e27;
-  margin-bottom: 50px; /* More space below the main title */
   font-weight: 800;
-  text-align: center; /* Center the main section title */
-  position: relative;
+  text-align: center;
+  margin-bottom: 50px;
   padding-bottom: 20px;
+  position: relative;
 }
 
 .content-section > h2::after {
@@ -56,26 +43,26 @@ main {
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  width: 80px; /* Underline effect */
+  width: 80px;
   height: 4px;
   background: linear-gradient(90deg, #004aad, #240b77);
   border-radius: 2px;
 }
 
-/* Individual Content Cards */
+/* Section Headings */
 .content-section h3 {
-  font-size: 1.8em; /* Slightly larger for section titles */
-  color: #004aad; /* Primary brand color */
+  font-size: var(--ftSize2);
+  color: #004aad;
   margin-top: 40px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   font-weight: 700;
-  border-bottom: 2px solid #e0e0e0; /* Subtle underline for sub-sections */
+  border-bottom: 2px solid #e0e0e0;
   padding-bottom: 10px;
 }
 
 .content-section h4 {
-  font-size: var(--card-header-ftSize);
-  color: #240b77; /* Secondary brand color */
+  font-size: 1.3em;
+  color: #240b77;
   margin-top: 30px;
   margin-bottom: 15px;
   font-weight: 600;
@@ -83,8 +70,8 @@ main {
 
 /* Paragraphs */
 .content-section p {
-    font-size: var(--desc-ftSize); /* Slightly larger text for readability */
-  line-height: 1.9; /* Increased line height */
+  font-size: 1.05rem;
+  line-height: 1.9;
   color: #4a5568;
   margin-bottom: 20px;
 }
@@ -98,47 +85,44 @@ main {
 
 .content-section ul li {
   position: relative;
-  padding-left: 35px; /* More space for the bullet */
-  margin-bottom: 12px; /* Tighter spacing for list items */
+  padding-left: 25px;
+  margin-bottom: 12px;
   color: #4a5568;
   line-height: 1.8;
-  text-align: left;
 }
 
 .content-section ul li::before {
-  content: '\2022'; /* Unicode bullet point */
+  content: '•';
   position: absolute;
   left: 0;
-  top: 0;
-  font-size: 1.2em; /* Larger bullet */
-  color: #004aad; /* Brand color bullet */
-  font-weight: bold;
+  color: #004aad;
+  font-size: 1.2em;
+  line-height: 1.6;
 }
 
 /* Links */
 .content-section a {
   color: #004aad;
   text-decoration: none;
-  font-weight: 600; /* Bolder links */
-  transition: all 0.3s ease-in-out; /* Smoother transition */
-  border-bottom: 1px solid transparent; /* Underline on hover */
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease-in-out;
 }
 
 .content-section a:hover {
   color: #240b77;
-  text-decoration: none; /* Remove default underline */
-  border-color: #240b77; /* Show underline on hover */
+  border-color: #240b77;
 }
 
-/* Contact Info */
+/* Contact Info Box (Only this is a "card") */
 .contact-info {
-  background-color: #ffffff; /* White background for contact card */
-  padding: 40px; /* More padding */
-  border-radius: 12px; /* More rounded corners */
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
   margin-top: 50px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Stronger shadow for emphasis */
-  border: 1px solid #e0e0e0; /* Subtle border */
-  text-align: center; /* Center contact info */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  text-align: center;
 }
 
 .contact-info p {
@@ -152,120 +136,41 @@ main {
   font-weight: 700;
 }
 
-/* General Card Styling for sections */
+/* Remove default card styles from all <p> and <div> */
+.content-section > p,
 .content-section > div {
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  margin-bottom: 30px; /* Space between cards */
-  border: 1px solid #f0f0f0;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Hover effect */
+  background: none;
+  padding: 0;
+  margin-bottom: 20px;
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+  transition: none;
 }
 
-.content-section > div:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-}
-
-/* Specific styling for the initial paragraphs outside of a card structure */
-.content-section > p {
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  margin-bottom: 30px;
-  border: 1px solid #f0f0f0;
-}
-
-
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-  .privacy-hero h1 {
-    font-size: 3.5em;
-  }
-
-  .content-section > h2 {
-    font-size: 2.4em;
-  }
-}
-
+/* Responsive */
 @media (max-width: 768px) {
-  .privacy-hero {
-    padding: 60px 20px;
-    margin-bottom: 40px;
-  }
-  
-  .privacy-hero h1 {
+  .inner-hero-section h1 {
     font-size: 2.8em;
   }
-  
+
   .content-section > h2 {
-    font-size: 2em;
-    margin-bottom: 30px;
-  }
-  
-  .content-section h3 {
-    font-size: 1.6em;
-  }
-  
-  .content-section h4 {
-    font-size: 1.3em;
-  }
-  
-  .content-section p, 
-  .content-section ul li {
-    font-size: 1em;
-  }
-
-  .content-section > div,
-  .content-section > p {
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-
-  .contact-info {
-    padding: 30px;
-  }
-}
-
-@media (max-width: 480px) {
-  .privacy-hero {
-    padding: 40px 15px;
-  }
-
-  .privacy-hero h1 {
     font-size: 2.2em;
   }
 
-  .content-section > h2 {
-    font-size: 1.8em;
-  }
-
   .content-section h3 {
-    font-size: 1.4em;
+    font-size: 1.6em;
   }
 
   .content-section h4 {
     font-size: 1.2em;
   }
 
-  .content-section p,
-  .content-section ul li {
-    font-size: 0.95em;
-  }
-
-  .content-section ul li::before {
-    top: 5px; /* Adjust bullet position for smaller screens */
-  }
-
-  .content-section > div,
-  .content-section > p {
-    padding: 15px;
-    border-radius: 8px;
+  .content-section p, .content-section ul li {
+    font-size: 1em;
   }
 
   .contact-info {
-    padding: 20px;
+    padding: 30px;
   }
 }
