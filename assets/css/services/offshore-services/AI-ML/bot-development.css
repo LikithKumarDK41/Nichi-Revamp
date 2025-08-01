@@ -87,7 +87,9 @@
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
-
+.bot_advantages{
+  background-color: white;
+}
 .bot_features h2,
 .bot_advantages h2 {
   font-size: var(--card-header-ftSize);

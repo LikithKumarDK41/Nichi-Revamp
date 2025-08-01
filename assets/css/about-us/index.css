@@ -30,10 +30,13 @@
   gap: 40px;
   margin: 0 auto;
   flex-wrap: wrap;
+  background: white;
 }
 
 .zigzag-row.reverse {
   flex-direction: row-reverse;
+  background: var(--alternate-section-bg);
+
 }
 
 .zigzag-text {
@@ -43,7 +46,7 @@
 }
 
 .zigzag-text p {
-  font-size: 1.125rem;
+  font-size: var(--desc-ftSize);
   line-height: 1.8;
   color: #4a5568;
   margin-bottom: 1.5rem;
