@@ -1,29 +1,4 @@
 /* Offshore Section Styling */
-
-.offshore-hero {
-  background: linear-gradient(135deg, #5077b1, #000066, #380597);
-  padding: 40px 20px;
-  color: white;
-  text-align: center;
-  margin-top: 80px;
-}
-
-.offshore-hero .hero-content {
-  margin: 0 auto;
-}
-
-.offshore-hero h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.offshore-hero p {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  opacity: 0.95;
-}
-
 .offshore-container {
   margin: 0 auto;
   padding: 40px 20px; /* Vertical padding and horizontal padding for smaller screens */
@@ -220,14 +195,6 @@
 
 /* For screens up to 768px (Larger Mobile / Smaller Tablets) */
 @media (max-width: 768px) {
-  .offshore-hero h1 {
-    font-size: 2.4rem;
-  }
-
-  .offshore-hero p {
-    font-size: 1rem;
-  }
-
   .offshore-heading h2 {
     font-size: 32px;
   }

@@ -61,25 +61,6 @@
       }
     }
 
-    /* Styling for the hero section */
-    .ia-iot-hero {
-      background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
-      color: white;
-      text-align: center;
-      padding: 80px 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 200px; /* Ensure a decent height */
-      margin-top: 80px;
-    }
-
-    .ia-iot-hero h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    }
-
     /* General styling for headings and paragraphs within zigzag */
     .zigzag-text h2 {
         font-size: var(--ftSize2);

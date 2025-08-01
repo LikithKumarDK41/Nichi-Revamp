@@ -13,34 +13,6 @@ main {
   margin: 0 auto;
 }
 
-/* Hero Section Styling */
-.privacy-hero {
-  background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
-  color: white;
-  text-align: center;
-  padding: 80px 20px;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 60px;
-  margin-top: 0;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  width: 100vw;
-  left: 50%;
-  transform: translateX(-50%);
-  box-sizing: border-box;
-}
-
-.privacy-hero h1 {
-  font-size: 4em;
-  margin: 0;
-  font-weight: 800;
-  letter-spacing: -1px;
-  position: relative;
-  z-index: 2;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
 
 /* Content Section Styling */
 .content-section {
@@ -174,35 +146,6 @@ main {
   box-shadow: none;
 }
 
-/* Onsite Business Hero Section */
-.onsite_hero {
-  background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
-  padding: 40px 20px;
-  text-align: center;
-  margin-top: 80px;
-}
-
-.onsite_hero .container {
-  margin: 0 auto;
-}
-
-.onsite_hero h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: white;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.onsite_hero .subtitle {
-  font-size: 1.25rem;
-  font-weight: 400;
-  color: white;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
 
 /* Layout Section */
 .section-content {
@@ -284,25 +227,12 @@ main {
 
 /* Responsive Styles - Retained */
 @media (max-width: 1024px) {
-  .privacy-hero h1 {
-    font-size: 3.5em;
-  }
-
   .content-section > h2 {
     font-size: 2.4em;
   }
 }
 
 @media (max-width: 768px) {
-  .privacy-hero {
-    padding: 60px 20px;
-    margin-bottom: 40px;
-  }
-
-  .privacy-hero h1 {
-    font-size: 2.8em;
-  }
-
   .content-section > h2 {
     font-size: 2em;
     margin-bottom: 30px;
@@ -333,14 +263,6 @@ main {
 }
 
 @media (max-width: 480px) {
-  .privacy-hero {
-    padding: 40px 15px;
-  }
-
-  .privacy-hero h1 {
-    font-size: 2.2em;
-  }
-
   .content-section > h2 {
     font-size: 1.8em;
   }

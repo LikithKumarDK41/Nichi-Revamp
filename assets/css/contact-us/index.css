@@ -120,26 +120,6 @@
             }
         }
 
-        /* Hero section specific styles */
-        .contact-hero {
-            background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 250px;
-            margin-top: 80px;
-        }
-
-        .contact-hero h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-        }
-
         /* Styles for the new sections */
         .location-section, .form-section, .career-enquiry-section {
             padding: 40px 20px;
