@@ -108,7 +108,6 @@
 /* What makes us Different? */
 
 .different {
-    padding: 40px 20px;
     background: var(--first-section-bg);
     text-align: center;
 }
@@ -533,7 +532,7 @@
 }
 
 .metric-box h1 {
-    font-size: 2.2rem;
+    font-size: var(--ftSize2);
     color: #222222;
     margin: 0;
     font-weight: 700;
@@ -923,7 +922,7 @@
 }
 
 .certifications h2 {
-    font-size: 2.4rem;
+    font-size: var(--ftSize1);
     font-weight: 700;
     color: #222222;
     margin-bottom: 40px;
