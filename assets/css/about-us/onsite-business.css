@@ -83,7 +83,7 @@ main {
 }
 
 .content-section h4 {
-  font-size: 1.4em;
+  font-size: var(--card-header-ftSize);
   color: #240b77;
   margin-top: 30px;
   margin-bottom: 15px;
@@ -91,9 +91,9 @@ main {
 }
 
 .content-section p {
-  font-size: 1.1em;
+  font-size: var(--desc-ftSize);
   line-height: 1.9;
-  color: #4a5568;
+  color: black;
   margin-bottom: 20px;
 }
 
