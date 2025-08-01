@@ -9,7 +9,8 @@
   <!-- Fonts -->
   <link rel="icon" type="image/png" href="/assets/img/favicon.png">
     <html-include src="/layout/script.html" lang="en"></html-include>
-    <link rel="stylesheet" href="/assets/css/global.css">  
+    <link rel="stylesheet" href="/assets/css/global.css">
+  <link rel="stylesheet" href="/assets/css/services/offshore-services/DX/smac-applications.css">  
 
 </head>
 
@@ -21,46 +22,42 @@
     <!-- Hero section for Cloud Application Development and Management -->
     <section class="inner-hero-section common-padding">
         <h1>CLOUD APPLICATION DEVELOPMENT AND MANAGEMENT</h1>
-        <!-- Removed the sentence from here -->
+         <p>Enables effective and agile customer experiences for SMEs or large enterprises, in the process of becoming future Digital enterprises.</p>
     </section>
 
     <!-- Main Content Section with Collapsible items -->
     <section class="content-section collapsible-container common-padding">
-      <p>Enables effective and agile customer experiences for SMEs or large enterprises, in the process of becoming future Digital enterprises.</p>
-
       <!-- Collapsible: Cloud Based Apps -->
-      <div class="collapsible-header" onclick="toggleCollapsible(this)">
-        <h3>Cloud Based Apps</h3>
-        <i class="fas fa-plus icon"></i>
-      </div>
-      <div class="collapsible-content">
+      <div class="vertical-item">
+        <div class="vertical-header">Cloud Based Apps</div>
+        <div class="vertical-content">
         <p>
             Nichi-In Software is keen to become a transformation partner for
             SMEs and large enterprises who are envisaging their journey
             in the cloud based applications space.
         </p>
-        <h4>Nichi-In Software’s Cloud Application Development Offerings include:</h4>
+        <h4>Nichi-In Software's Cloud Application Development Offerings include:</h4>
         <ul>
             <li>Design and Development of Enterprise cloud applications</li>
             <li>Cloud enabling of existing applications and products</li>
             <li>Quality assurance and testing of applications that are migrated to Cloud</li>
             <li>Cloud strategy and consulting</li>
         </ul>
+        </div>
       </div>
 
       <!-- Collapsible: Mobile Apps -->
-      <div class="collapsible-header" onclick="toggleCollapsible(this)">
-        <h3>Mobile Apps</h3>
-        <i class="fas fa-plus icon"></i>
-      </div>
-      <div class="collapsible-content">
+      <div class="vertical-item">
+        <div class="vertical-header">Mobile Apps</div>
+        <div class="vertical-content">
         <p>
-            Nichi-In Software’s offerings in Mobility include
+            Nichi-In Software's offerings in Mobility include
             wide-ranging services like Native and Cross Platform/Hybrid
             Application Development, Customized Enterprise Application
             Development, Mobile App Testing & Data Analytics, Migration Services, etc.
         </p>
         <p><a href="mobile-application-development.html">More Details</a></p>
+        </div>
       </div>
     </section>
     <!-- End Main Content Section -->
@@ -73,20 +70,29 @@
 
   <!-- JavaScript to Load Header & Footer -->
   <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Verticals Section Script (Accordion)
+      const verticalHeaders = document.querySelectorAll('.vertical-header');
 
-    // JavaScript for collapsible functionality
-    function toggleCollapsible(element) {
-      element.classList.toggle("active");
-      const content = element.nextElementSibling;
-      if (content.classList.contains("show")) {
-        content.classList.remove("show");
-        content.style.maxHeight = null; // Reset max-height to allow collapse
-      } else {
-        content.classList.add("show");
-        // Set max-height based on content's scrollHeight for smooth transition
-        content.style.maxHeight = content.scrollHeight + "px";
-      }
-    }
+      verticalHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+          const content = header.nextElementSibling;
+          const isActive = header.classList.contains('active');
+
+          // Close all other open items
+          document.querySelectorAll('.vertical-content.show').forEach(openContent => {
+            if (openContent !== content) {
+              openContent.classList.remove('show');
+              openContent.previousElementSibling.classList.remove('active');
+            }
+          });
+
+          // Toggle current item
+          header.classList.toggle('active');
+          content.classList.toggle('show');
+        });
+      });
+    });
   </script>
 
     <html-include src="/layout/footer.html" lang="en"></html-include>

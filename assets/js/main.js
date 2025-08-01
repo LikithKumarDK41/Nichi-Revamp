@@ -57,17 +57,33 @@ class HTMLInclude extends HTMLElement {
 }
 
 
-    // Mobile dropdown toggle
-    const dropdownLinks = this.querySelectorAll('.dropdown-mobile > a');
-    dropdownLinks.forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const parentLi = link.closest('li');
-        parentLi.classList.toggle('open');
-        const submenu = parentLi.querySelector('ul');
-        if (submenu) submenu.classList.toggle('open');
-      });
-    });
+    // Mobile dropdown toggle using arrow only
+const dropdownArrows = this.querySelectorAll('.dropdown-mobile .dropdown-arrow');
+
+dropdownArrows.forEach(arrow => {
+  arrow.addEventListener('click', e => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const parentLi = arrow.closest('li');
+    const submenu = parentLi.querySelector('ul');
+
+    parentLi.classList.toggle('open');
+    if (submenu) submenu.classList.toggle('open');
+  });
+});
+
+// Allow main menu items to navigate to their pages
+const dropdownLinks = this.querySelectorAll('.dropdown-mobile > a');
+dropdownLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    // Only prevent default if the click was on the dropdown arrow
+    if (e.target.classList.contains('dropdown-arrow') || link.querySelector('.dropdown-arrow').contains(e.target)) {
+      e.preventDefault();
+    }
+    // Otherwise, let the link navigate normally
+  });
+});
   }
 
  highlightActiveMenuItems() {
