@@ -178,11 +178,11 @@
                         if (decodedProductName === "Kisanbandhu") {
                             mainImageHtml = '';
                             detailsContainer.innerHTML = `
-                                <div class="kisanbandhu-main-content-wrapper">
-                                     <div class="kisanbandhu-image-content">
+                                <div class="product-details-flex-row">
+                                     <div class="product-details-image-col">
                                         <img src="${product.image}" alt="${product.title} Image" onerror="this.onerror=null;this.src='https://placehold.co/300x200/cccccc/333333?text=Image+Not+Found';" class="product-image-inline-features">
                                     </div>
-                                    <div class="kisanbandhu-text-content">
+                                    <div class="product-details-content-col">
                                         <p>${product.description}</p>
                                     </div>
                                    

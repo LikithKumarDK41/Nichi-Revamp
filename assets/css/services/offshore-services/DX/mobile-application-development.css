@@ -171,9 +171,9 @@
 }
 
 .mobile-service-title {
-  font-size: 1.6rem; /* Slightly larger title */
+  font-size: var(--ftSize2); /* Slightly larger title */
   color: var(--dark-color);
-  font-weight: 600;
+  font-weight: var(--ftWt2);
 }
 
 .mobile-service-toggle {
@@ -202,7 +202,7 @@
 .mobile-service-description {
   color: var(--gray-color);
   margin-top: 0.5rem;
-  font-size: 1rem;
+  font-size: var(--desc-ftSize);
   line-height: 1.6;
 }
 
