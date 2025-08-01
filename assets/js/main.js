@@ -41,11 +41,21 @@ class HTMLInclude extends HTMLElement {
     const overlay = this.querySelector('#mobile-nav-overlay');
 
     if (hamburger && overlay) {
-      hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('open');
-        overlay.classList.toggle('open');
-      });
-    }
+  const closeBtn = overlay.querySelector('#mobile-close-btn');
+
+  hamburger.addEventListener('click', () => {
+    overlay.classList.add('open');
+    hamburger.classList.add('hamburger-hidden'); // Hide hamburger when menu is open
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      overlay.classList.remove('open');
+      hamburger.classList.remove('hamburger-hidden'); // Show hamburger again
+    });
+  }
+}
+
 
     // Mobile dropdown toggle
     const dropdownLinks = this.querySelectorAll('.dropdown-mobile > a');
@@ -87,10 +97,14 @@ class HTMLInclude extends HTMLElement {
           if (parentLink) parentLink.classList.add('active');
 
           const submenu = parentLi.querySelector('ul');
-          if (submenu) {
-            submenu.classList.add('open');
-            submenu.style.display = 'block';
-          }
+
+const isMobile = window.innerWidth <= 1024;
+if (submenu && isMobile) {
+  // Only apply open state on mobile
+  submenu.classList.add('open');
+  parentLi.classList.add('open');
+}
+
         }
         li = parentLi;
       }

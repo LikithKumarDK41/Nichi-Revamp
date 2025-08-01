@@ -346,17 +346,6 @@
     margin: 3px 0;
 }
 
-.hamburger-menu.open .bar:nth-child(1) {
-    transform: translateY(5px) rotate(45deg);
-}
-
-.hamburger-menu.open .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger-menu.open .bar:nth-child(3) {
-    transform: translateY(-5px) rotate(-45deg);
-}
 
 /* ===============================
    Mobile Nav Overlay Container
@@ -704,3 +693,31 @@
         width: 100%;
     }
 } */
+.mobile-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  z-index: 1001;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.mobile-close-btn:hover {
+  background-color: rgba(0, 0, 102, 0.05); /* light hover effect */
+}
+
+.mobile-close-btn svg {
+  width: 24px;
+  height: 24px;
+  stroke: #000066; /* brand color */
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.hamburger-hidden {
+  display: none !important;
+}

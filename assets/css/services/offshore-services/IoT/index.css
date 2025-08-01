@@ -1,6 +1,5 @@
     /* Basic styling for the zigzag section */
     .zigzag-section {
-      padding: 40px 20px;
       overflow: hidden; /* Clear floats */
     }
 
