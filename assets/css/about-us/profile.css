@@ -111,14 +111,14 @@
     }
 
     .name-title-div h3 {
-      font-size: 1.125rem; /* Equivalent to text-lg (1.125rem = 18px) */
+      font-size: var(--card-content-ftSize); /* Equivalent to text-lg (1.125rem = 18px) */
       font-weight: 600; /* Equivalent to font-semibold */
-      color: #2d3748; /* Equivalent to text-gray-800 */
+      color: var(--common-text-color-dark); /* Equivalent to text-gray-800 */
     }
 
     .name-title-div p {
-      font-size: 0.875rem; /* Equivalent to text-sm (0.875rem = 14px) */
-      color: #a0a0a0; /* Equivalent to text-gray-500 */
+      font-size: var(--desc-ftSize2); /* Equivalent to text-sm (0.875rem = 14px) */
+      color: var(--common-text-color-dark); /* Equivalent to text-gray-500 */
     }
 
     .right-content { /* New class for rightContent */
@@ -126,17 +126,17 @@
     }
 
     .right-content h2 {
-      font-size: 1.5rem; /* Equivalent to text-2xl (1.5rem = 24px) */
+      font-size: var(--card-header-ftSize); /* Equivalent to text-2xl (1.5rem = 24px) */
       font-weight: 700; /* Equivalent to font-bold */
-      color: #2d3748; /* Equivalent to text-gray-800 */
+      color: var(--common-text-color-dark); /* Equivalent to text-gray-800 */
       margin-bottom: 0.25rem; /* Equivalent to mb-1 (0.25rem = 4px) */
       text-align: left;
     }
 
     .right-content .title {
-      font-size: 1rem; /* Equivalent to text-md (1rem = 16px) */
+      font-size: var(--desc-ftSize2); /* Equivalent to text-md (1rem = 16px) */
       font-weight: 600; /* Equivalent to font-semibold */
-      color: #718096; /* Equivalent to text-gray-600 */
+      color: var(--common-text-color-dark); /* Equivalent to text-gray-600 */
       margin-bottom: 1rem; /* Equivalent to mb-4 (1rem = 16px) */
     }
 
@@ -144,13 +144,14 @@
       list-style-type: disc; /* Equivalent to list-disc */
       padding-left: 1.5rem; /* Equivalent to pl-6 (1.5rem = 24px) */
       margin-bottom: 1rem; /* Equivalent to mb-4 (1rem = 16px) */
-      color: #4a5568; /* Equivalent to text-gray-700 */
+      color: var(--common-text-color-dark); /* Equivalent to text-gray-700 */
+      font-size: var(--desc-ftSize2);
     }
 
     .major-roles-heading { /* New class for heading */
-      font-size: 1rem; /* Equivalent to text-md (1rem = 16px) */
+      font-size: var(--card-content-ftSize); /* Equivalent to text-md (1rem = 16px) */
       font-weight: 600; /* Equivalent to font-semibold */
-      color: #2d3748; /* Equivalent to text-gray-800 */
+      color: var(--common-text-color-dark); /* Equivalent to text-gray-800 */
       margin-top: 1rem; /* Equivalent to mt-4 (1rem = 16px) */
       margin-bottom: 0.5rem; /* Equivalent to mb-2 (0.5rem = 8px) */
     }
@@ -158,7 +159,8 @@
     .roles-list { /* New class for rolesList */
       list-style-type: disc; /* Equivalent to list-disc */
       padding-left: 1.5rem; /* Equivalent to pl-6 (1.5rem = 24px) */
-      color: #4a5568; /* Equivalent to text-gray-700 */
+      color: var(--common-text-color-dark); /* Equivalent to text-gray-700 */
+      font-size: var(--desc-ftSize2);
     }
 
     .profile-links {

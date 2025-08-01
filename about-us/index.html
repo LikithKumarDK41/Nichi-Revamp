@@ -11,218 +11,345 @@
 </head>
 
 <body>
+  <!-- Header Include -->
   <html-include src="/layout/header.html" lang="en"></html-include>
+
   <div id="content">
     <main>
 
+      <!-- Inner Hero Section -->
       <section class="inner-hero-section">
+        <div>
           <h1>ABOUT US</h1>
+          <p>Discover Our Journey and Vision</p>
+        </div>
       </section>
 
+      <!-- About Us Section - REVAMPED -->
       <section class="aboutus-section">
-        <div class="zigzag-row"> 
-          <div class="zigzag-text-about">
-            <p>Established in 1997, Nichi-In Software is a diversified IT services company with more than 25 years of
-              experience.</p>
-            <p>We have extensive experience in handling Offshore projects from Japan, USA, and other APAC countries.</p>
-            <p>Our offerings include Offshore Services, Onsite Consulting, and Product Development.</p>
-            <p>We are one of the pioneers with a strong focus on the Japan market, and over 80% of our revenue comes
-              from repeat customers.</p>
-            <p>Our own facility in Bengaluru, the IT Capital of India, supports all of our operations with
-              state-of-the-art infrastructure.</p>
+        <div class="container">
+          <!-- Zigzag Row 1: Established & Experience -->
+          <div class="zigzag-row">
+            <div class="zigzag-text-about animate-fade-in-left">
+              <h2>Our Story & Expertise</h2>
+              <p class="flex">
+                <i class="fas fa-calendar-alt"></i>
+                Established in 1997, Nichi-In Software is a diversified IT services company with more than 25 years of experience.
+              </p>
+              <p class="flex">
+                <i class="fas fa-globe"></i>
+                We have extensive experience in handling Offshore projects from Japan, USA, and other APAC countries.
+              </p>
+              <p class="flex">
+                <i class="fas fa-hand-holding-usd"></i>
+                Our offerings include Offshore Services, Onsite Consulting, and Product Development.
+              </p>
+              <p class="flex">
+                <i class="fas fa-chart-line"></i>
+                We are one of the pioneers with a strong focus on the Japan market, and over 80% of our revenue comes from repeat customers.
+              </p>
+              <p class="flex">
+                <i class="fas fa-city"></i>
+                Our own facility in Bengaluru, the IT Capital of India, supports all of our operations with state-of-the-art infrastructure.
+              </p>
+            </div>
+            <div class="about-us-zigzag-image animate-fade-in-right">
+              <img src="../assets/img/about-us/EN-205X300.png" alt="About Us Image">
+            </div>
           </div>
-          <div class="about-us-zigzag-image">
-            <img src="../assets/img/about-us/EN-205X300.png" alt="About Us Image">
-          </div>
-        </div>
- <div class="zigzag-row reverse">
-          <div class="zigzag-text-about">
-            <h2 class="section-title">Our Infrastructure</h2>
-            <p>Nichi-In Software‘s self-owned infrastructure in Bengaluru is designed to support software development
-              while creating a secure, comfortable, and collaborative workspace. With state-of-the-art access control
-              systems and reliable power backups, we ensure that everything runs smoothly.</p>
-            <p>We take pride in our professional and innovative environment, reflected in our technology and workplace
-              vibe. The interiors blend multicultural influences including Japanese work culture, reflecting our
-              Indo-Japanese identity.</p>
-            <p>Our workstations are ergonomically designed and spacious, offering the perfect balance of privacy and
-              openness for informal collaboration.</p>
-          </div>
-          <div class="about-us-zigzag-image">
-            <img src="../assets/img/about-us/office-1.jpg" alt="Infrastructure Image">
+
+          <!-- Zigzag Row 2 (Reverse): Our Infrastructure -->
+          <div class="zigzag-row reverse">
+            <div class="zigzag-text-about animate-fade-in-right">
+              <h2>Our Infrastructure</h2>
+              <p class="flex">
+                <i class="fas fa-building"></i>
+                Nichi-In Software‘s self-owned infrastructure in Bengaluru is designed to support software development while creating a secure, comfortable, and collaborative workspace. With state-of-the-art access control systems and reliable power backups, we ensure that everything runs smoothly.
+              </p>
+              <p class="flex">
+                <i class="fas fa-lightbulb"></i>
+                We take pride in our professional and innovative environment, reflected in our technology and workplace vibe. The interiors blend multicultural influences including Japanese work culture, reflecting our Indo-Japanese identity.
+              </p>
+              <p class="flex">
+                <i class="fas fa-chair"></i>
+                Our workstations are ergonomically designed and spacious, offering the perfect balance of privacy and openness for informal collaboration.
+              </p>
+            </div>
+            <div class="about-us-zigzag-image animate-fade-in-left">
+              <img src="../assets/img/about-us/office-1.jpg" alt="Infrastructure Image">
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="infrastructure-section">
-       
-      </section>
-
-
+      <!-- Factsheet Section (Revamped Carousel) -->
       <section class="factsheet-section" id="factsheet">
-        <div class="factsheet-container">
-          <div class="factsheet-scroll-area" id="factsheet-scroll">
-            <ul class="factsheet-list">
+        <div class="container">
+          <h2>Our Factsheet</h2>
 
+          <div class="relative">
+            <div id="factsheet-scroll" class="factsheet-scroll-area hide-scrollbar">
               <!-- Slide 1 -->
-              <li class="factsheet-slide">
-                <img src="../assets/img/about-us/2149241221.jpg" alt="150+ professionals">
-                <div class="overlay">
-                  <div class="factsheet-text">
-                    <h2 class="factsheet-title">Our Factsheet</h2>
-                    <p>"150+ professionals"</p>
+              <div class="factsheet-slide">
+                <div>
+                  <div class="relative h-64">
+                    <img src="../assets/img/about-us/2149241221.jpg" alt="150+ professionals">
+                    <div class="absolute">
+                      <div class="text-center">
+                        <i class="fas fa-users"></i>
+                        <p>150+ professionals</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </li>
+              </div>
 
               <!-- Slide 2 -->
-              <li class="factsheet-slide">
-                <img src="../assets/img/about-us/22422.jpg" alt="Global Delivery Centre">
-                <div class="overlay">
-                  <div class="factsheet-text">
-                    <h2 class="factsheet-title">Our Factsheet</h2>
-                    <p>"8,000 sq. ft. self-owned Global Delivery Centre"</p>
+              <div class="factsheet-slide">
+                <div>
+                  <div class="relative h-64">
+                    <img src="../assets/img/about-us/22422.jpg" alt="Global Delivery Centre">
+                    <div class="absolute">
+                      <div class="text-center">
+                        <i class="fas fa-building"></i>
+                        <p>8,000 sq. ft. self-owned Global Delivery Centre</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </li>
+              </div>
 
               <!-- Slide 3 -->
-              <li class="factsheet-slide">
-                <img src="../assets/img/about-us/737.jpg" alt="Global Customers">
-                <div class="overlay">
-                  <div class="factsheet-text">
-                    <h2 class="factsheet-title">Our Factsheet</h2>
-                    <p>"Customers in Japan, USA, Thailand, Singapore, India"</p>
+              <div class="factsheet-slide">
+                <div>
+                  <div class="relative h-64">
+                    <img src="../assets/img/about-us/737.jpg" alt="Global Customers">
+                    <div class="absolute">
+                      <div class="text-center">
+                        <i class="fas fa-globe-americas"></i>
+                        <p>Customers in Japan, USA, Thailand, Singapore, India</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </li>
+              </div>
 
               <!-- Slide 4 -->
-              <li class="factsheet-slide">
-                <img src="../assets/img/about-us/vecteezy_vector-iso-certification-gold-stamp-luxury_36580710.jpg"
-                  alt="ISO 9001">
-                <div class="overlay">
-                  <div class="factsheet-text">
-                    <h2 class="factsheet-title">Our Factsheet</h2>
-                    <p>"ISO 9001:2015 Certified"</p>
+              <div class="factsheet-slide">
+                <div>
+                  <div class="relative h-64">
+                    <img src="../assets/img/about-us/vecteezy_vector-iso-certification-gold-stamp-luxury_36580710.jpg" alt="ISO 9001">
+                    <div class="absolute">
+                      <div class="text-center">
+                        <i class="fas fa-certificate"></i>
+                        <p>ISO 9001:2015 Certified</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </li>
+              </div>
 
               <!-- Slide 5 -->
-              <li class="factsheet-slide">
-                <img src="../assets/img/about-us/1682001831542.jpg" alt="ISO 27001">
-                <div class="overlay">
-                  <div class="factsheet-text">
-                    <h2 class="factsheet-title">Our Factsheet</h2>
-                    <p>"ISO 27001:2022 Certified"</p>
+              <div class="factsheet-slide">
+                <div>
+                  <div class="relative h-64">
+                    <img src="../assets/img/about-us/1682001831542.jpg" alt="ISO 27001">
+                    <div class="absolute">
+                      <div class="text-center">
+                        <i class="fas fa-shield-alt"></i>
+                        <p>ISO 27001:2022 Certified</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </li>
+              </div>
 
               <!-- Slide 6 -->
-              <li class="factsheet-slide">
-                <img src="../assets/img/about-us/2150010130.jpg" alt="Methodologies">
-                <div class="overlay">
-                  <div class="factsheet-text">
-                    <h2 class="factsheet-title">Our Factsheet</h2>
-                    <p>"Flexible Methodologies like Waterfall, Spiral & Agile/XP"</p>
+              <div class="factsheet-slide">
+                <div>
+                  <div class="relative h-64">
+                    <img src="../assets/img/about-us/2150010130.jpg" alt="Methodologies">
+                    <div class="absolute">
+                      <div class="text-center">
+                        <i class="fas fa-cogs"></i>
+                        <p>Flexible Methodologies like Waterfall, Spiral & Agile/XP</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </li>
+              </div>
 
               <!-- Slide 7 -->
-              <li class="factsheet-slide">
-                <img src="../assets/img/about-us/well_trained.jpg" alt="Qualified Professionals">
-                <div class="overlay">
-                  <div class="factsheet-text">
-                    <h2 class="factsheet-title">Our Factsheet</h2>
-                    <p>"Access to Well-trained & Qualified Professionals"</p>
+              <div class="factsheet-slide">
+                <div>
+                  <div class="relative h-64">
+                    <img src="../assets/img/about-us/well_trained.jpg" alt="Qualified Professionals">
+                    <div class="absolute">
+                      <div class="text-center">
+                        <i class="fas fa-user-graduate"></i>
+                        <p>Access to Well-trained & Qualified Professionals</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </li>
+              </div>
 
               <!-- Slide 8 -->
-              <li class="factsheet-slide">
-                <img src="../assets/img/about-us/2151003788.jpg" alt="Partner Network">
-                <div class="overlay">
-                  <div class="factsheet-text">
-                    <h2 class="factsheet-title">Our Factsheet</h2>
-                    <p>"Well established partner network"</p>
+              <div class="factsheet-slide">
+                <div>
+                  <div class="relative h-64">
+                    <img src="../assets/img/about-us/2151003788.jpg" alt="Partner Network">
+                    <div class="absolute">
+                      <div class="text-center">
+                        <i class="fas fa-handshake"></i>
+                        <p>Well established partner network</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </li>
+              </div>
 
               <!-- Slide 9 -->
-              <li class="factsheet-slide">
-                <img src="../assets/img/about-us/2150040428.jpg" alt="Technology Skills">
-                <div class="overlay">
-                  <div class="factsheet-text">
-                    <h2 class="factsheet-title">Our Factsheet</h2>
-                    <p>"Diverse Technology Skills, all under One Roof"</p>
+              <div class="factsheet-slide">
+                <div>
+                  <div class="relative h-64">
+                    <img src="../assets/img/about-us/2150040428.jpg" alt="Technology Skills">
+                    <div class="absolute">
+                      <div class="text-center">
+                        <i class="fas fa-laptop-code"></i>
+                        <p>Diverse Technology Skills, all under One Roof</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </li>
+              </div>
 
               <!-- Slide 10 -->
-              <li class="factsheet-slide">
-                <img src="../assets/img/about-us/2151893445.jpg" alt="IP Protection">
-                <div class="overlay">
-                  <div class="factsheet-text">
-                    <h2 class="factsheet-title">Our Factsheet</h2>
-                    <p>"Well-defined Intellectual Property Protection"</p>
+              <div class="factsheet-slide">
+                <div>
+                  <div class="relative h-64">
+                    <img src="../assets/img/about-us/2151893445.jpg" alt="IP Protection">
+                    <div class="absolute">
+                      <div class="text-center">
+                        <i class="fas fa-lock"></i>
+                        <p>Well-defined Intellectual Property Protection</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </li>
+              </div>
 
               <!-- Slide 11 -->
-              <li class="factsheet-slide">
-                <img src="../assets/img/about-us/2150103581.jpg" alt="Japanese Market">
-                <div class="overlay">
-                  <div class="factsheet-text">
-                    <h2 class="factsheet-title">Our Factsheet</h2>
-                    <p>"One of the pioneers in terms of focus on Japanese Market"</p>
+              <div class="factsheet-slide">
+                <div>
+                  <div class="relative h-64">
+                    <img src="../assets/img/about-us/2150103581.jpg" alt="Japanese Market">
+                    <div class="absolute">
+                      <div class="text-center">
+                        <i class="fas fa-chart-line"></i>
+                        <p>One of the pioneers in terms of focus on Japanese Market</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </li>
+              </div>
+            </div>
 
-            </ul>
-          </div>
-
-          <!-- Pagination -->
-          <div class="factsheet-pagination">
-            <span class="bar active" data-index="0"></span>
-            <span class="bar" data-index="1"></span>
-            <span class="bar" data-index="2"></span>
-            <span class="bar" data-index="3"></span>
-            <span class="bar" data-index="4"></span>
-            <span class="bar" data-index="5"></span>
-            <span class="bar" data-index="6"></span>
-            <span class="bar" data-index="7"></span>
-            <span class="bar" data-index="8"></span>
-            <span class="bar" data-index="9"></span>
-            <span class="bar" data-index="10"></span>
+            <!-- Pagination -->
+            <div class="factsheet-pagination">
+              <span class="bar active" data-index="0"></span>
+              <span class="bar" data-index="1"></span>
+              <span class="bar" data-index="2"></span>
+              <span class="bar" data-index="3"></span>
+              <span class="bar" data-index="4"></span>
+              <span class="bar" data-index="5"></span>
+              <span class="bar" data-index="6"></span>
+              <span class="bar" data-index="7"></span>
+              <span class="bar" data-index="8"></span>
+            </div>
           </div>
         </div>
       </section>
 
-
+      <!-- Brochure Section -->
       <section class="brochure-section">
-        <div class="brochure-content-wrapper"> <!-- New wrapper added here -->
+        <div class="container">
           <h3 class="brochure-heading">We Deliver Wide Spectrum of Services</h3>
           <p class="brochure-subtext">"We Made Our Customers Feel Valued with Our Services”</p>
 
-          <a href="#" class="tech-read-more">
+          <a href="#">
             Download Corporate Brochure <i class="fas fa-arrow-right"></i>
           </a>
         </div>
       </section>
 
-
     </main>
   </div>
+
+  <!-- Footer Include -->
   <html-include src="/layout/footer.html" lang="en"></html-include>
+
+  <!-- Original JS includes -->
   <script src="/assets/js/main.js"></script>
-  <script src="/assets/js/about-us.js"></script>
+  <!-- New JS for factsheet carousel -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const scrollArea = document.getElementById('factsheet-scroll');
+      const paginationBars = document.querySelectorAll('.factsheet-pagination .bar');
+      const slides = document.querySelectorAll('.factsheet-slide');
+
+      // Function to update active pagination bar
+      const updatePagination = () => {
+        const scrollLeft = scrollArea.scrollLeft;
+        const scrollWidth = scrollArea.scrollWidth - scrollArea.clientWidth;
+        const slideWidth = slides[0].offsetWidth; // Assuming all slides have the same width
+        let activeIndex = 0;
+
+        if (scrollWidth > 0) {
+          // Calculate the current slide index based on scroll position
+          const firstVisibleSlideIndex = Math.round(scrollLeft / slideWidth);
+          activeIndex = firstVisibleSlideIndex;
+
+          // Adjust for responsiveness: if multiple slides are visible,
+          // the pagination should correspond to the first fully visible slide
+          const visibleSlidesCount = Math.round(scrollArea.clientWidth / slideWidth);
+          if (visibleSlidesCount > 1 && activeIndex + visibleSlidesCount > slides.length) {
+            activeIndex = slides.length - visibleSlidesCount;
+            if (activeIndex < 0) activeIndex = 0; // Ensure it doesn't go negative
+          }
+        }
+
+        paginationBars.forEach((bar, index) => {
+          if (index === activeIndex) {
+            bar.classList.add('active');
+          } else {
+            bar.classList.remove('active');
+          }
+        });
+      };
+
+      // Event listener for scroll
+      scrollArea.addEventListener('scroll', updatePagination);
+
+      // Event listeners for pagination bars
+      paginationBars.forEach(bar => {
+        bar.addEventListener('click', (e) => {
+          const index = parseInt(e.target.dataset.index);
+          const slideWidth = slides[0].offsetWidth;
+          scrollArea.scrollTo({
+            left: index * slideWidth,
+            behavior: 'smooth'
+          });
+        });
+      });
+
+      // Initial update on load
+      updatePagination();
+
+      // Update pagination on window resize to ensure correct active index calculation
+      window.addEventListener('resize', updatePagination);
+    });
+  </script>
 </body>
 
 </html>

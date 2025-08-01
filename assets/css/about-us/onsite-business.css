@@ -151,7 +151,7 @@ main {
 .section-content {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: start;
   gap: 40px;
   border-radius: 0;
   box-shadow: none;
