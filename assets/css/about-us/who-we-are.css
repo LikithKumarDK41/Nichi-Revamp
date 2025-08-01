@@ -159,19 +159,15 @@ main {
 
 .differentiators .section-title {
   text-align: center;
-  margin-bottom: 60px;
-  font-size: var(--ftSize1);
-  color: var(--common-text-color-dark);
+  margin-bottom: 20px;
 }
 
 .differentiator-item {
   display: flex;
-  flex-wrap: wrap;
-  align-items: start; 
-  gap: 40px;
-  margin-bottom: 60px;
-  /* Removed card background, border-radius, box-shadow, and transition */
-  padding: 0; /* Remove padding inside the card */
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
 }
 
 .differentiator-item:hover {
@@ -185,8 +181,9 @@ main {
 }
 
 .differentiator-content {
-  flex: 1;
-  min-width: 300px;
+     flex: 1 1 50%;
+    min-width: 320px;
+    padding: 10px 0;
 }
 
 .differentiator-content h3 {
@@ -203,10 +200,11 @@ main {
 }
 
 .differentiator-image {
-  flex: 1;
-  display: flex;
-  /* Ensure no internal padding affects image sizing */
-  padding: 0;
+  flex: 1 1 45%;
+    min-width: 320px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 /* Push image to the right for default differentiator-item */
@@ -221,14 +219,12 @@ main {
 
 
 .differentiator-image img {
-  width: 100%;
-  max-height: 300px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  display: block;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+     width: 100%;
+    max-height: 300px;
+    display: block;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .differentiator-image img:hover {
@@ -237,16 +233,14 @@ main {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  .differentiators {
-    padding: 60px 0;
-  }
-
+@media (max-width: 992px) {
   .differentiator-item,
   .differentiator-item.reversed {
-    flex-direction: column;
-    gap: 30px;
+    flex-direction: column-reverse;
+    gap: 20px;
     padding: 0; /* Adjust padding for smaller screens */
+    margin-bottom: 20px;
+
   }
 
   .differentiator-content,
@@ -254,13 +248,6 @@ main {
     width: 100%;
   }
 
-  .differentiator-content h3 {
-    font-size: 1.5rem;
-  }
-
-  .differentiator-content p {
-    font-size: 1rem;
-  }
   .differentiator-image img {
     width: 100%; /* Make image responsive */
     height: auto; /* Maintain aspect ratio */
@@ -270,13 +257,6 @@ main {
   .differentiator-item:not(.reversed) .differentiator-image,
   .differentiator-item.reversed .differentiator-image {
     justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .differentiators .section-title {
-    font-size: 2rem;
-    margin-bottom: 40px;
   }
 }
 
