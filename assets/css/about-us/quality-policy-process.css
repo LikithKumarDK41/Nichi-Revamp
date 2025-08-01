@@ -144,7 +144,6 @@
   font-size: var(--ftSize2);
   font-weight: 700;
   color: var(--common-text-color-dark);
-  margin-top: 32px;
   margin-bottom: 16px;
   text-align: left;
 }
@@ -182,10 +181,9 @@
 
 .qpp_block .qpp_icon {
   width: 64px;
-  height: 64px;
+  height: 44.8px;
   object-fit: contain;
   flex-shrink: 0;
-  margin-top: 6px;
 }
 
 /* ----------------------------------------
