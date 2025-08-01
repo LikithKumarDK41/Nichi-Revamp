@@ -149,7 +149,13 @@ body {
     transform: translateX(4px);
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
+    .inner-hero-section {
+      margin-top: 63px;
+    }
+}
+
+@media screen and (max-width: 500px) {  
   .inner-hero-section p {
     display: block;
     /* Ensure the <p> is rendered */
