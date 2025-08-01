@@ -4,43 +4,6 @@ main {
   /* Adjust based on your header height */
 }
 
-/* wwa-hero-section */
-.wwa-hero-section {
-  background: linear-gradient(135deg, #5077b1, #000066, #380597);
-  padding: 40px 20px;
-  /* Added 20px padding */
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 200px;
-  /* Example height */
-}
-
-.wwa-hero-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.wwa-hero-title {
-  font-size: 2.5rem;
-  /* text-4xl */
-  font-weight: 700;
-  /* font-extrabold */
-  color: white;
-  /* gray-900 */
-  margin-bottom: 16px;
-  /* mb-4 */
-}
-
-.wwa-hero-subtitle {
-  font-size: 1.5rem;
-  /* text-xl */
-  color: white;
-  /* gray-700 */
-  line-height: 1.5;
-}
-
 /* wwa-duo-section */
 .wwa-duo-section {
   /* Added 20px padding */

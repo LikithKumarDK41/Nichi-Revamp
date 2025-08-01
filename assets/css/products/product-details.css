@@ -102,11 +102,7 @@
 
         .product-details-section p {
             font-size: var(--desc-ftSize);
-<<<<<<< HEAD
-            color: #222222;
-=======
             color: black;
->>>>>>> f1b321720e0db8fab5c5b544081ff42a182ad0de
             line-height: 1.8;
             margin-bottom: 25px;
             text-align: left;
@@ -123,13 +119,8 @@
         }
 
         .product-details-section ul li {
-<<<<<<< HEAD
-            font-size: var(--desc-ftSize2);
-            color: #222222;
-=======
             font-size: var(--desc-ftSize);
             color: black;
->>>>>>> f1b321720e0db8fab5c5b544081ff42a182ad0de
             line-height: 1.7;
             margin-bottom: 8px;
         }
@@ -195,13 +186,6 @@
 
         /* Specific styles for Kisanbandhu content layout */
         .kisanbandhu-main-content-wrapper {
-<<<<<<< HEAD
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 30px;
-        margin: 40px auto;
-=======
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
@@ -212,7 +196,6 @@
 
             padding: 32px 24px;
             max-width: 900px;
->>>>>>> f1b321720e0db8fab5c5b544081ff42a182ad0de
         }
 
         .kisanbandhu-text-content p {
@@ -265,38 +248,6 @@
             width: 100%;
         }
 
-        /* Hero Section Styling */
-        .product-hero-section {
-            padding: 56px 20px 48px 20px;
-            text-align: center;
-            color: #fff;
-            background-color: #333;
-            background-size: cover;
-            background-position: center;
-            margin-bottom: 0;
-            margin-top: 80px;
-            border-radius: 0 0 24px 24px;
-            box-shadow: 0 6px 32px rgba(0,0,0,0.10);
-            position: relative;
-            z-index: 1;
-        }
-
-        .product-hero-section h1 {
-            font-size: 3.2rem;
-            font-weight: 800;
-            margin-bottom: 12px;
-            letter-spacing: -1px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.10);
-        }
-
-        .product-hero-section p {
-            font-size: 1.35rem;
-            font-weight: 500;
-            opacity: 0.96;
-            margin-bottom: 0;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.08);
-        }
-
         /* Responsive adjustments */
         @media (max-width: 900px) {
             .product-details-card, .kisanbandhu-main-content-wrapper {
@@ -340,15 +291,6 @@
             .product-image-inline-features {
                 margin-bottom: 20px;
             }
-            .product-hero-section {
-                padding: 40px 8px 32px 8px;
-            }
-            .product-hero-section h1 {
-                font-size: 2.1rem;
-            }
-            .product-hero-section p {
-                font-size: 1.08rem;
-            }
         }
 
         @media (max-width: 480px) {
@@ -364,15 +306,6 @@
             .product-details-section p,
             .product-details-section ul li {
                 font-size: 0.93rem;
-            }
-            .product-hero-section {
-                padding: 24px 2px 18px 2px;
-            }
-            .product-hero-section h1 {
-                font-size: 1.2rem;
-            }
-            .product-hero-section p {
-                font-size: 0.95rem;
             }
              .product-details-content-col {
     padding: 0 8px;

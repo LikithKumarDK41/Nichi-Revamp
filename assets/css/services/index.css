@@ -1,33 +1,5 @@
-    /* Services Hero Section */
-    .services-hero {
-      background: linear-gradient(135deg, #5077b1, #000066, #380597);
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-      margin-top: 80px;
-      margin-bottom: 2rem; /* mb-8 */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
-    }
-
-    .services-hero h2 {
-      font-size: 2.5rem; /* text-5xl */
-      font-weight: 700; /* font-extrabold */
-      letter-spacing: -0.05em; /* tracking-tight */
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* drop-shadow-lg */
-      color: white;
-    }
-
-    .service-parent{
+   .service-parent{
       background: var(--alternate-section-bg);
-    }
-
-    @media (min-width: 768px) {
-      .services-hero h2 {
-        font-size: 2.5rem; /* md:text-6xl */
-      }
     }
 
     /* Main Heading for Services Description */

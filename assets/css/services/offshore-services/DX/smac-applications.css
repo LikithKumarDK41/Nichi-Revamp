@@ -1,21 +1,4 @@
 
-    /* Hero Section Styling */
-    .smac-hero {
-      background: linear-gradient(135deg, #004aad, #240b77, #0a0e27); /* User-specified gradient */
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 200px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      margin-top: 80px;
-    }
-
     p a {
     color: #007bff;
     text-decoration: underline;
@@ -25,46 +8,6 @@
 
     p a:hover {
     color: #0056b3;
-    }
-
-    .smac-hero::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: rgba(255, 255, 255, 0.08);
-      transform: rotate(45deg);
-      animation: hero-bg-animation 20s infinite linear;
-    }
-
-    @keyframes hero-bg-animation {
-      0% { transform: rotate(0deg) scale(1); opacity: 0.08; }
-      50% { transform: rotate(180deg) scale(1.1); opacity: 0.12; }
-      100% { transform: rotate(360deg) scale(1); opacity: 0.08; }
-    }
-
-    .smac-hero-container {
-      position: relative;
-      z-index: 1;
-    }
-
-    .smac-hero h1 {
-      font-size: 2.5em;
-      margin-bottom: 25px;
-      text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
-      letter-spacing: 1.5px;
-      font-weight: 800;
-    }
-
-    .smac-hero p {
-      font-size: 1.4em;
-      line-height: 1.7;
-      max-width: 700px;
-      margin: 0 auto;
-      opacity: 0.95;
-      font-weight: 400;
     }
 
     /* General Content Section Styling */
@@ -183,16 +126,6 @@
 
     /* Responsive adjustments */
     @media (max-width: 768px) {
-      .smac-hero {
-        padding: 80px 15px;
-        min-height: 350px;
-      }
-      .smac-hero h1 {
-        font-size: 2.5em;
-      }
-      .smac-hero p {
-        font-size: 1.1em;
-      }
       .content-section {
         padding: 40px 15px;
         margin-top: -50px;

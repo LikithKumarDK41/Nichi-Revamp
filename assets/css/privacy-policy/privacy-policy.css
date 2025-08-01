@@ -3,24 +3,6 @@ main {
   margin: 0 auto; /* Center the main content */
 }
 
-/* Hero Section Styling */
-.inner-hero-section {
-  background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
-  color: white;
-  text-align: center;
-  padding: 80px 20px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  width: 100%;
-}
-
-.inner-hero-section h1 {
-  font-size: 3.5rem;
-  font-weight: 800;
-  margin: 0;
-  letter-spacing: -1px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
 /* Content Section Layout */
 .content-section {
   margin: 0 auto;
@@ -150,10 +132,6 @@ main {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .inner-hero-section h1 {
-    font-size: 2.8em;
-  }
-
   .content-section > h2 {
     font-size: 2.2em;
   }

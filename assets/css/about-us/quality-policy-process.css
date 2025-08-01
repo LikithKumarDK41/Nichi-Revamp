@@ -1,44 +1,6 @@
 /* ----------------------------------------
    1. Quality Policy and Process Section
 ----------------------------------------- */
-
-.qpp-hero {
-  background: linear-gradient(135deg, #5077b1, #000066, #380597);
-  padding: 40px 20px;
-  color: white;
-  text-align: center;
-  margin-top: 80px;
-}
-
-.qpp-hero-container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.qpp-hero h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-
-.qpp-hero-subtitle {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  opacity: 0.95;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .qpp-hero h1 {
-    font-size: 2.2rem;
-  }
-  .qpp-hero-subtitle {
-    font-size: 1rem;
-  }
-}
-
-
 .qpp {
   padding: 40px 20px;
   background-color: #f8f9fa;
