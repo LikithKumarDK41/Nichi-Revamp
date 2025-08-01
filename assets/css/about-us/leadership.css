@@ -8,15 +8,6 @@
   margin: 0 auto; /* Centered content */
 }
 
-.leadership-section-title {
-  font-size: 2.75rem;
-  font-weight: 800;
-  margin-bottom: 20px;
-  color: #222222;
-  text-align: center;
-  padding: 40px 0px 0px
-}
-
 .leadership-intro-text {
   font-size: var(--card-content-ftSize);
   color: var(--common-text-color-dark);
@@ -63,7 +54,7 @@
   text-align: center;
   padding: 1.5rem 1rem;
   width: 280px;
-  height: 380px;
+  height: 410px;
   display: flex;
   flex-direction: column;
   align-items: center;

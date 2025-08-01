@@ -1,5 +1,4 @@
-
-    p a {
+ p a {
     color: #007bff;
     text-decoration: underline;
     font-weight: 600;
@@ -70,57 +69,56 @@
       text-align: left; /* Align collapsible headers left */
     }
 
-    .collapsible-header {
+    .vertical-item {
+      max-width: 900px;
+      margin: 0 auto 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .vertical-header {
+      padding: 1.5rem;
       cursor: pointer;
-      background-color: #e8f0fe; /* Light blue background */
-      padding: 20px 30px;
-      border: 1px solid #c5d8ff;
-      border-radius: 10px;
-      margin-bottom: 12px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      font-weight: 600;
-    }
-
-    .collapsible-header:hover {
-      background-color: #d2e3fc;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .collapsible-header h3 {
-      margin: 0;
-      color: #222222;
+      font-weight: 700;
       font-size: var(--card-header-ftSize);
+      transition: background-color 0.3s ease;
     }
 
-    .collapsible-header .icon {
-      font-size: 1.4em;
-      color: #004aad; /* Match hero primary color */
+    .vertical-header:hover {
+      background-color: #f0f0f0;
+    }
+
+    .vertical-header::after {
+      content: '+';
+      font-size: 1.5rem;
       transition: transform 0.3s ease;
     }
 
-    .collapsible-header.active .icon {
-      transform: rotate(45deg); /* Rotate to form a cross/X */
+    .vertical-header.active::after {
+      content: '-';
     }
 
-    .collapsible-content {
-      padding: 15px 30px;
-      border: 1px solid #c5d8ff;
-      border-top: none;
-      border-radius: 0 0 10px 10px;
-      margin-bottom: 20px;
-      display: none;
-      overflow: hidden;
-      transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    .vertical-content {
+      padding: 0 1.5rem;
       max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      border-top: 1px solid transparent;
+      line-height: 1.6;
+      font-size: var(--card-content-ftSize);
+      font-weight: var(--card-content-ftWt);
     }
 
-    .collapsible-content.show {
-      display: block;
-      padding-top: 15px;
-      padding-bottom: 15px;
+    .vertical-content.show {
+      padding: 1.5rem 1.5rem;
+      max-height: 500px; /* Adjust as needed for content length */
+      border-top-color: #eee;
     }
 
 

@@ -151,8 +151,8 @@ main {
 
 
 /* ========================
-   Differentiators Section
-   ======================== */
+    Differentiators Section
+    ======================== */
 .differentiators {
   background-color: var(--first-section-bg);
 }
@@ -167,19 +167,17 @@ main {
 .differentiator-item {
   display: flex;
   flex-wrap: wrap;
-  align-items: center; /* Changed to center for better vertical alignment */
+  align-items: start; 
   gap: 40px;
   margin-bottom: 60px;
-  background-color: #f0f4f8;/* Card background */
-  border-radius: 12px; /* More rounded corners for card */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Stronger shadow for card effect */
-  padding: 30px; /* Padding inside the card */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+  /* Removed card background, border-radius, box-shadow, and transition */
+  padding: 0; /* Remove padding inside the card */
 }
 
 .differentiator-item:hover {
-  transform: translateY(-8px); /* Lift effect on hover */
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  /* Removed hover effects */
+  transform: none;
+  box-shadow: none;
 }
 
 .differentiator-item.reversed {
@@ -207,19 +205,35 @@ main {
 .differentiator-image {
   flex: 1;
   display: flex;
-  justify-content: center;
-  padding: 0;
   /* Ensure no internal padding affects image sizing */
+  padding: 0;
 }
+
+/* Push image to the right for default differentiator-item */
+.differentiator-item:not(.reversed) .differentiator-image {
+  justify-content: flex-end;
+}
+
+/* Push image to the left for reversed differentiator-item */
+.differentiator-item.reversed .differentiator-image {
+  justify-content: flex-start;
+}
+
 
 .differentiator-image img {
   width: 100%;
-  max-width: 500px;
+  max-height: 300px;
   height: auto;
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.differentiator-image img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 /* Responsive Design */
@@ -232,7 +246,7 @@ main {
   .differentiator-item.reversed {
     flex-direction: column;
     gap: 30px;
-    padding: 20px; /* Adjust padding for smaller screens */
+    padding: 0; /* Adjust padding for smaller screens */
   }
 
   .differentiator-content,
@@ -250,6 +264,12 @@ main {
   .differentiator-image img {
     width: 100%; /* Make image responsive */
     height: auto; /* Maintain aspect ratio */
+  }
+
+  /* Reset justify-content for smaller screens */
+  .differentiator-item:not(.reversed) .differentiator-image,
+  .differentiator-item.reversed .differentiator-image {
+    justify-content: center;
   }
 }
 

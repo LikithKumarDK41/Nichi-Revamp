@@ -156,10 +156,13 @@ function initMobileNavigation() {
             menu.setAttribute('aria-expanded', 'false');
 
             link.addEventListener('click', (event) => {
-                // Prevent default link navigation for dropdown toggles
-                // Only prevent if the link has a dropdown-arrow, indicating it's a toggle
-                if (link.querySelector('.dropdown-arrow')) {
+                // Prevent default link navigation only if clicking on the dropdown arrow
+                if (event.target.classList.contains('dropdown-arrow') || 
+                    (link.querySelector('.dropdown-arrow') && link.querySelector('.dropdown-arrow').contains(event.target))) {
                     event.preventDefault();
+                } else {
+                    // If clicking on the link itself (not the arrow), allow navigation
+                    return;
                 }
 
                 const isOpen = dropdown.classList.contains('open');
