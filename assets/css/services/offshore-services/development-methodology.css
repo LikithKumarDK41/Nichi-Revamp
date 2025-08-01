@@ -50,13 +50,7 @@
   }
 }
 
-/* DM_methodology-section - Styles for the main content section containing methodology cards */
-.DM_methodology-section {
-  padding-top: 4rem; /* Vertical padding */
-  padding-bottom: 4rem; /* Vertical padding */
-  padding-left: 1rem; /* Horizontal padding */
-  padding-right: 1rem; /* Horizontal padding */
-}
+
 
 /* Responsive adjustments for section padding */
 @media (min-width: 768px) {
@@ -81,7 +75,7 @@
 
 /* DM_intro-paragraph - Styles for the introductory paragraph */
 .DM_intro-paragraph {
-  font-size: 1.25rem; /* Base font size */
+  font-size: var(--desc-ftSize); /* Base font size */
   color: #374151; /* Dark gray text color */
   margin-bottom: 3rem; /* Bottom margin */
   line-height: 1.625; /* Relaxed line height */
@@ -93,7 +87,7 @@
 /* Responsive adjustment for intro paragraph font size */
 @media (min-width: 768px) {
   .DM_intro-paragraph {
-    font-size: 1.5rem; /* Larger font size on larger screens */
+    font-size: var(--desc-ftSize); /* Larger font size on larger screens */
   }
 }
 
@@ -135,7 +129,7 @@
 
 /* DM_card-title - Styles for the title within each card */
 .DM_card-title {
-  font-size: 1.875rem; /* Large font size for title */
+  font-size: var(--card-header-ftSize); /* Large font size for title */
   font-weight: 700; /* Bold font weight */
   color: #111827; /* Dark text color */
   margin-bottom: 1rem; /* Bottom margin */
@@ -153,6 +147,7 @@
   color: #374151; /* Dark gray text color */
   margin-bottom: 1rem; /* Bottom margin for paragraphs */
   line-height: 1.625; /* Relaxed line height */
+  font-size: var(--card-content-ftSize);
 }
 
 /* DM_card-paragraph-last - Styles for the last paragraph in a card (no bottom margin) */

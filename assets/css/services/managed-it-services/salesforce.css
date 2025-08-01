@@ -1,44 +1,32 @@
-    .Odoo-hero {
-      background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-      margin-top: 80px;
-    }
-
-    .Odoo-hero h2 {
-      font-size: 2.5em;
-      margin: 0;
-    }
-
     /* Introduction Sections */
     .sf_intro1,
     .sf_intro2 {
-      background-color: #f9f9f9;
-      padding: 20px;
-      margin-bottom: 30px;
+      background-color: var(--first-section-bg);
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       font-size: 1.15rem;
     }
 
-    .sf_intro2 h2 {
-      color: #222222;
-      margin-top: 0;
-      font-size: 2rem;
+    .sf_intro2 p{
+      color:var(--common-text-color-dark);
+      font-size: var( --desc-ftSize);
     }
 
     /* Zigzag Section Styles */
     .sf_zigzag_section {
-      padding: 40px 20px;
+      background: var(--alternate-section-bg);
     }
 
-    .sf_zigzag_section h2 {
-      text-align: center;
-      color: #222222;
-      font-size: 2.5em;
-      margin-bottom: 50px;
+    .sf_zigzag_section h3 {
+      color: var(--common-text-color-dark);
+      font-size: var(--ftSize2);
     }
+
+    .sf_zigzag_section .list li{
+      color: var(--common-text-color-dark);
+      font-size: var(--desc-ftSize);
+      font-weight: var(--ftWt3);
+    }
+
 
     .zigzag-item {
       display: flex;

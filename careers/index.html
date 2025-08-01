@@ -8,7 +8,7 @@
 
     <html-include src="/layout/script.html" lang="en"></html-include>
     <link rel="stylesheet" href="/assets/css/global.css">
-
+    <!-- Assuming Font Awesome and Inter font are included in global.css or script.html -->
 </head>
 
 <body>
@@ -22,39 +22,52 @@
             </section>
 
             <section class="careers-main-section">
-                  <div class="OFS_container">
-        <div class="OFS_zigzag-container">
+                <div class="OFS_container">
+                    <div class="OFS_zigzag-container">
 
-            <div class="OFS_zigzag-item OFS_zigzag-left">
-                <div class="OFS_zigzag-content">
-                    <h3 class="OFS_card-title">Working at Nichi-In Software</h3>
-                    <p class="OFS_card-description">
-                        At Nichi-In Software, we truly believe that our people are our greatest asset. Our vision is to hire exceptional talent not only for their contributions today, but for the value they bring to our future. We recognize and honor each individual for their unique skills, aspirations, and achievements.
-                        Your contributions are valued, and we are committed to offering you opportunities for growth through challenging projects that foster skill development, continuous improvement, and job satisfaction. You are not just part of an organization; you are a valued individual whose work drives innovation and creates meaningful impact.
-                        Together, we grow, succeed, and make a difference.
-                    </p>
-                </div>
-                <div class="OFS_zigzag-image-wrapper">
-                    <img src="../assets/img/careers/working.jpg" alt="Team working together" class="OFS_zigzag-image">
-                </div>
-            </div>
+                        <div class="OFS_zigzag-item OFS_zigzag-left">
+                            <div class="OFS_zigzag-content">
+                                <h3 class="OFS_card-title">Working at Nichi-In Software</h3>
+                                <p class="OFS_card-description">
+                                    At Nichi-In Software, we truly believe that our people are our greatest asset. Our
+                                    vision is to hire exceptional talent not only for their contributions today, but for
+                                    the value they bring to our future. We recognize and honor each individual for their
+                                    unique skills, aspirations, and achievements.
+                                    Your contributions are valued, and we are committed to offering you opportunities
+                                    for growth through challenging projects that foster skill development, continuous
+                                    improvement, and job satisfaction. You are not just part of an organization; you
+                                    are a valued individual whose work drives innovation and creates meaningful impact.
+                                    Together, we grow, succeed, and make a difference.
+                                </p>
+                            </div>
+                            <div class="OFS_zigzag-image-wrapper">
+                                <img src="../assets/img/careers/working.jpg" alt="Team working together"
+                                    class="OFS_zigzag-image">
+                            </div>
+                        </div>
 
-            <!-- Zigzag Section: Why Nichi-In -->
-            <div class="OFS_zigzag-item OFS_zigzag-right">
-                <div class="OFS_zigzag-image-wrapper">
-                    <img src="../assets/img/careers/careers.jpg" alt="Happy employees at work" class="OFS_zigzag-image">
-                </div>
-                <div class="OFS_zigzag-content">
-                    <h3 class="OFS_card-title">Why Nichi-In Software</h3>
-                    <p class="OFS_card-description">
-                        Nichi-In Software is an organization where policies focus on personal and professional development that are complementary to each other. Individuals can align their goals with those of the organization. Creativity and originality are encouraged in every sphere of work. Employee participation and suggestions are welcomed and rewarded.
-                        We also organize events, cultural activities, and regular get-togethers to foster a 'feel-good' spirit that is carried into the work environment.
-                    </p>
-                </div>
-            </div>
+                        <!-- Zigzag Section: Why Nichi-In -->
+                        <div class="OFS_zigzag-item OFS_zigzag-right">
+                            <div class="OFS_zigzag-image-wrapper">
+                                <img src="../assets/img/careers/careers.jpg" alt="Happy employees at work"
+                                    class="OFS_zigzag-image">
+                            </div>
+                            <div class="OFS_zigzag-content">
+                                <h3 class="OFS_card-title">Why Nichi-In Software</h3>
+                                <p class="OFS_card-description">
+                                    Nichi-In Software is an organization where policies focus on personal and
+                                    professional development that are complementary to each other. Individuals can align
+                                    their goals with those of the organization. Creativity and originality are
+                                    encouraged in every sphere of work. Employee participation and suggestions are
+                                    welcomed and rewarded.
+                                    We also organize events, cultural activities, and regular get-togethers to foster a
+                                    'feel-good' spirit that is carried into the work environment.
+                                </p>
+                            </div>
+                        </div>
 
-        </div>
-    </div>
+                    </div>
+                </div>
 
                 <!-- Tab Navigation -->
                 <div class="tab-nav">
@@ -62,20 +75,72 @@
                     <button class="tab-button" data-tab="job-application">Job Application</button>
                 </div>
 
-                <!-- 
-                Tab Content for Current Openings
+                <!-- Tab Content for Current Openings -->
                 <div id="current-openings" class="tab-content active">
                     <h3 class="job-listing-heading">Current Openings</h3>
-                    <p>Find jobs, create great future with us.</p>
-                    <a href="#" class="tech-read-more" id="careers-click-here"> Click Here <i class="fas fa-arrow-right"></i></a>
+                    <p class="current-openings-description">Find jobs, create a great future with us.</p>
 
+                    <!-- Dummy Job Listing 1 -->
+                    <div class="job-card">
+                        <h4>Senior Software Engineer (Backend)</h4>
+                        <p>We are looking for a highly skilled Senior Software Engineer with expertise in building robust
+                            and scalable backend systems.</p>
+                        <div class="requirements">
+                            <ul>
+                                <li>5+ years of experience in backend development (Node.js, Python, Java)</li>
+                                <li>Strong understanding of database design (SQL/NoSQL)</li>
+                                <li>Experience with cloud platforms (AWS, Azure, GCP)</li>
+                                <li>Excellent problem-solving and communication skills</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="tech-read-more apply-now-btn"
+                            data-job-title="Senior Software Engineer (Backend)">Apply Now <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Dummy Job Listing 2 -->
+                    <div class="job-card">
+                        <h4>Frontend Developer (React/Angular)</h4>
+                        <p>Join our dynamic team as a Frontend Developer and help us create stunning user interfaces and
+                            experiences.</p>
+                        <div class="requirements">
+                            <ul>
+                                <li>3+ years of experience with React.js or Angular</li>
+                                <li>Proficiency in HTML5, CSS3, and JavaScript</li>
+                                <li>Experience with responsive design and cross-browser compatibility</li>
+                                <li>Familiarity with UI/UX principles</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="tech-read-more apply-now-btn"
+                            data-job-title="Frontend Developer (React/Angular)">Apply Now <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Dummy Job Listing 3 -->
+                    <div class="job-card">
+                        <h4>DevOps Engineer</h4>
+                        <p>We are seeking a talented DevOps Engineer to streamline our development and operations
+                            processes.</p>
+                        <div class="requirements">
+                            <ul>
+                                <li>4+ years of experience in DevOps practices</li>
+                                <li>Strong knowledge of CI/CD pipelines (Jenkins, GitLab CI)</li>
+                                <li>Proficiency with Docker and Kubernetes</li>
+                                <li>Experience with infrastructure as code (Terraform, Ansible)</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="tech-read-more apply-now-btn" data-job-title="DevOps Engineer">Apply Now <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- The 'no-openings-message' is initially hidden by the JS below if jobs are present -->
                     <p id="no-openings-message">
                         We do not have any job openings at the moment, but we frequently update our listings.
                         Please check back regularly for new opportunities. In the meantime, feel free to
-                        send us your resume <a href="#" id="jobs-apply-link" style="color: #007bff; text-decoration: underline;">here</a>.
+                        send us your resume <a href="#" id="jobs-apply-link" class="jobs-apply-link">here</a>.
                     </p>
                 </div>
-            -->
+
 
                 <!-- Tab Content for Job Application Form -->
                 <div id="job-application" class="tab-content">
@@ -119,7 +184,7 @@
                         <!-- Submit Button -->
                         <div class="form-submit-button-wrapper">
                             <button type="submit" class="tech-read-more">
-                                Submit <i class="fas fa-arrow-right ml-2"></i>
+                                Submit <i class="fas fa-arrow-right"></i>
                             </button>
                         </div>
                     </form>
@@ -128,12 +193,12 @@
         </main>
     </div>
 
-    <!-- JavaScript to Load Header & Footer and Handle Navigation -->
+    <!-- JavaScript to Handle Tab Functionality and Apply Button -->
     <script>
-
         // Get references to the relevant DOM elements for tab functionality
         const tabButtons = document.querySelectorAll(".tab-button");
         const tabContents = document.querySelectorAll(".tab-content");
+        const jobTypeInput = document.getElementById("job-type");
 
         // Function to activate a tab
         function activateTab(tabId) {
@@ -161,27 +226,54 @@
             });
         });
 
+        // Handle "Apply Now" buttons
+        const applyNowButtons = document.querySelectorAll(".apply-now-btn");
+        applyNowButtons.forEach(button => {
+            button.addEventListener("click", function (event) {
+                event.preventDefault();
+                const jobTitle = this.dataset.jobTitle;
+                activateTab('job-application');
+                if (jobTypeInput) {
+                    jobTypeInput.value = jobTitle;
+                }
+                const jobFormSection = document.getElementById("job-application");
+                if (jobFormSection) {
+                    jobFormSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
         // Original functionality for "Click Here" and "here" link within "Current Openings" tab
         const showMessageBtn = document.getElementById("careers-click-here");
         const noOpeningsMessage = document.getElementById("no-openings-message");
-        const applyHereLink = document.getElementById("jobs-apply-link");
+        const jobsApplyLink = document.getElementById("jobs-apply-link");
 
+        // Initially hide the "no-openings-message" as we now have job listings
+        // and hide the "Click Here" button.
+        if (noOpeningsMessage) {
+            noOpeningsMessage.style.display = 'none'; // Use style.display to hide
+            if (showMessageBtn) {
+                showMessageBtn.style.display = 'none';
+            }
+        }
+
+        // This part is largely redundant with dummy jobs, but kept for robustness.
+        // It would show the message if the "Click Here" button was visible and clicked.
         if (showMessageBtn) {
             showMessageBtn.addEventListener("click", function (event) {
                 event.preventDefault();
                 if (noOpeningsMessage) {
-                    noOpeningsMessage.classList.add('active');
+                    noOpeningsMessage.style.display = 'block'; // Show message
                 }
-                showMessageBtn.style.display = 'none';
+                showMessageBtn.style.display = 'none'; // Hide button
             });
         }
 
-        if (applyHereLink) {
-            applyHereLink.addEventListener("click", function (event) {
+        // This handles the "send us your resume here" link within the no-openings-message
+        if (jobsApplyLink) {
+            jobsApplyLink.addEventListener("click", function (event) {
                 event.preventDefault();
-                // When "here" is clicked, activate the "Job Application" tab
                 activateTab('job-application');
-                // Scroll to the job application form section
                 const jobFormSection = document.getElementById("job-application");
                 if (jobFormSection) {
                     jobFormSection.scrollIntoView({ behavior: 'smooth' });

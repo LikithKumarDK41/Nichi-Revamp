@@ -1,23 +1,10 @@
-.leadership-hero {
-  background: linear-gradient(135deg, #5077b1, #000066, #380597);
-  padding: 40px 20px;
-  color: white;
-  text-align: center;
-  margin-top: 80px;
-}
-
-.leadership-hero h2 {
-  font-size: 2.5rem;       /* Bigger font size */
-  font-weight: 700;      /* Bold for emphasis */
-  margin: 0;             /* Remove default margins if unnecessary */
-}
-
 .EBA_section {
   padding: 40px 20px;
   margin: 0 auto;
   line-height: 1.6;
   color: #333;
-  font-size: 1.1em;
+  font-size: var(--desc-ftSize);
+  background: white;
 }
 
 .EBA_section p {
@@ -34,6 +21,7 @@
   display: flex;
   flex-direction: column; /* Default to column layout for mobile */
   gap: 40px; /* Space between the two content blocks */
+  background: var(--alternate-section-bg);
 }
 
 @media (min-width: 768px) {
@@ -52,13 +40,13 @@
 }
 
 .EBA_duo h2 {
-  font-size: 1.8em;
+  font-size: var(--card-header-ftSize);
   color: #222222; /* A distinct color for headings in this section */
   margin-bottom: 15px;
 }
 
 .EBA_duo p {
-  font-size: 1.05em;
+  font-size: var(--card-content-ftSize);
   line-height: 1.6;
   color: #555;
 }

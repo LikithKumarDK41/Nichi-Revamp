@@ -718,34 +718,3 @@ body {
     padding-right: 1rem;
   }
 }
-
-.tech-read-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 22px;
-  font-weight: 600;
-  color: #fff;
-  background: linear-gradient(135deg, #4f46e5, #6d28d9);
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  width: fit-content;
-  font-size: 1rem;
-}
-
-.tech-read-more i {
-  font-size: 1rem;
-  transition: transform 0.3s ease;
-}
-
-.tech-read-more:hover {
-  background: linear-gradient(135deg, #4338ca, #5b21b6);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-}
-
-.tech-read-more:hover i {
-  transform: translateX(4px);
-}

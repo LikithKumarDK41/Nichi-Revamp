@@ -1,29 +1,3 @@
-.aboutus-hero {
-  background: linear-gradient(135deg, #004aad, #240b77, #0a0e27);
-  padding: 40px 20px;
-  text-align: center;
-  color: white;
-  margin-top: 80px;
-}
-
-.aboutus-hero-container {
-  margin: 0 auto;
-}
-
-.aboutus-hero h1 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-
-.aboutus-hero-subtitle {
-  font-size: 1.2rem;
-  font-weight: 400;
-  line-height: 1.7;
-  opacity: 0.95;
-}
-
 /* IT Services Introduction Section */
 .it-services-intro-section {
   padding: 40px 20px;

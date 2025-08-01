@@ -41,11 +41,21 @@ class HTMLInclude extends HTMLElement {
     const overlay = this.querySelector('#mobile-nav-overlay');
 
     if (hamburger && overlay) {
-      hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('open');
-        overlay.classList.toggle('open');
-      });
-    }
+  const closeBtn = overlay.querySelector('#mobile-close-btn');
+
+  hamburger.addEventListener('click', () => {
+    overlay.classList.add('open');
+    hamburger.classList.add('hamburger-hidden'); // Hide hamburger when menu is open
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      overlay.classList.remove('open');
+      hamburger.classList.remove('hamburger-hidden'); // Show hamburger again
+    });
+  }
+}
+
 
     // Mobile dropdown toggle
     const dropdownLinks = this.querySelectorAll('.dropdown-mobile > a');
@@ -60,29 +70,53 @@ class HTMLInclude extends HTMLElement {
     });
   }
 
-  highlightActiveMenuItems() {
-    const currentPath = window.location.pathname;
-    const allLinks = this.querySelectorAll('.mobile-nav a, .main-nav a');
+ highlightActiveMenuItems() {
+  const currentUrl = window.location.href;
+  const currentPath = window.location.pathname.replace(/\/$/, '');
+  const allLinks = this.querySelectorAll('.main-nav a, .mobile-nav a');
 
-    allLinks.forEach(link => {
-      const href = new URL(link.href, window.location.origin).pathname;
+  allLinks.forEach(link => {
+    const linkUrl = new URL(link.href, window.location.origin);
+    const linkPath = linkUrl.pathname.replace(/\/$/, '');
 
-      if (currentPath === href || currentPath.startsWith(href)) {
-        link.classList.add('active');
+    const isExactMatch = currentUrl === linkUrl.href;
+    const isPathMatch = currentPath === linkPath;
+    const isSectionMatch = linkPath !== '/index.html' && currentPath.startsWith(linkPath);
 
-        // Mark all parent dropdowns active and expand their menus
-        let li = link.closest('li');
-        while (li) {
-          li.classList.add('active');
+    if (isExactMatch || isPathMatch || isSectionMatch) {
+      link.classList.add('active');
 
-          const submenu = li.querySelector('ul');
-          if (submenu) submenu.classList.add('open');
+      // Highlight submenu path
+      let li = link.closest('li');
+      while (li) {
+        const parentLi = li.closest('ul')?.closest('li');
+        if (parentLi) {
+          parentLi.classList.add('submenu-active');
 
-          li = li.parentElement.closest('li.dropdown-mobile, li.dropdown');
+          const parentLink = parentLi.querySelector('a');
+          if (parentLink) parentLink.classList.add('active');
+
+          const submenu = parentLi.querySelector('ul');
+
+const isMobile = window.innerWidth <= 1024;
+if (submenu && isMobile) {
+  // Only apply open state on mobile
+  submenu.classList.add('open');
+  parentLi.classList.add('open');
+}
+
         }
+        li = parentLi;
       }
-    });
-  }
+    }
+  });
+}
+
+
+
+
+
+
 }
 
 // Define the custom element

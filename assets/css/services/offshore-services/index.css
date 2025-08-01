@@ -21,69 +21,88 @@
 
 /* OFS_ Specific Classes */
 .OFS_container {
-    margin: 0 auto; /* Centers the container horizontally. */
+    margin: 0 auto;
+    /* Centers the container horizontally. */
 }
 
 .OFS_section-heading {
-    font-size: 2.5rem; /* Sets the font size for section headings. */
-    font-weight: 700; /* Sets the font weight to bold. */
-    color: #222222; /* Sets the color of the section heading. */
-    text-align: center; /* Centers the text. */
-    margin-bottom: 40px; /* Adds space below the heading. */
-    position: relative; /* Needed for positioning the ::after pseudo-element. */
-    padding-bottom: 10px; /* Adds padding below the text for the underline. */
+    font-size: 2.5rem;
+    /* Sets the font size for section headings. */
+    font-weight: 700;
+    /* Sets the font weight to bold. */
+    color: #222222;
+    /* Sets the color of the section heading. */
+    text-align: center;
+    /* Centers the text. */
+    margin-bottom: 40px;
+    /* Adds space below the heading. */
+    position: relative;
+    /* Needed for positioning the ::after pseudo-element. */
+    padding-bottom: 10px;
+    /* Adds padding below the text for the underline. */
 }
 
 /* Offerings Section - Zigzag Layout */
+/* This we have used in Our-offerings, online-consulting, Careers screen */
 .OFS_offerings-section {
-    background: var(--first-section-bg); /* Sets a white background. */
+    background: var(--first-section-bg);
+    /* Sets a white background. */
 }
 
 .OFS_zigzag-container {
     display: flex;
     flex-direction: column;
-    gap: 60px; /* Space between each zigzag item */
+    gap: 60px;
+    /* Space between each zigzag item */
 }
 
 .OFS_zigzag-item {
     display: flex;
-    align-items: center;
-    gap: 40px; /* Space between image and content */
-    background-color: #f0f4f8; /* Light background for each item */
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    padding: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    /* flex-wrap: wrap; */
 }
 
-.OFS_zigzag-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
-}
 
 .OFS_zigzag-left {
-    flex-direction: row; /* Content on right, image on left */
+    flex-direction: row;
+    /* Content on right, image on left */
+
 }
 
 .OFS_zigzag-content {
-    flex: 1; /* Takes up remaining space */
-    padding: 20px;
+    flex: 1 1 50%;
+    min-width: 320px;
+    padding: 10px 0;
 }
 
 .OFS_zigzag-image-wrapper {
-    flex: 1; /* Takes up half the space */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 300px; /* Minimum width for the image wrapper */
+    flex: 1 1 45%;
+    min-width: 320px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
 }
+
+/* }
+.OFS_zigzag-image-wrapper :hover{
+    transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+} */
 
 .OFS_zigzag-image {
     width: 100%;
-    max-width: 500px; /* Ensure images don't get too large */
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-height: 300px;
+    display: block;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.OFS_zigzag-image:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .OFS_card-title {
@@ -102,99 +121,132 @@
 
 /* Detailed Services Section */
 .OFS_detailed-services-section {
-    background-color: var(--alternate-section-bg); /* Sets a light background color. */
+    background-color: var(--alternate-section-bg);
+    /* Sets a light background color. */
 }
 
 .OFS_detailed-services-flexbox {
-    display: flex; /* Uses flexbox for the layout of service items. */
-    flex-wrap: wrap; /* Allows items to wrap to the next line. */
-    gap: 43px; /* Sets the space between flex items. */
-    justify-content: center; /* Centers the flex items horizontally. */
+    display: flex;
+    /* Uses flexbox for the layout of service items. */
+    flex-wrap: wrap;
+    /* Allows items to wrap to the next line. */
+    gap: 43px;
+    /* Sets the space between flex items. */
+    justify-content: center;
+    /* Centers the flex items horizontally. */
 }
 
 .OFS_service-item {
-    background-color: #fff; /* Sets a white background for service items. */
-    border-radius: 15px; /* Rounds the corners. */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Adds a subtle shadow. */
-    padding: 30px; /* Adds padding inside the item. */
-    text-align: left; 
-    flex: 1 1 calc(33.333% - 30px); /* Three items per row on larger screens, considering gap. */
-    max-width: calc(33.333% - 30px); /* Ensures maximum width for three columns. */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects. */
+    background-color: #fff;
+    /* Sets a white background for service items. */
+    border-radius: 15px;
+    /* Rounds the corners. */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    /* Adds a subtle shadow. */
+    padding: 30px;
+    /* Adds padding inside the item. */
+    text-align: left;
+    flex: 1 1 calc(33.333% - 30px);
+    /* Three items per row on larger screens, considering gap. */
+    max-width: calc(33.333% - 30px);
+    /* Ensures maximum width for three columns. */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transition for hover effects. */
 }
 
 .OFS_service-item:hover {
-    transform: translateY(-10px); /* Lifts the item up on hover. */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12); /* Enhances shadow on hover. */
+    transform: translateY(-10px);
+    /* Lifts the item up on hover. */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+    /* Enhances shadow on hover. */
 }
 
 .OFS_service-image {
-    width: 90px; /* Sets a fixed width for the image. */
-    height: 90px; /* Sets a fixed height for the image. */
-    object-fit: cover; /* Ensures the image covers the area without distortion. */
-    margin-bottom: 20px; /* Adds space below the image. */
-    display: block; /* Makes the image a block element. */
-    margin-left: auto; /* Centers the image horizontally. */
-    margin-right: auto; /* Centers the image horizontally. */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects. */
+    width: 90px;
+    /* Sets a fixed width for the image. */
+    height: 90px;
+    /* Sets a fixed height for the image. */
+    object-fit: cover;
+    /* Ensures the image covers the area without distortion. */
+    margin-bottom: 20px;
+    /* Adds space below the image. */
+    display: block;
+    /* Makes the image a block element. */
+    margin-left: auto;
+    /* Centers the image horizontally. */
+    margin-right: auto;
+    /* Centers the image horizontally. */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transition for hover effects. */
 }
 
 .OFS_service-item .OFS_service-title {
-    font-size: var(--card-header-ftSize); /* Sets the font size for service titles. */
-    font-weight: var(--card-header-ftWt); /* Sets the font weight. */
-    color: var(--common-text-color-dark); /* Sets the color of the service title. */
-    margin-bottom: 10px; /* Adds space below the title. */
+    font-size: var(--card-header-ftSize);
+    /* Sets the font size for service titles. */
+    font-weight: var(--card-header-ftWt);
+    /* Sets the font weight. */
+    color: var(--common-text-color-dark);
+    /* Sets the color of the service title. */
+    margin-bottom: 10px;
+    /* Adds space below the title. */
 }
 
 .OFS_service-item .OFS_service-description {
-    font-size: var(--card-content-ftSize); /* Sets the font size for service descriptions. */
-    color:  var(--common-text-color-dark); /* Sets the color of the description. */
-    line-height: 1.7; /* Increases line height for readability. */
+    font-size: var(--card-content-ftSize);
+    /* Sets the font size for service descriptions. */
+    color: var(--common-text-color-dark);
+    /* Sets the color of the description. */
+    line-height: 1.7;
+    /* Increases line height for readability. */
 }
 
 /* Responsive Adjustments */
-@media (max-width: 992px) { /* Styles for screens up to 992px wide (e.g., tablets). */
-    /* Zigzag adjustments for smaller screens */
+@media (max-width: 992px) {
+
+    .OFS_zigzag-content {
+        padding: 10px 0;
+    }
+
     .OFS_zigzag-item {
-        flex-direction: column; /* Stack content and image vertically */
+        gap: 20px;
+    }
+
+    .OFS_service-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+        flex-direction: column;
         text-align: center;
         padding: 20px;
     }
 
-    .OFS_zigzag-content {
-        padding: 10px 0; /* Adjust padding for stacked content */
-    }
-
     .OFS_zigzag-image-wrapper {
-        min-width: unset; /* Remove min-width constraint */
-        width: 80%; /* Make image narrower on smaller screens */
-        margin-bottom: 20px; /* Add space below image when stacked */
+        width: 100%;
+        min-width: unset;
     }
 
-    .OFS_service-item {
-        flex: 1 1 calc(50% - 30px); /* Two items per row on medium screens, considering gap. */
-        max-width: calc(50% - 30px); /* Ensures maximum width for two columns. */
+    .OFS_zigzag-right {
+        flex-direction: column;
     }
+
+    .OFS_zigzag-left {
+        flex-direction: column-reverse;
+    }
+
 }
 
-@media (max-width: 768px) { /* Styles for screens up to 768px wide (e.g., larger phones). */
+@media (max-width: 768px) {
     .OFS_section-heading {
-        font-size: 2rem; /* Reduces font size of section headings. */
-    }
-
-    .OFS_service-item {
-        flex: 1 1 100%; /* One item per row on small screens. */
-        max-width: 100%; /* Ensures full width. */
+        font-size: 2rem;
     }
 
     .OFS_service-image {
-        width: 80px; /* Reduces image size on smaller screens. */
-        height: 80px; /* Reduces image size on smaller screens. */
+        width: 80px;
+        height: 80px;
     }
 }
 
-@media (max-width: 480px) { /* Styles for screens up to 480px wide (e.g., smaller phones). */
+@media (max-width: 480px) {
     .OFS_section-heading {
-        font-size: 1.8rem; /* Further reduces font size of section headings. */
+        font-size: 1.8rem;
     }
 }
