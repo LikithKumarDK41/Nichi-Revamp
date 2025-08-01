@@ -185,4 +185,115 @@ document.addEventListener('DOMContentLoaded', () => {
 
   observer.observe(document.body, { childList: true, subtree: true });
 });
+   // Get references to the relevant DOM elements for tab functionality
+        const tabButtons = document.querySelectorAll(".tab-button");
+        const tabContents = document.querySelectorAll(".tab-content");
+        const jobTypeInput = document.getElementById("job-type");
 
+        // Function to activate a tab
+        function activateTab(tabId) {
+            tabButtons.forEach(button => {
+                if (button.dataset.tab === tabId) {
+                    button.classList.add("active");
+                } else {
+                    button.classList.remove("active");
+                }
+            });
+
+            tabContents.forEach(content => {
+                if (content.id === tabId) {
+                    content.classList.add("active");
+                } else {
+                    content.classList.remove("active");
+                }
+            });
+        }
+
+        // Event listeners for tab buttons
+        tabButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                activateTab(button.dataset.tab);
+            });
+        });
+
+        // Handle "Apply Now" buttons
+        const applyNowButtons = document.querySelectorAll(".apply-now-btn");
+        applyNowButtons.forEach(button => {
+            button.addEventListener("click", function (event) {
+                event.preventDefault();
+                const jobTitle = this.dataset.jobTitle;
+                activateTab('job-application');
+                if (jobTypeInput) {
+                    jobTypeInput.value = jobTitle;
+                }
+                const jobFormSection = document.getElementById("job-application");
+                if (jobFormSection) {
+                    jobFormSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Original functionality for "Click Here" and "here" link within "Current Openings" tab
+        const showMessageBtn = document.getElementById("careers-click-here");
+        const noOpeningsMessage = document.getElementById("no-openings-message");
+        const jobsApplyLink = document.getElementById("jobs-apply-link");
+
+        // Initially hide the "no-openings-message" as we now have job listings
+        // and hide the "Click Here" button.
+        if (noOpeningsMessage) {
+            noOpeningsMessage.style.display = 'none'; // Use style.display to hide
+            if (showMessageBtn) {
+                showMessageBtn.style.display = 'none';
+            }
+        }
+
+        // This part is largely redundant with dummy jobs, but kept for robustness.
+        // It would show the message if the "Click Here" button was visible and clicked.
+        if (showMessageBtn) {
+            showMessageBtn.addEventListener("click", function (event) {
+                event.preventDefault();
+                if (noOpeningsMessage) {
+                    noOpeningsMessage.style.display = 'block'; // Show message
+                }
+                showMessageBtn.style.display = 'none'; // Hide button
+            });
+        }
+
+        // This handles the "send us your resume here" link within the no-openings-message
+        if (jobsApplyLink) {
+            jobsApplyLink.addEventListener("click", function (event) {
+                event.preventDefault();
+                activateTab('job-application');
+                const jobFormSection = document.getElementById("job-application");
+                if (jobFormSection) {
+                    jobFormSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        }
+
+        // File Upload Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const fileInput = document.getElementById('resume');
+            const customTrigger = document.getElementById('custom-file-trigger');
+            const fileNameDisplay = document.getElementById('file-name-display');
+
+            if (customTrigger && fileInput && fileNameDisplay) {
+                // Trigger file input when custom button is clicked
+                customTrigger.addEventListener('click', function() {
+                    fileInput.click();
+                });
+
+                // Update file name display when a file is selected
+                fileInput.addEventListener('change', function() {
+                    if (fileInput.files.length > 0) {
+                        fileNameDisplay.textContent = fileInput.files[0].name;
+                        fileNameDisplay.classList.add('file-selected');
+                        customTrigger.classList.add('file-selected');
+                    } else {
+                        fileNameDisplay.textContent = 'No file chosen';
+                        fileNameDisplay.classList.remove('file-selected');
+                        customTrigger.classList.remove('file-selected');
+                    }
+                });
+            }
+        });

@@ -24,6 +24,7 @@
   justify-content: space-between;
   gap: 40px;
   flex-wrap: wrap;
+  margin-bottom: 80px;
 }
 
 .offshore-heading {
@@ -72,6 +73,10 @@
   color: var(--common-text-color-dark);
   margin-top: 30px;
   margin-bottom: 15px;
+}
+
+.wwo h2{
+  font-size: var(--card-header-ftSize) !important;
 }
 
 .offshore-zigzag {
