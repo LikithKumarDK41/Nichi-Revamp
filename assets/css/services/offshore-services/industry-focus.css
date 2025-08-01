@@ -173,7 +173,6 @@
         /* Verticals Section Styles */
         .verticals-section {
             font-family: 'Inter', sans-serif;
-            padding: 40px 20px;
             background-color: var(--alternate-section-bg);
             color: #333;
         }
