@@ -279,7 +279,7 @@ main {
   .content-section ul li {
     font-size: 0.95em;
   }
-  
+
   .content-section ul li::before {
     top: 5px;
   }
