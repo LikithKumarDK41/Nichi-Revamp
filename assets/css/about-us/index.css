@@ -234,11 +234,14 @@
 
   .aboutus-section .section-title,
   .infrastructure-section .section-title {
+     font-size: 2rem;
     margin-bottom: 2rem;
+    
   }
 
   .aboutus-section p,
   .infrastructure-section p {
+    font-size: 1rem;
     margin-bottom: 1rem;
     text-align: left;
   }
@@ -393,7 +396,16 @@
 }
 
 @media (max-width: 768px) {
+  .brochure-heading {
+    font-size: 1.8rem;
+  }
+
+  .brochure-subtext {
+    font-size: 1.1rem;
+  }
+
   .brochure-download-btn {
+    font-size: 1rem;
     padding: 12px 24px;
   }
 }
