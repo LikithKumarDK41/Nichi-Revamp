@@ -563,7 +563,7 @@
     .testimonials-container {
         flex-direction: row;
         /* Side-by-side on larger screens */
-        justify-content: space-between;
+        justify-content: center;
         align-items: stretch;
         /* Stretch items to fill height */
     }
@@ -594,7 +594,7 @@
     .testimonial-slider-wrapper {
         flex: 1;
         /* Adjust flex to control width distribution */
-        max-width: 55%;
+        max-width: 100%;
         /* Slider takes slightly more than half */
     }
 }
@@ -603,9 +603,7 @@
     position: relative;
     width: 100%;
     height: 100%;
-    /* Occupy full height of wrapper */
-    overflow: hidden;
-    /* Crucial for slide transitions */
+
 }
 
 .testimonial-slide-item {
@@ -613,7 +611,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -629,6 +627,7 @@
 .testimonial-slide-item.active {
     opacity: 1;
     transform: translateX(0);
+
     /* Slide into view */
 }
 
@@ -641,9 +640,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100%;
-    max-width: 600px;
+
+    
     /* Limit card width */
     margin: 0 auto;
     padding: 1rem;
@@ -1238,7 +1236,7 @@
         max-width: 700px;
         min-width: unset;
         padding: 1.5rem;
-        min-height: 580px;
+
     }
 
     .testimonial-card {
@@ -1522,13 +1520,13 @@
 @media (min-width: 1024px) {
     .testimonials-container {
         flex-direction: row; /* Side-by-side on larger screens */
-        justify-content: space-between;
+        justify-content: center;
         align-items: stretch; /* Stretch items to fill height */
     }
 
     .testimonial-slider-wrapper {
         flex: 1; /* Adjust flex to control width distribution */
-        max-width: 55%; /* Slider takes slightly more than half */
+        max-width: 100%; /* Slider takes slightly more than half */
     }
 
     .company-logos-grid {
