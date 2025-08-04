@@ -229,11 +229,10 @@
     font-size: 15px;
   }
 }
+
 /* For screens up to 480px (Smaller Mobile Devices) */
 @media (max-width: 480px) {
-    .offshore-heading h2 {
+  .offshore-heading h2 {
     font-size: 28px;
   }
-  /* Styles for smaller mobile devices */
 }
-
