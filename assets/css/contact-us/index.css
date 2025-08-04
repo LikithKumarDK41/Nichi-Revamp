@@ -137,11 +137,9 @@
         .map-container {
             width: 100%;
             height: 400px; /* Fixed height for the map */
-            background-color: #f0f0f0;
             border-radius: 12px;
             overflow: hidden;
             margin-bottom: 40px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         }
 
         .map-container iframe {
@@ -329,7 +327,6 @@
     min-width: 300px;
     display: flex;
     flex-direction: column;
-    height: 100%;
     padding-top: 30px;
 }
 

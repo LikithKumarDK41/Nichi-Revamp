@@ -52,9 +52,7 @@
         /* Tab Content Sections */
         .tab-content {
             display: none;
-            padding: 20px 20px 60px;
-            max-width: 1000px;
-            margin: auto;
+    
         }
 
         .tab-content.active {
@@ -77,15 +75,39 @@
             margin-bottom: 30px;
         }
 
+        /* Job Cards Grid Layout */
+        .job-cards-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* 1 card per row on small screens */
+            gap: 30px;
+            width: 100%;
+        }
+
+        /* Medium screens - 2 cards per row */
+        @media (min-width: 768px) {
+            .job-cards-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+            }
+        }
+
+        /* Large screens - 3 cards per row */
+        @media (min-width: 1024px) {
+            .job-cards-grid {
+                grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+            }
+        }
+
         /* Individual Job Card */
         .job-card {
             background-color: #f9f9f9;
             border-left: 5px solid #000066;
             padding: 24px;
             border-radius: 12px;
-            margin-bottom: 30px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease;
+            height: 100%; /* Make all cards the same height */
+            display: flex;
+            flex-direction: column;
         }
 
         .job-card:hover {
@@ -97,15 +119,21 @@
             font-weight: 700;
             margin-bottom: 12px;
             color: #222;
+            line-height: 1.3;
         }
 
         .job-card p {
             font-size: 15px;
             color: #555;
             margin-bottom: 16px;
+            line-height: 1.5;
         }
 
         /* Requirements List */
+        .requirements {
+            flex-grow: 1; /* Allow requirements to take available space */
+        }
+        
         .requirements ul {
             list-style-type: disc;
             padding-left: 20px;
@@ -131,6 +159,8 @@
             border-radius: 6px;
             text-decoration: none;
             transition: background-color 0.3s ease;
+            margin-top: auto; /* Push button to bottom of card */
+            align-self: flex-start; /* Align button to the left */
         }
 
         .apply-now-btn:hover {
@@ -163,6 +193,22 @@
 
             .tab-button {
                 padding: 10px 20px;
+            }
+            
+            /* Adjust grid gap on smaller screens */
+            .job-cards-grid {
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            /* Further reduce spacing on very small screens */
+            .job-cards-grid {
+                gap: 15px;
+            }
+            
+            .job-card {
+                padding: 15px;
             }
         }
 
@@ -358,8 +404,6 @@
         .tab-content {
             display: none;
             animation: fadeIn 0.5s ease-in-out;
-            padding-left: 20px;
-            padding-right: 20px;
         }
 
         .tab-content.active {
