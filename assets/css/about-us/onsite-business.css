@@ -234,7 +234,20 @@ main {
 
 @media (max-width: 768px) {
   .content-section > h2 {
+    font-size: 2em;
     margin-bottom: 30px;
+  }
+  .content-section h3 {
+    font-size: 1.6em;
+  }
+
+  .content-section h4 {
+    font-size: 1.3em;
+  }
+
+  .content-section p,
+  .content-section ul li {
+    font-size: 1em;
   }
 
   .contact-info {
@@ -250,6 +263,22 @@ main {
 
 @media (max-width: 480px) {
 
+  .content-section > h2 {
+    font-size: 1.8em;
+  }
+
+  .content-section h3 {
+    font-size: 1.4em;
+  }
+
+  .content-section h4 {
+    font-size: 1.2em;
+  }
+
+  .content-section p,
+  .content-section ul li {
+    font-size: 0.95em;
+  }
   .content-section ul li::before {
     top: 5px;
   }
