@@ -1,4 +1,4 @@
-.profile-section {
+    .profile-section {
       width: 100%;
       padding: 60px 0;
       background-color: #f9f9fb;
@@ -248,20 +248,20 @@
       }
 
       .profile-header-content h2 {
-        
+        font-size: 2rem;        
       }
 
       .profile-header-content .title {
-        
+        font-size: 1.2rem;        
       }
 
       .profile-details p,
       .profile-details ul li {
-        
+        font-size: 1rem;        
       }
 
       .profile-details h3 {
-        
+        font-size: 1.3rem;        
       }
     }
 
