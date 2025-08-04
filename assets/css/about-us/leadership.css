@@ -112,7 +112,7 @@
 }
 
 .member-details-link:hover {
-  background-color: #000066;
+  background-color: var(--button-hover-bg);
   color: #fff;
 }
 
@@ -137,7 +137,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 14px;
+  padding: 12px 22px;
   font-size: 0.9rem;
   font-weight: 600;
   color: #ffffff;

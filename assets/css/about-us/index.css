@@ -1,455 +1,454 @@
-.aboutus-section {
-  padding: 40px 20px;
-  background-color: #ebedf1;
-  text-align: center;
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  /* bg-gray-50 */
+  color: #374151;
+  /* text-gray-800 */
 }
 
-.aboutus-section .section-title,
-.infrastructure-section .section-title {
-  font-size: var(--ftSize2);
-  margin-bottom: 24px;
-  color: var(--common-text-color-dark);
-  font-weight: 700;
-  text-align: center;
+/* Custom scrollbar for the factsheet */
+.factsheet-scroll-area::-webkit-scrollbar {
+  height: 8px;
 }
 
-.factsheet-title {
-  text-align: center;
-  font-size: var(--ftSize2) !important;
-  color: var(--common-text-color-light);
+.factsheet-scroll-area::-webkit-scrollbar-track {
+  background: #e0e0e0;
+  border-radius: 10px;
 }
 
-.factsheet-text p {
-  font-size: var(--desc-ftSize2) !important;
+.factsheet-scroll-area::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
 }
 
-/* Paragraph Styles */
-.aboutus-section p,
-.infrastructure-section p {
-  font-size: 1.125rem;
-  line-height: 1.8;
-  color: #4a5568;
-  margin-bottom: 1.5rem;
-  text-align: justify;
+.factsheet-scroll-area::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
-.zigzag-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  background: white;
+/* Hide scrollbar for the scroll area */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
-.zigzag-row.reverse {
-  flex-direction: row-reverse;
-  background: var(--alternate-section-bg);
-
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera*/
 }
 
-.zigzag-text-about {
-  flex: 1 1 50%;
-  text-align: left;
-  padding-right: 20px;
+/* Ensure html-include elements are displayed correctly */
+html-include {
+  display: contents;
 }
 
-.zigzag-text p {
-  font-size: var(--desc-ftSize);
-  line-height: 1.8;
-  color: var(--common-text-color-dark);
-  margin-bottom: 1.5rem;
-  text-align: justify;
+/* Keyframe animations for subtle effects */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.about-us-zigzag-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 16px;
-  overflow: hidden;
-  /* Important for containing the zoom effect */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.about-us-zigzag-image img {
-  max-width: 100%;
-  height: auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.about-us-zigzag-image img:hover {
-  transform: scale(1.03);
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
+.animate-fade-in-down {
+  animation: fadeInDown 1s ease-out forwards;
+}
 
-/*===============================
-  Factsheet Section
-================================*/
-/* Factsheet Section Styles */
-/* Factsheet Section (Slider) */
-.factsheet-section {
-  position: relative;
-  background: linear-gradient(to bottom, #e0eafc, #cfdef3);
-  /* Lighter, modern gradient */
-  height: 90vh;
-  /* Increased height for more visual space */
+.animate-fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 1s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 1s ease-out forwards;
+}
+
+/* Global Layout */
+#content {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
-  width: 100%;
-  margin-bottom: 0;
-  border-radius: 0;
-  /* No border-radius for full-width section */
-  box-shadow: none;
 }
 
-.factsheet-container {
-  max-width: 100%;
+main {
+  flex-grow: 1;
+}
+
+.aboutus-section .container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.aboutus-section .zigzag-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  position: relative; /* Added for absolute positioning of images */
+}
+
+@media (min-width: 768px) {
+  .aboutus-section .zigzag-row {
+    flex-direction: row;
+  }
+
+  .aboutus-section .zigzag-row.reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.aboutus-section .zigzag-text-about {
+  font-size: 1.125rem;
+  line-height: 1.625;
+  animation: fadeInLeft 1s ease-out forwards;
   width: 100%;
-  margin: 0 auto;
+}
+
+.aboutus-section .zigzag-text-about.animate-fade-in-right {
+  animation: fadeInRight 1s ease-out forwards;
+}
+
+@media (min-width: 768px) {
+  .aboutus-section .zigzag-text-about {
+    width: 50%;
+  }
+}
+
+.aboutus-section .zigzag-text-about p:not(:first-child) {
+  margin-top: 1.5rem;
+}
+
+.aboutus-section .zigzag-text-about h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1d4ed8;
+  margin-bottom: 1.5rem;
+}
+
+.aboutus-section .zigzag-text-about p.flex {
+  display: flex;
+  align-items: flex-start;
+}
+
+.aboutus-section .zigzag-text-about p.flex i {
+  color: #000066;
+  margin-right: 0.75rem;
+  margin-top: 0.25rem;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.aboutus-section .about-us-zigzag-image {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  animation: fadeInRight 1s ease-out forwards;
+  margin-top: 40px;
+}
+
+.aboutus-section .zigzag-row.reverse .about-us-zigzag-image {
+  animation: fadeInLeft 1s ease-out forwards;
+}
+
+@media (min-width: 768px) {
+  .aboutus-section .about-us-zigzag-image {
+    width: 50%;
+    position: absolute; /* Position images absolutely */
+    top: 0; /* Align to the top */
+  }
+  /* For the first image (top-right) */
+  .aboutus-section .zigzag-row:not(.reverse) .about-us-zigzag-image {
+    right: 0;
+  }
+  /* For the second image (top-left) */
+  .aboutus-section .zigzag-row.reverse .about-us-zigzag-image {
+    left: 0;
+  }
+}
+
+.aboutus-section .about-us-zigzag-image img {
+  border-radius: 0.75rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease-in-out;
+  max-width: 100%;
+  height: auto;
+}
+
+.aboutus-section .about-us-zigzag-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Factsheet Section */
+.factsheet-section {
+  padding: 4rem 0;
+  background: linear-gradient(to bottom right, #eff6ff, #e0e7ff);
+}
+
+@media (min-width: 768px) {
+  .factsheet-section {
+    padding: 6rem 0;
+  }
+}
+
+.factsheet-section .container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.factsheet-section h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
   text-align: center;
+  color: #111827;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .factsheet-section h2 {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+  }
+}
+
+.factsheet-section .relative {
   position: relative;
-  overflow: hidden;
-  height: 100%;
-  /* Ensure container takes full height */
 }
 
 .factsheet-scroll-area {
-  height: 100%;
-  /* Full height of its parent */
-  overflow: hidden;
-  /* Changed from 'scroll' to 'hidden' to disable scrolling */
-  /* Removed scroll-snap-type: y mandatory; */
-  -webkit-overflow-scrolling: touch;
-  /* For smooth scrolling on iOS (still useful for touch devices, even if not scrollable by user) */
-  position: relative;
-}
-
-.factsheet-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  height: 100%;
   display: flex;
-  flex-direction: column;
-  /* Stack slides vertically */
-  transition: transform 0.5s ease-in-out;
-  /* Smooth transition for automatic sliding */
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 1.5rem;
 }
 
 .factsheet-slide {
-  scroll-snap-align: start;
-  /* Kept for potential future use, though not active with overflow:hidden */
-  height: 100%;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  /* Ensures overlay is fully rendered within the slide */
   flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  padding: 1rem;
+  scroll-snap-align: center;
+}
+
+@media (min-width: 768px) {
+  .factsheet-slide {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .factsheet-slide {
+    width: 33.333333%;
+  }
+}
+
+.factsheet-slide>div {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.factsheet-slide>div:hover {
+  transform: scale(1.02);
+}
+
+.factsheet-slide .relative.h-64 {
+  position: relative;
+  height: 16rem;
 }
 
 .factsheet-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-  /* Remove extra space below image */
-  z-index: 1;
 }
 
-/* Overlay content on each slide */
-.factsheet-slide .overlay {
+.factsheet-slide .absolute {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.65);
-  /* Darker blackish overlay */
-  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
+}
+
+.factsheet-slide .text-center {
   text-align: center;
-  padding: 2rem;
-  transition: background 0.3s ease;
-  /* Smooth transition for overlay */
-  z-index: 2;
-  /* Ensure overlay appears above the image */
-  pointer-events: none;
-  /* Allows clicking through if needed */
+  color: white;
 }
 
-.factsheet-slide .overlay h2.section-title {
-  font-size: clamp(2rem, 5vw, 3rem);
-  /* Larger and more responsive */
-  font-weight: 800;
-  margin-bottom: 1.5rem;
-  color: #fff;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
-  /* Stronger shadow for text */
+.factsheet-slide .text-center i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #93c5fd;
+  transition: color 0.3s;
 }
 
-.factsheet-slide .overlay p {
-  font-size: clamp(1.2rem, 3.5vw, 1.8rem);
-  /* Larger and more responsive */
+.factsheet-slide>div:hover .text-center i {
+  color: #bfdbfe;
+}
+
+.factsheet-slide .text-center p {
+  font-size: 1.875rem;
   font-weight: 600;
-  max-width: 80%;
-  /* Slightly narrower text block */
-  margin: 0 auto;
-  line-height: 1.7;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
 }
 
-/* Vertical Pagination Bars */
 .factsheet-pagination {
-  position: absolute;
-  top: 50%;
-  right: 30px;
-  /* More space from the right edge */
-  transform: translateY(-50%);
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  /* Increased gap */
-  z-index: 20;
-  pointer-events: auto;
-  /* Ensure clickable */
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 0.5rem;
 }
 
 .factsheet-pagination .bar {
-  width: 10px;
-  /* Increased width */
-  height: 10px;
-  /* Increased height */
-  background-color: rgba(255, 255, 255, 0.5);
-  /* Lighter default */
-  border-radius: 50%;
-  transition: all 0.3s ease, transform 0.3s ease;
-  border: 2px solid rgba(255, 255, 255, 0.7);
-  /* Thicker border */
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #9ca3af;
+  border-radius: 9999px;
   cursor: pointer;
-  /* Indicate clickability */
+  transition: all 0.3s ease-in-out;
+}
+
+.factsheet-pagination .bar:hover {
+  background-color: #3b82f6;
 }
 
 .factsheet-pagination .bar.active {
-  background-color: #ffffff;
-  height: 20px;
-  /* More elongated when active */
-  border-radius: 5px;
-  /* Rounded rectangle */
-  transform: scale(1.1);
-  /* Slightly larger */
-  border-color: #ffffff;
-  /* Solid white border */
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
-  /* Glow effect */
+  background-color: #2563eb;
+  width: 1.5rem;
 }
 
-.factsheet-pagination .bar:hover:not(.active) {
-  background-color: rgba(255, 255, 255, 0.8);
-  /* Brighter on hover */
-  transform: scale(1.05);
+.factsheet-pagination .bar.active:hover {
+  background-color: #3b82f6;
 }
-
 
 /* Brochure Section */
 .brochure-section {
-  position: relative;
-  padding: 0 20px;
-  /* Only horizontal padding on the section */
+  background-color: #1d4ed8;
+  color: white;
+  padding: 4rem 0;
+}
+
+@media (min-width: 768px) {
+  .brochure-section {
+    padding: 5rem 0;
+  }
+}
+
+.brochure-section .container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
   text-align: center;
-  background: linear-gradient(to right,
-      #190475,
-      #8897db,
-      #acaecc,
-      #c0c7da,
-      #c0cee9,
-      #dedce2);
-  margin-top: 0;
-  /* Ensures no gap above this section */
 }
 
-/* New wrapper for brochure content to control vertical padding */
-.brochure-content-wrapper {
-  padding: 60px 0;
-  /* Apply vertical padding here */
-  position: relative;
-  /* Ensure content sits above section background */
-  z-index: 1;
-}
-
-.brochure-heading {
-  font-size: var(--ftSize2);
+.brochure-section .brochure-heading {
+  font-size: 2.25rem;
   font-weight: 700;
-  color: var(--common-text-color-dark);
-  /* Override original dark text to white */
   margin-bottom: 1rem;
+  line-height: 1.25;
 }
 
-.brochure-subtext {
-  font-size: var(--card-header-ftSize);
-  color: var(--common-text-color-dark);
+@media (min-width: 768px) {
+  .brochure-section .brochure-heading {
+    font-size: 3rem;
+  }
+}
+
+.brochure-section .brochure-subtext {
+  font-size: 1.25rem;
+  font-weight: 300;
+  opacity: 0.9;
   margin-bottom: 2rem;
-  font-style: italic;
 }
 
-@media (max-width: 768px) {
-  .aboutus-section,
-  .infrastructure-section {
-    padding: 60px 15px;
-  }
-
-  .aboutus-section .section-title,
-  .infrastructure-section .section-title {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .aboutus-section p,
-  .infrastructure-section p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    text-align: left;
-  }
-
-  .factsheet-section {
-    padding: 0;
-    height: 70vh;
-    /* Adjusted height for smaller screens */
-    overflow: hidden;
-    position: relative;
-  }
-
-  .factsheet-container {
-    padding: 0;
-    margin: 0 auto;
-    /* Centered */
-    width: 100%;
-    /* Wider on smaller screens */
-  }
-
-  .factsheet-scroll-area {
-    height: 70vh;
-    /* Adjusted height for smaller screens */
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    touch-action: none;
-  }
-
-  .factsheet-slide {
-    height: 100%;
-    /* Fill parent height */
-    width: 100%;
-    /* Fill parent width */
-  }
-
-  .factsheet-slide img {
-    width: 100%;
-    /* Fill slide width */
-    height: 100%;
-    /* Fill slide height */
-    object-fit: cover;
-  }
-
-  .factsheet-slide .overlay h2.section-title {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-  }
-
-  .factsheet-slide .overlay p {
-    font-size: 1.3rem;
-    padding: 0 1rem;
-    line-height: 1.6;
-  }
-
-  .factsheet-pagination {
-    position: absolute;
-    top: 50%;
-    right: 1rem;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 10;
-  }
-
-  .factsheet-pagination .bar {
-    width: 6px;
-    /* Adjusted width */
-    height: 6px;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
-    /* Made circular */
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    /* Added border */
-  }
-
-  .factsheet-pagination .bar.active {
-    background-color: #ffffff;
-    height: 14px;
-    /* Adjusted height */
-    border-radius: 3px;
-    /* Rounded rectangle when active */
-    transform: scale(1.2);
-    /* Slightly larger when active */
-  }
-
-   .factsheet-pagination {
-    top: auto;
-    bottom: 1.5rem;
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .factsheet-pagination .bar {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-  }
-
-  .factsheet-pagination .bar.active {
-    width: 12px;
-    height: 12px;
-  }
-
-    .brochure-heading {
-    font-size: 1.8rem;
-  }
-
-  .brochure-subtext {
-    font-size: 1.1rem;
-  }
-
-  .brochure-download-btn {
-    font-size: 1rem;
-    padding: 12px 24px;
+@media (min-width: 768px) {
+  .brochure-section .brochure-subtext {
+    font-size: 1.5rem;
   }
 }
 
-@media (max-width: 480px) {
-  .factsheet-pagination {
-    bottom: 1rem;
-    gap: 8px;
-  }
+.brochure-section a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background-color: white;
+  color: #1d4ed8;
+  font-weight: 600;
+  border-radius: 9999px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+  transform: scale(1);
+  text-decoration: none;
+}
 
-  .factsheet-pagination .bar {
-    width: 6px;
-    height: 6px;
-  }
+.brochure-section a:hover {
+  background-color: #dbeafe;
+  transform: scale(1.05);
+}
 
-  .factsheet-pagination .bar.active {
-    width: 10px;
-    height: 10px;
-  }
+.brochure-section a i {
+  margin-left: 0.75rem;
+  transition: transform 0.3s;
+}
+
+.brochure-section a:hover i {
+  transform: translateX(0.25rem);
 }
