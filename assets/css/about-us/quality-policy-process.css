@@ -192,7 +192,22 @@
    6. Responsive Design
 ----------------------------------------- */
 @media (max-width: 768px) {
+  .qpp h2,
+  .qpp_certification h2,
+  .qpp_approach h2,
+  .qpp_development h2 {
+    font-size: 24px;
+  }
 
+  .qpp p,
+  .qpp li,
+  .qpp_certification p,
+  .qpp_trio p,
+  .qpp_approach p,
+  .qpp_development p,
+  .qpp_development li {
+    font-size: 16px;
+  }
   .qpp_trio {
     flex-direction: column;
   }
