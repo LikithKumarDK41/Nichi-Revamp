@@ -540,74 +540,97 @@
 }
 
 
-/* Testimonials */
-
+/* Testimonials - Redesigned with Fixed Buttons */
 .testimonials-section {
-    padding: 40px 20px;
     background-color: var(--alternate-section-bg);
-    font-family: 'Inter', sans-serif;
 }
 
 .testimonials-container {
     display: flex;
     flex-direction: column;
-    /* Stack vertically on small screens */
     gap: 2rem;
-    /* Space between left and right columns */
     margin: 0 auto;
-    align-items: flex-start;
-    /* Align items to the start of the cross axis */
+    max-width: 1200px;
+    padding: 0 1.5rem; /* Increased side padding to accommodate buttons */
 }
 
 @media (min-width: 1024px) {
     .testimonials-container {
         flex-direction: row;
-        /* Side-by-side on larger screens */
-        justify-content: space-between;
-        align-items: stretch;
-        /* Stretch items to fill height */
+        align-items: center;
     }
 }
 
-/* Left Div: Testimonial Slider Wrapper */
+/* Slider Wrapper - Adjusted Height and Button Space */
 .testimonial-slider-wrapper {
     position: relative;
     flex: 1;
-    /* Takes available space */
-    min-width: 400px;
-    /* Minimum width for slider */
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    min-width: 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 16px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
-    /* Hide overflow for slide transitions */
-    min-height: 650px;
-    /* Ensure a minimum height for the slider */
+    overflow: visible; /* Changed from hidden to visible for buttons */
+    min-height: 450px; /* Increased from 400px */
+    max-height: 500px; /* Increased from 450px */
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    margin: 0 1rem; /* Added margin for button space */
 }
 
-@media (min-width: 1024px) {
-    .testimonial-slider-wrapper {
-        flex: 1;
-        /* Adjust flex to control width distribution */
-        max-width: 55%;
-        /* Slider takes slightly more than half */
-    }
+.testimonial-slider-wrapper:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
 }
 
 .testimonial-slider-main {
     position: relative;
     width: 100%;
     height: 100%;
-    /* Occupy full height of wrapper */
-    overflow: hidden;
-    /* Crucial for slide transitions */
+    overflow: hidden; /* Moved overflow hidden here instead */
 }
 
+/* Navigation Buttons - Fixed Positioning */
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #000066;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 102, 0.2);
+    opacity: 0.9;
+}
+
+.slider-button:hover {
+    background-color: rgba(8, 6, 160, 0.966);
+    transform: translateY(-50%) scale(1.1);
+    opacity: 1;
+}
+
+.slider-button.prev-button {
+    left: -15px; /* Brought closer to edge but not overlapping */
+}
+
+.slider-button.next-button {
+    right: -15px; /* Brought closer to edge but not overlapping */
+}
+
+.slider-button svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Rest of the CSS remains the same as your previous version */
 .testimonial-slide-item {
     position: absolute;
     top: 0;
@@ -617,169 +640,156 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     opacity: 0;
-    transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
-    transform: translateX(100%);
-    /* Start off-screen to the right */
+    transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transform: translateX(30px);
+    pointer-events: none;
     padding: 1rem;
-    text-align: center;
 }
 
 .testimonial-slide-item.active {
     opacity: 1;
     transform: translateX(0);
-    /* Slide into view */
+    pointer-events: auto;
 }
 
 .testimonial-slide-item.prev {
-    transform: translateX(-100%);
-    /* Slide out to the left */
+    transform: translateX(-30px);
 }
 
 .testimonial-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     height: 100%;
-    max-width: 600px;
-    /* Limit card width */
-    margin: 0 auto;
-    padding: 1rem;
+    justify-content: space-between;
 }
 
 .testimonial-card .company-logo {
-    max-width: 100px;
-    height: auto;
-    margin-bottom: 1rem;
-    border-radius: 8px;
-    /* Slightly rounded corners for logos */
+    max-width: 180px;
+    max-height: 80px;
+    margin: 0 auto 1.5rem;
+    filter: grayscale(100%) contrast(120%);
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.testimonial-slide-item.active .company-logo {
+    filter: grayscale(0) contrast(100%);
+    opacity: 1;
 }
 
 .testimonial-text {
-    font-size: var(--desc-ftSize);
+    font-size: 1rem;
     color: var(--common-text-color-dark);
-    line-height: 1.6;
+    line-height: 1.7;
     margin-bottom: 1.5rem;
-    text-align: left;
+    text-align: center;
+    position: relative;
+    padding: 0 1rem;
+}
+
+.testimonial-text::before,
+.testimonial-text::after {
+    content: '"';
+    font-size: 2.5rem;
+    color: rgba(0, 0, 102, 0.2);
+    position: absolute;
+    font-family: serif;
+    line-height: 1;
+}
+
+.testimonial-text::before {
+    top: -15px;
+    left: -5px;
+}
+
+.testimonial-text::after {
+    bottom: -35px;
+    right: -5px;
 }
 
 .testimonial-author {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 0.95rem;
-    color: #2d3748;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 102, 0.1);
 }
 
 .testimonial-author .author-name {
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 0.2rem;
+    color: #000066;
+    font-size: 1.1rem;
 }
 
 .testimonial-author .author-designation {
-    color: #718096;
+    color: #4a5568;
     margin-bottom: 0.1rem;
+    font-size: 0.9rem;
 }
 
 .testimonial-author .author-company {
-    color: #718096;
+    color: #4a5568;
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
-/* Slider Navigation Buttons */
-.slider-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #000066;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 10;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.slider-button:hover {
-    background-color: rgba(8, 6, 160, 0.966);
-    transform: translateY(-50%) scale(1.05);
-}
-
-.slider-button.prev-button {
-    left: 10px;
-}
-
-.slider-button.next-button {
-    right: 10px;
-}
-
-.slider-button svg {
-    width: 24px;
-    height: 24px;
-}
-
-/* Pagination Dots */
 .testimonial-pagination-dots-main {
     display: flex;
     justify-content: center;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     position: absolute;
-    /* Position relative to slider-wrapper */
     bottom: 1rem;
-    width: 100%;
+    left: 0;
+    right: 0;
 }
 
 .testimonial-dot-main {
-    height: 10px;
-    width: 10px;
-    margin: 0 5px;
-    background-color: #bbb;
+    height: 12px;
+    width: 12px;
+    margin: 0 6px;
+    background-color: #d1d5db;
     border-radius: 50%;
     display: inline-block;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.testimonial-dot-main:hover {
+    background-color: #9ca3af;
 }
 
 .testimonial-dot-main.active {
-    background-color: #717171;
+    background-color: #000066;
     transform: scale(1.2);
+    border-color: rgba(0, 0, 102, 0.2);
 }
 
-/* Right Div: Company Logos Grid */
 .company-logos-grid {
-    flex: 1;
-    /* Takes available space */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* 2 columns on small screens */
-    gap: 1rem;
-    padding: 1rem;
-    /* Padding around the grid */
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    gap: 1.5rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    margin-top: 2rem;
 }
 
 @media (min-width: 768px) {
     .company-logos-grid {
         grid-template-columns: repeat(3, 1fr);
-        /* 3 columns on medium screens */
     }
 }
 
 @media (min-width: 1024px) {
     .company-logos-grid {
-        flex: 0.7;
-        /* Adjust flex to control width distribution */
-        max-width: 40%;
-        /* Grid takes less than half */
+        margin-top: 0;
+        margin-left: 2rem;
+        flex: 0 0 45%;
     }
 }
 
@@ -787,31 +797,39 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.5rem;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    background: #f7fafc;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: #f8fafc;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 102, 0.05);
 }
 
 .logo-grid-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 102, 0.1);
+    background: white;
+    border-color: rgba(0, 0, 102, 0.1);
 }
 
-.company-logo-grid {
-    max-width: 90%;
-    max-height: 100px;
-    /* Limit logo height in grid */
+.logo-grid-item img {
+    max-width: 100%;
+    max-height: 60px;
     width: auto;
     height: auto;
-    object-fit: contain;
-    /* Ensure the entire logo is visible */
-    transition: filter 0.3s ease, opacity 0.3s ease;
+    filter: grayscale(100%) contrast(80%);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.logo-grid-item:hover img {
+    filter: grayscale(0) contrast(100%);
+    opacity: 1;
+    transform: scale(1.05);
 }
 
 
 /* Our Members Section */
+
 .our-members-section {
     padding: 40px 20px;
     background: var(--alternate-section-bg);
@@ -1238,7 +1256,7 @@
         max-width: 700px;
         min-width: unset;
         padding: 1.5rem;
-        min-height: 580px;
+
     }
 
     .testimonial-card {
@@ -1522,13 +1540,13 @@
 @media (min-width: 1024px) {
     .testimonials-container {
         flex-direction: row; /* Side-by-side on larger screens */
-        justify-content: space-between;
+        justify-content: center;
         align-items: stretch; /* Stretch items to fill height */
     }
 
     .testimonial-slider-wrapper {
         flex: 1; /* Adjust flex to control width distribution */
-        max-width: 55%; /* Slider takes slightly more than half */
+        max-width: 100%; /* Slider takes slightly more than half */
     }
 
     .company-logos-grid {
