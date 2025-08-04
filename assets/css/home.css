@@ -265,16 +265,11 @@
         text-align: center;
     }
 
-    .tech-expertise-heading {
-        font-size: 2rem;
-    }
-
     .tech-expertise-content {
         padding: 1rem;
     }
 
     .tech-expertise-content p {
-        font-size: 1rem;
         max-width: 100%;
     }
 }
@@ -1629,13 +1624,8 @@
     }
 
     .slide-text-container h2 {
-   
         text-align: center;
     }
-
- 
-
-  
 
     .dot {
         height: 0.6rem;
