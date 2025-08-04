@@ -221,7 +221,8 @@
     gap: 30px; /* Reduce gap between elements on mobile */
   }
 }
-.offshore-content h3 {
+
+  .offshore-content h3 {
     font-size: 22px;
   }
 
@@ -233,7 +234,9 @@
 @media (max-width: 480px) {
    .offshore-heading h2 {
     font-size: 28px;
+    
   }
   /* Styles for smaller mobile devices */
+
 }
 
