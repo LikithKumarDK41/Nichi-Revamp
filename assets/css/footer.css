@@ -9,7 +9,10 @@
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* Updated grid-template-columns to give more space to the middle column */
+    /* This sets up three columns: the first and third take 1 fraction of space, */
+    /* and the second (About the Company) takes 2 fractions, making it wider. */
+    grid-template-columns: 1fr 2fr 1fr;
     gap: 2.5rem;
     margin-bottom: 2.5rem;
 }
@@ -127,17 +130,16 @@
 }
 
 /* Desktop layout (Optional override if needed) */
-@media (min-width: 769px) and (max-width: 986px) {
+@media  (max-width: 992px) {
     .footer-content {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         text-align: center;
         align-items: flex-start;
         padding: 0 20px;
         /* Optional: match header logo padding */
     }
-
-    .footer-column {
-        text-align: left;
+    .footer-column .social-icons{
+        justify-content: center;
     }
 
     .newsletter-form {
@@ -167,7 +169,7 @@
 @media (max-width: 768px) {
     .footer-content {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(1,1fr);
         gap: 2rem;
         margin: 0 auto;
         padding: 0 18px;
@@ -239,21 +241,3 @@
         padding: 0 0.5rem;
     }
 }
-
-/* Responsive adjustments
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .footer-column {
-        min-width: unset;
-        width: 100%;
-    }
-
-    .social-icons {
-        justify-content: center;
-    }
-} */
