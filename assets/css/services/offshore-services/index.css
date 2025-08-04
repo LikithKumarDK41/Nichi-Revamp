@@ -100,7 +100,7 @@
 
 /* Detailed Services Section */
 .OFS_detailed-services-section {
-    background-color: var(--alternate-section-bg);
+    background: var(--alternate-section-bg);
     /* Sets a light background color. */
 }
 
