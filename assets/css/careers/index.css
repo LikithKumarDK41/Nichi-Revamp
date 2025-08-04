@@ -1,4 +1,4 @@
-        /* Main Careers Content Section */
+/* Main Careers Content Section */
         .careers-main-section {
             padding: 40px 20px 20px;
             background-color: #fff;
@@ -163,11 +163,6 @@
 
             .tab-button {
                 padding: 10px 20px;
-                font-size: 15px;
-            }
-
-            .job-listing-heading {
-                font-size: 24px;
             }
         }
 
@@ -392,24 +387,19 @@
             }
 
             .careers-main-section h3 {
-                font-size: 1.8rem;
             }
 
             .careers-main-section p {
-                font-size: 1rem;
             }
 
             .application-form-container h2 {
-                font-size: 2rem;
             }
 
             .application-form-container h3 {
-                font-size: 1.5rem;
             }
 
             .tab-button {
                 padding: 10px 15px;
-                font-size: 1rem;
             }
 
             .image-text-container {
@@ -425,31 +415,25 @@
 
         @media (max-width: 480px) {
             .careers-main-section h3 {
-                font-size: 1.5rem;
             }
 
             .careers-main-section p {
-                font-size: 0.9rem;
             }
 
             .application-form-container h2 {
-                font-size: 1.8rem;
             }
 
             .application-form-container h3 {
-                font-size: 1.3rem;
             }
 
             .form-group input[type="text"],
             .form-group input[type="email"],
             .form-group input[type="file"] {
                 padding: 10px;
-                font-size: 0.9rem;
             }
 
             .form-group input[type="file"]::-webkit-file-upload-button {
                 padding: 8px 15px;
-                font-size: 0.9rem;
             }
 
             .consent-group label {

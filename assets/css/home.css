@@ -108,7 +108,6 @@
 /* What makes us Different? */
 
 .different {
-    padding: 40px 20px;
     background: var(--first-section-bg);
     text-align: center;
 }
@@ -266,16 +265,11 @@
         text-align: center;
     }
 
-    .tech-expertise-heading {
-        font-size: 2rem;
-    }
-
     .tech-expertise-content {
         padding: 1rem;
     }
 
     .tech-expertise-content p {
-        font-size: 1rem;
         max-width: 100%;
     }
 }
@@ -533,7 +527,7 @@
 }
 
 .metric-box h1 {
-    font-size: 2.2rem;
+    font-size: var(--ftSize2);
     color: #222222;
     margin: 0;
     font-weight: 700;
@@ -923,7 +917,7 @@
 }
 
 .certifications h2 {
-    font-size: 2.4rem;
+    font-size: var(--ftSize1);
     font-weight: 700;
     color: #222222;
     margin-bottom: 40px;
@@ -1052,12 +1046,10 @@
         max-width: 90%;
     }
 
-    .overlay-text h3 {
-        font-size: 1.1rem;
-    }
+
 
     .different-block p {
-        font-size: 0.95rem;
+
         padding: 0 1rem;
         line-height: 1.6;
         min-height: 150px;
@@ -1116,12 +1108,10 @@
         padding: 0 1rem;
     }
 
-    .tech-content h2 {
-        font-size: 1.8rem;
-    }
+   
 
     .tech-content p {
-        font-size: 1rem;
+    
         line-height: 1.6;
     }
 
@@ -1131,23 +1121,19 @@
 }
 
 @media (max-width: 480px) {
-    .tech-content h2 {
-        font-size: 1.5rem;
-    }
+    
 
-    .tech-content p {
-        font-size: 0.95rem;
-    }
+   
 
     .read-more-button {
-        font-size: 1rem;
+     
         padding: 0.6rem 1.2rem;
     }
 }
 
 @media (min-width: 768px) {
     .read-more-button {
-        font-size: 20px;
+      
         min-width: 180px;
     }
 }
@@ -1162,13 +1148,9 @@
         height: 160px;
     }
 
-    .industry-overlay h3 {
-        font-size: 1.1rem;
-    }
+   
 
-    .industry-overlay p {
-        font-size: 0.85rem;
-    }
+   
 }
 
 /* Medium tablets & landscape phones (max-width: 768px) */
@@ -1178,7 +1160,6 @@
     }
 
     .section-title {
-        font-size: 2rem;
         margin-bottom: 24px;
     }
 
@@ -1194,13 +1175,9 @@
         padding: 12px;
     }
 
-    .industry-overlay h3 {
-        font-size: 0.95rem;
-    }
 
-    .industry-overlay p {
-        font-size: 0.8rem;
-    }
+
+
 }
 
 /* Small phones (max-width: 480px) */
@@ -1209,9 +1186,7 @@
         padding: 32px 12px;
     }
 
-    .section-title {
-        font-size: 1.75rem;
-    }
+
 
     .industry-card {
         flex: 0 0 200px;
@@ -1225,13 +1200,9 @@
         padding: 10px;
     }
 
-    .industry-overlay h3 {
-        font-size: 0.9rem;
-    }
+ 
 
-    .industry-overlay p {
-        font-size: 0.75rem;
-    }
+
 }
 
 @media (max-width: 768px) {
@@ -1253,7 +1224,6 @@
     }
 
     .testimonials-section .section-title {
-        font-size: 2rem;
         margin-bottom: 2rem;
         text-align: center;
     }
@@ -1311,9 +1281,7 @@
         padding: 24px 12px;
     }
 
-    .testimonials-section .section-title {
-        font-size: 1.75rem;
-    }
+
 
     .testimonial-slider-wrapper {
         padding: 1rem;
@@ -1329,9 +1297,7 @@
         text-align: left;
     }
 
-    .testimonial-author {
-        font-size: 0.85rem;
-    }
+
 
     .slider-button {
         width: 36px;
@@ -1372,9 +1338,7 @@
     min-height: 600px;
   }
 
-    .testimonials-section .section-title {
-        font-size: 1.75rem;
-    }
+
 
     .testimonial-slider-wrapper {
         padding: 1rem;
@@ -1390,9 +1354,7 @@
         text-align: left;
     }
 
-    .testimonial-author {
-        font-size: 0.85rem;
-    }
+
 
     .slider-button {
         width: 36px;
@@ -1433,7 +1395,7 @@
   }
 
     .testimonials-section .section-title {
-        font-size: 2rem;
+
         margin-bottom: 2rem;
         text-align: center;
     }
@@ -1504,7 +1466,7 @@
     }
 
     .testimonials-section .section-title {
-        font-size: 2rem;
+
         margin-bottom: 2rem;
         text-align: center;
     }
@@ -1577,7 +1539,7 @@
 
 @media (max-width: 768px) {
     .partnerships h3 {
-        font-size: 1.0rem;
+       
         /* Changed from h3 to p, so this rule is for the p tag */
         padding: 0 1rem;
     }
@@ -1608,7 +1570,7 @@
 
 
     .our-members-section .section-subtitle {
-        font-size: 1rem;
+   
         padding: 0 1rem;
     }
 
@@ -1626,9 +1588,7 @@
 @media (max-width: 480px) {
  
 
-    .our-members-section .section-subtitle {
-        font-size: 0.95rem;
-    }
+
 
     .logo-carousel-track img {
         height: 50px;
@@ -1637,12 +1597,10 @@
 }
 
 @media (max-width: 768px) {
-    .certifications h2 {
-        font-size: 1.8rem;
-    }
+ 
 
     .certifications h3 {
-        font-size: 1.0rem;
+
         /* Changed from h3 to p, so this rule is for the p tag */
         padding: 0 1rem;
     }
@@ -1666,16 +1624,7 @@
     }
 
     .slide-text-container h2 {
-        font-size: 1.8rem;
         text-align: center;
-    }
-
-    .slide-text-container h3 {
-        font-size: 1.2rem;
-    }
-
-    .slide-text-container p {
-        font-size: 0.9rem;
     }
 
     .dot {

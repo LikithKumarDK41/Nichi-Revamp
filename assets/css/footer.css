@@ -225,7 +225,6 @@
     .footer-bottom {
         text-align: center;
         padding-top: 1.5rem;
-        font-size: 0.85rem;
     }
 }
 
@@ -238,26 +237,6 @@
 
     .footer-column {
         padding: 0 0.5rem;
-    }
-
-    .footer-column h4 {
-        font-size: 1rem;
-    }
-
-    .newsletter p {
-        font-size: 0.85rem;
-    }
-
-    .social-icons a {
-        font-size: 1.2rem;
-    }
-
-    .newsletter-form input {
-        font-size: 0.85rem;
-    }
-
-    .newsletter-form button {
-        font-size: 0.9rem;
     }
 }
 
