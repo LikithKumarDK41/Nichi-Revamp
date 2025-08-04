@@ -38,7 +38,7 @@
 ----------------------------------------- */
 .qpp_certification {
   padding: 40px 20px;
-  background-color: #e0e7ff;
+  background-color: var(--alternate-section-bg);
   border-top: 1px solid #e0e0e0;
 }
 
@@ -110,8 +110,7 @@
    4. Strategic Approach Section
 ----------------------------------------- */
 .qpp_approach {
-  padding: 60px 20px;
-  background-color: #e0e7ff;
+  background-color: var(--alternate-section-bg);
   text-align: center;
 }
 

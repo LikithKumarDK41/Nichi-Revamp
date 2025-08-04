@@ -540,9 +540,10 @@
 }
 
 
-/* Testimonials - Redesigned with Fixed Buttons */
+/* Testimonials */
+
 .testimonials-section {
-    background-color: var(--alternate-section-bg);
+    background: var(--alternate-section-bg);
 }
 
 .testimonials-container {

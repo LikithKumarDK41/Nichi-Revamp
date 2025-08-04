@@ -166,7 +166,7 @@
 }
 
 .factsheet-section {
-  background: linear-gradient(to bottom right, #eff6ff, #e0e7ff);
+  background: var(--alternate-section-bg);
 }
 
 .factsheet-section .container {
