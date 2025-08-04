@@ -8,15 +8,6 @@
   margin: 0 auto; /* Centered content */
 }
 
-.leadership-section-title {
-  font-size: 2.75rem;
-  font-weight: 800;
-  margin-bottom: 20px;
-  color: #222222;
-  text-align: center;
-  padding: 40px 0px 0px
-}
-
 .leadership-intro-text {
   font-size: var(--card-content-ftSize);
   color: var(--common-text-color-dark);
@@ -26,18 +17,18 @@
 }
 
 .leadership-intro-text1 {
-  font-size: var(--card-header-ftSize);
+  font-size: var(--card-content-ftSize);
   color: var(--common-text-color-dark);
   text-align: left !important;
   line-height: 1.7;
 }
 
 .leadership-category-title {
-  font-size: 1.75rem;
+  font-size: var(--ftSize2);
   font-weight: 700;
   margin-top: 3rem;
   margin-bottom: 1.5rem;
-  color: #222222;
+  color: var(--common-text-color-dark);
   text-align: center;
 }
 
@@ -45,7 +36,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem; 
+  gap: 3rem; 
   margin-bottom: 2rem;
   padding: 0 1rem;
 }
@@ -61,9 +52,9 @@
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
   text-align: center;
-  padding: 1.5rem 1rem;
-  width: 280px;
-  height: 380px;
+  padding: 2.5rem 1.5rem;
+  width: 340px;
+  height: 410px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,8 +84,8 @@
 }
 
 .member-title {
-  font-size: 0.95rem;
-  color: #555;
+  font-size: var(--desc-ftSize2);
+  color: var( --common-text-color-dark);
   margin-bottom: 1rem;
   line-height: 1.4;
   flex-grow: 1; 
@@ -121,7 +112,7 @@
 }
 
 .member-details-link:hover {
-  background-color: #000066;
+  background-color: var(--button-hover-bg);
   color: #fff;
 }
 
@@ -146,7 +137,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 14px;
+  padding: 12px 22px;
   font-size: 0.9rem;
   font-weight: 600;
   color: #ffffff;
