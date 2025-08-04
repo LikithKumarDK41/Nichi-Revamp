@@ -4,13 +4,6 @@
   text-align: center;
 }
 
-<<<<<<< HEAD
-.aboutus-section .section-title,
-.infrastructure-section .section-title {
-  font-size: var(--ftSize2);
-  margin-bottom: 24px;
-  color: var(--common-text-color-dark);
-=======
 /* Custom scrollbar for the factsheet */
 .factsheet-scroll-area::-webkit-scrollbar {
   height: 8px;
@@ -163,7 +156,6 @@ html-include {
 
 .aboutus-section .zigzag-text-about h2 {
   font-size: 2.25rem;
->>>>>>> 9d4cd4006108d7f22e10fc37f2209b5b44351e3f
   font-weight: 700;
   text-align: center;
 }

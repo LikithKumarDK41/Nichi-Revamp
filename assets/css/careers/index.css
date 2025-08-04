@@ -52,9 +52,7 @@
         /* Tab Content Sections */
         .tab-content {
             display: none;
-            padding: 20px 20px 60px;
-            max-width: 1000px;
-            margin: auto;
+    
         }
 
         .tab-content.active {
@@ -358,8 +356,6 @@
         .tab-content {
             display: none;
             animation: fadeIn 0.5s ease-in-out;
-            padding-left: 20px;
-            padding-right: 20px;
         }
 
         .tab-content.active {
