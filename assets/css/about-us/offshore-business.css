@@ -1,7 +1,6 @@
 /* Offshore Section Styling */
 .offshore-container {
   margin: 0 auto;
-  padding: 40px 20px; /* Vertical padding and horizontal padding for smaller screens */
   box-sizing: border-box; /* Include padding in element's total width and height */
 }
 

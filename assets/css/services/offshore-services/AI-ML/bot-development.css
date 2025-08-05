@@ -1,27 +1,25 @@
 .bot_dev {
-  padding: 40px 20px;
   margin: 0 auto;
   text-align: left;
 }
 
 .bot_dev h2 {
   font-size: var(--ftSize1);
-  color: #333;
+  color: var(--common-text-color-dark);
   margin-bottom: 20px;
 }
 
 .bot_dev p {
   font-size: var(--desc-ftSize);
   line-height: 1.6;
-  color: #555;
+  color: var(--common-text-color-dark);
   margin-bottom: 30px;
 }
 
 .bot_intro {
-  padding: 40px 20px;
   margin-bottom: 0px;
   line-height: 1.6;
-  color: #333;
+  color: var(--common-text-color-dark);
   font-size: 1.1em;
   background: white;
 }
@@ -81,7 +79,6 @@
 /* Styles for the dynamically rendered sections */
 .bot_features,
 .bot_advantages {
-  padding: 40px 20px;
   margin-bottom: 0px; /* Add margin-bottom for spacing between sections */
   background: var(--alternate-section-bg);
   border-radius: 8px;
@@ -93,7 +90,7 @@
 .bot_features h2,
 .bot_advantages h2 {
   font-size: var(--card-header-ftSize);
-  color: #222222;
+  color: var(--common-text-color-dark);
   margin-bottom: 20px;
   text-align: center;
 }
@@ -102,13 +99,13 @@
 .bot_advantages p {
   font-size: var(--card-content-ftSize);
   line-height: 1.6;
-  color: #555;
+  color: var(--common-text-color-dark);
   margin-bottom: 15px;
 }
 
 .bot_features p strong,
 .bot_advantages p strong {
-  color: #333;
+  color: var(--common-text-color-dark);
 }
 
     /* Basic styling for the dropdown sections */
@@ -131,7 +128,7 @@
       align-items: center;
       font-size: var(--card-header-ftSize); /* Slightly smaller font for point headers */
       font-weight: 600;
-      color: #444;
+      color: var(--common-text-color-dark);
       border-bottom: 1px solid #eee;
       transition: background-color 0.3s ease; /* Smooth transition for hover effect */
     }
@@ -171,7 +168,7 @@
     .dropdown-content p {
       margin-bottom: 10px;
       line-height: 1.6;
-      color: #555;
+      color: var(--common-text-color-dark);
       font-size: var(--card-content-ftSize);
     }
 
@@ -179,7 +176,7 @@
     main section h2 {
       margin-bottom: 25px;
       font-size: var(--ftSize2);
-      color: #222;
+      color: var(--common-text-color-dark);
       text-align: center;
     }
 
