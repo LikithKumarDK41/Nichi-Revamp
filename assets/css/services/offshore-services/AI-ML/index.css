@@ -135,7 +135,7 @@
       align-items: center;
       font-size: var(--card-header-ftSize); /* Slightly smaller font for point headers */
       font-weight: 600;
-      color: #444;
+      color: var(--common-text-color-dark);
       border-bottom: 1px solid #eee;
       transition: background-color 0.3s ease; /* Smooth transition for hover effect */
     }
@@ -175,7 +175,7 @@
     .dropdown-content p {
       margin-bottom: 10px;
       line-height: 1.6;
-      color: #555;
+      color: var(--common-text-color-dark);
       font-size: var(--card-content-ftSize);
     }
 

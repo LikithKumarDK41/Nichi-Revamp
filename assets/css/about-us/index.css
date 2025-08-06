@@ -17,25 +17,15 @@
   background: #555;
 }
 
-/* Hide scrollbar for the scroll area */
 .hide-scrollbar {
   -ms-overflow-style: none;
-  /* IE and Edge */
   scrollbar-width: none;
-  /* Firefox */
 }
 
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
-  /* Chrome, Safari, Opera*/
 }
 
-/* Ensure html-include elements are displayed correctly */
-html-include {
-  display: contents;
-}
-
-/* Keyframe animations for subtle effects */
 @keyframes fadeInDown {
   from {
     opacity: 0;
@@ -103,45 +93,28 @@ html-include {
 .aboutus-section .container {
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
-.aboutus-section .zigzag-row {
+.aboutus-section .about-us-zigzag-row {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   gap: 3rem;
-  margin-bottom: 4rem;
-  position: relative; /* Added for absolute positioning of images */
-}
-
-@media (min-width: 768px) {
-  .aboutus-section .zigzag-row {
-    flex-direction: row;
-  }
-
-  .aboutus-section .zigzag-row.reverse {
-    flex-direction: row-reverse;
-  }
+  margin-bottom: 20px;
+  position: relative;
 }
 
 .aboutus-section .zigzag-text-about {
-  font-size: 1.125rem;
+  font-size: var(--card-content-ftSize);
   line-height: 1.625;
   animation: fadeInLeft 1s ease-out forwards;
   width: 100%;
+  color: var(--common-text-color-dark);
 }
 
 .aboutus-section .zigzag-text-about.animate-fade-in-right {
   animation: fadeInRight 1s ease-out forwards;
-}
-
-@media (min-width: 768px) {
-  .aboutus-section .zigzag-text-about {
-    width: 50%;
-  }
 }
 
 .aboutus-section .zigzag-text-about p:not(:first-child) {
@@ -149,9 +122,9 @@ html-include {
 }
 
 .aboutus-section .zigzag-text-about h2 {
-  font-size: 2.25rem;
+  font-size: var(--ftSize2);
   font-weight: 700;
-  color: #1d4ed8;
+  color: var(--common-text-color-dark);
   margin-bottom: 1.5rem;
 }
 
@@ -176,24 +149,8 @@ html-include {
   margin-top: 40px;
 }
 
-.aboutus-section .zigzag-row.reverse .about-us-zigzag-image {
+.aboutus-section .about-us-zigzag-row.reverse .about-us-zigzag-image {
   animation: fadeInLeft 1s ease-out forwards;
-}
-
-@media (min-width: 768px) {
-  .aboutus-section .about-us-zigzag-image {
-    width: 50%;
-    position: absolute; /* Position images absolutely */
-    top: 0; /* Align to the top */
-  }
-  /* For the first image (top-right) */
-  .aboutus-section .zigzag-row:not(.reverse) .about-us-zigzag-image {
-    right: 0;
-  }
-  /* For the second image (top-left) */
-  .aboutus-section .zigzag-row.reverse .about-us-zigzag-image {
-    left: 0;
-  }
 }
 
 .aboutus-section .about-us-zigzag-image img {
@@ -201,23 +158,15 @@ html-include {
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   transition: transform 0.3s ease-in-out;
   max-width: 100%;
-  height: auto;
+  height: 300px;
 }
 
 .aboutus-section .about-us-zigzag-image img:hover {
   transform: scale(1.05);
 }
 
-/* Factsheet Section */
 .factsheet-section {
-  padding: 4rem 0;
-  background: linear-gradient(to bottom right, #eff6ff, #e0e7ff);
-}
-
-@media (min-width: 768px) {
-  .factsheet-section {
-    padding: 6rem 0;
-  }
+  background: var(--alternate-section-bg);
 }
 
 .factsheet-section .container {
@@ -225,21 +174,6 @@ html-include {
   margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem;
-}
-
-.factsheet-section h2 {
-  font-size: 2.25rem;
-  font-weight: 800;
-  text-align: center;
-  color: #111827;
-  margin-bottom: 3rem;
-}
-
-@media (min-width: 768px) {
-  .factsheet-section h2 {
-    font-size: 3rem;
-    margin-bottom: 4rem;
-  }
 }
 
 .factsheet-section .relative {
@@ -261,16 +195,19 @@ html-include {
   scroll-snap-align: center;
 }
 
-@media (min-width: 768px) {
-  .factsheet-slide {
-    width: 50%;
-  }
+.brochure-section .container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
 }
 
-@media (min-width: 1024px) {
-  .factsheet-slide {
-    width: 33.333333%;
-  }
+.brochure-section .brochure-subtext {
+  font-size: var(--ftSize2);
+  font-weight: 300;
+  opacity: 0.9;
+  margin-bottom: 2rem;
 }
 
 .factsheet-slide>div {
@@ -324,7 +261,7 @@ html-include {
 }
 
 .factsheet-slide .text-center p {
-  font-size: 1.875rem;
+  font-size: var(--card-header-ftSize);
   font-weight: 600;
 }
 
@@ -346,90 +283,67 @@ html-include {
 }
 
 .factsheet-pagination .bar:hover {
-  background-color: #3b82f6;
+  background-color: var(--button-hover-bg);
 }
 
 .factsheet-pagination .bar.active {
-  background-color: #2563eb;
+  background-color: var(--button-bg);
   width: 1.5rem;
 }
 
 .factsheet-pagination .bar.active:hover {
-  background-color: #3b82f6;
+  background-color: var(--button-hover-bg);
 }
 
-/* Brochure Section */
 .brochure-section {
-  background-color: #1d4ed8;
+  background: linear-gradient(135deg, #162077, #0e174f, #f0f4ff);
+
   color: white;
   padding: 4rem 0;
+}
+
+.brochure-heading {
+  color: #fff;
+}
+
+@media (min-width: 1024px) {
+  .factsheet-slide {
+    width: 33.333333%;
+  }
 }
 
 @media (min-width: 768px) {
   .brochure-section {
     padding: 5rem 0;
   }
-}
 
-.brochure-section .container {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  text-align: center;
-}
-
-.brochure-section .brochure-heading {
-  font-size: 2.25rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  line-height: 1.25;
-}
-
-@media (min-width: 768px) {
-  .brochure-section .brochure-heading {
-    font-size: 3rem;
+  .factsheet-slide {
+    width: 50%;
   }
-}
 
-.brochure-section .brochure-subtext {
-  font-size: 1.25rem;
-  font-weight: 300;
-  opacity: 0.9;
-  margin-bottom: 2rem;
-}
-
-@media (min-width: 768px) {
-  .brochure-section .brochure-subtext {
-    font-size: 1.5rem;
+  .aboutus-section .about-us-zigzag-image {
+    width: 50%;
+    position: absolute;
+    top: 0;
   }
-}
 
-.brochure-section a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 2rem;
-  background-color: white;
-  color: #1d4ed8;
-  font-weight: 600;
-  border-radius: 9999px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease-in-out;
-  transform: scale(1);
-  text-decoration: none;
-}
+  .aboutus-section .about-us-zigzag-row:not(.reverse) .about-us-zigzag-image {
+    right: 0;
+  }
 
-.brochure-section a:hover {
-  background-color: #dbeafe;
-  transform: scale(1.05);
-}
+  .aboutus-section .about-us-zigzag-row.reverse .about-us-zigzag-image {
+    left: 0;
+  }
 
-.brochure-section a i {
-  margin-left: 0.75rem;
-  transition: transform 0.3s;
-}
+  .aboutus-section .zigzag-text-about {
+    width: 50%;
+  }
 
-.brochure-section a:hover i {
-  transform: translateX(0.25rem);
+  .aboutus-section .about-us-zigzag-row {
+    flex-direction: row;
+  }
+
+  .aboutus-section .about-us-zigzag-row.reverse {
+    flex-direction: row-reverse;
+  }
 }

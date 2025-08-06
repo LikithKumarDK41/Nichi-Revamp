@@ -10,7 +10,6 @@
 .mobile-container {
   width: 100%;
   margin: 0 auto;
-  padding: 0 1.5rem; /* More generous padding */
 }
 
 /* Content Sections */
@@ -26,12 +25,12 @@
 
 .mobile-section-header {
   text-align: center;
-  margin-bottom: 3.5rem; /* More space below header */
+  margin-bottom: 20px;
 }
 
 .mobile-section-title {
   font-size: var(--ftSize1);
-  color: #222222;
+  color: var(--common-text-color-dark);
   margin-bottom: 1rem;
   position: relative;
   display: inline-block;
@@ -53,6 +52,7 @@
   font-size: var(--desc-ftSize);
   margin: 0 auto 2rem;
   line-height: 1.7;
+  color: var(--common-text-color-dark);
 }
 
 /* Mobile Flex Wrapper (Why Choose Us Section) */
@@ -145,7 +145,7 @@
 
 .mobile-service-title {
   font-size: var(--ftSize2); /* Slightly larger title */
-  color: var(--dark-color);
+  color: var(--common-text-color-dark);
   font-weight: var(--ftWt2);
 }
 
@@ -173,7 +173,7 @@
 }
 
 .mobile-service-description {
-  color: var(--gray-color);
+  color: var(--common-text-color-dark);
   margin-top: 0.5rem;
   font-size: var(--desc-ftSize);
   line-height: 1.6;

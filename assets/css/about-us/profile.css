@@ -1,13 +1,11 @@
     .profile-section {
       width: 100%;
-      padding: 60px 0;
-      background-color: #f9f9fb;
+      background-color: var(--alternate-section-bg);
       min-height: calc(100vh - 100px);
       font-family: 'Inter', sans-serif;
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      margin-top: 60px;
     }
 
     .profile-container {
