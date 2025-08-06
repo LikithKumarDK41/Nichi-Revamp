@@ -572,8 +572,8 @@
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     padding: 2rem;
     overflow: visible; /* Changed from hidden to visible for buttons */
-    min-height: 450px; /* Increased from 400px */
-    max-height: 500px; /* Increased from 450px */
+    min-height: 500px; /* Increased from 400px */
+    max-height: 700px; /* Increased from 450px */
     border: 1px solid rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     margin: 0 1rem; /* Added margin for button space */

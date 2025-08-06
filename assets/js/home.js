@@ -448,42 +448,36 @@ function initTestimonialsSlider() {
 const testimonialsData = [
     {
         text: "We consider Nichi-In Software as one of our strong partners due to their Japanese language expertise and experience of their team in delivering quality solutions.",
-        author: "Client",
         designation: "",
         company: "Mitsubishi Electric India Pvt. Ltd.",
         logo: "/assets/img/dashboard/testimonials/Client_Mitsubishi.jpg"
     },
     {
         text: "Nichi-In Software is supporting us in offshore software development, onsite software development support and is a very important vendor for us.",
-        author: "Client",
         designation: "",
         company: "Toyota Connected India Pvt. Ltd.",
         logo: "/assets/img/dashboard/testimonials/Client_Toyota.jpg"
     },
     {
         text: "We evaluated Nichi-In Software in terms of design ability, schedule management, issue management. We found Nichi-In Software very professional in all these and we are happy to work with Nichi-In Software as one of the preferred outsourcing partners.",
-        author: "Client",
         designation: "",
         company: "NRI, Nomura Research Institute", // Updated company name for clarity
         logo: "/assets/img/dashboard/testimonials/Client_NRI.jpg"
     },
     {
         text: "With bilingual system engineers who can speak Japanese, the Nichi-In team understands the client's perspective and provides support. They are flexible, have high technical skills, and have also created high-quality design documents. They also provided prompt and thorough support after implementation. They are a reliable partner that takes the initiative in development by making proposals rather than waiting for instructions.",
-        author: "Client",
         designation: "",
         company: "Telenet Co., Ltd.",
         logo: "/assets/img/dashboard/testimonials/Telenet.png"
     },
     {
         text: "Nichi-In Software supported us in the development of software based on our intrinsic base concept. Since the structure of the existing software is very different from the usual one, there were a few hurdles initially. However, Nichi-In Software team was able to adapt quickly and fulfill the expectations and requirements of basic software structure, maintainability etc. Further, even though our PIC was in Japan and Nichi-In Software members had to shift to Work From Home during lockdown due to Covid-19, they were able to successfully complete the development without any significant delay by using Azure Devops, Skype etc. We can confidently say that development work can be outsourced to Nichi-In Software without any concerns about being in a different country or flexibility in project execution.",
-        author: "Client",
         designation: "",
         company: "Japan Automatic Machine Co., Ltd.", // Simplified company name
         logo: "/assets/img/dashboard/testimonials/Client_JAM.jpg"
     },
     {
         text: "We created a good partnership with Nichi-In Software as their dedication to our projects and visions is evident in all aspects of their deliverance. We appreciate their attention to detail and creative approach of bringing out projects to life on time.",
-        author: "Client",
         designation: "",
         company: "Cosmos Impex(I) Pvt. Ltd.",
         logo: "/assets/img/dashboard/testimonials/Client_Cosmos.jpg"
@@ -504,7 +498,6 @@ const testimonialsData = [
     },
     {
         text: "The professionals at Nichi-In Software Solutions are knowledgeable and experienced in the IT industry. In the early 2000’s Phoenix Solutions engaged Nichi-In Software as a trusted partner to develop a unique speech processing system for providing a single best answer to a question. Nichi-In Software delivered the most efficient solution and highest quality product consistent with our specifications. The outcomes were highly successful - their work enabled Phoenix to develop an extensive intellectual property portfolio encompassing distributed speech recognition and semantic speech understanding and other key contributions to the present burgeoning speech conversational market.",
-        author: "Client",
         designation: "",
         company: "Phoenix Solutions Inc., Palo Alto", // Included location for clarity
         logo: "https://placehold.co/100x50/CCCCCC/333333?text=Phoenix" // Placeholder
@@ -544,7 +537,7 @@ const testimonialsData = [
                     ${testimonial.logo ? `<img src="${testimonial.logo}" alt="${testimonial.company} Logo" class="company-logo">` : ''}
                     <p class="testimonial-text">"${testimonial.text}"</p>
                     <div class="testimonial-author">
-                        <span class="author-name">${testimonial.author}</span>
+                        <span class="author-name">${testimonial?.author ?? ""}</span>
                         ${testimonial.designation ? `<span class="author-designation">${testimonial.designation}</span>` : ''}
                         <span class="author-company">${testimonial.company}</span>
                     </div>
